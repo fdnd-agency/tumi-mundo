@@ -1,4 +1,5 @@
-<img width="453" alt="image" src="https://github.com/fdnd-agency/tumi-mundo/assets/1061632/3b3f2e07-846e-4f80-9476-47c95e8d6f09">
+<img width="453" alt="image" src="https://github.com/fdnd-agency/tumi-mundo/assets/61702002/6c04d95e-f4ea-480d-9e86-cbf9148e8e15">
+
 
 Door de wetenschappelijke en technologische vooruitgang komt er steeds meer inzicht in het proces van taalontwikkeling bij kinderen. Wij voorzien dat deze nieuwe inzichten en de technologische ontwikkelingen een steeds grotere toegevoegde waarde zullen hebben in de ondersteuning van ouders en kinderen bij de ontwikkeling van hun moedertaal en andere talen.
 
