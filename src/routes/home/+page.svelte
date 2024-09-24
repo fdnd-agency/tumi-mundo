@@ -56,6 +56,7 @@ article:first-of-type img {
 
 article:first-of-type h1{
     font-size: 36px;
+    font-weight: 400;
 }
 
 article:first-of-type p:nth-of-type(2){
