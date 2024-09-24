@@ -152,26 +152,29 @@ article img {
     opacity: 98%;
     color: white;
     box-sizing: border-box;
+    transition: left 0.3s ease;
 }
 
 .menu ul {
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
     flex-wrap: wrap;
-    flex-direction: column;
+    max-height: 470px;
     max-width: 240px;
-    gap: 40px;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .menu li {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 50%;
+    box-sizing: border-box;
+    list-style: none;
 }
 
-.menu li div{
+.menu li div {
     background-color: #1C1C1C;
     height: 100px;
     width: 100px;
@@ -193,6 +196,6 @@ article img {
 }
 
 .menu.active {
-    left: unset;
+    left: 0;
 }
 </style>
