@@ -3,6 +3,19 @@
 
     function toggleMenu() {
         isMenuActive = !isMenuActive;
+        const menu = document.querySelector('.menu');
+        const button = document.getElementById('menuToggle');
+        const buttonImg = button.querySelector('img');
+
+        if (isMenuActive) {
+            menu.classList.add('active');
+            button.style.backgroundColor = 'white';
+            buttonImg.src = '/icons/menu-close.svg';
+        } else {
+            menu.classList.remove('active');
+            button.style.backgroundColor = '#1C1C1C';
+            buttonImg.src = '/icons/menu-open.svg';
+        }
     }
 </script>
 
@@ -114,6 +127,7 @@ button#menuToggle {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.5s ease, transform 0.5s ease;
 }
 
 article:first-of-type img {
