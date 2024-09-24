@@ -153,15 +153,18 @@ article img {
     color: white;
     box-sizing: border-box;
     transition: left 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu ul {
     display: flex;
-    height: 100%;
     flex-wrap: wrap;
     max-height: 470px;
+    height: 470px;
     max-width: 240px;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
 }
 
