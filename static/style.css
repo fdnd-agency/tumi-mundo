@@ -1,0 +1,30 @@
+*, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+h2{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.story-title {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.story-description {
+    font-size: 8px;
+    font-weight: 400;
+}
