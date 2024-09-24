@@ -21,7 +21,7 @@
     <article class="nav">
         <nav class="menu" class:active={isMenuActive}>
             <ul>
-                <li>
+                <li class="active">
                     <a href="#">
                         <div>
                             <img src="/icons/home-icon.svg" alt="">
@@ -196,6 +196,30 @@ article img {
 .menu li p {
     color: white;
     text-align: center;
+}
+
+.menu li.active div{
+    border: 5px solid white;
+}
+
+.menu li:nth-of-type(1) div{
+    background-color: #3F92B6;
+}
+
+.menu li:nth-of-type(2) div{
+    background-color: #599AE7;
+}
+
+.menu li:nth-of-type(3) div{
+    background-color: #954BE2;
+}
+
+.menu li:nth-of-type(4) div{
+    background-color: #06A192;
+}
+
+.menu li:nth-of-type(5) div{
+    background-color: #FD8C73;
 }
 
 .menu.active {
