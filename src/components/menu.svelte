@@ -7,44 +7,44 @@
 </script>
 
 <article class="nav">
-    <nav class="menu" class:active={isMenuActive} aria-hidden="true">
+    <nav class="menu" class:active={isMenuActive} aria-hidden={isMenuActive}>
         <ul>
             <li class="active">
-                <a href="#">
+                <a href="./home" tabindex={isMenuActive ? "0" : "-1"}>
                     <div>
-                        <img src="/icons/home-icon.svg" alt="Home">
+                        <img src="/icons/home-icon.svg" alt="Navigatie naar Home">
                     </div>
                     <p>Home</p>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="./home" tabindex={isMenuActive ? "0" : "-1"}>
                     <div>
-                        <img src="/icons/puzzle-icon.svg" alt="Testing">
+                        <img src="/icons/puzzle-icon.svg" alt="Navigatie naar Testing">
                     </div>
                     <p>Testing</p>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="./home" tabindex={isMenuActive ? "0" : "-1"}>
                     <div>
-                        <img src="/icons/book-icon.svg" alt="Lessons">
+                        <img src="/icons/book-icon.svg" alt="Navigatie naar Lessons">
                     </div>
                     <p>Lessons</p>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="./home" tabindex={isMenuActive ? "0" : "-1"}>
                     <div>
-                        <img src="/icons/chart-icon.svg" alt="Statistics">
+                        <img src="/icons/chart-icon.svg" alt="Navigatie naar Statistics">
                     </div>
                     <p>Statistics</p>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="./home" tabindex={isMenuActive ? "0" : "-1"}>
                     <div>
-                        <img src="/icons/person-icon.svg" alt="Profile">
+                        <img src="/icons/person-icon.svg" alt="Navigatie naar Profile">
                     </div>
                     <p>Profile</p>
                 </a>
