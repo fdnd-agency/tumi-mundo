@@ -8,7 +8,7 @@
         </div>
     </article>
     <article>
-        <img src="/charachters/mouse.svg" alt="Mouse character"/>
+        <img src="/characters/rat.svg" alt="Rat character"/>
     </article>
 </section>
 
