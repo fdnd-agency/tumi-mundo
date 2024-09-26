@@ -12,7 +12,7 @@
         </div>
     </article>
     <article>
-        <img src="/charachters/mouse.svg" alt="Mouse character"/>
+        <img src="/characters/mouse.svg" alt="Mouse character"/>
     </article>
     <Menu/>
 </section>
