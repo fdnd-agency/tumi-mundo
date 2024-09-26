@@ -3,29 +3,16 @@
 
     function toggleMenu() {
         isMenuActive = !isMenuActive;
-        const menu = document.querySelector('.menu');
-        const button = document.getElementById('menuToggle');
-        const buttonImg = button.querySelector('img');
-
-        if (isMenuActive) {
-            menu.classList.add('active');
-            button.style.backgroundColor = 'white';
-            buttonImg.src = '/icons/menu-close.svg';
-        } else {
-            menu.classList.remove('active');
-            button.style.backgroundColor = '#1C1C1C';
-            buttonImg.src = '/icons/menu-open.svg';
-        }
     }
 </script>
 
 <article class="nav">
-    <nav class="menu" class:active={isMenuActive}>
+    <nav class="menu" class:active={isMenuActive} aria-hidden="true">
         <ul>
             <li class="active">
                 <a href="#">
                     <div>
-                        <img src="/icons/home-icon.svg" alt="">
+                        <img src="/icons/home-icon.svg" alt="Home">
                     </div>
                     <p>Home</p>
                 </a>
@@ -33,7 +20,7 @@
             <li>
                 <a href="#">
                     <div>
-                        <img src="/icons/puzzle-icon.svg" alt="">
+                        <img src="/icons/puzzle-icon.svg" alt="Testing">
                     </div>
                     <p>Testing</p>
                 </a>
@@ -41,7 +28,7 @@
             <li>
                 <a href="#">
                     <div>
-                        <img src="/icons/book-icon.svg" alt="">
+                        <img src="/icons/book-icon.svg" alt="Lessons">
                     </div>
                     <p>Lessons</p>
                 </a>
@@ -49,7 +36,7 @@
             <li>
                 <a href="#">
                     <div>
-                        <img src="/icons/chart-icon.svg" alt="">
+                        <img src="/icons/chart-icon.svg" alt="Statistics">
                     </div>
                     <p>Statistics</p>
                 </a>
@@ -57,7 +44,7 @@
             <li>
                 <a href="#">
                     <div>
-                        <img src="/icons/person-icon.svg" alt="">
+                        <img src="/icons/person-icon.svg" alt="Profile">
                     </div>
                     <p>Profile</p>
                 </a>
@@ -65,19 +52,27 @@
         </ul>
     </nav>
 </article>
-<button id="menuToggle" on:click={toggleMenu} aria-label="Toggle Menu">
-    <img src="/icons/menu-open.svg" alt="Menu Toggle">
-</button>
+
+{#if !isMenuActive}
+    <button class="btn open" on:click={toggleMenu} aria-label="Open Menu" aria-expanded={isMenuActive}>
+        <img src="/icons/menu-open.svg" alt="Open menu">
+    </button>
+{:else}
+    <button class="btn close" on:click={toggleMenu} aria-label="Close Menu" aria-expanded={isMenuActive}>
+        <img src="/icons/menu-close.svg" alt="Close menu">
+    </button>
+{/if}
 
 <style>
-button#menuToggle {
+
+button.btn {
     position: fixed;
     bottom: 2em;
     right: 2em;
-    background-color: #1C1C1C;
     height: 56px;
     width: 56px;
     border-radius: 16px;
+    background-color: #1C1C1C;
     opacity: 80%;
     border: none;
     display: flex;
@@ -85,6 +80,11 @@ button#menuToggle {
     align-items: center;
     transition: background-color 0.5s ease, transform 0.5s ease;
 }
+
+button.btn.close {
+    background-color: white;
+}
+
 .menu {
     position: fixed;
     top: 0;
@@ -141,27 +141,27 @@ button#menuToggle {
     text-align: center;
 }
 
-.menu li.active div{
+.menu li.active div {
     border: 5px solid white;
 }
 
-.menu li:nth-of-type(1) div{
+.menu li:nth-of-type(1) div {
     background-color: #3F92B6;
 }
 
-.menu li:nth-of-type(2) div{
+.menu li:nth-of-type(2) div {
     background-color: #599AE7;
 }
 
-.menu li:nth-of-type(3) div{
+.menu li:nth-of-type(3) div {
     background-color: #954BE2;
 }
 
-.menu li:nth-of-type(4) div{
+.menu li:nth-of-type(4) div {
     background-color: #06A192;
 }
 
-.menu li:nth-of-type(5) div{
+.menu li:nth-of-type(5) div {
     background-color: #FD8C73;
 }
 
