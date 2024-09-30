@@ -2,15 +2,19 @@
 
 <body>
   <main>
-    <header>
+
       <h1>Lessons</h1>
-      <a href="/" class="button-listening">Listening</a>
+      <nav>
+      <a href="/" class="button-listening">1.Listening</a>
       <img
       src="/Music Note 2.svg"
       class="music-note"
       alt="music-note"
     />
-    </header>
+
+    <a href="/" class="button-listening">2.</a>
+  </nav>
+
 
     <section class="content">
       <h2>Own playlists</h2>
@@ -161,13 +165,17 @@
      
     </article>
 
+    <div class="carousel-button">
+    <button class="left-button"> A </button>
+    <button class="right-button"> C </button>
+  </div>
 
     <section class="content">
       <h2>Liked playlist</h2>
 
       <article class="kaart">
         <article class="">
-          <img src="/Frame 27 (1).svg" class="schildpad" alt="pinguin" />
+          <img src="/Frame 27 (1).svg" class="pinguin" alt="pinguin" />
           <p class="octopus-tekst">Penguin activities!</p>
 
           <div class="tijd-en-playbutton">
@@ -187,7 +195,7 @@
         </article>
 
             <article class="">
-              <img src="/Frame 27 (4).svg" class="schildpad" alt="pinguin" />
+              <img src="/Frame 27 (4).svg" class="pinguin" alt="pinguin" />
               <p class="octopus-tekst">Christmas stories, for the festive season.</p>
     
               <div class="tijd-en-playbutton">
@@ -254,7 +262,7 @@
               </div>
             </article>
 
-            <!-- <article class="">
+            <article class="">
               <img src="/Frame 27 (4).svg" class="pinguin" alt="pinguin" />
               <p class="octopus-tekst">Christmas stories, for the festive season.</p>
     
@@ -272,7 +280,7 @@
                 alt="play-button"
               />
               </div>
-            </article> -->
+            </article>
 
       </article>
     </section>
@@ -303,18 +311,17 @@
     padding: 0;
   }
 
-  header {
+  nav {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
+    flex-direction: row;
+    transform: translateX(120px);
+    gap: 10px;
   }
 
   h1 {
     font-size: 2em;
     margin-bottom: 10px;
+    margin-top: 50px;
     color: white;
   }
 
@@ -322,14 +329,25 @@
     font-size: 1em;
     color: white;
     background-color: var(--btn-color);
-    padding: 8px 80px;
+    padding: 8px 90px;
     text-decoration: none;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
 
   a.button-listening:hover {
     background-color: var(--btn-color);
+  }
+
+  a.button-listening:nth-child(3){
+    background-color:#37C6AB;
+    opacity: 40%;
+  }
+
+  img.music-note {
+   position: absolute;
+   left: 190px;
+   top: 7px;
   }
 
   main {
@@ -349,6 +367,7 @@
     flex-direction: row;
     gap: 10px;
     margin-right: 55px;
+    margin-bottom: 30px;
   }
 
   article.kaart article {
@@ -481,6 +500,7 @@
     flex-direction: column;
     gap: 10px;
     margin-right: 10px;
+    margin-bottom: 50px;
   }
 
   article.stories article {
@@ -567,12 +587,29 @@
     margin-top: 2px;
   }
 
+
+ div.carousel-button {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  article.kaart article:nth-child(5){
+  transform: translateX(-305px);
+}
+
+  .left-button, .right-button {
+    background-color: var(--carousel-btn);
+  }
+
   img.pinguin {
     width: 100px;
     height: 95px;
     object-fit: cover;
     border-radius: 8px;
   }
+
+
 
  
 </style>
