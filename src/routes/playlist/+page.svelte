@@ -5,13 +5,17 @@
     <header>
       <h1>Lessons</h1>
       <a href="/" class="button-listening">Listening</a>
+      <img
+      src="/Music Note 2.svg"
+      class="music-note"
+      alt="music-note"
+    />
     </header>
 
     <section class="content">
       <h2>Own playlists</h2>
 
       <article class="kaart">
-        <!-- Octopus kaart -->
         <article class="octopus-kaart">
           <img src="/Frame 27.svg" class="octopus" alt="octopus" />
           <p class="octopus-tekst">The octopus who was very hungry</p>
@@ -26,7 +30,6 @@
           </div>
         </article>
 
-        <!-- Maak playlist kaart -->
         <article class="maak-playlist">
           <img src="/Group 321.svg" class="playlist-icon" alt="playlist-icon" />
           <p class="playlist-text">Make a playlist !</p>
@@ -93,10 +96,187 @@
         </div>
       </article>
 
-      <article class=""></article>
+      <article class="story-content">
+        <img src="/Frame 104.svg" class="schildpad" alt="pinguin" />
 
-      <article class=""></article>
+        <div class="tekst">
+          <p class="title">Six o’clock</p>
+          <p class="description">
+            A group of friends try to take over the playground. Jesper and Wylan want to take over the swings, but one person stands in their way.
+          </p>
+        </div>
+
+        <img src="/Rectangle 135.svg" class="vlag-icon" alt="engelse-vlag" />
+
+        <div class="iconen-onder">
+          <img
+            src="/Group 316 (1).svg"
+            class="links-onder"
+            alt="playbutton-blue"
+          />
+          <p class="time">3 min. 5 sec</p>
+
+          <div class="rechts-onder">
+            <img
+              src="/Frame 64.svg"
+              class="download-icon"
+              alt="download-icon"
+            />
+            <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+          </div>
+        </div>
+      </article>
+
+      <article class="story-content">
+        <img src="/Frame 105.svg" class="schildpad" alt="bomen" />
+
+        <div class="tekst">
+          <p class="title">Toys on the Orient Express</p>
+          <p class="description">
+            A child looses his toy during a train ride. He is determined to find it back.
+          </p>
+        </div>
+
+        <img src="/Rectangle 135.svg" class="vlag-icon" alt="engelse-vlag" />
+
+        <div class="iconen-onder">
+          <img
+            src="/Group 316 (1).svg"
+            class="links-onder"
+            alt="playbutton-blue"
+          />
+          <p class="time">3 min. 5 sec</p>
+
+          <div class="rechts-onder">
+            <img
+              src="/Frame 64.svg"
+              class="download-icon"
+              alt="download-icon"
+            />
+            <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+          </div>
+        </div>
+      </article>
+
+     
     </article>
+
+
+    <section class="content">
+      <h2>Liked playlist</h2>
+
+      <article class="kaart">
+        <article class="">
+          <img src="/Frame 27 (1).svg" class="schildpad" alt="pinguin" />
+          <p class="octopus-tekst">Penguin activities!</p>
+
+          <div class="tijd-en-playbutton">
+            <img
+              src="/Group 316.svg"
+              class="playbutton-orange"
+              alt="play-button"
+            />
+            <p class="tijd">31 min. 55 sec</p>
+
+            <img
+            src="/Heart.svg"
+            class="playbutton-orange"
+            alt="play-button"
+          />
+          </div>
+        </article>
+
+            <article class="">
+              <img src="/Frame 27 (4).svg" class="schildpad" alt="pinguin" />
+              <p class="octopus-tekst">Christmas stories, for the festive season.</p>
+    
+              <div class="tijd-en-playbutton">
+                <img
+                  src="/Group 316.svg"
+                  class="playbutton-orange"
+                  alt="play-button"
+                />
+                <p class="tijd">31 min. 55 sec</p>
+    
+                <img
+                src="/Heart.svg"
+                class="playbutton-orange"
+                alt="play-button"
+              />
+              </div>
+            </article>
+
+      </article>
+    </section>
+
+    <section class="content">
+      <h2>Suggested playlist</h2>
+
+      <article class="kaart">
+        <article class="">
+          <img src="/Frame 27 (1).svg" class="pinguin" alt="pinguin" />
+          <p class="octopus-tekst">Penguin activities!</p>
+
+          <div class="tijd-en-playbutton">
+            <img
+              src="/Group 316.svg"
+              class="playbutton-orange"
+              alt="play-button"
+            />
+            <p class="tijd">31 min. 55 sec</p>
+
+            <img
+            src="/Icon.svg"
+            class="playbutton-orange"
+            alt="play-button"
+          />
+          </div>
+        </article>
+
+
+            <article class="">
+              <img src="/Frame 27 (4).svg" class="pinguin" alt="pinguin" />
+              <p class="octopus-tekst">Christmas stories, for the festive season.</p>
+    
+              <div class="tijd-en-playbutton">
+                <img
+                  src="/Group 316.svg"
+                  class="playbutton-orange"
+                  alt="play-button"
+                />
+                <p class="tijd">31 min. 55 sec</p>
+    
+                <img
+                src="/Icon.svg"
+                class="playbutton-orange"
+                alt="play-button"
+              />
+              </div>
+            </article>
+
+            <!-- <article class="">
+              <img src="/Frame 27 (4).svg" class="pinguin" alt="pinguin" />
+              <p class="octopus-tekst">Christmas stories, for the festive season.</p>
+    
+              <div class="tijd-en-playbutton">
+                <img
+                  src="/Group 316.svg"
+                  class="playbutton-orange"
+                  alt="play-button"
+                />
+                <p class="tijd">31 min. 55 sec</p>
+    
+                <img
+                src="/Icon.svg"
+                class="playbutton-orange"
+                alt="play-button"
+              />
+              </div>
+            </article> -->
+
+      </article>
+    </section>
+
   </main>
 </body>
 
@@ -386,4 +566,13 @@
     gap: 5px;
     margin-top: 2px;
   }
+
+  img.pinguin {
+    width: 100px;
+    height: 95px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+ 
 </style>
