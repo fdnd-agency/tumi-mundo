@@ -1,3 +1,37 @@
+<!-- <script>
+  import Story from '../../components/story.svelte'
+</script> -->
+
+<script>
+
+  // Maak een variabele voor de slide met daarin een array aan voor de verschillende slides 
+  let slides = ['Slide 1', 'Slide 2', 'Slide 3'];
+  let currentSlide = 0; 
+  // Toon de eerste slide al (omdat 0 = 1)
+
+  
+  function goToSlide(slideIndex) {
+    if (slideIndex >= slides.length) {
+      currentSlide = 0; // Terug naar de eerste slide
+    } else if (slideIndex < 0) {
+      currentSlide = slides.length - 1; // Ga naar de laatste slide
+    } else {
+      currentSlide = slideIndex; // Ga naar de aangegeven slide
+    }
+  }
+
+  // Event listeners voor knoppen
+  function nextSlide() {
+    goToSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(currentSlide - 1);
+  }
+
+
+</script>
+
 <a href="/">Go to Home</a>
 
 <body>
@@ -63,12 +97,13 @@
 
     <form class="carousel-container">
       <!-- Radio buttons voor het besturen van de slides -->
-      <input type="radio" name="carousel" id="slide1" checked />
-      <input type="radio" name="carousel" id="slide2" />
-      <input type="radio" name="carousel" id="slide3" />
+      <input type="radio" name="carousel" id="slide1" checked={currentSlide === 0} />
+      <input type="radio" name="carousel" id="slide2" checked={currentSlide === 1} />
+      <input type="radio" name="carousel" id="slide3" checked={currentSlide === 2}/>
 
       <article class="carousel">
         <article class="carousel-slide">
+          <!-- <Story/> -->
           <article class="story-content">
             <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
 
@@ -406,9 +441,10 @@
       </article>
 
       <div class="carousel-button">
-        <button class="left">
+        <button id="prev" on:click={prevSlide}>
           <img src="/left.svg" class="add-icon" alt="add-icon" />
         </button>
+
         <!-- Labels om de slides te besturen -->
         <div class="carousel-controls">
           <label for="slide1"></label>
@@ -416,8 +452,8 @@
           <label for="slide3"></label>
         </div>
 
-        <button class="right">
-          <img src="/right.svg" class="add-icon" alt="add-icon" />
+        <button id="next" on:click={nextSlide}>
+          <img src="/right.svg"  class="add-icon" alt="add-icon" />
         </button>
       </div>
     </form>
@@ -760,7 +796,7 @@
     width: 300px;
     max-width: 800px;
     height: 65px;
-    background-color:var(--card-bg-color);
+    background-color: var(--card-bg-color);
     padding: 20px;
     position: relative;
     margin: 5px;
@@ -781,7 +817,7 @@
     max-width: 800px;
     height: 65px;
     background-color:var(--card-bg-color);
-  }
+  }  
 
   .title {
     font-weight: 600;
@@ -862,14 +898,6 @@
     display: flex;
   }
 
-  .left {
-    background-color: var(--carousel-btn);
-    opacity: 50%;
-  }
-
-  .right {
-    background-color: var(--carousel-btn);
-  }
 
   div.carousel-button {
     display: flex;
@@ -881,8 +909,19 @@
     margin-bottom: 30px;
   }
 
+  #prev{
+    background-color: var(--carousel-btn);
+    opacity: 50%;
+  }
+
+  #next {
+    background-color: var(--carousel-btn);
+  }
+
+
   /* Styling voor de controls (indicators) */
   .carousel-controls {
+    display: flex;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
