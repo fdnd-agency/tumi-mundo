@@ -1,2 +1,0 @@
-<a href="/">Go to Home</a>
-
