@@ -38,14 +38,14 @@
   <main>
     <h1>Lessons</h1>
     <nav>
-      <a href="/" class="button-listening">1.Listening</a>
+      <a href="/" class="button-listening">Listening</a>
       <img src="/Music Note 2.svg" class="music-note" alt="music-note" />
 
       <a href="/" class="button-listening">2.</a>
     </nav>
 
     <section class="content">
-      <h2>Own playlists</h2>
+      <h2 class="titel">Own playlists</h2>
 
       <article class="kaart">
         <article class="octopus-kaart">
@@ -453,7 +453,7 @@
         </div>
 
         <button id="next" on:click={nextSlide}>
-          <img src="/right.svg"  class="add-icon" alt="add-icon" />
+          <img src="/right.svg" class="add-icon" alt="add-icon" />
         </button>
       </div>
     </form>
@@ -461,100 +461,100 @@
     <section class="content">
       <h2>Liked playlist</h2>
 
-      <article class="kaart">
-        <article class="">
+      <article class="pinguin-kaart">
+        <article class="pinguin-card">
           <img src="/Frame 27 (1).svg" class="pinguin" alt="pinguin" />
-          <p class="octopus-tekst">Penguin activities!</p>
+          <p class="pinguin-tekst">Penguin activities!</p>
 
-          <div class="tijd-en-playbutton">
+          <div class="pinguin-icon">
             <img
               src="/Group 316.svg"
-              class="playbutton-orange"
+              class="playbutton"
               alt="play-button"
             />
             <p class="tijd">31 min. 55 sec</p>
 
-            <img src="/Heart.svg" class="playbutton-orange" alt="play-button" />
+            <img src="/Heart.svg" class="heart-icon" alt="heart-icon" />
           </div>
         </article>
 
-        <article class="">
+        <article class="pinguin-card">
           <img src="/Frame 27 (4).svg" class="pinguin" alt="pinguin" />
-          <p class="octopus-tekst">
+          <p class="pinguin-tekst">
             Christmas stories, for the festive season.
           </p>
 
-          <div class="tijd-en-playbutton">
+          <div class="pinguin-icons">
             <img
               src="/Group 316.svg"
-              class="playbutton-orange"
+              class="playbutton"
               alt="play-button"
             />
             <p class="tijd">31 min. 55 sec</p>
 
-            <img src="/Heart.svg" class="playbutton-orange" alt="play-button" />
+            <img src="/Heart.svg" class="heart-icon" alt="heart-icon" />
           </div>
         </article>
       </article>
     </section>
 
-    <section class="content">
+    <section class="last-content">
       <h2>Suggested playlist</h2>
 
-      <article class="kaart">
-        <article class="">
+      <article class="pinguin-kaart">
+        <article class="pinguin-card">
           <img src="/Frame 27 (1).svg" class="pinguin" alt="pinguin" />
-          <p class="octopus-tekst">Penguin activities!</p>
+          <p class="pinguin-tekst">Penguin activities!</p>
 
-          <div class="tijd-en-playbutton">
+          <div class="pinguin-icon">
             <img
               src="/Group 316.svg"
-              class="playbutton-orange"
+              class="playbutton"
               alt="play-button"
             />
             <p class="tijd">31 min. 55 sec</p>
 
-            <img src="/Icon.svg" class="playbutton-orange" alt="play-button" />
+            <img src="/Icon.svg" class="empty-heart" alt="empty-heart-icon" />
           </div>
         </article>
 
-        <article class="">
+        <article class="pinguin-card">
           <img src="/Frame 27 (4).svg" class="pinguin" alt="pinguin" />
-          <p class="octopus-tekst">
+          <p class="pinguin-tekst">
             Christmas stories, for the festive season.
           </p>
 
-          <div class="tijd-en-playbutton">
+          <div class="pinguin-icons">
             <img
               src="/Group 316.svg"
-              class="playbutton-orange"
+              class="playbutton"
               alt="play-button"
             />
             <p class="tijd">31 min. 55 sec</p>
 
-            <img src="/Icon.svg" class="playbutton-orange" alt="play-button" />
+            <img src="/Icon.svg" class="empty-heart" alt="empty-heart-icon" />
           </div>
         </article>
 
-        <!-- <article class="">
-              <img src="/Frame 27 (4).svg" class="pinguin" alt="pinguin" />
-              <p class="octopus-tekst">Christmas stories, for the festive season.</p>
-    
-              <div class="tijd-en-playbutton">
-                <img
-                  src="/Group 316.svg"
-                  class="playbutton-orange"
-                  alt="play-button"
-                />
-                <p class="tijd">31 min. 55 sec</p>
-    
-                <img
-                src="/Icon.svg"
-                class="playbutton-orange"
-                alt="play-button"
-              />
-              </div>
-            </article> -->
+        <article class="pinguin-card">
+          <img src="/Frame 27 (4).svg" class="pinguin" alt="pinguin" />
+          <p class="pinguin-tekst">
+            Christmas stories, for the festive season.
+          </p>
+
+          <div class="pinguin-icons">
+            <img
+              src="/Group 316.svg"
+              class="playbutton"
+              alt="play-button"
+            />
+            <p class="tijd">31 min. 55 sec</p>
+
+            <img src="/Icon.svg" class="empty-heart" alt="empty-heart-icon" />
+          </div>
+        </article>
+
+
       </article>
     </section>
   </main>
@@ -564,7 +564,9 @@
   :root {
     --playlist-bg-color: #471871;
     --btn-color: #1cb854;
+    --btn-color-two: #37C6AB;
 
+    --card-bg-color-two:#494375;
     --card-bg-color: #f3f3f3;
     --card-time-font-size: 8px;
     --card-description-font-size: 11px;
@@ -574,6 +576,8 @@
     --languages-font-color: #1f1230;
     --languages-font-size: 12px;
     --carousel-btn: #9264f4;
+
+
   }
 
   body {
@@ -605,6 +609,7 @@
     text-decoration: none;
     border-radius: 5px;
     margin-bottom: 30px;
+    transform: translateX(-18px);
   }
 
   a.button-listening:hover {
@@ -612,7 +617,7 @@
   }
 
   a.button-listening:nth-child(3) {
-    background-color: #37c6ab;
+    background-color: #37C6AB;
     opacity: 40%;
   }
 
@@ -631,7 +636,7 @@
   }
 
   article.kaart article.maak-playlist {
-    background-color: #494375;
+    background-color: var(--card-bg-color-two);
   }
 
   article.kaart {
@@ -647,12 +652,12 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100px;
-    height: 165px;
+    width: 105px;
+    height: 175px;
     border-radius: 10px;
     background-color: white;
     padding: 10px;
-    transform: translateX(-22px);
+    transform: translateX(-18px);
   }
 
   .tijd-en-playbutton {
@@ -670,20 +675,26 @@
   img.playbutton-orange {
     width: 24px;
     height: 24px;
-    transform: translateX(-7px);
+    transform: translateX(-10px);
   }
+
 
   img.playlist-icon {
     margin-top: 22px;
     margin-bottom: 8px;
   }
 
+  .titel {
+    font-size: 1.3em;
+    transform: translateX(-18px);
+  }
+
   h2 {
-    font-size: 1em;
+    font-size: 1.3em;
     text-align: left;
     color: white;
-    margin-bottom: 8px;
-    transform: translateX(-20px);
+    margin-bottom: 10px;
+    transform: translateX(-13px);
   }
 
   p {
@@ -698,11 +709,9 @@
     color: var(--card-font-color);
     line-height: 16.5px;
     margin: 0;
+    margin-left: 5px;
   }
 
-  .tijd {
-    padding-right: 10px;
-  }
 
   .playlist-text {
     color: white;
@@ -716,12 +725,12 @@
   .favorite-text {
     color: white;
     margin: 0;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     margin-left: 5px;
     margin-right: 5px;
     font-size: 9px;
     font-weight: 300;
-    line-height: 16.5px;
+    line-height: 12px;
   }
 
   .buttons {
@@ -938,10 +947,84 @@
     transition: 0.3s ease;
   }
 
+  section.last-content {
+    transform: translateX(65px);
+  }
+
+  article.pinguin-kaart {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-right: 55px;
+    margin-bottom: 30px;
+  }
+
+  article.pinguin-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 105px;
+    height: 170px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+    transform: translateX(-14px);
+}
+
   img.pinguin {
-    width: 100px;
+    width: 105px;
     height: 95px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
+    margin-bottom: 3px;
+  }
+
+  .pinguin-tekst {
+    font-size: var(--card-description-font-size);
+    text-align: left;
+    color: var(--card-font-color);
+    line-height: 16.5px;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .pinguin-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+  
+  .pinguin-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  img.empty-heart {
+    width: 22px;
+    height: 30px;
+    transform: translateX(5px);
+  }
+
+  img.playbutton {
+    width: 24px;
+    height: 24px;
+    transform: translateX(-2px);
+  }
+
+  img.heart-icon  {
+    width: 28px;
+    height: 30px;
+    transform: translateX(5px);
+  }
+
+  img.playlist-icon {
+    margin-top: 22px;
+    margin-bottom: 8px;
+  }
+  
+  p.tijd {
+    transform: translateX(2px);
   }
 </style>
