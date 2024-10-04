@@ -25,3 +25,27 @@ Vertaal het reeds bestaande grafische design naar een web applicatie of mobiele 
 
 [Design](https://www.figma.com/file/RDlD4etdXBvcOW9AAqueBz/TuMiMundo_FDND_Prototype?type=design&node-id=0%3A1&mode=design&t=3z8nbpTxTLvGHUIm-1)  
 
+## Kenmerken
+
+* HTML
+* CSS
+* JavaScript
+* NodeJS
+* Sveltekit
+*Directus
+<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+
+## Installatie
+* Installeer NodeJs
+* Fork/clone deze repository
+* Open het in een code editor naar keuze
+* Open de terminal en maak een nieuwe werkomgeving aan:  
+* create a new project in the current directory
+* npm create svelte@latest
+
+# create a new project in my-app
+* npm create svelte@latest my-app (my-app is optioneel dit kun je ook leeg laten)
+* Run de command npm install
+* Run de command npm run dev
+* Klik op de localhost link en begin met coden!
+
