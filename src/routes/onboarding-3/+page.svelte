@@ -37,7 +37,6 @@ section {
     height: 100vh;
     width: 100vw;
     background-color: var(--main-blue);
-    margin: -8px;
 }
 .mouse {
     width: 100%;
