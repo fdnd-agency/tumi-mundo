@@ -1,7 +1,7 @@
 <title>sign-up</title>
 <section>
     <div class="heading">
-        <a>back</a>
+        <a href="/onboarding-3">back</a>
         <h1>Sign up</h1> 
     </div>
    
@@ -20,7 +20,7 @@
                     <span class="slider round"></span>
                 </label>
 
-                <p>Agree to the terms of services and the privacy policy <a href="/" class="click-here">(click here for more information)</a></p>
+                <p>Agree to the terms of services and the privacy policy <a href="/click" class="click-here">(click here for more information)</a></p>
             </div>
     
             <div>
@@ -93,7 +93,7 @@ div{
 .switch {
   position: relative;
   display: inline-block;
-  width: 40px;
+  width: 80px;
   height: 20px;
   margin-right: 10px;
 }

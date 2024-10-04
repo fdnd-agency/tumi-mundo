@@ -10,6 +10,7 @@
         <picture class="rat">
             <source srcset="/characters/mouse.svg?format=avif" type="image/avif">
             <source srcset="/characters/mouse.svg?format=webp">
+            <!-- svelte-ignore a11y-img-redundant-alt -->
             <img src="/characters/mouse.svg" alt="rat image" height="250">
         </picture>
     </div>
@@ -27,15 +28,10 @@
 
 *{
     color: white;
-    font-family: sans-serif;
     text-decoration: none;
 
     --main-blue: #3F92B6;
     --secondary-blue: #3D7A95;
-}
-html,main,body{
-    margin: 0;
-    padding: 0;
 }
 section {
     display: flex;
