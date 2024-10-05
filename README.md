@@ -33,6 +33,7 @@ Vertaal het reeds bestaande grafische design naar een web applicatie of mobiele 
 
 * HTML
 * CSS
+* Node JS
 * JavaScript
 * Sveltekit
 * Directus
