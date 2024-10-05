@@ -1,10 +1,8 @@
-## Links
-[Issues](https://github.com/fdnd-agency/tumi-mundo/issues)  
-[Project board](https://github.com/orgs/fdnd-agency/projects/43)  
-***
+# Tumi Mundo
 
 <img width="453" alt="image" src="https://github.com/fdnd-agency/tumi-mundo/assets/61702002/6c04d95e-f4ea-480d-9e86-cbf9148e8e15">
 
+### Over Tumi Mundo
 
 Door de wetenschappelijke en technologische vooruitgang komt er steeds meer inzicht in het proces van taalontwikkeling bij kinderen. Wij voorzien dat deze nieuwe inzichten en de technologische ontwikkelingen een steeds grotere toegevoegde waarde zullen hebben in de ondersteuning van ouders en kinderen bij de ontwikkeling van hun moedertaal en andere talen.
 
@@ -25,14 +23,19 @@ Vertaal het reeds bestaande grafische design naar een web applicatie of mobiele 
 
 [Design](https://www.figma.com/file/RDlD4etdXBvcOW9AAqueBz/TuMiMundo_FDND_Prototype?type=design&node-id=0%3A1&mode=design&t=3z8nbpTxTLvGHUIm-1)  
 
+
+## Links
+[Issues](https://github.com/fdnd-agency/tumi-mundo/issues)  
+[Project board](https://github.com/orgs/fdnd-agency/projects/43)  
+***
+
 ## Kenmerken
 
 * HTML
 * CSS
 * JavaScript
-* NodeJS
 * Sveltekit
-*Directus
+* Directus
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
 
 ## Installatie
@@ -43,9 +46,9 @@ Vertaal het reeds bestaande grafische design naar een web applicatie of mobiele 
 * create a new project in the current directory
 * npm create svelte@latest
 
-# create a new project in my-app
-* npm create svelte@latest my-app (my-app is optioneel dit kun je ook leeg laten)
-* Run de command npm install
-* Run de command npm run dev
-* Klik op de localhost link en begin met coden!
-
+### How to review
+* To start the project you firstly have load the repo from Github Desktop.
+* Navigate to the branch of this pull-request
+* Open the terminal and enter npm install to install the dependencies.
+* To start the project enter npm run dev to start the project. Now you will be redirected to "https://localhost:5173", You can see the homepage by typing /home. 
+* To see the other pages type "https://localhost:5173/playlist, "https://localhost:5173/onboarding-1 .
