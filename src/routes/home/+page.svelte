@@ -1,3 +1,7 @@
+<script>
+    import Menu from '../../components/menu.svelte';
+</script>
+
 <section>
     <article>
         <img src="/progress.svg" alt="Progress bar">
@@ -10,6 +14,7 @@
     <article>
         <img src="/characters/rat.svg" alt="Rat character"/>
     </article>
+    <Menu/>
 </section>
 
 <style>
@@ -69,5 +74,4 @@ article img {
     justify-content: center;
     align-items: center;
 }
-
 </style>

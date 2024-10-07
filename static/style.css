@@ -4,6 +4,13 @@
     font-family: 'Poppins', sans-serif;
 }
 
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
 h1{
     font-size: 22px;
     font-weight: 600;
