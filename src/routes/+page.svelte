@@ -14,7 +14,7 @@
         {/each}
     {:else}
         <!-- This will show if no people are available -->
-        <p>Er zitten geen studenten in deze squad</p>
+        <p>Er zijn geen accounts</p>
     {/if}
     </article>
 </section>
