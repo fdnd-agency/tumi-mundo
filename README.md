@@ -27,6 +27,7 @@ Vertaal het reeds bestaande grafische design naar een web applicatie of mobiele 
 ## Links
 [Issues](https://github.com/fdnd-agency/tumi-mundo/issues)  
 [Project board](https://github.com/orgs/fdnd-agency/projects/43)  
+[Debriefing TuMi Mundo.pdf](https://github.com/user-attachments/files/17307672/Debriefing.TuMi.Mundo.pdf)
 ***
 
 ## Kenmerken
