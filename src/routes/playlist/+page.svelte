@@ -4,6 +4,35 @@
 
 <script>
 
+
+// let currentSlide = 0;
+//     const totalSlides = 3;
+  
+//     function goToSlide(slideIndex) {
+//       if (slideIndex >= totalSlides) {
+//         currentSlide = 0;
+//       } else if (slideIndex < 0) {
+//         currentSlide = totalSlides - 1;
+//       } else {
+//         currentSlide = slideIndex;
+//       }
+  
+//       const carousel = document.querySelector(".carousel");
+//       const slideWidth = carousel.clientWidth;
+//       carousel.scrollTo({
+//         left: currentSlide * slideWidth,
+//         behavior: "smooth",
+//       });
+//     }
+  
+//     function nextSlide() {
+//       goToSlide(currentSlide + 1);
+//     }
+  
+//     function prevSlide() {
+//       goToSlide(currentSlide - 1);
+//     }
+
   // Maak een variabele voor de slide met daarin een array aan voor de verschillende slides 
   let slides = ['Slide 1', 'Slide 2', 'Slide 3'];
   let currentSlide = 0; 
@@ -95,7 +124,7 @@
       </div>
     </section>
 
-    <form class="carousel-container">
+    <div class="carousel-container">
       <!-- Radio buttons voor het besturen van de slides -->
       <input type="radio" name="carousel" id="slide1" checked={currentSlide === 0} />
       <input type="radio" name="carousel" id="slide2" checked={currentSlide === 1} />
@@ -456,7 +485,7 @@
           <img src="/right.svg" class="add-icon" alt="add-icon" />
         </button>
       </div>
-    </form>
+    </div>
 
     <section class="content">
       <h2>Liked playlist</h2>
@@ -776,7 +805,7 @@
     transform: translateX(-75px);
   }
 
-  form.carousel-container {
+.carousel-container {
     display: flex;
     flex-direction: column;
     overflow: hidden;
