@@ -850,7 +850,7 @@
   }
 
   .time {
-    margin-top: 10px;
+    margin: 5px;
     margin-right: 129px;
   }
 
@@ -999,6 +999,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 10px;
   }
 
   img.empty-heart {
@@ -1027,4 +1028,5 @@
   p.tijd {
     transform: translateX(2px);
   }
+
 </style>
