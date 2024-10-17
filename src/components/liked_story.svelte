@@ -77,6 +77,11 @@
 </section>
 
 <style>
+
+section.content {
+  margin-top: 30px;
+}
+
   section.last-content {
     transform: translateX(70px);
   }
