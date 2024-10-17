@@ -1,9 +1,7 @@
-<!-- <script>
-  import Story from '../../components/story.svelte'
-</script> -->
-
 <script>
+  // import Carousel from '../../components/carousel.svelte'
 
+  import Story from '../../components/story.svelte'
 
 // let currentSlide = 0;
 //     const totalSlides = 3;
@@ -124,15 +122,20 @@
       </div>
     </section>
 
-    <div class="carousel-container">
-      <!-- Radio buttons voor het besturen van de slides -->
+
+      <!-- <Carousel/> -->
+
+
+ 
+ <div class="carousel-container">
+    
       <input type="radio" name="carousel" id="slide1" checked={currentSlide === 0} />
       <input type="radio" name="carousel" id="slide2" checked={currentSlide === 1} />
       <input type="radio" name="carousel" id="slide3" checked={currentSlide === 2}/>
 
       <article class="carousel">
         <article class="carousel-slide">
-          <!-- <Story/> -->
+ <!-- <Story/>  -->
           <article class="story-content">
             <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
 
@@ -243,7 +246,7 @@
           </article>
         </article>
 
-        <!-- Slide 2 -->
+        
         <article class="carousel-slide">
           <article class="story-content">
             <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
@@ -352,7 +355,6 @@
           </article>
         </article>
 
-        <!-- -- Slide 3 -->
         <article class="carousel-slide">
           <article class="story-content">
             <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
@@ -474,7 +476,7 @@
           <img src="/left.svg" class="add-icon" alt="add-icon" />
         </button>
 
-        <!-- Labels om de slides te besturen -->
+      
         <div class="carousel-controls">
           <label for="slide1"></label>
           <label for="slide2"></label>
@@ -485,7 +487,7 @@
           <img src="/right.svg" class="add-icon" alt="add-icon" />
         </button>
       </div>
-    </div>
+    </div> 
 
     <section class="content">
       <h2>Liked playlist</h2>

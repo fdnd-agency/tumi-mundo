@@ -28,8 +28,7 @@
     }
   </script>
   
-  <body>
-    <main>
+
       <div class="container">
         <div class="carousel-container">
           <ul class="carousel">
@@ -407,8 +406,7 @@
           </div>
         </div>
       </div>
-    </main>
-  </body>
+
   
   <style>
     :root {
@@ -426,7 +424,7 @@
       --carousel-btn: #9264f4;
     }
   
-    body {
+   /* body {
       font-family: "Poppins", sans-serif;
       background-color: var(--playlist-bg-color);
       margin: 0;
@@ -439,7 +437,7 @@
       flex-direction: column;
       min-height: 100vh;
       background-color: var(--bg-color);
-    }
+    }  */
   
     p {
       font-size: var(--card-time-font-size);
@@ -637,5 +635,6 @@
       margin-left: 0;
       transform: translateX(-8px);
     }
+
   </style>
   
