@@ -1,11 +1,8 @@
 <script>
   import Carousel from '../../components/carousel.svelte'
-
   import Likedstory from "../../components/liked_story.svelte";
 
 </script>
-
-<a href="/">Go to Home</a>
 
 <body>
   <main>
@@ -89,6 +86,9 @@
     --languages-font-size: 12px;
     --carousel-btn: #9264f4;
     --label-btn: #ccc;
+    --heading-font-color: white;
+    --playlistcard-font-color:white;
+    --icon-btn-color: white;
   }
 
   body {
@@ -109,12 +109,12 @@
     font-size: 2em;
     margin-bottom: 10px;
     margin-top: 50px;
-    color: white;
+    color: var(--heading-font-color);
   }
 
   a.button-listening {
     font-size: 1em;
-    color: white;
+    color: var(--heading-font-color);
     background-color: var(--btn-color);
     padding: 8px 90px;
     text-decoration: none;
@@ -128,7 +128,7 @@
   }
 
   a.button-listening:nth-child(3) {
-    background-color: #37c6ab;
+    background-color: var(--btn-color-two);
     opacity: 40%;
   }
 
@@ -166,7 +166,7 @@
     width: 105px;
     height: 175px;
     border-radius: 10px;
-    background-color: white;
+    background-color:var(--card-bg-color);
     padding: 10px;
     transform: translateX(-18px);
   }
@@ -202,7 +202,7 @@
   h2 {
     font-size: 1.3em;
     text-align: left;
-    color: white;
+    color: var(--heading-font-color);
     margin-bottom: 10px;
     transform: translateX(-13px);
   }
@@ -224,7 +224,7 @@
   }
 
   .playlist-text {
-    color: white;
+    color: var(--playlistcard-font-color);
     font-weight: 600;
     margin: 0;
     font-size: 12px;
@@ -233,7 +233,7 @@
   }
 
   .favorite-text {
-    color: white;
+    color: var(--playlistcard-font-color);
     margin: 0;
     margin-bottom: 10px;
     margin-left: 5px;
@@ -255,8 +255,8 @@
   .button-eng {
     display: flex;
     align-items: center;
-    color: black;
-    background-color: white;
+    color: var(--languages-font-color);
+    background-color: var(--languages-btn-color);
     padding: 3px 8px;
     border-radius: 10px;
     margin-bottom: 10px;

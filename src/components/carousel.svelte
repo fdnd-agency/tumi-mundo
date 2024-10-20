@@ -414,6 +414,8 @@
     --languages-font-size: 12px;
     --carousel-btn: #9264f4;
     --label-btn: #ccc;
+    --heading-font-color: white;
+    --icon-btn-color: white;
   }
 
   p {
@@ -422,10 +424,13 @@
     text-align: left;
   }
 
+
   .container {
     width: 100%;
     overflow-y: hidden;
+    max-width: 1200px;
   }
+   
 
   .carousel {
     display: flex;
@@ -433,6 +438,7 @@
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     width: 100%;
+    transition: 0.3s ease-in;
   }
 
   .carousel ul {
@@ -448,9 +454,9 @@
     display: flex;
     flex: 100%;
     scroll-snap-align: start;
-    width: 100vw;
+    /* min-width: 100%; */
   }
-
+   
   .slide-content {
     display: flex;
     flex-direction: column;
@@ -463,7 +469,7 @@
     margin: 2px;
     margin-left: 10px;
     flex: 1;
-    background-color: #f9f9f9;
+    background-color: var(--card-bg-color);
     border-radius: 8px;
     position: relative;
   }
@@ -542,7 +548,7 @@
     align-items: center;
     gap: 50px;
     margin-right: 30px;
-    margin-top: 20px;
+    margin-top: 5px;
   }
 
   .radio-buttons input[type="radio"] {
@@ -572,10 +578,10 @@
   }
 
   button {
-    padding: 2px 6px;
+    padding: 2px 7px;
     margin-top: 10px;
     background-color: var(--carousel-btn);
-    color: white;
+    color: var(--icon-btn-color);
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -603,6 +609,8 @@
     transform: translateX(-8px);
   }
 
-
+  .button-carousel {
+    margin: 0;
+  }
 
 </style>
