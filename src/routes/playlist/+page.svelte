@@ -68,6 +68,7 @@
     <Carousel/>
 
     <Likedstory />
+    
   </main>
 </body>
 
@@ -212,7 +213,6 @@
     line-height: 12px;
     text-align: left;
   }
-
 
   .octopus-tekst {
     font-size: var(--card-description-font-size);

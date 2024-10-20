@@ -356,8 +356,8 @@
     </ul>
 
     <div class="carousel-button">
-      <button on:click={prevSlide}  aria-label="Vorige slide">
-      <img src="/left.svg" class="button-carousel" alt="Volgende slide" />
+      <button on:click={prevSlide} aria-label="Vorige slide">
+        <img src="/left.svg" class="button-carousel" alt="Volgende slide" />
       </button>
 
       <div class="radio-buttons">
@@ -393,8 +393,6 @@
       <button on:click={nextSlide} aria-label="Volgende slide">
         <img src="/right.svg" class="button-carousel" alt="Volgende slide" />
       </button>
-      
-
     </div>
   </div>
 </div>
@@ -424,13 +422,12 @@
     text-align: left;
   }
 
-
   .container {
     width: 100%;
     overflow-y: hidden;
-    max-width: 1200px;
+    /* max-width: 1200px; */
+    /* height: 100%; */
   }
-   
 
   .carousel {
     display: flex;
@@ -456,7 +453,7 @@
     scroll-snap-align: start;
     /* min-width: 100%; */
   }
-   
+
   .slide-content {
     display: flex;
     flex-direction: column;
@@ -486,6 +483,7 @@
     text-align: left;
     margin-left: 20px;
     margin-top: 10px;
+    /* margin-bottom: 10px; */
   }
 
   figure img {
@@ -548,7 +546,7 @@
     align-items: center;
     gap: 50px;
     margin-right: 30px;
-    margin-top: 5px;
+    /* margin-top: 40px; */
   }
 
   .radio-buttons input[type="radio"] {
@@ -612,5 +610,4 @@
   .button-carousel {
     margin: 0;
   }
-
 </style>
