@@ -105,7 +105,7 @@
 
           <li>
             <figure>
-              <img src="/Frame 105.svg" class="schildpad" alt="schilpad" />
+              <img src="/Frame 105.svg" class="schildpad" alt="bomen" />
               <figcaption>
                 <h3>Toys on the Orient Express</h3>
                 <p class="beschrijving">
@@ -144,7 +144,7 @@
         <ul class="slide-content">
           <li>
             <figure>
-              <img src="/Frame 105.svg" class="schildpad" alt="schilpad" />
+              <img src="/Frame 105.svg" class="schildpad" alt="bomen" />
               <figcaption>
                 <h3>Toys on the Orient Express</h3>
                 <p class="beschrijving">
@@ -425,8 +425,6 @@
   .container {
     width: 100%;
     overflow-y: hidden;
-    /* max-width: 1200px; */
-    /* height: 100%; */
   }
 
   .carousel {
@@ -435,11 +433,13 @@
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     width: 100%;
-    transition: 0.3s ease-in;
+    height: 100%;
+    transition: 0.3s ease;
   }
 
   .carousel ul {
     display: flex;
+    width: 100%;
     border-radius: 20px;
     list-style: none;
     padding: 0;
@@ -451,14 +451,13 @@
     display: flex;
     flex: 100%;
     scroll-snap-align: start;
-    /* min-width: 100%; */
   }
 
   .slide-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 40vh;
+    height: 100%;
     position: relative;
   }
 
@@ -483,7 +482,7 @@
     text-align: left;
     margin-left: 20px;
     margin-top: 10px;
-    /* margin-bottom: 10px; */
+    margin-bottom: 10px;
   }
 
   figure img {
@@ -546,7 +545,6 @@
     align-items: center;
     gap: 50px;
     margin-right: 30px;
-    /* margin-top: 40px; */
   }
 
   .radio-buttons input[type="radio"] {
