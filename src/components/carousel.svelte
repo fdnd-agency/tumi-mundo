@@ -425,11 +425,13 @@
   .container {
     width: 100%;
     overflow-y: hidden;
+    transform: translateX(3px);
   }
 
   .carousel {
     display: flex;
     overflow-x: auto;
+    overflow:scroll;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     width: 100%;
@@ -544,9 +546,8 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
-    margin-right: 30px;
   }
-
+  
   .radio-buttons input[type="radio"] {
     display: none;
   }
@@ -608,4 +609,22 @@
   .button-carousel {
     margin: 0;
   }
+
+  @media screen and (min-width: 375px) {
+    .container {
+      transform: translateX(5px);
+    }
+    
+    .carousel-button {
+      transform: translateX(-22px);
+  }
+    
+  }
+
+  @media screen and (min-width: 425px) {
+    .container{
+   
+    }
+  }
+  
 </style>
