@@ -3,11 +3,21 @@
   import Likedstory from "../../components/liked_story.svelte";
   import Playlist from '../../components/playlist.svelte';
 
-  export let data; // Hier komt de data van de load functie binnen
-  const { persons = [] } = data; // Destructureer de data en geef een fallback waarde aan 'persons'
 
-  // Log om te controleren of 'persons' correct wordt doorgegeven
-  console.log(persons, 'personen in Svelte');
+  export let data; // Verkrijg de data vanuit de load-functie
+  const { firstStory } = data; // Haal de eerste story uit de data
+
+  // export let data;
+  // const { stories = [] } = data; // Zorg ervoor dat 'stories' altijd een array is
+
+  // console.log(stories, 'stories in Svelte');
+
+  // export let data; // Hier komt de data van de load functie binnen
+  // const { persons = [] } = data; // Destructureer de data en geef een fallback waarde aan 'persons'
+
+  // // Log om te controleren of 'persons' correct wordt doorgegeven
+  // console.log(persons, 'personen in Svelte');
+
 
 
 </script>
@@ -25,21 +35,19 @@
 
     <div>
       
-      {#if persons && persons.length > 0}
-        <ul>
-          {#each persons as person}
-            <li>
-              <h2>{person.name} {person.surname}</h2>
-              <img src="{person.avatar}" alt="{person.name}" style="width: 100px; height: 100px; border-radius: 50%;" />
-              <p><strong>Bio:</strong> {person.bio}</p>
-              <p><strong>Nickname:</strong> {person.nickname}</p>
-              <p><strong>Roles:</strong> {#each person.role as r}{r} {/each}</p>
-            </li>
-          {/each}
-        </ul>
-      {:else}
-        <p>Geen personen gevonden.</p>
-      {/if}
+      <!-- {#if stories.length > 0}
+      <ul>
+        {#each stories as story}
+          <li>
+            <h2>{story.title}</h2>
+            <p>{story.summary}</p>
+         
+          </li>
+        {/each}
+      </ul>
+    {:else}
+      <p>Geen verhalen gevonden.</p>
+    {/if} -->
     </div>
     
 
@@ -69,7 +77,13 @@
       </div>
     </section>
 
-    <Carousel/>
+    {#if firstStory}
+<Carousel stories={[firstStory]} /> <!-- Geef de eerste story door aan het Carousel component -->
+{:else}
+
+
+<p>Geen verhaal gevonden.</p>
+{/if}
 
     <Likedstory />
     

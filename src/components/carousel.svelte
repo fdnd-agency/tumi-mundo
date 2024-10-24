@@ -26,6 +26,9 @@
   function prevSlide() {
     goToSlide(currentSlide - 1);
   }
+
+  export let stories = [];
+
 </script>
 
 <div class="container">
@@ -72,12 +75,14 @@
             <figure>
               <img src="/Frame 104.svg" class="schildpad" alt="pinguin" />
               <figcaption>
-                <h3>Six o’clock</h3>
-                <p class="beschrijving">
-                  A group of friends try to take over the playground. Jesper and
-                  Wylan want to take over the swings, but one person stands in
-                  their way.
-                </p>
+                {#if stories.length > 0}
+                {#each stories as story}
+                  <h3>{story.title}</h3>
+                  <p class="beschrijving">{story.summary}</p>
+              {/each}
+              {:else}
+              <p>Geen verhalen beschikbaar.</p>
+            {/if}
               </figcaption>
             </figure>
             <img
@@ -180,12 +185,14 @@
             <figure>
               <img src="/Frame 104.svg" class="schildpad" alt="pinguin" />
               <figcaption>
-                <h3>Six o’clock</h3>
-                <p class="beschrijving">
-                  A group of friends try to take over the playground. Jesper and
-                  Wylan want to take over the swings, but one person stands in
-                  their way.
-                </p>
+                {#if stories.length > 0}
+                {#each stories as story}
+                  <h3>{story.title}</h3>
+                  <p class="beschrijving">{story.summary}</p>
+              {/each}
+              {:else}
+              <p>Geen verhalen beschikbaar.</p>
+            {/if}
               </figcaption>
             </figure>
             <img
@@ -320,13 +327,16 @@
 
           <li>
             <figure>
-              <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
+              <img src="/Frame 104.svg" class="schildpad" alt="schilpad" />
               <figcaption>
-                <h3>The dinosaur family</h3>
-                <p class="beschrijving">
-                  Long ago there was a family of dinosaurs that lived in a
-                  deserted place. The little dinosaur is making a new friend.
-                </p>
+                {#if stories.length > 0}
+                {#each stories as story}
+                  <h3>{story.title}</h3>
+                  <p class="beschrijving">{story.summary}</p>
+              {/each}
+              {:else}
+              <p>Geen verhalen beschikbaar.</p>
+            {/if}
               </figcaption>
             </figure>
             <img
