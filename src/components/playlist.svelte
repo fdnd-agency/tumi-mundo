@@ -78,7 +78,7 @@
     
       .titel {
         font-size: 1.3em;
-        transform: translateX(10px);
+        transform: translateX(-15px);
         margin-top: 20px;
       }
     

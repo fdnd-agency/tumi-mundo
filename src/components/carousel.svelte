@@ -441,7 +441,6 @@
   .carousel {
     display: flex;
     overflow-x: auto;
-    overflow:scroll;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     width: 100%;
@@ -456,7 +455,6 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 10px;
   }
 
   .slide {
@@ -471,6 +469,7 @@
     justify-content: space-between;
     height: 100%;
     position: relative;
+    gap: 3px;
   }
 
   .slide-content li {
@@ -585,7 +584,7 @@
   }
 
   button {
-    padding: 2px 7px;
+    padding: 4px 8px; 
     margin-top: 10px;
     background-color: var(--carousel-btn);
     color: var(--icon-btn-color);
@@ -633,8 +632,26 @@
 
   @media screen and (min-width: 425px) {
     .container{
-   
+      transform: translateX(20px);
+      width: 400px;
     }
+    
+    .carousel-button {
+      transform: translateX(-45px);
+  }
+
+}
+
+  @media screen and (min-width: 705px) {
+    .container{
+      transform: translateX(21px);
+      width: 400px;
+    }
+    
+    .carousel-button {
+      transform: translateX(-45px);
+  }
+
   }
   
 </style>

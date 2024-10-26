@@ -4,19 +4,8 @@
   import Playlist from '../../components/playlist.svelte';
 
 
-  export let data; // Verkrijg de data vanuit de load-functie
-  const { firstStory } = data; // Haal de eerste story uit de data
-
-  // export let data;
-  // const { stories = [] } = data; // Zorg ervoor dat 'stories' altijd een array is
-
-  // console.log(stories, 'stories in Svelte');
-
-  // export let data; // Hier komt de data van de load functie binnen
-  // const { persons = [] } = data; // Destructureer de data en geef een fallback waarde aan 'persons'
-
-  // // Log om te controleren of 'persons' correct wordt doorgegeven
-  // console.log(persons, 'personen in Svelte');
+  export let data; 
+  const { firstStory } = data; 
 
 
 
@@ -27,29 +16,19 @@
   <main>
     <h1>Lessons</h1>
     <nav>
-      <a href="/" class="button-listening">Listening</a>
-      <img src="/Music Note 2.svg" class="music-note" alt="music-note" />
-
-      <a href="/" class="button-listening">2.</a>
-    </nav>
-
-    <div>
-      
-      <!-- {#if stories.length > 0}
-      <ul>
-        {#each stories as story}
-          <li>
-            <h2>{story.title}</h2>
-            <p>{story.summary}</p>
-         
+      <nav>
+        <ul class="nav-list">
+            <li>
+              <span>1.</span>
+            <a href="/" class="button-one">Listening</a>
+            <img src="/Music Note 2.svg" class="music-note" alt="music-note" />
           </li>
-        {/each}
-      </ul>
-    {:else}
-      <p>Geen verhalen gevonden.</p>
-    {/if} -->
-    </div>
-    
+          <li><a href="/" class="button-two">2.</a></li>
+        </ul>
+      </nav>
+
+     
+    </nav>
 
     <Playlist/>
 
@@ -78,7 +57,7 @@
     </section>
 
     {#if firstStory}
-<Carousel stories={[firstStory]} /> <!-- Geef de eerste story door aan het Carousel component -->
+<Carousel stories={[firstStory]} /> 
 {:else}
 
 
@@ -117,21 +96,46 @@
     padding: 0;
   }
 
-  nav {
+
+  main {
     display: flex;
-    flex-direction: row;
-    transform: translateX(120px);
-    gap: 10px;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
   }
 
-  h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    margin-top: 50px;
+  .nav-list {
+  display: flex;                
+  justify-content: flex-start;
+  list-style-type: none;     
+  padding: 0;                  
+  margin: 0; 
+  gap: 10px;                 
+}
+
+
+.nav-list li span {
+    z-index: 1;
+    position: absolute;
+    top: 7px;
     color: var(--heading-font-color);
+}
+
+
+.nav-list li {
+  display: flex;              
+  align-items: center;  
+  transform: translateX(120px);
+}  
+
+a.button-two {
+    background-color: var(--btn-color-two);
+    opacity: 40%;
   }
 
-  a.button-listening {
+a.button-one, a.button-two {
     font-size: 1em;
     color: var(--heading-font-color);
     background-color: var(--btn-color);
@@ -142,28 +146,24 @@
     transform: translateX(-18px);
   }
 
-  a.button-listening:hover {
+  a.button-one:hover {
     background-color: var(--btn-color);
-  }
-
-  a.button-listening:nth-child(3) {
-    background-color: var(--btn-color-two);
-    opacity: 40%;
   }
 
   img.music-note {
     position: absolute;
     left: 190px;
     top: 7px;
+  } 
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    color: var(--heading-font-color);
+    transform: translateX(10px);
   }
 
-  main {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: var(--bg-color);
-  }
 
       
   h2 {
