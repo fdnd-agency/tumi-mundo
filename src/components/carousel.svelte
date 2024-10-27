@@ -26,6 +26,9 @@
   function prevSlide() {
     goToSlide(currentSlide - 1);
   }
+
+  export let stories = [];
+
 </script>
 
 <div class="container">
@@ -72,12 +75,14 @@
             <figure>
               <img src="/Frame 104.svg" class="schildpad" alt="pinguin" />
               <figcaption>
-                <h3>Six o’clock</h3>
-                <p class="beschrijving">
-                  A group of friends try to take over the playground. Jesper and
-                  Wylan want to take over the swings, but one person stands in
-                  their way.
-                </p>
+                {#if stories.length > 0}
+                {#each stories as story}
+                  <h3>{story.title}</h3>
+                  <p class="beschrijving">{story.summary}</p>
+              {/each}
+              {:else}
+              <p>Geen verhalen beschikbaar.</p>
+            {/if}
               </figcaption>
             </figure>
             <img
@@ -180,12 +185,14 @@
             <figure>
               <img src="/Frame 104.svg" class="schildpad" alt="pinguin" />
               <figcaption>
-                <h3>Six o’clock</h3>
-                <p class="beschrijving">
-                  A group of friends try to take over the playground. Jesper and
-                  Wylan want to take over the swings, but one person stands in
-                  their way.
-                </p>
+                {#if stories.length > 0}
+                {#each stories as story}
+                  <h3>{story.title}</h3>
+                  <p class="beschrijving">{story.summary}</p>
+              {/each}
+              {:else}
+              <p>Geen verhalen beschikbaar.</p>
+            {/if}
               </figcaption>
             </figure>
             <img
@@ -320,13 +327,16 @@
 
           <li>
             <figure>
-              <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
+              <img src="/Frame 104.svg" class="schildpad" alt="schilpad" />
               <figcaption>
-                <h3>The dinosaur family</h3>
-                <p class="beschrijving">
-                  Long ago there was a family of dinosaurs that lived in a
-                  deserted place. The little dinosaur is making a new friend.
-                </p>
+                {#if stories.length > 0}
+                {#each stories as story}
+                  <h3>{story.title}</h3>
+                  <p class="beschrijving">{story.summary}</p>
+              {/each}
+              {:else}
+              <p>Geen verhalen beschikbaar.</p>
+            {/if}
               </figcaption>
             </figure>
             <img
@@ -425,6 +435,7 @@
   .container {
     width: 100%;
     overflow-y: hidden;
+    transform: translateX(3px);
   }
 
   .carousel {
@@ -444,7 +455,6 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 10px;
   }
 
   .slide {
@@ -459,6 +469,7 @@
     justify-content: space-between;
     height: 100%;
     position: relative;
+    gap: 3px;
   }
 
   .slide-content li {
@@ -544,9 +555,8 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
-    margin-right: 30px;
   }
-
+  
   .radio-buttons input[type="radio"] {
     display: none;
   }
@@ -574,7 +584,7 @@
   }
 
   button {
-    padding: 2px 7px;
+    padding: 4px 8px; 
     margin-top: 10px;
     background-color: var(--carousel-btn);
     color: var(--icon-btn-color);
@@ -608,4 +618,40 @@
   .button-carousel {
     margin: 0;
   }
+
+  @media screen and (min-width: 375px) {
+    .container {
+      transform: translateX(5px);
+    }
+    
+    .carousel-button {
+      transform: translateX(-22px);
+  }
+    
+  }
+
+  @media screen and (min-width: 425px) {
+    .container{
+      transform: translateX(20px);
+      width: 400px;
+    }
+    
+    .carousel-button {
+      transform: translateX(-45px);
+  }
+
+}
+
+  @media screen and (min-width: 705px) {
+    .container{
+      transform: translateX(21px);
+      width: 400px;
+    }
+    
+    .carousel-button {
+      transform: translateX(-45px);
+  }
+
+  }
+  
 </style>

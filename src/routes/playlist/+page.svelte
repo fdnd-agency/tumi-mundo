@@ -1,45 +1,36 @@
 <script>
   import Carousel from '../../components/carousel.svelte'
   import Likedstory from "../../components/liked_story.svelte";
+  import Playlist from '../../components/playlist.svelte';
+
+
+  export let data; 
+  const { firstStory } = data; 
+
+
 
 </script>
+
 
 <body>
   <main>
     <h1>Lessons</h1>
     <nav>
-      <a href="/" class="button-listening">Listening</a>
-      <img src="/Music Note 2.svg" class="music-note" alt="music-note" />
+      <nav>
+        <ul class="nav-list">
+            <li>
+              <span>1.</span>
+            <a href="/" class="button-one">Listening</a>
+            <img src="/Music Note 2.svg" class="music-note" alt="music-note" />
+          </li>
+          <li><a href="/" class="button-two">2.</a></li>
+        </ul>
+      </nav>
 
-      <a href="/" class="button-listening">2.</a>
+     
     </nav>
 
-    <section class="content">
-      <h2 class="titel">Own playlists</h2>
-
-      <article class="kaart">
-        <article class="octopus-kaart">
-          <img src="/Frame 27.svg" class="octopus" alt="octopus" />
-          <p class="octopus-tekst">The octopus who was very hungry</p>
-
-          <div class="tijd-en-playbutton">
-            <img
-              src="/Group 316.svg"
-              class="playbutton-orange"
-              alt="play-button"
-            />
-            <p class="tijd">31 min. 55 sec</p>
-          </div>
-        </article>
-
-        <article class="maak-playlist">
-          <img src="/Group 321.svg" class="playlist-icon" alt="playlist-icon" />
-          <p class="playlist-text">Make a playlist !</p>
-          <p></p>
-          <p class="favorite-text">Add your favorite stories in one playlist</p>
-        </article>
-      </article>
-    </section>
+    <Playlist/>
 
     <section class="content">
       <h2 class="storie-titel">All stories</h2>
@@ -65,7 +56,13 @@
       </div>
     </section>
 
-    <Carousel/>
+    {#if firstStory}
+<Carousel stories={[firstStory]} /> 
+{:else}
+
+
+<p>Geen verhaal gevonden.</p>
+{/if}
 
     <Likedstory />
     
@@ -99,21 +96,46 @@
     padding: 0;
   }
 
-  nav {
+
+  main {
     display: flex;
-    flex-direction: row;
-    transform: translateX(120px);
-    gap: 10px;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
   }
 
-  h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    margin-top: 50px;
+  .nav-list {
+  display: flex;                
+  justify-content: flex-start;
+  list-style-type: none;     
+  padding: 0;                  
+  margin: 0; 
+  gap: 10px;                 
+}
+
+
+.nav-list li span {
+    z-index: 1;
+    position: absolute;
+    top: 7px;
     color: var(--heading-font-color);
+}
+
+
+.nav-list li {
+  display: flex;              
+  align-items: center;  
+  transform: translateX(120px);
+}  
+
+a.button-two {
+    background-color: var(--btn-color-two);
+    opacity: 40%;
   }
 
-  a.button-listening {
+a.button-one, a.button-two {
     font-size: 1em;
     color: var(--heading-font-color);
     background-color: var(--btn-color);
@@ -124,130 +146,38 @@
     transform: translateX(-18px);
   }
 
-  a.button-listening:hover {
+  a.button-one:hover {
     background-color: var(--btn-color);
-  }
-
-  a.button-listening:nth-child(3) {
-    background-color: var(--btn-color-two);
-    opacity: 40%;
   }
 
   img.music-note {
     position: absolute;
     left: 190px;
     top: 7px;
-  }
+  } 
 
-  main {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: var(--bg-color);
-  }
-
-  article.kaart article.maak-playlist {
-    background-color: var(--card-bg-color-two);
-  }
-
-  article.kaart {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    margin-right: 55px;
-    margin-bottom: 30px;
-  }
-
-  article.kaart article {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 105px;
-    height: 175px;
-    border-radius: 10px;
-    background-color:var(--card-bg-color);
-    padding: 10px;
-    transform: translateX(-18px);
-  }
-
-  .tijd-en-playbutton {
-    display: flex;
-    align-items: center;
-  }
-
-  img.octopus {
-    width: 100px;
-    height: 95px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-  img.playbutton-orange {
-    width: 24px;
-    height: 24px;
-    transform: translateX(-10px);
-  }
-
-  img.playlist-icon {
-    margin-top: 22px;
-    margin-bottom: 8px;
-  }
-
-  .titel {
-    font-size: 1.3em;
-    transform: translateX(-18px);
-  }
-
-  h2 {
-    font-size: 1.3em;
-    text-align: left;
+  h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    margin-top: 50px;
     color: var(--heading-font-color);
-    margin-bottom: 10px;
-    transform: translateX(-13px);
+    transform: translateX(10px);
   }
 
-  p {
-    font-size: var(--card-time-font-size);
-    line-height: 12px;
-    text-align: left;
-  }
 
-  .octopus-tekst {
-    font-size: var(--card-description-font-size);
-    text-align: left;
-    color: var(--card-font-color);
-    line-height: 16.5px;
-    margin: 0;
-    margin-left: 5px;
-  }
-
-  .playlist-text {
-    color: var(--playlistcard-font-color);
-    font-weight: 600;
-    margin: 0;
-    font-size: 12px;
-    line-height: 16.5px;
-    margin-bottom: 3px;
-  }
-
-  .favorite-text {
-    color: var(--playlistcard-font-color);
-    margin: 0;
-    margin-bottom: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    font-size: 9px;
-    font-weight: 300;
-    line-height: 12px;
-  }
+      
+  h2 {
+        font-size: 1.3em;
+        text-align: left;
+        color: var(--heading-font-color);
+        margin-bottom: 10px;
+      }
 
   .buttons {
     display: flex;
     justify-content: center;
     gap: 10px;
-    transform: translateX(-82px);
+    transform: translateX(-52px);
     text-decoration: none;
   }
 
@@ -283,13 +213,22 @@
 
   h2.storie-titel {
     margin-top: 1em;
-    transform: translateX(-75px);
+    transform: translateX(-50px);
   }
 
+  @media screen and (min-width: 375px) {
 
-  img.playlist-icon {
-    margin-top: 22px;
-    margin-bottom: 8px;
+
+    h2.storie-titel {
+    transform: translateX(-72px);
+    }
+
+  .buttons{
+    transform: translateX(-74px);
+    }
+
+    
   }
+
 
 </style>

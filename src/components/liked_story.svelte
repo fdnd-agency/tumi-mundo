@@ -77,10 +77,9 @@
 </section>
 
 <style>
-
-section.content {
-  margin-top: 30px;
-}
+  section.content {
+    margin-top: 30px;
+  }
 
   section.last-content {
     transform: translateX(70px);
@@ -88,15 +87,15 @@ section.content {
 
   h2 {
     color: white;
-    transform: translateX(-14px);
+    transform: translateX(-10px);
     margin-bottom: 10px;
+    margin-top: 20px;
   }
 
   article.pinguin-kaart {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    margin-right: 55px;
     margin-bottom: 30px;
   }
 
@@ -109,7 +108,7 @@ section.content {
     border-radius: 10px;
     background-color: white;
     padding: 10px;
-    transform: translateX(-14px);
+    transform: translateX(-10px);
   }
 
   img.pinguin {
@@ -177,4 +176,15 @@ section.content {
     text-align: left;
   }
 
+  @media screen and (min-width: 375px) {
+     
+  h2 {
+      transform: translateX(-35px);
+  }
+
+  article.pinguin-card {
+    transform: translateX(-37px);
+  }
+
+  }
 </style>
