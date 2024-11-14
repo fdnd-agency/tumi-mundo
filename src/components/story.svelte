@@ -33,19 +33,23 @@
 
 <style>
     section {
-        margin: auto;
+        padding: 20px 0 20px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
     }
 
     article.story-container {
-        max-width: 360px;
+        width: 360px;
         max-height: 85px;
-        gap: 8px;
         display: grid;
         grid-template-columns: repeat(6, auto);
         grid-template-rows: repeat(3, 1fr);
         background-color: #fff;
-        border: solid 1px black;
         overflow: hidden;
+        padding: 10px;
+        border-radius: 4px;
     }
 
     .story-image { 
@@ -53,7 +57,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-left: 8px;
+        padding-right: 10px;
     }
 
     .story-image img {
@@ -63,7 +67,6 @@
 
     .story-title{ 
         grid-area: 1 / 3 / 2 / 6; 
-        padding-top: 8px;
     }
 
     .story-title h6 {
@@ -73,7 +76,10 @@
 
     .story-summary{ 
         grid-area: 2 / 3 / 3 / 7; 
+        width: 275px;
+        max-height: 24px;
     }
+
     .story-summary p{ 
         font-size: 8px;
     }
@@ -83,8 +89,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-bottom: 8px;
-        padding-right: 8px;
     }
 
     .story-meta .story-playtime {
@@ -115,8 +119,6 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        padding-top: 8px;
-        padding-right: 8px;
     }
 
     .story-language img {
