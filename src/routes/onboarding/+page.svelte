@@ -60,7 +60,7 @@
             <ul class="carousel">
               <li>
                   <section>
-                    <a href="/sign-up-1">Skip</a>
+                    <a href="/sign-up">Skip</a>
                     <div class="mouse">
                         <picture class="eclipse">
                             <source srcset="/characters/Ellipse131.svg?format=avif" type="image/avif">
@@ -93,7 +93,7 @@
 
               <li>
                   <section class="slide-2">
-                    <a href="/sign-up-1">Skip</a>
+                    <a href="/sign-up">Skip</a>
                       <div class="mouse">
                           <picture class="eclipse">
                               <source srcset="/characters/Ellipse131-2.svg?format=avif" type="image/avif">
@@ -109,8 +109,8 @@
                       </div>
 
                       <div class="carousel-indicators">
-                        <span class="indicator active" data-slide="0"></span>
-                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="0"></span>
+                        <span class="indicator active" data-slide="1"></span>
                         <span class="indicator" data-slide="2"></span>
                       </div>
                   
@@ -126,7 +126,7 @@
 
               <li>
                   <section class="slide-3">
-                    <a href="/sign-up-1">Skip</a>
+                    <a href="/sign-up">Skip</a>
                     <div class="mouse">
                         <picture class="eclipse">
                             <source srcset="/characters/Ellipse131-3.svg?format=avif" type="image/avif">
@@ -143,9 +143,9 @@
 
                     <!-- Carousel Indicators -->
                     <div class="carousel-indicators">
-                      <span class="indicator active" data-slide="0"></span>
+                      <span class="indicator" data-slide="0"></span>
                       <span class="indicator" data-slide="1"></span>
-                      <span class="indicator" data-slide="2"></span>
+                      <span class="indicator active" data-slide="2"></span>
                     </div>
                   
                     <h1>See the results</h1>
@@ -153,7 +153,7 @@
                             See the results of the tests and watch as your child learns a language with TuMi Mundo.
                             The older your child becomes the further into the method you go, it starts with listening, it ends with being able to have a full conversation.
                         </p>
-                    <a href="/sign-up-1" class="make-acc">Make an account</a>
+                    <a href="/sign-up" class="make-acc">Make an account</a>
                 </section>
               </li>
             </ul>
