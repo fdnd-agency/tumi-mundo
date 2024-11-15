@@ -74,6 +74,12 @@
                             <img src="/characters/mouse.svg" alt="rat image" height="250">
                         </picture>
                     </div>
+
+                    <div class="carousel-indicators">
+                      <span class="indicator active" data-slide="0"></span>
+                      <span class="indicator" data-slide="1"></span>
+                      <span class="indicator" data-slide="2"></span>
+                    </div>
                   
                     <h1>Learn languages</h1>
                     <p>
@@ -100,6 +106,12 @@
                               <!-- svelte-ignore a11y-img-redundant-alt -->
                               <img src="/characters/mouse.svg" alt="rat image" height="250">
                           </picture>
+                      </div>
+
+                      <div class="carousel-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
                       </div>
                   
                         <h1>Test the progress</h1>
@@ -155,7 +167,7 @@
 .carousel-indicators {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-bottom: 30px;
   z-index: 10;
 }
 
@@ -163,7 +175,8 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: white;
+  border: 1px solid lightgray;
+  background-color: transparent;
   margin: 0 5px;
   cursor: pointer;
 }
