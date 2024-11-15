@@ -3,10 +3,10 @@
 <img width="453" alt="image" src="https://github.com/fdnd-agency/tumi-mundo/assets/61702002/6c04d95e-f4ea-480d-9e86-cbf9148e8e15">
 
 ## Belangrijk
-[Design components](https://www.figma.com/design/tXRARfGkPQQhkkcp4VyXXR/Tumi-Mundo---Issues-prototype?node-id=4002-1692&t=XNYDmTT7hk1gslye-1)
-[Issues](https://github.com/fdnd-agency/tumi-mundo/issues)
+###[Design components](https://www.figma.com/design/tXRARfGkPQQhkkcp4VyXXR/Tumi-Mundo---Issues-prototype?node-id=4002-1692&t=XNYDmTT7hk1gslye-1)
+###[Issues](https://github.com/fdnd-agency/tumi-mundo/issues)
 
-### Over Tumi Mundo
+## Over Tumi Mundo
 
 Door de wetenschappelijke en technologische vooruitgang komt er steeds meer inzicht in het proces van taalontwikkeling bij kinderen. Wij voorzien dat deze nieuwe inzichten en de technologische ontwikkelingen een steeds grotere toegevoegde waarde zullen hebben in de ondersteuning van ouders en kinderen bij de ontwikkeling van hun moedertaal en andere talen.
 
