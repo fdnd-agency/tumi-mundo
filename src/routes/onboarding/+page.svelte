@@ -13,7 +13,6 @@
       button.addEventListener('click', function () {
         const direction = this.classList.contains('left') ? -1 : 1;
         scrollCarousel(carousel, direction);
-        updateIndicators();
       });
     });
 
@@ -28,15 +27,6 @@
       currentSlide = (currentSlide + direction + indicators.length) % indicators.length;
     }
 
-    function updateIndicators() {
-      indicators.forEach((indicator, index) => {
-        if (index === currentSlide) {
-          indicator.classList.add('active');
-        } else {
-          indicator.classList.remove('active');
-        }
-      });
-    }
 
     // Maak indicators clickable
     indicators.forEach(indicator => {
@@ -46,7 +36,6 @@
 
         scrollCarousel(carousel, difference);
         currentSlide = targetSlide;
-        updateIndicators();
       });
     });
   });
