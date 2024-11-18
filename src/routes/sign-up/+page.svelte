@@ -1,7 +1,7 @@
 <title>sign-up</title>
 <section>
     <div class="heading">
-        <a href="/onboarding-3">back</a>
+        <a href="/onboarding">back</a>
         <h1>Sign up</h1> 
     </div>
    
