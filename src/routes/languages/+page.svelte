@@ -1,7 +1,18 @@
+
 <script>
-    /** @type {import('./$types').PageData} */
-    export let data;
-    
+
+    export let data; 
+    // Reactieve zoekterm
+    let searchTerm = "";
+
+    import Search from '../../components/search.svelte';
+
+    // Reactieve filtering
+    $: filteredLanguages = searchTerm
+        ? data.languages.filter(language =>
+            language.name.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+        : data.languages;
 </script>
 
 <main>
@@ -9,37 +20,55 @@
 
     <div class="navigation">
         <a href="/onboarding">
-        <img src="/icons/back-button-2.svg" alt="back-btn">
+            <img src="/icons/back-button-2.svg" alt="back-btn">
         </a>
         <h1>We are going to learn!</h1>
     </div>
-   
 
-    <p>Now it is time to pick the language(s) your child will learn. You can pick a <strong>maximum of 3</strong> languages.</p>
+    <p>
+        Now it is time to pick the language(s) your child will learn. 
+        You can pick a <strong>maximum of 3</strong> languages.
+    </p>
 
-    <input type="text" placeholder="Search language" class="search">
-    
+    <input 
+    type="text" 
+    id="searchbar"
+    placeholder="Search language" 
+    class="search"
+    bind:value={searchTerm} 
+    />
+    <!-- <Search {data}/> -->
+
+
     <div class="lijntje"></div>
 
-        {#if data.languages && data.languages.length > 0}
-            <ul>
-                {#each data.languages as language}
-                    <li>
-                        <input class="radio" type="checkbox" id="language-{language.name}" name="language" value="{language.name}">
-                        <label for="language-{language.name}"><strong>{language.name}</strong></label>
-                    </li>
-                {/each}
-            </ul>
+    <!-- Talenlijst -->
+    {#if filteredLanguages && filteredLanguages.length > 0}
+        <ul>
+            {#each filteredLanguages as language}
+                <li class="languages">
+                    <input 
+                        class="radio" 
+                        type="checkbox" 
+                        id="language-{language.name}" 
+                        name="language" 
+                        value="{language.name}" 
+                    />
+                    <label for="language-{language.name}">
+                        <strong>{language.name}</strong>
+                    </label>
+                </li>
+            {/each}
+        </ul>
     {:else}
-        <!-- This will show if no languages are available -->
-        <p>Er zijn geen stories</p>
+        <!-- Geen resultaten -->
+        <p>No languages found.</p>
     {/if}
-      
+
     <input type="submit" value="Continue">
-    
 </section>
 </main>
-    
+
 
 <style>
 
@@ -55,12 +84,13 @@ main{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
-    height: 100%;
+    height: 100vh;
     color: white;
     overflow: hidden;
     font-family: Poppins;
 }
 .navigation{
+    /* position: absolute; */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -72,7 +102,10 @@ main{
 .search{
     background-image: url(/icons/search-icon.svg);
     background-repeat: no-repeat;
-    background-position: center left;
+    background-position: 2% 50%;
+    padding: 13px 30px;
+    border-radius: 7px;
+    border: none;
 }
 section{
     display: flex;
@@ -82,7 +115,6 @@ section{
     margin: 20px;
     position: relative;
     overflow-y: hidden;
-    height: 100vh;
 }
 h1{
     margin-bottom: 16px;
@@ -99,11 +131,6 @@ h1,p{
 }
 p{
     margin-bottom: 40px;
-}
-input:nth-of-type(1){
-    padding: 13px 20px;
-    border-radius: 7px;
-    border: none;
 }
 .lijntje{
     margin-top: 10px;
