@@ -60,7 +60,7 @@
 
 
 <style>
-li:active, li:focus {border: 1px solid orange}
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -73,7 +73,7 @@ main{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
-    height: 100vh;
+    height: 100%;
     color: white;
     overflow: hidden;
     font-family: Poppins;
@@ -95,7 +95,6 @@ section{
     align-items: center;
     margin: 20px;
     position: relative;
-    overflow-y: hidden;
 }
 h1{
     margin-bottom: 16px;
@@ -105,7 +104,13 @@ h1, p, input{
 }
 ul{
     width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
     overflow-y: scroll;
+}
+li:focus {
+    border: 3px solid red;
 }
 h1,p{
     text-align: center;
@@ -124,7 +129,7 @@ p{
 .radio{
     width: 100%;
 }
-input:nth-of-type(2){
+input:nth-of-type(1){
     font-family: Poppins;
     width: 85%;
     padding: 13px;
@@ -137,7 +142,7 @@ input:nth-of-type(2){
     bottom: 0;
     margin-bottom: 40px;
 }
-input:nth-of-type(2):hover{
+input:nth-of-type(1):hover{
     cursor: pointer;
     color: white;
     background-color: #215165 ;
