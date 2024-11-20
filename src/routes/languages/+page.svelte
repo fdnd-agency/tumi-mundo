@@ -1,5 +1,6 @@
 <script>
     import Search from '../../components/search.svelte'; // Adjust the path
+    import Continue from '../../components/continue-btn.svelte';
 
     export let data = {
         languages: [] // Empty languages array
@@ -54,7 +55,9 @@
             <p>No languages found.</p>
         {/if}
 
-        <input type="submit" value="Continue" />
+        <!-- <input type="submit" value="Continue" /> -->
+        <Continue type="button"/>
+
     </section>
 </main>
 
@@ -69,7 +72,6 @@
 }
 main{
     background: linear-gradient(to bottom, #3F93B7, #1C5872);
-    /* background-color: black; */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -79,7 +81,6 @@ main{
     font-family: Poppins;
 }
 .navigation{
-    /* position: absolute; */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -109,9 +110,6 @@ ul{
     flex-direction: column;
     overflow-y: scroll;
 }
-li:focus {
-    border: 3px solid red;
-}
 h1,p{
     text-align: center;
 }
@@ -129,31 +127,12 @@ p{
 .radio{
     width: 100%;
 }
-input:nth-of-type(1){
-    font-family: Poppins;
-    width: 85%;
-    padding: 13px;
-    border-radius: 7px;
-    border: none;
-    font-size: 18px;
-    color: #797979;
-    background-color: #C0C0C0 ;
-    position: fixed;
-    bottom: 0;
-    margin-bottom: 40px;
-}
-input:nth-of-type(1):hover{
-    cursor: pointer;
-    color: white;
-    background-color: #215165 ;
-}
-
+/* input for languages */
 input[type="checkbox"]:not(:checked), 
 input[type="checkbox"]:checked {
     position: absolute;
     left: -9999%;
 }
-  
 input[type="checkbox"] + label {
     display: inline-block;
     color: black;
@@ -166,10 +145,12 @@ input[type="checkbox"] + label {
     width: 100%;
     border-radius: 8px;
 }
-  
 input[type="checkbox"]:checked + label {
     color: white;
     background-color: #1A188A;
 } 
+input[type="checkbox"] + label:focus {
+    border: 3px solid red;
+}
 
 </style>
