@@ -1,34 +1,47 @@
 <script>
-	    // Reactieve zoekterm
-        let searchTerm = "";
+    import { onMount } from "svelte"
+    import { createEventDispatcher } from "svelte"; // https://www.youtube.com/watch?v=ECCAS5BfC7o
+    export let data = []; 
+    export let searchTerm = "";
 
-        export let data; 
+    // Dispatch events to notify the parent
+    const dispatch = createEventDispatcher();
 
-        // Reactieve filtering
-        $: filteredLanguages = searchTerm
-            ? data.languages.filter(language =>
-                language.name.toLowerCase().includes(searchTerm.toLowerCase())
-            )
-            : data.languages;
+    // Reactive filtered data
+    $: filteredData = searchTerm
+        ? data.filter(item =>
+            item.name.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+        : data;
+
+    // Emit filtered data whenever it changes
+    $: dispatch("filter", filteredData);
+
+    // Emit the full list on component load
+    onMount(() => {
+        dispatch("filter", data);
+    });
 </script>
 
-	    <!-- Zoekveld -->
-        <input 
-        type="text" 
+<div>
+    <!-- Search Field -->
+    <input
+        type="text"
         id="searchbar"
-        placeholder="Search language" 
+        placeholder="Search..." 
         class="search"
-        bind:value={searchTerm} 
-        />
+        bind:value={searchTerm}
+    /> <!-- Removed "languages" from placeholder so we can re-use this component. -->
+</div>
 
 <style>
-
-.search{
+/* Add styles for the search field */
+.search {
     background-image: url(/icons/search-icon.svg);
     background-repeat: no-repeat;
     background-position: 2% 50%;
     padding: 13px 30px;
-    border-radius: 10px;
+    border-radius: 7px;
     border: none;
     width: 85%;
 }
