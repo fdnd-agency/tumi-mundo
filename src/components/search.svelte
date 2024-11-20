@@ -41,8 +41,11 @@
     background-repeat: no-repeat;
     background-position: 2% 50%;
     padding: 13px 30px;
-    border-radius: 7px;
+    border-radius: 8px;
     border: none;
-    width: 85%;
+    width: 84%;
+}
+div{
+    width: 100%;
 }
 </style>
