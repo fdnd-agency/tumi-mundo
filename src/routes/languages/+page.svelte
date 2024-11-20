@@ -1,74 +1,61 @@
-
 <script>
+    import Search from '../../components/search.svelte'; // Adjust the path
 
-    export let data; 
-    // Reactieve zoekterm
-    let searchTerm = "";
+    export let data = {
+        languages: [] // Empty languages array
+    };
 
-    import Search from '../../components/search.svelte';
-
-    // Reactieve filtering
-    $: filteredLanguages = searchTerm
-        ? data.languages.filter(language =>
-            language.name.toLowerCase().includes(searchTerm.toLowerCase())
-        )
-        : data.languages;
+    let filteredLanguages = data.languages; // Initialize with full dataset
+    let searchTerm = ""; // To store the search term
 </script>
 
 <main>
-<section>
+    <section>
+        <div class="navigation">
+            <a href="/onboarding">
+                <img src="/icons/back-button-2.svg" alt="back-btn" />
+            </a>
+            <h1>We are going to learn!</h1>
+        </div>
 
-    <div class="navigation">
-        <a href="/onboarding">
-            <img src="/icons/back-button-2.svg" alt="back-btn">
-        </a>
-        <h1>We are going to learn!</h1>
-    </div>
+        <p>
+            Now it is time to pick the language(s) your child will learn.
+            You can pick a <strong>maximum of 3</strong> languages.
+        </p>
 
-    <p>
-        Now it is time to pick the language(s) your child will learn. 
-        You can pick a <strong>maximum of 3</strong> languages.
-    </p>
+        <!-- Use the Search Component -->
+        <Search
+            data={data.languages}
+            bind:searchTerm
+            on:filter={(e) => (filteredLanguages = e.detail)}
+        />
 
-    <input 
-    type="text" 
-    id="searchbar"
-    placeholder="Search language" 
-    class="search"
-    bind:value={searchTerm} 
-    />
+        <div class="lijntje"></div>
 
-    <!-- Uitgecomment want de zoekbalk laadt wel in maar de functie niet -->
-    <!-- <Search {data}/> -->
+        <!-- Display Filtered Languages -->
+        {#if filteredLanguages.length > 0}
+            <ul>
+                {#each filteredLanguages as language}
+                    <li class="languages">
+                        <input
+                            class="radio"
+                            type="checkbox"
+                            id="language-{language.name}"
+                            name="language"
+                            value="{language.name}"
+                        />
+                        <label for="language-{language.name}">
+                            <strong>{language.name}</strong>
+                        </label>
+                    </li>
+                {/each}
+            </ul>
+        {:else}
+            <p>No languages found.</p>
+        {/if}
 
-
-    <div class="lijntje"></div>
-
-    <!-- Talenlijst -->
-    {#if filteredLanguages && filteredLanguages.length > 0}
-        <ul>
-            {#each filteredLanguages as language}
-                <li class="languages" tabindex="0">
-                    <input 
-                        class="radio" 
-                        type="checkbox" 
-                        id="language-{language.name}" 
-                        name="language" 
-                        value="{language.name}" 
-                    />
-                    <label for="language-{language.name}">
-                        <strong>{language.name}</strong>
-                    </label>
-                </li>
-            {/each}
-        </ul>
-    {:else}
-        <!-- Geen resultaten -->
-        <p>No languages found.</p>
-    {/if}
-
-    <input type="submit" value="Continue">
-</section>
+        <input type="submit" value="Continue" />
+    </section>
 </main>
 
 
@@ -100,14 +87,6 @@ main{
 }
 .navigation > a{
     align-self: start;
-}
-.search{
-    background-image: url(/icons/search-icon.svg);
-    background-repeat: no-repeat;
-    background-position: 2% 50%;
-    padding: 13px 30px;
-    border-radius: 7px;
-    border: none;
 }
 section{
     display: flex;
