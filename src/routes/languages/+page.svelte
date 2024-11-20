@@ -37,6 +37,8 @@
     class="search"
     bind:value={searchTerm} 
     />
+
+    <!-- Uitgecomment want de zoekbalk laadt wel in maar de functie niet -->
     <!-- <Search {data}/> -->
 
 
@@ -46,7 +48,7 @@
     {#if filteredLanguages && filteredLanguages.length > 0}
         <ul>
             {#each filteredLanguages as language}
-                <li class="languages">
+                <li class="languages" tabindex="0">
                     <input 
                         class="radio" 
                         type="checkbox" 
@@ -71,7 +73,7 @@
 
 
 <style>
-
+li:active, li:focus {border: 1px solid orange}
 *{
     box-sizing: border-box;
     margin: 0;
