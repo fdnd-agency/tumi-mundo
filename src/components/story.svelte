@@ -1,5 +1,8 @@
 <script>
     export let story;
+
+    // SELECT THE FIRST AUDIO FILE, EX: NO SPEAKER PROFILE SELECTED
+    const firstAudio = story.audios?.[0]?.file || null;
 </script>
 
 <li class="story-container">
@@ -12,7 +15,7 @@
     </div>
     <p class="story-summary">{story.summary}</p>
     <div class="story-playtime flex-items">
-        <img src="/icons/story-playtime.svg" alt="Icon for playtime">
+        <a href={firstAudio} target="_blank"><img src="/icons/story-playtime.svg" alt="Icon for playtime"></a>
         <p>{story.playtime}</p>
     </div>
     <div class="story-icons flex-items">
@@ -77,6 +80,11 @@
 
     .story-playtime {
         grid-area: 3 / 3 / 4 / 6; 
+    }
+
+    .story-playtime a {
+        display: flex;
+        align-items: center;
     }
 
     .story-icons {
