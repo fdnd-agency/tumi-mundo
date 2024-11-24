@@ -1,46 +1,27 @@
 <script>
-    let stories = [
-        { title: 'Story One', summary: 'This is the description of the story. Some titles may be a little longer than usual. We need to build in an line-clamp for that. Now it will stop it from overflowing, cool huh?', image: '/stories/Story-pengiun.png', playtime: '2 min. 5 sec', language: 'English'},
-        { title: 'Story Two', summary: 'This is the description of the story.', image: '/stories/Story-trees.png', playtime: '3 min. 6 sec', language: 'Dutch'},
-        { title: 'Story Three', summary: 'This is the description of the story.', image: '/stories/Story-turtle.png', playtime: '1 min. 15 sec', language: 'French'},
-        { title: 'Story Four', summary: 'This is the description of the story.', image: '/stories/Story-pengiun.png', playtime: '4 min. 53 sec', language: 'German'}
-    ];
+    export let story;
 </script>
 
-<section>
-    <ul>
-        {#each stories as story}
-            <li class="story-container">
-                <div class="story-image flex-items">
-                    <img src="{story.image}" alt="">
-                </div>
-                <h2 class="story-title">{story.title}</h2>
-                <div class="story-language flex-items">
-                    <img src="/languages/{story.language}.svg" alt="{story.language} flag">
-                </div>
-                <p class="story-summary">{story.summary}</p>
-                <div class="story-playtime flex-items">
-                    <img src="/icons/story-playtime.svg" alt="Icon for playtime">
-                    <p>{story.playtime}</p>
-                </div>
-                <div class="story-icons flex-items">
-                    <img src="/icons/download-icon.svg" alt="Icon for download">
-                    <img src="/icons/add-to-playlist.svg" alt="Icon for adding to playlist">
-                </div>
-            </li>
-        {/each}
-    </ul>
-</section>
+<li class="story-container">
+    <div class="story-image flex-items">
+        <img src="{story.image}" alt="">
+    </div>
+    <h3 class="story-title">{story.title}</h3>
+    <div class="story-language flex-items">
+        <img src="/languages/{story.language}.svg" alt="{story.language} flag">
+    </div>
+    <p class="story-summary">{story.summary}</p>
+    <div class="story-playtime flex-items">
+        <img src="/icons/story-playtime.svg" alt="Icon for playtime">
+        <p>{story.playtime}</p>
+    </div>
+    <div class="story-icons flex-items">
+        <img src="/icons/download-icon.svg" alt="Icon for download">
+        <img src="/icons/add-to-playlist.svg" alt="Icon for adding to playlist">
+    </div>
+</li>
 
 <style>
-    ul {
-        padding: 20px 0 20px 0;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-    }
-
     li {
         width: 360px;
         max-height: 85px;
@@ -51,6 +32,7 @@
         overflow: hidden;
         padding: 10px;
         border-radius: 4px;
+        color: black;
     }
 
     .story-title {
@@ -73,6 +55,8 @@
 
     .story-image img{
         max-width: 60px;
+        min-height: 64px;
+        object-fit: cover;
     }
 
     .story-language {
