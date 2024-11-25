@@ -140,8 +140,7 @@ input[type="checkbox"] + label {
     background-color: white;
     list-style: none;
     align-self: self-end;
-    /* margin-top: 10px; */
-    margin-bottom: 10px;
+    margin-bottom: 2px;
     padding: 5px;
     width: 100%;
     border-radius: 10px;
@@ -149,15 +148,11 @@ input[type="checkbox"] + label {
 input[type="checkbox"]:checked + label {
     color: white;
     background-color: #1A188A;
-} 
-input[type="checkbox"] + label:focus {
-    border: 3px solid red;
 }
-
 label {
     position: relative; 
     display: inline-block; 
-    height: 50px;
+    height: 60px;
     width: 100%; 
 }
 .flag-svg {
