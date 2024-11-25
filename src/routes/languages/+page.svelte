@@ -46,7 +46,7 @@
                             value="{language.name}"
                         />
                         <label for="language-{language.name}">
-                            <img src="/flags/{language.name}.svg" alt="{language.name}" class="flag-svg">
+                            <img src="/languages/{language.name}.svg" alt="{language.name}" class="flag-svg">
                             <strong class="language-strong">{language.name}</strong>
                         </label>
                     </li>
