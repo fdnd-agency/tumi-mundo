@@ -139,11 +139,11 @@ input[type="checkbox"] + label {
     background-color: white;
     list-style: none;
     align-self: self-end;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     margin-bottom: 10px;
     padding: 16px;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 input[type="checkbox"]:checked + label {
     color: white;
