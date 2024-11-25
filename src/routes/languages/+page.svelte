@@ -56,6 +56,7 @@
             <p>No languages found.</p>
         {/if}
 
+        <!-- change the input type if u want to use other component type -->
         <!-- <input type="submit" value="Continue" /> -->
         <Continue type="button"/>
 
