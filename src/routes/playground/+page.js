@@ -7,10 +7,10 @@ export async function load({ fetch }) {
     const data = await fetchAllData(fetch);
 
     // Enrich stories with details
-    const enrichedPlaylists  = mapPlaylistsWithDetails(data.playlists, data.stories, data.languages);
+    const enrichedPlaylists = mapPlaylistsWithDetails(data.playlists, data.stories, data.playlistStories);
 
     return {
         ...data,
-        playlists: enrichedPlaylists // Stories now include corresponding audios and languages
+        playlists: enrichedPlaylists, // Playlists now include enriched details like playtime
     };
 }
