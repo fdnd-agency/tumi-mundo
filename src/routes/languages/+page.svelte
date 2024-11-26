@@ -7,6 +7,11 @@
     };
 
     let filteredLanguages = data.languages; // Initialize with full dataset
+
+    data.languages.forEach(language => {
+        language.name = language.language;
+    });
+    
     let searchTerm = ""; // To store the search term
 </script>
 

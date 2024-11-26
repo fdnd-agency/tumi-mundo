@@ -10,7 +10,7 @@
     // Reactive filtered data
     $: filteredData = searchTerm
         ? data.filter(item =>
-            item.language.toLowerCase().includes(searchTerm.toLowerCase())
+            item.name.toLowerCase().includes(searchTerm.toLowerCase())
         )
         : data;
 
