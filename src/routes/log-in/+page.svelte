@@ -22,6 +22,13 @@
     padding: 0;
     list-style: none;
 }
+main, section, .buttons{
+    display: flex;
+    flex-direction: column;
+}
+section, .buttons{
+    align-items: center;
+}
 main{
     /* background: linear-gradient(to bottom, #3F93B7, #1C5872); */
     background-image: url(log-in-bg.svg);
@@ -29,18 +36,11 @@ main{
     background-repeat: no-repeat;
     background-position: bottom;
     height: 100vh;
+    width: 100%;
     color: white;
-    /* overflow: hidden; */
     font-family: Poppins;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly; /* Zorgt ervoor dat inhoud verspreid wordt */
 }
 section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     flex-grow: 1; /* Zorgt ervoor dat de sectie de resterende ruimte opvult */
     justify-content: start;
 }
@@ -50,20 +50,16 @@ h1{
     font-weight: bold;
     margin-bottom: .5rem;
 }
-p{
+p, button{
     font-size: 16px;
 }
 .buttons{
     margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 10px;
     margin-bottom: 60px;
     width: 100%;
 }
 button{
-    font-size: 16px ;
     border: 1px solid white;
     border-radius: 10px;
     padding: .8rem;
