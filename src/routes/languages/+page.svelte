@@ -46,7 +46,8 @@
                             value="{language.name}"
                         />
                         <label for="language-{language.name}">
-                            <strong>{language.name}</strong>
+                            <img src="/languages/{language.name}.svg" alt="{language.name}" class="flag-svg">
+                            <strong class="language-strong">{language.name}</strong>
                         </label>
                     </li>
                 {/each}
@@ -55,6 +56,7 @@
             <p>No languages found.</p>
         {/if}
 
+        <!-- change the input type if u want to use other component type -->
         <!-- <input type="submit" value="Continue" /> -->
         <Continue type="button"/>
 
@@ -139,18 +141,36 @@ input[type="checkbox"] + label {
     background-color: white;
     list-style: none;
     align-self: self-end;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 16px;
+    margin-bottom: 2px;
+    padding: 5px;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 input[type="checkbox"]:checked + label {
     color: white;
     background-color: #1A188A;
-} 
-input[type="checkbox"] + label:focus {
-    border: 3px solid red;
 }
+label {
+    position: relative; 
+    display: inline-block; 
+    height: 60px;
+    width: 100%; 
+}
+.flag-svg {
+    position: absolute;
+    top: 50%;
+    left: 5px; 
+    transform: translateY(-50%); 
+    width: 55px; 
+    height: 100%;
+}
+
+.language-strong{
+    position: absolute;
+    top: 50%;
+    left: 65px;
+    transform: translateY(-50%);
+}
+
 
 </style>
