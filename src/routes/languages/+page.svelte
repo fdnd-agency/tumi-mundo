@@ -41,13 +41,13 @@
                         <input
                             class="radio"
                             type="checkbox"
-                            id="language-{language.name}"
+                            id="language-{language.language}"
                             name="language"
-                            value="{language.name}"
+                            value="{language.language}"
                         />
-                        <label for="language-{language.name}">
-                            <img src="/languages/{language.name}.svg" alt="{language.name}" class="flag-svg">
-                            <strong class="language-strong">{language.name}</strong>
+                        <label for="language-{language.language}">
+                            <img src="/languages/{language.language}.svg" alt="{language.language}" class="flag-svg">
+                            <strong class="language-strong">{language.language}</strong>
                         </label>
                     </li>
                 {/each}
