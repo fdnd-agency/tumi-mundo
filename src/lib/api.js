@@ -66,7 +66,6 @@ export function mapStoriesWithDetails(stories, audios, languages) {
         const storyAudios = story.audio.map((audioId) => {
             const audioData = audios.find((audio) => audio.id === audioId);
             if (audioData) {
-
                 return {
                     id: audioData.id,
                     file: `${assetBaseUrl}${audioData.audio_file}`,
@@ -88,6 +87,31 @@ export function mapStoriesWithDetails(stories, audios, languages) {
         return {
             ...story,
             audios: storyAudios
+        };
+    });
+}
+
+// Helper function to enrich playlists with their image, language, and stories
+export function mapPlaylistsWithDetails(playlists, stories, languages) {
+    const assetBaseUrl = "https://fdnd-agency.directus.app/assets/";
+
+    return playlists.map((playlist) => {
+        const language = languages.find((lang) => lang.id === playlist.language_id)?.language || "Unknown";
+        const playlistStories = playlist.stories.map((storyId) => {
+            return stories.find((story) => story.id === storyId) || null;
+        }).filter(Boolean);
+
+        playlist.image = playlist.image ? `${assetBaseUrl}${playlist.image}` : "unknown.svg";
+
+        if (playlist.playtime) {
+            playlist.playtime = formatPlaytime(playlist.playtime);
+        }
+
+        playlist.language = language;
+
+        return {
+            ...playlist,
+            stories: playlistStories
         };
     });
 }
