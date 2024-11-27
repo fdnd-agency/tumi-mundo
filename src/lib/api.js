@@ -15,7 +15,7 @@ export async function fetchAllData(fetch) {
 
     // Fetch all required data in parallel
     const [
-        accounts,
+        users,
         profiles,
         profileStatistics,
         buddys,
@@ -25,7 +25,8 @@ export async function fetchAllData(fetch) {
         speakers,
         stories,
         likes,
-        playlistStories  // Fetch the playlist_stories junction table
+        playlistStories,
+        profileUsers
     ] = await Promise.all([
         fetchCollection(fetch, 'tm_users'),
         fetchCollection(fetch, 'tm_profile'),
@@ -37,11 +38,12 @@ export async function fetchAllData(fetch) {
         fetchCollection(fetch, 'tm_speaker_profile'),
         fetchCollection(fetch, 'tm_story'),
         fetchCollection(fetch, 'tm_likes'),
-        fetchCollection(fetch, 'tm_playlist_stories')
+        fetchCollection(fetch, 'tm_playlist_stories'),
+        fetchCollection(fetch, 'tm_profile_user')
     ]);
 
     return {
-        accounts,
+        users,
         profiles,
         profileStatistics,
         buddys,
@@ -51,7 +53,8 @@ export async function fetchAllData(fetch) {
         speakers,
         stories,
         likes,
-        playlistStories
+        playlistStories,
+        profileUsers
     };
 }
 
@@ -133,3 +136,29 @@ export function mapPlaylistsWithDetails(playlists, stories, playlistStories) {
     });
 }
 
+export function mapUsersWithProfiles(users, profiles, profileUsers) {
+    const profileMap = new Map(profiles.map((profile) => [profile.id, profile]));
+
+    console.log(profileUsers)
+
+    return users.map((user) => {
+        const relatedProfileIds = profileUsers
+            .filter((link) => link.user_id === user.id)
+            .map((link) => link.profile_id);
+
+        const userProfilesData = relatedProfileIds
+        .map((profileId) => {
+            const profile = profileMap.get(profileId);
+            return profile;
+        })
+        .filter(Boolean); // Filter out undefined stories
+
+
+        const enrichedUser = {
+            ...user,
+            profiles: userProfilesData,
+        };
+
+        return enrichedUser;
+    })
+}

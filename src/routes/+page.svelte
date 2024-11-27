@@ -7,17 +7,18 @@
 <section>
     <h2>Accounts</h2>
     <article>
-        {#if data.accounts && data.accounts.length > 0}
+        {#if data.users && data.users.length > 0}
             <ul>
-                {#each data.accounts as account}
+                {#each data.users as account}
+                {console.log(account)}
                     <li>{account.name}</li>
                     <li>{account.email}</li>
-                    <li>{account.profile}</li>
+                    <li>{account.profiles}</li>
                 {/each}
             </ul>
     {:else}
         <!-- This will show if no people are available -->
-        <p>Er zijn geen accounts</p>
+        <p>Er zijn geen users</p>
     {/if}
     </article>
 
@@ -44,7 +45,6 @@
                     <li>{profile.name_of_child}</li>
                     <li>{profile.gender}</li>
                     <li>{profile.date_of_birth}</li>
-                    <li>{profile.current_language}</li>
                     <li>{profile.new_language_to_learn}</li>
                     <li>{profile.buddy}</li>
                 {/each}
