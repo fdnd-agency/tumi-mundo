@@ -5,7 +5,7 @@
 
         <div class="buttons">
             <label class="popup-button" for="login-popup">Login</label>
-            <button>New to Tumi Mundo? Sign up!</button>
+            <a href="/onboarding" class="sign-up">New to Tumi Mundo? Sign up!</a>
             <a href="/log-in">I don't remember my password/username</a>
         </div>
     </section>
@@ -18,14 +18,18 @@
             <div class="popup-inner">
                 <div class="popup-title">
                     <h2>Log in</h2>
-                    <label for="login-popup" class="popup-close-btn"><img src="/icons/menu-close.svg" height="16px" width="15px">Close</label>
+                    <div class="close-div">
+                        <img src="/icons/menu-close.svg" height="16px" width="15px" alt="close button">
+                        <label for="login-popup" class="popup-close-btn">Close</label>
+                    </div>
+                    
                 </div>
                 <div class="popup-content">
                     <form action="">
                         <ul>
                             <li>
-                                <label for="lname">Email</label>
-                                <input type="text" id="lname" name="lname" placeholder="Your email" aria-label="email">
+                                <label for="email">Email</label>
+                                <input type="text" id="email" name="email" placeholder="Your email" aria-label="email">
                             </li>
                             <li>
                                 <label for="password">Password</label>
@@ -35,7 +39,7 @@
                                 <button type="submit" class="login-popup">Log in</button>
                             </li>
                             <li>
-                                <a href="/log-in">I don't remember my password/username</a>
+                                <a href="/">I don't remember my password/username</a>
                             </li>
                         </ul>
                     </form>
@@ -47,18 +51,21 @@
 
 
 <style>
-    .popup-close-btn{
-       writing-mode: vertical-lr;
-    }
-    h2{
-        margin: auto;
-    }
+.close-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.popup-close-btn{
+    line-height: 1.2;
+}
+h2{
+    margin: auto;
+}
 
 h2, label{
     color: black;
-}
-li{
-    /* border: 1px solid red; */
 }
 input{
     padding: 1rem;
@@ -122,19 +129,22 @@ p, button, label {
     width: 100%;
 }
 
-button, .popup-button, .login-popup{
+button, .popup-button, .login-popup, .sign-up{
+    text-decoration: none;
     border: 1px solid white;
     border-radius: 10px;
     padding: .8rem;
-    width: 70%;
+    width: 80%;
     background-color: #378DB3;
     color: white;
     text-align: center;
     cursor: pointer;
+    margin: auto;
     display: block;
 }
 
-button{
+button, .sign-up{
+    text-decoration: none;
     background-color: #F0F0F0;
     color: #535353;
     padding: .8rem 1rem;
@@ -143,12 +153,13 @@ button{
 button:hover, .popup-button:hover {
     background-color: #2a6d91;
 }
-a {
+a{
     color: #378EB4;
     text-decoration: underline;
     width: 100%;
     text-align: center;
 }
+
 /* Styling for popup */
 .popup-container {
     display: inline-block;
@@ -188,18 +199,9 @@ a {
     margin-bottom: 20px;
 }
 
-.popup-container .popup .popup-inner .popup-title h6 {
-    font-size: 18px;
-    font-weight: 500;
-}
 .popup-title{
     justify-content: space-between;
 }
-h6{
-    margin: auto ;
-    font-weight: bold;
-}
-
 .popup-container .popup .popup-inner .popup-title .popup-close-btn {
     cursor: pointer;
     display: block;
@@ -226,10 +228,6 @@ h6{
     padding: 0 15px;
     font-size: 14px;
     box-sizing: border-box;
-}
-
-.popup-container .popup .popup-inner .popup-content ul li button {
-    width: 100%;
 }
 
 .popup-container .popup .transparent-label {
