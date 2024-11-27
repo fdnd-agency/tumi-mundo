@@ -1,6 +1,6 @@
 <script>
 
-export let type = 'text'; // standard type is 'button'
+export let type = 'text';
 
 </script>
 
