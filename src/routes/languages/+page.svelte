@@ -1,12 +1,17 @@
 <script>
-    import Search from '../../components/search.svelte'; // Adjust the path
-    import Continue from '../../components/continue-btn.svelte';
+    import Search from '../../components/forms/search.svelte'; // Adjust the path
+    import Continue from '../../components/forms/continue-btn.svelte';
 
     export let data = {
         languages: [] // Empty languages array
     };
 
     let filteredLanguages = data.languages; // Initialize with full dataset
+
+    data.languages.forEach(language => {
+        language.name = language.language;
+    });
+    
     let searchTerm = ""; // To store the search term
 </script>
 
@@ -77,7 +82,7 @@ main{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
-    height: 100%;
+    height: 100vh;
     color: white;
     overflow: hidden;
     font-family: Poppins;
