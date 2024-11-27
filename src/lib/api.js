@@ -1,6 +1,8 @@
 import getDirectusInstance from '$lib/directus';
 import { readItems } from '@directus/sdk';
 
+const assetBaseUrl = "https://fdnd-agency.directus.app/assets/";
+
 // Helper function to fetch data for a specific collection
 export async function fetchCollection(fetch, collectionName) {
     const directus = getDirectusInstance(fetch);
@@ -22,7 +24,8 @@ export async function fetchAllData(fetch) {
         playlists,
         speakers,
         stories,
-        likes
+        likes,
+        playlistStories  // Fetch the playlist_stories junction table
     ] = await Promise.all([
         fetchCollection(fetch, 'tm_users'),
         fetchCollection(fetch, 'tm_profile'),
@@ -33,7 +36,8 @@ export async function fetchAllData(fetch) {
         fetchCollection(fetch, 'tm_playlist'),
         fetchCollection(fetch, 'tm_speaker_profile'),
         fetchCollection(fetch, 'tm_story'),
-        fetchCollection(fetch, 'tm_likes')
+        fetchCollection(fetch, 'tm_likes'),
+        fetchCollection(fetch, 'tm_playlist_stories')
     ]);
 
     return {
@@ -46,7 +50,8 @@ export async function fetchAllData(fetch) {
         playlists,
         speakers,
         stories,
-        likes
+        likes,
+        playlistStories
     };
 }
 
@@ -59,14 +64,12 @@ function formatPlaytime(seconds) {
 
 // Helper function to enrich stories with audio and language details
 export function mapStoriesWithDetails(stories, audios, languages) {
-    const assetBaseUrl = "https://fdnd-agency.directus.app/assets/";
 
     return stories.map((story) => {
         const language = languages.find((lang) => lang.id === story.language)?.language || "unknown.svg";
         const storyAudios = story.audio.map((audioId) => {
             const audioData = audios.find((audio) => audio.id === audioId);
             if (audioData) {
-
                 return {
                     id: audioData.id,
                     file: `${assetBaseUrl}${audioData.audio_file}`,
@@ -91,3 +94,42 @@ export function mapStoriesWithDetails(stories, audios, languages) {
         };
     });
 }
+
+export function mapPlaylistsWithDetails(playlists, stories, playlistStories) {
+    const storyMap = new Map(stories.map((story) => [story.id, story]));
+
+    return playlists.map((playlist) => {
+        // Get the related story IDs from the playlist_stories junction table
+        const relatedStoryIds = playlistStories
+            .filter((link) => link.playlist_id === playlist.id)  // Filter by playlist_id
+            .map((link) => link.story_id);  // Get the story_id for each link
+
+        // Get the stories for the playlist based on the related story IDs
+        const playlistStoriesData = relatedStoryIds
+            .map((storyId) => {
+                const story = storyMap.get(storyId);
+                return story;
+            })
+            .filter(Boolean); // Filter out undefined stories
+
+        // Calculate total playtime
+        const totalPlaytime = playlistStoriesData.reduce((sum, story) => {
+            return sum + (story.playtime || 0);
+        }, 0);
+
+
+        // Format the total playtime
+        const formattedPlaytime = totalPlaytime > 0 ? formatPlaytime(totalPlaytime) : "N/A";
+
+        // Log the final enriched playlist
+        const enrichedPlaylist = {
+            ...playlist,
+            image: playlist.image ? `${assetBaseUrl}${playlist.image}` : "unknown.svg",
+            playtime: formattedPlaytime,
+            stories: playlistStoriesData, // Enriched stories
+        };
+
+        return enrichedPlaylist;
+    });
+}
+
