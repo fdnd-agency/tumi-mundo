@@ -51,60 +51,6 @@
 
 
 <style>
-.popup-title {
-    display: flex;
-    align-items: center; /* Items verticaal centreren */
-    justify-content: space-between; /* Zorgt dat de `h2` en `close-div` ruimte verdelen */
-    position: relative; /* Voor betere controle over positionering */
-}
-
-.popup-title h2 {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Centreer de tekst exact horizontaal */
-    font-size: 20px; /* Pas de grootte aan naar wens */
-    margin: 0; /* Verwijder eventuele marges */
-}
-
-.close-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Zorg dat `<img>` en `<label>` verticaal gecentreerd zijn */
-    gap: 5px; /* Zorg voor ruimte tussen de afbeelding en de label */
-    margin-left: auto; /* Verplaats de `close-div` naar de rechterkant */
-}
-
-.close-div img {
-    cursor: pointer; /* Optioneel: maakt het interactief */
-    margin-right: -10px;
-}
-
-.close-div label {
-    cursor: pointer; /* Optioneel: interactief maken van de label */
-    font-size: 14px; /* Pas aan naar wens */
-    color: #333; /* Stijl de tekstkleur indien nodig */
-    margin-right: -10px;
-}
-
-h2{
-    margin: auto;
-}
-
-h2, label{
-    color: black;
-}
-input{
-    padding: 1rem;
-    background-color: #EEEEEE;
-    border: none;
-    border-radius: 100px;
-    margin-bottom: 20px ;
-    font-size: 16px;
-}
-label{
-    margin-bottom: 10px;
-}
 
 * {
     box-sizing: border-box;
@@ -187,6 +133,60 @@ a{
     text-decoration: underline;
     width: 100%;
     text-align: center;
+}
+/* styling for popup heading */
+.popup-title {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    position: relative; 
+}
+
+.popup-title h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+}
+
+.close-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto;
+}
+
+.close-div img {
+    cursor: pointer;
+    margin-right: -10px;
+}
+
+.close-div label {
+    cursor: pointer;
+    font-size: 14px; 
+    color: #333; 
+    margin-right: -10px;
+}
+
+h2{
+    margin: auto;
+}
+
+h2, label{
+    color: black;
+}
+input{
+    padding: 1rem;
+    background-color: #EEEEEE;
+    border: none;
+    border-radius: 100px;
+    margin-bottom: 20px ;
+    font-size: 16px;
+}
+label{
+    margin-bottom: 10px;
 }
 
 /* Styling for popup */
