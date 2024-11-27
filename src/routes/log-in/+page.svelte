@@ -4,33 +4,91 @@
         <p>Your language learning app</p>
 
         <div class="buttons">
-            <button>Log in</button>
+            <label class="popup-button" for="login-popup">Login</label>
             <button>New to Tumi Mundo? Sign up!</button>
-            <a href="/log-in">I dont remember my password/username</a>
+            <a href="/log-in">I don't remember my password/username</a>
         </div>
     </section>
 
+    <div class="popup-container">
+        <!-- Input blijft in de container -->
+        <input type="checkbox" id="login-popup">
+        <div class="popup">
+            <label for="login-popup" class="transparent-label"></label>
+            <div class="popup-inner">
+                <div class="popup-title">
+                    <h2>Log in</h2>
+                    <label for="login-popup" class="popup-close-btn"><img src="/icons/menu-close.svg" height="16px" width="15px">Close</label>
+                </div>
+                <div class="popup-content">
+                    <form action="">
+                        <ul>
+                            <li>
+                                <label for="lname">Email</label>
+                                <input type="text" id="lname" name="lname" placeholder="Your email" aria-label="email">
+                            </li>
+                            <li>
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" placeholder="Password (atleast 8 characters)" aria-label="password">
+                            </li>
+                            <li>
+                                <button type="submit" class="login-popup">Log in</button>
+                            </li>
+                            <li>
+                                <a href="/log-in">I don't remember my password/username</a>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 
-
 <style>
+    .popup-close-btn{
+       writing-mode: vertical-lr;
+    }
+    h2{
+        margin: auto;
+    }
 
-*{
+h2, label{
+    color: black;
+}
+li{
+    /* border: 1px solid red; */
+}
+input{
+    padding: 1rem;
+    background-color: #EEEEEE;
+    border: none;
+    border-radius: 100px;
+    margin-bottom: 20px ;
+    font-size: 16px;
+}
+label{
+    margin-bottom: 10px;
+}
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     list-style: none;
 }
-main, section, .buttons{
+
+main, section, .buttons {
     display: flex;
     flex-direction: column;
 }
-section, .buttons{
+
+section, .buttons {
     align-items: center;
 }
-main{
-    /* background: linear-gradient(to bottom, #3F93B7, #1C5872); */
+
+main {
     background-image: url(log-in-bg.svg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -38,44 +96,162 @@ main{
     height: 100vh;
     width: 100%;
     color: white;
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
 }
-section{
-    flex-grow: 1; /* Zorgt ervoor dat de sectie de resterende ruimte opvult */
+
+section {
+    flex-grow: 1;
     justify-content: start;
 }
-h1{
+
+h1 {
     margin-top: 45%;
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: .5rem;
 }
-p, button{
+
+p, button, label {
     font-size: 16px;
 }
-.buttons{
+
+.buttons {
     margin-top: auto;
     gap: 10px;
     margin-bottom: 60px;
     width: 100%;
 }
-button{
+
+button, .popup-button, .login-popup{
     border: 1px solid white;
     border-radius: 10px;
     padding: .8rem;
     width: 70%;
     background-color: #378DB3;
     color: white;
+    text-align: center;
+    cursor: pointer;
+    display: block;
 }
-button:nth-of-type(2){
+
+button{
     background-color: #F0F0F0;
     color: #535353;
-    padding: .8rem 1rem .8rem 1rem;
+    padding: .8rem 1rem;
 }
-a{
+
+button:hover, .popup-button:hover {
+    background-color: #2a6d91;
+}
+a {
     color: #378EB4;
     text-decoration: underline;
     width: 100%;
     text-align: center;
+}
+/* Styling for popup */
+.popup-container {
+    display: inline-block;
+}
+
+.popup-container .popup {
+    position: fixed;
+    top: 15%;
+    top: 0;
+    width: 100%;
+    height: 150%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: 250ms all;
+}
+
+.popup-container .popup .popup-inner {
+    height: 500px;
+    width: 400px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 20px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 150%;
+    transition: 250ms all;
+}
+
+.popup-container .popup .popup-inner .popup-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.popup-container .popup .popup-inner .popup-title h6 {
+    font-size: 18px;
+    font-weight: 500;
+}
+.popup-title{
+    justify-content: space-between;
+}
+h6{
+    margin: auto ;
+    font-weight: bold;
+}
+
+.popup-container .popup .popup-inner .popup-title .popup-close-btn {
+    cursor: pointer;
+    display: block;
+    line-height: 30px;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #222;
+    border-radius: 3px;
+}
+
+.popup-container .popup .popup-inner .popup-content ul li {
+    margin-bottom: 10px;
+}
+
+.popup-container .popup .popup-inner .popup-content ul li:last-child {
+    margin-bottom: 0;
+}
+
+.popup-container .popup .popup-inner .popup-content ul li input {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    line-height: 34px;
+    padding: 0 15px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.popup-container .popup .popup-inner .popup-content ul li button {
+    width: 100%;
+}
+
+.popup-container .popup .transparent-label {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    cursor: pointer;
+}
+
+.popup-container > input {
+    display: none;
+}
+
+.popup-container > input:checked + .popup {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-container > input:checked + .popup .popup-inner {
+    top: 50%;
 }
 </style>
