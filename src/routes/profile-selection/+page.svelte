@@ -1,28 +1,28 @@
 <main>
     <div class="top-bar">
         <h1>Select account</h1>
-        <a href="" class="edit-button">
+        <a href="/" class="edit-button">
             <img src="/icons/edit-icon.svg" alt="Edit icon" />
             <p>Edit</p>
         </a>
     </div>
     <ul>
         <li>
-            <a href="">
-                <img src="/temp/profile-test.png" alt="Daan">
-                <h3>Daan</h3>
+            <a href="/">
+                <img src="/temp/profile-test.png" alt="Profile avatar of">
+                <h2>Daan</h2>
             </a>
         </li>
         <li>
-            <a href="">
-                <img src="/temp/profile-test2.png" alt="Daan">
-                <h3>Sarah</h3>
+            <a href="/">
+                <img src="/temp/profile-test2.png" alt="Profile avatar of">
+                <h2>Sarah</h2>
             </a>
         </li>
         <li>
-            <a href="">
-                <img src="/icons/add-button.svg" alt="Add profile">
-                <h3>Add profile</h3>
+            <a href="/">
+                <img src="/icons/add-button.svg" alt="Button to add an profile">
+                <h2>Add profile</h2>
             </a>
         </li>
     </ul>
@@ -106,7 +106,7 @@
         margin-bottom: 1em;
     }
 
-    h3 {
+    h2 {
         font-size: 1em;
     }
 </style>
