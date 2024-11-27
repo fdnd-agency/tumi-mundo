@@ -1,6 +1,6 @@
 <script>
 
-import Input from '../../components/input.svelte';
+import Input from '../../components/forms/input.svelte';
 
 </script>
 
