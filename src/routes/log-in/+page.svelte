@@ -32,23 +32,10 @@ import Input from '../../components/input.svelte';
                 <div class="popup-content">
                     <form action="">
                         <ul>
-                            <li>
-                                <Input type="email"/>
-                                <!-- <label for="email">Email</label>
-                                <input type="text" id="email" name="email" placeholder="Your email" aria-label="email"> -->
-                            </li>
-                            <li>
-                                <!-- <label for="password">Password</label>
-                                <input type="password" id="password" name="password" placeholder="Password (atleast 8 characters)" aria-label="password"> -->
-                                <Input type="password"/>
-
-                            </li>
-                            <li>
-                                <button type="submit" class="login-popup">Log in</button>
-                            </li>
-                            <li>
-                                <a href="/">I don't remember my password/username</a>
-                            </li>
+                            <li><Input type="email"/></li>
+                            <li><Input type="password"/></li>
+                            <li><button type="submit" class="login-popup">Log in</button></li>
+                            <li><a href="/">I don't remember my password/username</a></li>
                         </ul>
                     </form>
                 </div>
