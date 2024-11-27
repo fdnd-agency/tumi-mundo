@@ -1,3 +1,9 @@
+<script>
+
+import Input from '../../components/input.svelte';
+
+</script>
+
 <main>
     <section>
         <h1>Tumi Mundo</h1>
@@ -11,7 +17,6 @@
     </section>
 
     <div class="popup-container">
-        <!-- Input blijft in de container -->
         <input type="checkbox" id="login-popup">
         <div class="popup">
             <label for="login-popup" class="transparent-label"></label>
@@ -28,12 +33,15 @@
                     <form action="">
                         <ul>
                             <li>
-                                <label for="email">Email</label>
-                                <input type="text" id="email" name="email" placeholder="Your email" aria-label="email">
+                                <Input type="email"/>
+                                <!-- <label for="email">Email</label>
+                                <input type="text" id="email" name="email" placeholder="Your email" aria-label="email"> -->
                             </li>
                             <li>
-                                <label for="password">Password</label>
-                                <input type="password" id="password" name="password" placeholder="Password (atleast 8 characters)" aria-label="password">
+                                <!-- <label for="password">Password</label>
+                                <input type="password" id="password" name="password" placeholder="Password (atleast 8 characters)" aria-label="password"> -->
+                                <Input type="password"/>
+
                             </li>
                             <li>
                                 <button type="submit" class="login-popup">Log in</button>
@@ -181,9 +189,10 @@ input{
     padding: 1rem;
     background-color: #EEEEEE;
     border: none;
-    border-radius: 100px;
+    border-radius: 30px;
     margin-bottom: 20px ;
     font-size: 16px;
+    height: 3rem;
 }
 label{
     margin-bottom: 10px;

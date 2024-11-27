@@ -1,3 +1,9 @@
+<script>
+
+import Input from '../../components/input.svelte';
+
+</script>
+
 <title>sign-up</title>
 <section>
     <div class="heading">
@@ -6,12 +12,15 @@
     </div>
    
     <form>
-        <label for="fname">Name</label>
-            <input type="text" id="fname" name="fname" placeholder="Your name" aria-label="name">
-        <label for="email">Email</label>
-            <input type="text" id="email" name="email" placeholder="Your email" aria-label="email">
-        <label for="password">Password</label>
-            <input type="text" id="password" name="password" placeholder="Password (atleast 8 characters)" aria-label="password">
+        <!-- <label for="fname">Name</label>
+            <input type="text" id="fname" name="fname" placeholder="Your name" aria-label="name"> -->
+            <Input type="text"/>
+        <!-- <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Your email" aria-label="email"> -->
+            <Input type="email"/>
+        <!-- <label for="password">Password</label>
+            <input type="text" id="password" name="password" placeholder="Password (atleast 8 characters)" aria-label="password"> -->
+            <Input type="password"/>
 
         <article>
             <div>
