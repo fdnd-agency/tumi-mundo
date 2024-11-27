@@ -66,7 +66,7 @@ section, .buttons {
 }
 
 main {
-    background-image: url(log-in-bg.svg);
+    background-image: url(/log-in-bg.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
