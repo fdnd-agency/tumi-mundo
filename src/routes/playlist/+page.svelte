@@ -1,5 +1,5 @@
 <script>
-  import Playlist from '../../components/playlist.svelte';
+  import Playlist from '../../components/layout/playlist.svelte';
 
   /** @type {import('./$types').PageData} */
   export let data;
