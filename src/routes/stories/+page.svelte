@@ -1,5 +1,5 @@
 <script>
-    import Story from '../../components/story.svelte';
+    import Story from '../../components/layout/story.svelte';
 
     /** @type {import('./$types').PageData} */
     export let data;

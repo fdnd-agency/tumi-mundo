@@ -1,6 +1,6 @@
 <script>
-    import Search from '../../components/search.svelte'; // Adjust the path
-    import Continue from '../../components/continue-btn.svelte';
+    import Search from '../../components/forms/search.svelte'; // Adjust the path
+    import Continue from '../../components/forms/continue-btn.svelte';
 
     export let data = {
         languages: [] // Empty languages array
@@ -82,7 +82,7 @@ main{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
-    height: 100%;
+    height: 100vh;
     color: white;
     overflow: hidden;
     font-family: Poppins;

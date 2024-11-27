@@ -87,7 +87,7 @@
                           <picture class="eclipse">
                               <source srcset="/characters/Ellipse131-2.svg?format=avif" type="image/avif">
                               <source srcset="/characters/Ellipse131-2.svg?format=webp">
-                              <img src="h/characters/Ellipse131-2.svg" alt="eclipse" loading="lazy" width="250">
+                              <img src="/characters/Ellipse131-2.svg" alt="eclipse" loading="lazy" width="250">
                           </picture>
                           <picture class="rat">
                               <source srcset="/characters/mouse.svg?format=avif" type="image/avif">
