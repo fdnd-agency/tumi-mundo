@@ -51,15 +51,42 @@
 
 
 <style>
-.close-div{
+.popup-title {
+    display: flex;
+    align-items: center; /* Items verticaal centreren */
+    justify-content: space-between; /* Zorgt dat de `h2` en `close-div` ruimte verdelen */
+    position: relative; /* Voor betere controle over positionering */
+}
+
+.popup-title h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centreer de tekst exact horizontaal */
+    font-size: 20px; /* Pas de grootte aan naar wens */
+    margin: 0; /* Verwijder eventuele marges */
+}
+
+.close-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Zorg dat `<img>` en `<label>` verticaal gecentreerd zijn */
+    gap: 5px; /* Zorg voor ruimte tussen de afbeelding en de label */
+    margin-left: auto; /* Verplaats de `close-div` naar de rechterkant */
 }
-.popup-close-btn{
-    line-height: 1.2;
+
+.close-div img {
+    cursor: pointer; /* Optioneel: maakt het interactief */
+    margin-right: -10px;
 }
+
+.close-div label {
+    cursor: pointer; /* Optioneel: interactief maken van de label */
+    font-size: 14px; /* Pas aan naar wens */
+    color: #333; /* Stijl de tekstkleur indien nodig */
+    margin-right: -10px;
+}
+
 h2{
     margin: auto;
 }
@@ -85,7 +112,9 @@ label{
     padding: 0;
     list-style: none;
 }
-
+section{
+    padding: 0 2rem;
+}
 main, section, .buttons {
     display: flex;
     flex-direction: column;
@@ -134,7 +163,7 @@ button, .popup-button, .login-popup, .sign-up{
     border: 1px solid white;
     border-radius: 10px;
     padding: .8rem;
-    width: 80%;
+    width: 100%;
     background-color: #378DB3;
     color: white;
     text-align: center;

@@ -81,14 +81,14 @@ form {
 
 label{
     font-size: 20px;
-}
+}                                                                                
 p{
     font-size: 16px;
     max-width: 40ch;
 }
 
 input{
-    padding: 20px;
+    padding: 1rem;
     background-color: #EEEEEE;
     border: none;
     border-radius: 10px;
@@ -159,7 +159,7 @@ input:checked + .slider:before {
 .sign-upbtn{
     align-self: center;
     bottom: 0;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 95%;
     background-color: #3D7A95;
     padding: 10px;
