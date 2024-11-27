@@ -8,19 +8,19 @@
     </div>
     <ul>
         <li>
-            <a href="/">
+            <a href="/home">
                 <img src="/temp/profile-test.png" alt="Profile avatar of">
                 <h2>Daan</h2>
             </a>
         </li>
         <li>
-            <a href="/">
+            <a href="/home">
                 <img src="/temp/profile-test2.png" alt="Profile avatar of">
                 <h2>Sarah</h2>
             </a>
         </li>
         <li>
-            <a href="/">
+            <a href="/home">
                 <img src="/icons/add-button.svg" alt="Button to add an profile">
                 <h2>Add profile</h2>
             </a>

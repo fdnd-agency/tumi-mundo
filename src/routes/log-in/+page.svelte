@@ -30,7 +30,7 @@ import Input from '../../components/forms/input.svelte';
                     
                 </div>
                 <div class="popup-content">
-                    <form action="">
+                    <form action="/profile-selection">
                         <ul>
                             <li><Input type="email"/></li>
                             <li><Input type="password"/></li>

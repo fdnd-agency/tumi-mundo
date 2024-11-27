@@ -2,6 +2,14 @@
     /** @type {import('./$types').PageData} */
     export let data;
     
+    import { onMount } from 'svelte';
+    import { goto } from '$app/navigation';
+
+    onMount(() => {
+        goto('/log-in'); // Redirects when the component is mounted
+    });
+
+
 </script>
 
 <section>
@@ -10,7 +18,6 @@
         {#if data.users && data.users.length > 0}
             <ul>
                 {#each data.users as account}
-                {console.log(account)}
                     <li>{account.name}</li>
                     <li>{account.email}</li>
                     <li>{account.profiles}</li>

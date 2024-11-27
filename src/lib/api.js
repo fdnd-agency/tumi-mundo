@@ -139,8 +139,6 @@ export function mapPlaylistsWithDetails(playlists, stories, playlistStories) {
 export function mapUsersWithProfiles(users, profiles, profileUsers) {
     const profileMap = new Map(profiles.map((profile) => [profile.id, profile]));
 
-    console.log(profileUsers)
-
     return users.map((user) => {
         const relatedProfileIds = profileUsers
             .filter((link) => link.user_id === user.id)

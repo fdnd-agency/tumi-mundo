@@ -1,6 +1,6 @@
 <script>
 
-import Input from '../../components/input.svelte';
+import Input from '../../components/forms/input.svelte';
 
 </script>
 
@@ -11,7 +11,7 @@ import Input from '../../components/input.svelte';
         <h1>Sign up</h1> 
     </div>
    
-    <form>
+    <form action="/profile-selection">
             <Input type="text"/>
             <Input type="email"/>
             <Input type="password"/>
