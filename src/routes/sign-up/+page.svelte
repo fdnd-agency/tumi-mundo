@@ -1,17 +1,20 @@
+<script>
+
+import Input from '../../components/input.svelte';
+
+</script>
+
 <title>sign-up</title>
 <section>
     <div class="heading">
-        <a href="/onboarding">back</a>
+        <a href="/onboarding"><img src="/icons/back-button.svg" alt="back button"></a>
         <h1>Sign up</h1> 
     </div>
    
     <form>
-        <label for="fname">Name</label>
-            <input type="text" id="fname" name="fname" placeholder="Your name" aria-label="name">
-        <label for="lname">Email</label>
-            <input type="text" id="lname" name="lname" placeholder="Your email" aria-label="email">
-        <label for="password">Password</label>
-            <input type="text" id="password" name="password" placeholder="Password (atleast 8 characters)" aria-label="password">
+            <Input type="text"/>
+            <Input type="email"/>
+            <Input type="password"/>
 
         <article>
             <div>
@@ -48,32 +51,47 @@ section, form{
     flex-direction: column;
 }
 section {
-    padding: 10px;
+    padding: 20px;
     min-height: 100vh;
 }
 form {
     flex-grow: 1;
 }
-.heading{
+.heading {
     display: flex;
     align-items: center;
-    justify-content: left;
-    width: 100%;
-    margin: 40px 0 40px 0;
+    justify-content: space-between;
+    position: relative; /* Maakt positionering mogelijk binnen de container */
+    height: 80px;
+    margin-bottom: 30px;
+    margin-top: 10px;
 }
-.heading > h1{
-    margin: auto;
+
+.heading h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Plaatst het h1 in het midden van de container */
+    margin: 0; /* Zorgt voor consistentie */
+    font-size: 1.5rem; /* Pas aan naar gewenste grootte */
 }
+
+.heading a {
+    text-decoration: none; /* Optioneel: verwijder onderstreping */
+    margin-left: 0; /* Zorg dat de `a` helemaal links begint */
+    display: flex; /* Zorg dat de img inline blijft met flexbox */
+    align-items: center;
+}
+
 label{
     font-size: 20px;
-}
+}                                                                                
 p{
     font-size: 16px;
     max-width: 40ch;
 }
 
 input{
-    padding: 20px;
+    padding: 1rem;
     background-color: #EEEEEE;
     border: none;
     border-radius: 10px;
@@ -142,9 +160,10 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 .sign-upbtn{
+    align-self: center;
     bottom: 0;
-    border-radius: 5px;
-    width: 100%;
+    border-radius: 10px;
+    width: 95%;
     background-color: #3D7A95;
     padding: 10px;
     text-align: center;
@@ -152,7 +171,7 @@ input:checked + .slider:before {
     color: white;
     text-decoration: none; 
     margin-top: auto;  
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 .click-here{
     color: #599AE7;
