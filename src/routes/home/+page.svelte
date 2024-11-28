@@ -29,6 +29,7 @@ section {
     background-repeat: no-repeat;
     background-position: bottom;
     height: 100vh;
+    height: 100dvh; /* for dynamic viewport height */
     width: 100%;
     display: grid;
     grid-template-columns: auto;

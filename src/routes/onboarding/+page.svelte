@@ -187,6 +187,7 @@ section:nth-of-type(1) {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    height: 100dvh; /* for dynamic viewport height */
     width: 100vw;
 }
 .slide-2{
@@ -276,6 +277,7 @@ button, a:nth-of-type(2) {
   display: flex;
     flex-direction: column;
     height: 100vh;
+    height: 100dvh; /* for dynamic viewport height */
     width: 100vw;
     background-color: var(--main-blue);
     

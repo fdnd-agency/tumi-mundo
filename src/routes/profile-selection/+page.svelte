@@ -36,6 +36,7 @@
         background-repeat: no-repeat;
         background-position: bottom;
         height: 100vh;
+        height: 100dvh; /* for dynamic viewport height */
         color: white;
         margin: auto;
         padding: 1em;

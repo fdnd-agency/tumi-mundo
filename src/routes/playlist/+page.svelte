@@ -17,6 +17,7 @@
   section{
       background-color: purple;
       height: 100vh;
+      height: 100dvh; /* for dynamic viewport height */
   }
 
   ul {

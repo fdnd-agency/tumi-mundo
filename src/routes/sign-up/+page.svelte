@@ -52,7 +52,8 @@ section, form{
 }
 section {
     padding: 20px;
-    min-height: 100vh;
+    height: 100vh;
+    height: 100dvh; /* for dynamic viewport height */
 }
 form {
     flex-grow: 1;
