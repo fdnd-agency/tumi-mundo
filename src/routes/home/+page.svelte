@@ -25,7 +25,7 @@
 <style>
 section {
     background: url('/home-background.png'), linear-gradient(to bottom, #3F93B7, #1C5872);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
     height: 100vh;
