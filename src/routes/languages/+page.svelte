@@ -92,7 +92,11 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    width: 100vw;
+    align-items: center;
     width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
 }
 .navigation > a{
     align-self: start;
