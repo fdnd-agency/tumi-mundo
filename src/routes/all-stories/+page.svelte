@@ -70,8 +70,8 @@
     position: absolute;
     color: white;
     left: 50%;
+    font-size: 1.7rem;
     transform: translateX(-50%);
-    font-size: 20px;
 }
 .heading-back{
     align-self: self-start;
