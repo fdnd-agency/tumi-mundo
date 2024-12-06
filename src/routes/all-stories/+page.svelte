@@ -12,7 +12,8 @@
         <h1>All stories</h1>
     </div>
 
-    <Search/>
+    <!-- <input type="text" placeholder="Search for stories"> -->
+     <Search/>
 
     <ul class="nav-ul">
         <li>
@@ -49,14 +50,21 @@
 
 <style>
 /* styling for header */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .heading{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 1.5rem;
     padding: 1rem;
+    margin-top: 1rem;
+    position: relative; 
 }
 .heading > h1{
     position: absolute;
@@ -69,11 +77,15 @@
     align-self: self-start;
 }
 header {
-    position: fixed;
+    /* position: fixed; */
     z-index: 10;
     width: 100%; 
-    height: 10vh; /* Stel een consistente hoogte in */
-    /* background-color: white;  */
+    height: 100%;
+    padding: 10px;
+    justify-content: space-between; 
+    width: 100%;
+    padding: 10px 20px;
+    background-color: transparent;
 }
 input{
     width: 100%;
@@ -99,19 +111,31 @@ details > summary{
     /* rotate: 90deg; */
 }
 
-
+:root{
+    background-image: linear-gradient(#471871, #142151);
+}
 /* end */
     section {
-        background-image: linear-gradient(#471871, #142151);
+        /* background-color: purple; */
+        /* background-image: linear-gradient(#471871, #142151); */
         padding: 20px;
-        color: white;
-        padding: calc(20px + 20vh) 20px 20px 20px;
+        /* color: white; */
+        /* padding: calc(20px + 30vh) 20px 20px 20px; */
     }
+    section {
+    /* background-image: linear-gradient(#471871, #142151); */
+    padding: 20px;
+    color: white;
+    /* padding-top: calc(30vh + 20px);  */
+}
+
 
     ul {
         list-style: none;
         padding: 0;
         display: flex;
+        align-items: center;
+        justify-content: center;
         flex-wrap: wrap;
         gap: 16px;
     }
