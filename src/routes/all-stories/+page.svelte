@@ -101,7 +101,7 @@ details > summary{
 
 /* end */
     section {
-        background-color: purple;
+        background-image: linear-gradient(#471871, #142151);
         padding: 20px;
         color: white;
         padding: calc(20px + 20vh) 20px 20px 20px;
