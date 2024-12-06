@@ -1,5 +1,6 @@
 <script>
     import Story from '../../components/layout/story.svelte';
+    import Search from '../../components/forms/search.svelte';
 
     /** @type {import('./$types').PageData} */
     export let data;
@@ -11,7 +12,7 @@
         <h1>All stories</h1>
     </div>
 
-    <input type="text" placeholder="Search for stories">
+    <Search/>
 
     <ul class="nav-ul">
         <li>
