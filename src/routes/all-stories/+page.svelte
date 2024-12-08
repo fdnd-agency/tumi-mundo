@@ -4,6 +4,10 @@
 
     /** @type {import('./$types').PageData} */
     export let data;
+
+    console.log(data.languages)
+    // console.log(data.languages);
+
 </script>
 
 <header>
@@ -28,9 +32,11 @@
         </li>
         <li>
             <select name="language" id="language">
-                <option value="language">Language</option>
-                <option value="english">English</option>
+                {#each data.languages as language}
+                <option value="{ language.language }">{ language.language}</option>
+                {/each}
         </li>
+
         <li>
             <select name="sorting" id="sorting">
                 <option value="sorting">Sorting</option>
@@ -38,7 +44,6 @@
         </li>
     </ul>
 </header>
-
 
 <section>
     <ul>

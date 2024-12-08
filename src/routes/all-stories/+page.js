@@ -11,6 +11,7 @@ export async function load({ fetch }) {
 
     return {
         ...data,
-        stories: storiesWithDetails // Stories now include corresponding audios and languages
+        stories: storiesWithDetails, // Stories now include corresponding audios and languages
+        languages: data.languages
     };
 }
