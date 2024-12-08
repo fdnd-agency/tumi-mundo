@@ -17,24 +17,24 @@
 
     <ul class="nav-ul">
         <li>
-            <details>
-                <summary>Animal</summary>Animal
-            </details>
+            <select name="animal" id="animal-select">
+            <option value="animal">Animal</option>
+            <option value="Animal">Dog</option>
         </li>
         <li>
-            <details>
-                <summary>Season</summary>Summer
-            </details>
+            <select name="season" id="season-select">
+                <option value="season">Season</option>
+                <option value="summer">summer</option>
         </li>
         <li>
-            <details>
-                <summary>Language</summary>English
-            </details>
+            <select name="language" id="language">
+                <option value="language">Language</option>
+                <option value="english">English</option>
         </li>
         <li>
-            <details>
-                <summary>Sorting</summary>Length
-            </details>
+            <select name="sorting" id="sorting">
+                <option value="sorting">Sorting</option>
+                <option value="skibidi sigma">skibidi sigma</option>
         </li>
     </ul>
 </header>
@@ -49,13 +49,17 @@
 </section>
 
 <style>
-/* styling for header */
+
+:root{
+    background-image: linear-gradient(#471871, #142151);
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+/* styling for header */
 .heading{
     display: flex;
     justify-content: space-between;
@@ -77,7 +81,6 @@
     align-self: self-start;
 }
 header {
-    /* position: fixed; */
     z-index: 10;
     width: 100%; 
     height: 100%;
@@ -87,61 +90,62 @@ header {
     padding: 10px 20px;
     background-color: transparent;
 }
-input{
-    width: 100%;
-    padding: .5rem;
-    margin-bottom: .75rem;
-}
-.nav-ul{
-    display: grid;
-    color: white;
-    /* justify-content: space-evenly; */
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: .5rem;
-    list-style-type: none;
-}
-.nav-ul > li{
+/* styling for the nav and dropdowns */
+.nav-ul > li {
     background-color: #9264F4;
     font-size: 1em;
     padding: .2rem .3rem;
     border-radius: 5px;
-}
-details > summary{
-    list-style-type: '>';
-    /* rotate: 90deg; */
+    width: 100%;
 }
 
-:root{
-    background-image: linear-gradient(#471871, #142151);
+.nav-ul {
+    margin-top: .3rem;
+    display: grid;
+    color: white;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: .5rem;
+    list-style-type: none;
+    overflow-x: auto;
 }
-/* end */
-    section {
-        /* background-color: purple; */
-        /* background-image: linear-gradient(#471871, #142151); */
-        padding: 20px;
-        /* color: white; */
-        /* padding: calc(20px + 30vh) 20px 20px 20px; */
-    }
-    section {
-    /* background-image: linear-gradient(#471871, #142151); */
+
+select {
+    background-color: transparent;
+    color: white;
+    width: 100%; 
+    overflow-x: auto; 
+    border: none;
+}
+option{
+    color: black;
+}
+option:active{
+    color: black;
+}
+
+section {
     padding: 20px;
     color: white;
-    /* padding-top: calc(30vh + 20px);  */
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
 
-    ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 16px;
-    }
+h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
 
-    h2 {
-        font-size: 24px;
-        margin-bottom: 16px;
-    }
+@media only screen and (min-width: 865px) {
+  .nav-ul {
+    gap: 1rem;
+}
+}
 </style>
