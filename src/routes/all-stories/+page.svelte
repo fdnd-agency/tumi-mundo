@@ -5,8 +5,6 @@
     /** @type {import('./$types').PageData} */
     export let data;
 
-    console.log(data.buddys)
-
 </script>
 
 <header>
@@ -15,16 +13,15 @@
         <h1>All stories</h1>
     </div>
 
-    <!-- <input type="text" placeholder="Search for stories"> -->
      <Search/>
 
     <ul class="nav-ul">
         <li>
             <select name="animal" id="animal-select">
-            <option value="animal">Animal</option>
-            {#each data.buddys as buddy}
-            <option value="{ buddy.animal }">{ buddy.animal }</option>
-            {/each}
+                <option value="animal">Animal</option>
+                    {#each data.buddys as buddy}
+                        <option value="{ buddy.animal }">{ buddy.animal }</option>
+                    {/each}
         </li>
         <li>
             <select name="season" id="season-select">
@@ -34,11 +31,10 @@
         <li>
             <select name="language" id="language">
                 <option  value="languages">Languages</option>
-                {#each data.languages as language}
-                <option value="{ language.language }">{ language.language}</option>
-                {/each}
+                    {#each data.languages as language}
+                        <option value="{ language.language }">{ language.language }</option>
+                    {/each}
         </li>
-
         <li>
             <select name="sorting" id="sorting">
                 <option value="sorting">Sorting</option>
@@ -68,51 +64,58 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
 }
+
 /* styling for header */
-.heading{
+.heading, ul{
     display: flex;
-    justify-content: space-between;
+    
     align-items: center;
+}
+
+select, header, .nav-ul > li{
+    width: 100%;
+}
+
+.heading{
     justify-content: space-between;
     margin-bottom: 1.5rem;
     padding: 1rem;
     margin-top: 1rem;
     position: relative; 
 }
+
 .heading > h1{
     position: absolute;
-    color: white;
     left: 50%;
     font-size: 1.7rem;
     transform: translateX(-50%);
 }
+
 .heading-back{
     align-self: self-start;
 }
+
 header {
     z-index: 10;
-    width: 100%; 
     height: 100%;
-    padding: 10px;
     justify-content: space-between; 
-    width: 100%;
     padding: 10px 20px;
     background-color: transparent;
 }
+
 /* styling for the nav and dropdowns */
 .nav-ul > li {
     background-color: #9264F4;
     font-size: 1em;
     padding: .2rem .3rem;
     border-radius: 5px;
-    width: 100%;
 }
 
 .nav-ul {
     margin-top: .3rem;
     display: grid;
-    color: white;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: .5rem;
     list-style-type: none;
@@ -121,28 +124,21 @@ header {
 
 select {
     background-color: transparent;
-    color: white;
-    width: 100%; 
     overflow-x: auto; 
     border: none;
 }
-option{
-    color: black;
-}
-option:active{
+
+option, option:active{
     color: black;
 }
 
 section {
     padding: 20px;
-    color: white;
 }
 
 ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 16px;
@@ -156,6 +152,6 @@ h2 {
 @media only screen and (min-width: 865px) {
   .nav-ul {
     gap: 1rem;
-}
+ }
 }
 </style>

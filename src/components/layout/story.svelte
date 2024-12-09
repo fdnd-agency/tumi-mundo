@@ -30,7 +30,7 @@
       max-height: 5.3em;
       display: grid;
       grid-template-columns: repeat(6, auto);
-      grid-template-rows: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
       background-color: #fff;
       overflow: hidden;
       padding: 10px;
