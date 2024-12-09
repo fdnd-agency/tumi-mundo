@@ -5,8 +5,7 @@
     /** @type {import('./$types').PageData} */
     export let data;
 
-    console.log(data.languages)
-    // console.log(data.languages);
+    console.log(data.buddys)
 
 </script>
 
@@ -23,15 +22,18 @@
         <li>
             <select name="animal" id="animal-select">
             <option value="animal">Animal</option>
-            <option value="Animal">Dog</option>
+            {#each data.buddys as buddy}
+            <option value="{ buddy.animal }">{ buddy.animal }</option>
+            {/each}
         </li>
         <li>
             <select name="season" id="season-select">
                 <option value="season">Season</option>
-                <option value="summer">summer</option>
+                <option value="summer">Summer</option>
         </li>
         <li>
             <select name="language" id="language">
+                <option  value="languages">Languages</option>
                 {#each data.languages as language}
                 <option value="{ language.language }">{ language.language}</option>
                 {/each}
@@ -40,7 +42,10 @@
         <li>
             <select name="sorting" id="sorting">
                 <option value="sorting">Sorting</option>
-                <option value="skibidi sigma">skibidi sigma</option>
+                <option value="from a to z">From A - Z</option>
+                <option value="from z to a">From Z to A</option>
+                <option value="short to long playtime">Short to long playtime</option>
+                <option value="long to short playtime">Long to short playtime</option>
         </li>
     </ul>
 </header>
