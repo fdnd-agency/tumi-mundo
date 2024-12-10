@@ -33,6 +33,7 @@
             class="search"
             bind:value={searchTerm}
             name="search"
+            aria-label="Search for languages"
         />
     </form>
 </div>
