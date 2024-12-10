@@ -24,7 +24,7 @@
     <section>
         <div class="navigation">
             <a href="/onboarding">
-                <img src="/icons/back-button-2.svg" alt="back-btn" />
+                <img src="/icons/back-button-2.svg" alt="back-btn" height="24" width="14"/>
             </a>
             <h1>We are going to learn!</h1>
         </div>
@@ -56,7 +56,7 @@
                             value="{language.language}"
                         />
                         <label for="language-{language.language}">
-                            <img src="/languages/{language.language}.svg" alt="{language.language}" class="flag-svg">
+                            <img src="/languages/{language.language}.svg" alt="{language.language} flag" class="flag-svg" height="55" width="66">
                             <strong class="language-strong">{language.language}</strong>
                         </label>
                     </li>
@@ -71,7 +71,7 @@
 </main>
 
 <style>
-
+    
     *{
         box-sizing: border-box;
         margin: 0;
@@ -87,7 +87,7 @@
         height: 100dvh; /* for dynamic viewport height */
         color: white;
         overflow: hidden;
-        font-family: Poppins;
+        font-family: Poppins, sans-serif;
     }
     .navigation{
         display: flex;
@@ -98,6 +98,10 @@
     .navigation > a{
         align-self: start;
     }
+    img {
+    aspect-ratio: 3 / 2; /* Breedte: hoogte verhouding */
+    width: 100%;
+    }   
     section{
         display: flex;
         flex-direction: column;
