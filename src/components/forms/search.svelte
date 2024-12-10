@@ -1,41 +1,44 @@
 <script>
-    import { onMount } from "svelte"
-    import { createEventDispatcher } from "svelte"; // https://www.youtube.com/watch?v=ECCAS5BfC7o
-    export let data = []; 
+    import { onMount } from "svelte";
+    import { createEventDispatcher } from "svelte";
+
+    export let data = [];
     export let searchTerm = "";
 
-    // Dispatch events to notify the parent
     const dispatch = createEventDispatcher();
 
-    // Reactive filtered data
+    // Reactive client-side filtered data
     $: filteredData = searchTerm
         ? data.filter(item =>
-            item.name.toLowerCase().includes(searchTerm.toLowerCase())
+            item.language.toLowerCase().includes(searchTerm.toLowerCase())
         )
         : data;
 
-    // Emit filtered data whenever it changes
+    // Emit filtered data to the parent whenever it changes
     $: dispatch("filter", filteredData);
 
-    // Emit the full list on component load
+    // Emit the full dataset on component load
     onMount(() => {
         dispatch("filter", data);
     });
 </script>
 
 <div>
-    <!-- Search Field -->
-    <input
-        type="text"
-        id="searchbar"
-        placeholder="Search..." 
-        class="search"
-        bind:value={searchTerm}
-    /> <!-- Removed "languages" from placeholder so we can re-use this component. -->
+    <!-- Server-side fallback -->
+    <form action="/languages" method="GET">
+        <input
+            type="text"
+            id="searchbar"
+            placeholder="Search..."
+            class="search"
+            bind:value={searchTerm}
+            name="search"
+        />
+    </form>
 </div>
 
 <style>
-/* Add styles for the search field */
+/* Styling remains the same */
 .search {
     background-image: url(/icons/search-icon.svg);
     background-repeat: no-repeat;
@@ -43,9 +46,12 @@
     padding: 13px 30px;
     border-radius: 8px;
     border: none;
-    width: 84%;
+    width: 100%;
+    max-width: 460px;
+    margin: 10px auto;
+    box-sizing: border-box;
 }
-div{
+div {
     width: 100%;
 }
 </style>
