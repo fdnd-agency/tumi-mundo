@@ -23,7 +23,7 @@
     });
 </script>
 
-<div>
+<div class="search-container">
     <!-- Server-side fallback -->
     <form action="/languages" method="GET">
         <input
@@ -38,7 +38,15 @@
 </div>
 
 <style>
-/* Styling remains the same */
+/* Zet de zoekcontainer op een containment context */
+.search-container {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    contain: inline-size;
+}
+
+/* Basisstijl voor de zoekbalk */
 .search {
     background-image: url(/icons/search-icon.svg);
     background-repeat: no-repeat;
@@ -50,8 +58,29 @@
     max-width: 460px;
     margin: 10px auto;
     box-sizing: border-box;
+    font-size: 16px;
+    transition: width 0.3s ease, font-size 0.3s ease;
 }
-div {
-    width: 100%;
+
+@container (max-width: 300px) {
+    .search {
+        width: 40px;
+        padding: 13px;
+        font-size: 0; 
+        background-position: center;
+    }
+}
+
+@media (max-width: 300px) {
+    .search-container {
+        max-width: 300px;
+    }
+    .search {
+        width: 40px;
+        padding: 13px;
+        font-size: 0;
+        background-position: center;
+    }
 }
 </style>
+
