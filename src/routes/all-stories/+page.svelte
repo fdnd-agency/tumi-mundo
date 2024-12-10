@@ -9,34 +9,34 @@
 
 <header>
     <div class="heading">
-        <a href="/stories"><img src="/icons/back-button-2.svg" alt="backbutton" class="heading-back"></a>
+        <a href="/stories"><img src="/icons/back-button-2.svg" alt="backbutton" class="heading-back" height="14px" width="24px"></a>
         <h1>All stories</h1>
     </div>
 
-     <Search/>
+     <!-- <Search/> -->
 
     <ul class="nav-ul">
         <li>
-            <select name="animal" id="animal-select">
+            <select name="animal" id="animal-select" aria-label="Choose an animal">
                 <option value="animal">Animal</option>
                     {#each data.buddys as buddy}
                         <option value="{ buddy.animal }">{ buddy.animal }</option>
                     {/each}
         </li>
         <li>
-            <select name="season" id="season-select">
+            <select name="season" id="season-select" aria-label="Choose a season">
                 <option value="season">Season</option>
                 <option value="summer">Summer</option>
         </li>
         <li>
-            <select name="language" id="language">
+            <select name="language" id="language"aria-label="Choose a language">
                 <option  value="languages">Languages</option>
                     {#each data.languages as language}
                         <option value="{ language.language }">{ language.language }</option>
                     {/each}
         </li>
         <li>
-            <select name="sorting" id="sorting">
+            <select name="sorting" id="sorting"aria-label="Choose a sorting">
                 <option value="sorting">Sorting</option>
                 <option value="from a to z">From A - Z</option>
                 <option value="from z to a">From Z to A</option>
@@ -55,9 +55,16 @@
 </section>
 
 <style>
+@font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/poppins-regular.woff2') format('woff2'),
+         url('/assets/fonts/poppins-regular.woff') format('woff');
+    font-display: swap;
+}
 
 :root{
     background-image: linear-gradient(#471871, #142151);
+    font-family: Poppins, sans-serif;
 }
 
 *{
@@ -107,7 +114,7 @@ header {
 
 /* styling for the nav and dropdowns */
 .nav-ul > li {
-    background-color: #9264F4;
+    background-color: #571899;
     font-size: 1em;
     padding: .2rem .3rem;
     border-radius: 5px;
