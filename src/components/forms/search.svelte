@@ -56,6 +56,13 @@
     border-radius: 8px;
     border: none;
     width: 100%;
+    max-width: 500px; /* Optionele maximale breedte */
+    margin: 10px auto; /* Centraal uitlijnen */
+    box-sizing: border-box; /* Zorg ervoor dat padding en border in de breedte worden meegenomen */
+}
+  
+div{
+    width: 100%;
     max-width: 460px;
     margin: 10px auto;
     box-sizing: border-box;
