@@ -70,7 +70,7 @@ main {
     background-repeat: no-repeat;
     background-position: bottom;
     height: 100vh;
-    height: 100dvh; /* for dynamic viewport height */
+    height: 100vh; /* for dynamic viewport height */
     width: 100%;
     color: white;
     font-family: Poppins, sans-serif;
