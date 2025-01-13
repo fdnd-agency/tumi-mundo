@@ -14,6 +14,7 @@
 
 <style>
 
+
 dialog{
     border: none;
     border-radius: .75rem;
