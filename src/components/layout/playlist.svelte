@@ -1,6 +1,53 @@
 <script>
+  import { onMount } from 'svelte';
+  import { fetchApi } from '$lib/fetchApi';
+
   export let playlist;
   const { image, title, playtime } = playlist;
+
+  let isLiked = false;
+  let existingLikeId = null; // Store the ID of the existing like for the playlist
+
+  const profileId = 121; // Example profile ID
+
+  // Fetch like status for the current playlist
+  onMount(async () => {
+    try {
+      const likes = await fetchApi(`/tm_likes?filter[playlist][_eq]=${playlist.id}&filter[profile][_eq]=${profileId}`);
+      
+      if (likes && likes.length > 0) {
+        isLiked = true;
+        existingLikeId = likes[0].id; // Store the existing like ID
+      }
+    } catch (error) {
+      console.error('Error fetching like status:', error);
+    }
+  });
+
+  // Toggle like status
+  async function toggleLike() {
+    const endpoint = isLiked ? `/tm_likes/${existingLikeId}` : '/tm_likes';
+    const method = isLiked ? 'DELETE' : 'POST';
+    const data = isLiked ? null : { playlist: playlist.id, profile: profileId };
+
+    try {
+      await fetchApi(endpoint, method, data);
+      isLiked = !isLiked; // Toggle the like state
+
+      if (isLiked) {
+        // If liked, fetch the new like's ID
+        const likes = await fetchApi(`/tm_likes?filter[playlist][_eq]=${playlist.id}&filter[profile][_eq]=${profileId}`);
+        if (likes && likes.length > 0) {
+          existingLikeId = likes[0].id; // Update the like ID
+        }
+      } else {
+        // If unliked, clear the existing like ID
+        existingLikeId = null;
+      }
+    } catch (error) {
+      console.error('Failed to toggle like:', error);
+    }
+  }
 </script>
 
 <article>
@@ -16,9 +63,12 @@
     <p>{playtime}</p>
   </div>
   <div class="playlist-icons flex-items">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M11.6536 7.15238C11.8471 7.33832 12.1529 7.33832 12.3464 7.15238C13.1829 6.34871 14.326 5.75 15.6 5.75C18.1489 5.75 20.25 7.64769 20.25 10.0298C20.25 11.7261 19.4577 13.1809 18.348 14.428C17.2397 15.6736 15.7972 16.7316 14.4588 17.6376L12.1401 19.207C12.0555 19.2643 11.9445 19.2643 11.8599 19.207L9.54125 17.6376C8.20278 16.7316 6.76035 15.6736 5.65201 14.428C4.54225 13.1809 3.75 11.7261 3.75 10.0298C3.75 7.64769 5.85106 5.75 8.4 5.75C9.67403 5.75 10.8171 6.34871 11.6536 7.15238Z" stroke="#C4C4C4" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>            
+    <button on:click={toggleLike}>
+      {isLiked ? 'Unlike' : 'Like'}
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.6536 7.15238C11.8471 7.33832 12.1529 7.33832 12.3464 7.15238C13.1829 6.34871 14.326 5.75 15.6 5.75C18.1489 5.75 20.25 7.64769 20.25 10.0298C20.25 11.7261 19.4577 13.1809 18.348 14.428C17.2397 15.6736 15.7972 16.7316 14.4588 17.6376L12.1401 19.207C12.0555 19.2643 11.9445 19.2643 11.8599 19.207L9.54125 17.6376C8.20278 16.7316 6.76035 15.6736 5.65201 14.428C4.54225 13.1809 3.75 11.7261 3.75 10.0298C3.75 7.64769 5.85106 5.75 8.4 5.75C9.67403 5.75 10.8171 6.34871 11.6536 7.15238Z" stroke="#C4C4C4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
   </div>
 </article>
 
@@ -92,7 +142,17 @@
     fill: #3A54DE;
   }
 
-  .playlist-icons svg:hover, .playlist-icons svg:hover path{
+  .playlist-icons button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+
+  .playlist-icons button svg:hover, .playlist-icons button svg:hover path{
     fill: #F33232;
     stroke: #F33232;
   }
