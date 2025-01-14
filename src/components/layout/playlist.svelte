@@ -37,7 +37,9 @@
   <div class="playlist-image flex-items">
     <img src="{image}" alt="">
   </div>
+
   <h3 class="playlist-title">{title}</h3>
+
   <div class="playlist-playtime flex-items">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="12" cy="12" r="12" fill="#F3A22A"/>
@@ -45,6 +47,7 @@
     </svg>      
     <p>{playtime}</p>
   </div>
+  
   <div class="playlist-icons flex-items">
     <form action="/like" method="POST" on:submit|preventDefault={toggleLike}>
     {#if isLiked}
