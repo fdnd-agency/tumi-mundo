@@ -50,6 +50,53 @@
 
 </section>
 
+<section class="own-playlist">
+    <h2>Liked playlists</h2>
+    <ul>
+        <li class="playlist-1">
+            <img src="/temp/temp-story.svg" class="story-img">
+            <h3>The octopus who was very hungry</h3>
+            <small><img src="/icons/playlist-playtime.svg" alt="Icon for playtime" height="17.59" width="17.59"><a href="all-stories">31 min. 55 sec</a></small>
+        </li>
+        <li class="playlist-1">
+            <img src="/temp/temp-story.svg" class="story-img">
+            <h3>The octopus who was very hungry</h3>
+            <small><img src="/icons/playlist-playtime.svg" alt="Icon for playtime" height="17.59" width="17.59"><a href="all-stories">31 min. 55 sec</a></small>
+        </li>
+    </ul>
+</section>
+
+<section class="own-playlist suggested-playlist">
+    <h2>Suggested playlists</h2>
+    <ul>
+        <li class="playlist-1">
+            <img src="/temp/temp-story.svg" class="story-img">
+            <h3>The octopus who was very hungry</h3>
+            <small>
+                <img src="/icons/playlist-playtime.svg" alt="Icon for playtime" height="17.59" width="17.59">
+                <a href="all-stories">31 min. 55 sec</a>
+            </small>
+        </li>
+        <li class="playlist-1">
+            <img src="/temp/temp-story.svg" class="story-img">
+            <h3>The octopus who was very hungry</h3>
+            <small>
+                <img src="/icons/playlist-playtime.svg" alt="Icon for playtime" height="17.59" width="17.59">
+                <a href="all-stories">31 min. 55 sec</a>
+            </small>
+        </li>
+        <li class="playlist-1">
+            <img src="/temp/temp-story.svg" class="story-img">
+            <h3>The octopus who was very hungry</h3>
+            <small>
+                <img src="/icons/playlist-playtime.svg" alt="Icon for playtime" height="17.59" width="17.59">
+                <a href="all-stories">31 min. 55 sec</a>
+            </small>
+        </li>
+    </ul>
+</section>
+
+
 </main>
 
 <style>
@@ -95,6 +142,7 @@ h2{
     display: flex;
     gap: 10px;
     margin-bottom: 5dvh;
+    overflow-x: auto;
 }
 .own-playlist > ul > li{
     height: 12.5rem;
@@ -128,7 +176,7 @@ h2{
 }
 
 main{
-    height: 100dvh;
+    height: 100%;
     color: white;
     background-image: linear-gradient(#471871, #142151);
     display: flex;
@@ -148,5 +196,20 @@ small img {
     height: 2em;
     width: 2em;
 }
+
+/*  */
+
+.suggested-playlist > ul {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 1rem; 
+    scroll-snap-type: x mandatory; 
+}
+.suggested-playlist > ul > li {
+    flex: 0 0 auto;
+    scroll-snap-align: center; 
+}
+
 
 </style>
