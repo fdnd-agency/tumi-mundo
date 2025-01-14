@@ -65,12 +65,12 @@ section, .buttons {
 }
 
 main {
-    background-image: url(/log-in-bg.svg);
-    background-size: contain;
+    background: url(/log-in-bg.svg), linear-gradient(to bottom, #3F93B7, #1C5872);
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
     height: 100vh;
-    height: 100vh; /* for dynamic viewport height */
+    height: 100dvh; /* for dynamic viewport height */
     width: 100%;
     color: white;
     font-family: Poppins, sans-serif;
@@ -82,7 +82,7 @@ section {
 }
 
 h1 {
-    margin-top: 45%;
+    margin-top: 10rem;
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: .5rem;
@@ -104,7 +104,7 @@ button, .popup-button, .login-popup, .sign-up{
     border: 1px solid white;
     border-radius: 10px;
     padding: .8rem;
-    width: 100%;
+    max-width: 20rem;
     background-color: #378DB3;
     color: white;
     text-align: center;
@@ -126,7 +126,7 @@ button:hover, .popup-button:hover {
 a{
     color: #378EB4;
     text-decoration: underline;
-    width: 100%;
+    max-width: 22rem;
     text-align: center;
 }
 /* styling for popup heading */
@@ -183,6 +183,7 @@ input{
 }
 label{
     margin-bottom: 10px;
+    max-width: 20rem;
 }
 
 /* Styling for popup */
