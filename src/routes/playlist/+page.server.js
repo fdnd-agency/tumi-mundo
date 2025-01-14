@@ -3,7 +3,7 @@ import { fetchAllData, mapPlaylistsWithDetails } from '$lib/api';
 import { fetchApi } from '$lib/fetchApi';
 
 export async function load({ locals }) {
-    const profileId = 121; // Replace with dynamic logic if necessary
+    const profileId = 122; //PROFILE ID BECAUSE WE DIDN'T CONNECT EVERYTHING TO DATA YET
     const data = await fetchAllData();
 
     const enrichedPlaylists = await Promise.all(
@@ -11,8 +11,8 @@ export async function load({ locals }) {
             const likes = await fetchApi(`/tm_likes?filter[playlist][_eq]=${playlist.id}&filter[profile][_eq]=${profileId}`);
             return {
                 ...playlist,
-                isLiked: likes?.length > 0, // Check if liked
-                likeId: likes?.[0]?.id || null, // Store like ID
+                isLiked: likes?.length > 0,
+                likeId: likes?.[0]?.id || null,
             };
         })
     );

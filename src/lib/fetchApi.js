@@ -1,5 +1,8 @@
+// Credits to the original Tumi mundo project. https://github.com/briannededeugd/tumimundo/tree/main
+import { PUBLIC_APIURL } from '$env/static/public';
+
 export async function fetchApi(path, method = 'GET', data = null) {
-  const url = `https://fdnd-agency.directus.app/items${path}`;
+  const url = `${PUBLIC_APIURL}/items${path}`;
 
   const options = {
       method,
@@ -22,7 +25,6 @@ export async function fetchApi(path, method = 'GET', data = null) {
       }
 
       if (response.ok) {
-          console.log('Success:', result);
           return result?.data || null; // Return the data if available
       } else {
           console.error('Error:', result);

@@ -3,27 +3,25 @@
 
   /** @type {import('./$types').PageData} */
   export let data;
-
-  console.log(data.playlists); // Should show `isLiked` and `likeId` for each playlist
 </script>
 
-<section>
+<main>
   <h2>Playlists</h2>
-  <ul>
+  <section class="playlist-list">
     {#each data.playlists as playlist}
       <Playlist {playlist} />
     {/each}
-  </ul>
-</section>
+  </section>
+</main>
 
 <style>
-  section {
+  main {
     background-color: purple;
     height: 100vh;
     height: 100dvh; /* for dynamic viewport height */
   }
 
-  ul {
+  section.playlist-list {
     display: flex;
     gap: 20px;
     overflow: scroll;
