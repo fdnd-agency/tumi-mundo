@@ -1,6 +1,60 @@
 <script>
+    import Input from '../../components/forms/input.svelte';
+    import { userState } from '$lib/account';
+    import { goto } from '$app/navigation';
+    import { fetchApi } from '$lib/fetchApi';
+  
+    let email = '';
+    let password = '';
+    let errorMessage = '';
+  
+    async function handleLogin(event) {
+  event.preventDefault();
 
-import Input from '../../components/forms/input.svelte';
+  // Validate inputs
+  if (!email || !password) {
+    errorMessage = 'Please fill out both fields.';
+    return;
+  }
+
+  console.log('Email:', email, 'Password:', password);
+
+  try {
+    // Fetch all user data
+    const response = await fetchApi('/tm_users', 'GET');
+
+    // Log the fetched response to inspect its structure
+    console.log('Fetched response:', response);
+
+    // Check if response and data are valid
+    if (response && Array.isArray(response)) {
+      const users = response;
+
+      console.log('Fetched users:', users);
+
+      // Match email and password
+      const user = users.find((user) => user.email === email && user.password === password);
+
+      console.log('Matched user:', user);
+
+      if (user) {
+        // Update the global user state
+        userState.set({ userId: user.id, profileId: null});
+
+        // Redirect to the profile-selection page
+        await goto('/profile-selection');
+      } else {
+        errorMessage = 'Invalid email or password.';
+      }
+    } else {
+      errorMessage = 'Account not found or incorrect data format.';
+    }
+  } catch (error) {
+    errorMessage = 'An unexpected error occurred. Please try again.';
+    console.error('Login failed:', error);
+  }
+}
+
 
 </script>
 
@@ -29,11 +83,14 @@ import Input from '../../components/forms/input.svelte';
                     </div>
                 </div>
                 <div class="popup-content">
-                    <form action="/profile-selection">
+                    <form on:submit|preventDefault={handleLogin}>
                         <ul>
-                            <li><Input type="email"/></li>
-                            <li><Input type="password"/></li>
+                            <li><Input type="email" placeholder="Email" bind:value={email}/></li>
+                            <li><Input type="password" placeholder="Password" bind:value={password}/></li>
                             <li><button type="submit" class="login-popup">Log in</button></li>
+                            {#if errorMessage}
+                            <li class="error-message">{errorMessage}</li>
+                            {/if}
                             <li><a href="/">I don't remember my password/username</a></li>
                         </ul>
                     </form>
@@ -279,5 +336,12 @@ label{
 
 .popup-container > input:checked + .popup .popup-inner {
     top: 50%;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
 }
 </style>

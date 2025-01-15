@@ -1,3 +1,9 @@
+<script>
+    import { userState } from '$lib/account';
+
+    console.log(userState);
+</script>
+
 <main>
     <div class="top-bar">
         <h1>Select account</h1>
