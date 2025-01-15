@@ -53,13 +53,13 @@
     </ul>
 
     <nav>
-        <button>left</button>
+        <button><img src="/icons/carousel-left-button.svg"></button>
             <ul>
                 <li><input type="radio"></li>
                 <li><input type="radio"></li>
                 <li><input type="radio"></li>
             </ul>
-        <button>right</button>
+        <button><img src="/icons/carousel-right-button.svg"></button>
     </nav>
 
 </section>
@@ -120,15 +120,32 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 nav{
     display: flex;
+    margin-top: 1em;
+    align-items: center;
+    justify-content: center;
 }
 nav > ul{
     display: flex;
-    margin: 1em 1.5em;
+    margin: 0 1.5em;
 }
-
+nav > button{
+    border: none;
+    border-radius: .5em;
+    padding:  1em;
+    height: 2em;
+    width: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9264F4;
+}
+nav > button > img{
+    height: 1.5em;
+}
 /*  */
 /* styling for all stories page */
 .language-filter{
@@ -278,6 +295,12 @@ small img {
 .suggested-playlist > ul > li {
     flex: 0 0 auto;
     scroll-snap-align: center; 
+}
+
+@media only screen and (min-width: 600px) {
+    main{
+    align-items: center;
+}
 }
 
 

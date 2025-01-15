@@ -104,7 +104,7 @@ button, .popup-button, .login-popup, .sign-up{
     border: 1px solid white;
     border-radius: 10px;
     padding: .8rem;
-    max-width: 20rem;
+    max-width: 17rem;
     background-color: #378DB3;
     color: white;
     text-align: center;
@@ -112,7 +112,9 @@ button, .popup-button, .login-popup, .sign-up{
     margin: auto;
     display: block;
 }
-
+.popup-button{
+    width: 100%;
+}
 button, .sign-up{
     text-decoration: none;
     background-color: #F0F0F0;
