@@ -3,12 +3,17 @@
     import Story from '../../components/layout/story.svelte';
     import Playlist from '../../components/layout/playlist.svelte';
 
+    import Menu2 from '../../components/core/menu2.svelte';
+
+    let currentPage = "lessons";
+
     /** @type {import('./$types').PageData} */
     export let data;
 
 </script>
 
 <main>
+<Menu2 {currentPage}/>
 
 <header>
     <h1>Lessons</h1>
