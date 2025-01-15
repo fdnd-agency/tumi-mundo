@@ -57,10 +57,10 @@
                             <img src="h/characters/Ellipse131.svg" alt="eclipse" loading="lazy" width="250">
                         </picture>
                         <picture class="rat">
-                            <source srcset="/characters/mouse.svg?format=avif" type="image/avif">
-                            <source srcset="/characters/mouse.svg?format=webp">
+                            <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
+                            <source srcset="/characters/Rat.svg?format=webp">
                             <!-- svelte-ignore a11y-img-redundant-alt -->
-                            <img src="/characters/mouse.svg" alt="rat image" height="250">
+                            <img src="/characters/Rat.svg" alt="rat image" height="250">
                         </picture>
                     </div>
 
@@ -90,10 +90,10 @@
                               <img src="/characters/Ellipse131-2.svg" alt="eclipse" loading="lazy" width="250">
                           </picture>
                           <picture class="rat">
-                              <source srcset="/characters/mouse.svg?format=avif" type="image/avif">
-                              <source srcset="/characters/mouse.svg?format=webp">
+                              <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
+                              <source srcset="/characters/Rat.svg?format=webp">
                               <!-- svelte-ignore a11y-img-redundant-alt -->
-                              <img src="/characters/mouse.svg" alt="rat image" height="250">
+                              <img src="/characters/Rat.svg" alt="rat image" height="250">
                           </picture>
                       </div>
 
@@ -123,10 +123,10 @@
                             <img src="h/characters/Ellipse131-3.svg" alt="eclipse" loading="lazy" width="250">
                         </picture>
                         <picture class="rat">
-                            <source srcset="/characters/mouse.svg?format=avif" type="image/avif">
-                            <source srcset="/characters/mouse.svg?format=webp">
+                            <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
+                            <source srcset="/characters/Rat.svg?format=webp">
                             <!-- svelte-ignore a11y-img-redundant-alt -->
-                            <img src="/characters/mouse.svg" alt="rat image" height="250">
+                            <img src="/characters/Rat.svg" alt="rat image" height="250">
                         </picture>
                     </div>
 

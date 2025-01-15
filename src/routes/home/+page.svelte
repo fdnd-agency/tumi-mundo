@@ -3,6 +3,8 @@
 
     import Menu2 from '../../components/core/menu2.svelte';
 
+    import Popup from '../../components/layout/popup.svelte';
+
     let currentPage = "home";
 </script>
 
@@ -16,13 +18,15 @@
             <p>Of your 5-minute goal</p>
         </div>
     </article>
+
     <article>
-        <img src="/characters/rat.svg" alt="Rat character"/>
+        <Popup/>  
+        <img src="/characters/Rat.svg" alt="Rat character"/>
     </article>
-    <!-- <Menu/> -->
 </section>
 
 <style>
+
 section {
     background: url('/home-background.png'), linear-gradient(to bottom, #3F93B7, #1C5872);
     background-size: cover;
@@ -45,7 +49,9 @@ article:first-of-type {
 }
 
 article:nth-of-type(2) { 
-    grid-area: 3 / 1 / 4 / 2; 
+    /* grid-area: 3 / 1 / 4 / 2;  */
+    display: flex;
+    flex-direction: column;
 }
 
 article {
@@ -56,7 +62,7 @@ article {
 }
 
 article:first-of-type img {
-    max-width: 290px;
+    width: 30vh;
 }
 
 .progress-text {

@@ -122,7 +122,7 @@ export function mapPlaylistsWithDetails(playlists, stories, playlistStories) {
 
 
         // Format the total playtime
-        const formattedPlaytime = totalPlaytime > 0 ? formatPlaytime(totalPlaytime) : "N/A";
+        const formattedPlaytime = totalPlaytime > 0 ? formatPlaytime(totalPlaytime) : "0 min 0 sec";
 
         // Log the final enriched playlist
         const enrichedPlaylist = {
