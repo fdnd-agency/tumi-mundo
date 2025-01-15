@@ -35,7 +35,7 @@ button{
     flex-direction: column;
     background-color: white;
     color: black;
-    height: 5em;
+    height: 5.3em;
     width: 14em;
     border-radius: .75rem;
     padding: .5rem;
@@ -52,9 +52,10 @@ form{
 .popup > a{
     background-color: #954BE2;
     color: white;
-    width: 95%;
+    width: 100%;
     border-radius: 5px;
     text-align: center;
+    /* margin-bottom: 1em; */
 }
 
 .popup > a:hover{
