@@ -5,24 +5,25 @@
   export let data;
 </script>
 
-<section>
+<main>
   <h2>Playlists</h2>
-  <ul>
-      {#each data.playlists as playlist}
-          <Playlist {playlist} />
-      {/each}
-  </ul>
-</section>
+  <section class="playlist-list">
+    {#each data.playlists as playlist}
+      <Playlist {playlist} />
+    {/each}
+  </section>
+</main>
+
 <style>
-  section{
-      background-color: purple;
-      height: 100vh;
-      height: 100dvh; /* for dynamic viewport height */
+  main {
+    background-color: purple;
+    height: 100vh;
+    height: 100dvh; /* for dynamic viewport height */
   }
 
-  ul {
-      display: flex;
-      gap: 20px;
-      overflow: scroll;
+  section.playlist-list {
+    display: flex;
+    gap: 20px;
+    overflow: scroll;
   }
 </style>

@@ -21,9 +21,8 @@
 
     <article>
         <Popup/>  
-        <img src="/characters/rat.svg" alt="Rat character"/>
+        <img src="/characters/Rat.svg" alt="Rat character"/>
     </article>
-    <!-- <Menu/> -->
 </section>
 
 <style>
@@ -63,7 +62,7 @@ article {
 }
 
 article:first-of-type img {
-    max-width: 290px;
+    width: 30vh;
 }
 
 .progress-text {
