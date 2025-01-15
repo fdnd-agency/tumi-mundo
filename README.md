@@ -11,15 +11,13 @@ Een innovatieve aanpak om taalontwikkeling bij kinderen te ondersteunen door mid
 3. [Screenshots](#screenshots)
 4. [Live Link](#live-link)
 5. [Installatiehandleiding](#installatiehandleiding)
-6. [Instructies](#instructies)
-7. [CMS Uitleg](#cms-uitleg)
-8. [Huisstijl](#huisstijl)
-9. [Bijdragen](#bijdragen)
-10. [Hints voor volgende teams](#hints-voor-volgende-teams)
-11. [Gebruikte Bronnen](#gebruikte-bronnen)
-12. [Badges](#badges)
-13. [Link naar Projectboard](#link-naar-projectboard)
-14. [Licentie](#licentie)
+6. [Huisstijl](#huisstijl)
+7. [Bijdragen](#bijdragen)
+8. [Hints voor volgende teams](#hints-voor-volgende-teams)
+9. [Gebruikte Bronnen](#gebruikte-bronnen)
+10. [Badges](#badges)
+11. [Link naar Projectboard](#link-naar-projectboard)
+12. [Licentie](#licentie)
 
 ## Introductie
 
@@ -64,22 +62,6 @@ npm install
 npm start
 ```
 
-## Instructies
-
-De applicatie is ontworpen om eenvoudig te gebruiken te zijn door ouders en onderzoekers. Enkele functies:
-
-- **Taalverhalen afspelen**: Navigeer naar het verhaaloverzicht en selecteer een verhaal.
-- **Aandachtstestjes uitvoeren**: Start een test via het menu "Testjes".
-- **Data analyseren**: Onderzoekers kunnen data exporteren via het beheerderspaneel.
-
-## CMS Uitleg
-
-Het Content Management Systeem (CMS) is eenvoudig te gebruiken:
-
-1. Log in op het CMS via `/admin`.
-2. Voeg nieuwe taalverhalen of tests toe via de respectieve secties.
-3. Bewerk bestaande content door op "Wijzigen" te klikken.
-
 ## Huisstijl
 
 De huisstijlrichtlijnen zijn beschikbaar in het Figma-bestand:
@@ -100,12 +82,15 @@ Contributies aan dit project zijn welkom! Volg deze stappen om bij te dragen:
 
 - Zorg voor duidelijke documentatie bij nieuwe functies.
 - Test nieuwe features grondig op verschillende apparaten.
-- Overweeg automatische tests toe te voegen voor kritieke functionaliteiten.
 
 ## Gebruikte Bronnen
 
 - [Figma](https://www.figma.com/)
 - [Svelte docs](https://svelte.dev/)
+- [Svelte view transitions](https://svelte.dev/blog/view-transitions)
+- [Github/Briannededeugd](https://github.com/briannededeugd/tumimundo/)
+- [Vercel](https://vercel.com/)
+- [Chatgpt](https://chat.openai.com)
 
 ## Badges
 
