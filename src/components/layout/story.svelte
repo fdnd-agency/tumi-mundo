@@ -1,7 +1,7 @@
 <script>
   export let story;
 
-  const { image, title, summary, playtime, language } = story;
+  const { image, title, summary, playtime, language, audios } = story;
   
   // SELECT THE FIRST AUDIO FILE, EX: NO SPEAKER PROFILE SELECTED
   const firstAudio = audios?.[0]?.file || null;

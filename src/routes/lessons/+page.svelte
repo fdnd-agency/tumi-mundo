@@ -1,6 +1,7 @@
 
 <script>
     import Story from '../../components/layout/story.svelte';
+    import Playlist from '../../components/layout/playlist.svelte';
 
     /** @type {import('./$types').PageData} */
     export let data;
@@ -23,7 +24,12 @@
         <li class="playlist-1">
             <img src="/temp/temp-story.svg" class="story-img">
             <h3>The octopus who was very hungry</h3>
-            <small><img src="/icons/playlist-playtime.svg" alt="Icon for playtime" height="17.59" width="17.59"><a href="all-stories">31 min. 55 sec</a></small>
+            <small>    
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="12" fill="#F3A22A"/>
+                    <path d="M17.0874 13.0613C17.7817 12.5241 17.7817 11.4759 17.0874 10.9387C14.9891 9.31508 12.6461 8.03537 10.146 7.14743L9.68929 6.98522C8.8155 6.67488 7.89254 7.26607 7.77425 8.16805C7.44374 10.6882 7.44374 13.3118 7.77425 15.8319C7.89254 16.7339 8.8155 17.3251 9.68929 17.0148L10.146 16.8526C12.6461 15.9646 14.9891 14.6849 17.0874 13.0613Z" fill="white"/>
+                </svg><a href="all-stories">31 min. 55 sec
+            </a></small>
         </li>
         <li class="create-playlist">
             <img src="/icons/create-playlist.svg">
@@ -46,11 +52,11 @@
         <a href="/all-stories">Show all</a>
     </nav>
 
-    <ul>
+    <section class="story-list">
         {#each data.stories as story}
             <Story {story} />
         {/each}
-    </ul>
+    </section>
 
     <nav>
         <button><img src="/icons/carousel-left-button.svg"></button>
@@ -66,48 +72,20 @@
 
 <section class="own-playlist">
     <h2>Liked playlists</h2>
-    <ul>
-        <li class="playlist-1">
-            <img src="/temp/temp-story.svg" class="story-img">
-            <h3>The octopus who was very hungry</h3>
-            <small><img src="/icons/playlist-playtime.svg" alt="Icon for playtime" height="17.59" width="17.59"><a href="all-stories">31 min. 55 sec</a></small>
-        </li>
-        <li class="playlist-1">
-            <img src="/temp/temp-story.svg" class="story-img">
-            <h3>The octopus who was very hungry</h3>
-            <small><img src="/icons/playlist-playtime.svg" alt="Icon for playtime" height="17.59" width="17.59"><a href="all-stories">31 min. 55 sec</a></small>
-        </li>
-    </ul>
+    <section class="playlist-list">
+      {#each data.playlists.filter(playlist => playlist.isLiked) as playlist}
+        <Playlist {playlist} />
+      {/each}
+    </section>
 </section>
 
 <section class="own-playlist suggested-playlist">
     <h2>Suggested playlists</h2>
-    <ul>
-        <li class="playlist-1">
-            <img src="/temp/temp-story.svg" class="story-img">
-            <h3>The octopus who was very hungry</h3>
-            <small>
-                <img src="/icons/playlist-playtime.svg" alt="Icon for playtime" height="17.59" width="17.59">
-                <a href="all-stories">31 min. 55 sec</a>
-            </small>
-        </li>
-        <li class="playlist-1">
-            <img src="/temp/temp-story.svg" class="story-img">
-            <h3>The octopus who was very hungry</h3>
-            <small>
-                <img src="/icons/playlist-playtime.svg" alt="Icon for playtime" height="17.59" width="17.59">
-                <a href="all-stories">31 min. 55 sec</a>
-            </small>
-        </li>
-        <li class="playlist-1">
-            <img src="/temp/temp-story.svg" class="story-img">
-            <h3>The octopus who was very hungry</h3>
-            <small>
-                <img src="/icons/playlist-playtime.svg" alt="Icon for playtime" height="17.59" width="17.59">
-                <a href="all-stories">31 min. 55 sec</a>
-            </small>
-        </li>
-    </ul>
+    <section class="playlist-list">
+        {#each data.playlists.filter(playlist => !playlist.isLiked) as playlist}
+            <Playlist {playlist} />
+        {/each}
+    </section>
 </section>
 
 
@@ -285,14 +263,15 @@ small img {
 
 /*  styling for suggested playlist page*/
 
-.suggested-playlist > ul {
+section.playlist-list {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 20px;
     overflow-x: auto;
     padding-bottom: 1rem; 
     scroll-snap-type: x mandatory; 
 }
-.suggested-playlist > ul > li {
+section.playlist-list > article {
     flex: 0 0 auto;
     scroll-snap-align: center; 
 }
