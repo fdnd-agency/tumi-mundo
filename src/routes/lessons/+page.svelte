@@ -33,20 +33,34 @@
     </ul>
 </section>
 
-<section>
+<section class="all-stories">
     <h2>All stories</h2>
-    <div>
-        <input type="checkbox">
-        <input type="checkbox">
+    <nav class="language-filter">
+
+        <input type="checkbox" id="checkbox-nl">
+        <label for="checkbox-nl"><img src="/languages/Dutch.svg">Dutch</label>
+    
+        <input type="checkbox" id="checkbox-en">
+        <label for="checkbox-en"><img src="/languages/English.svg">English</label>
 
         <a href="/all-stories">Show all</a>
-    </div>
+    </nav>
 
     <ul>
         {#each data.stories as story}
-            <!-- <Story {story} /> -->
+            <Story {story} />
         {/each}
     </ul>
+
+    <nav>
+        <button>left</button>
+            <ul>
+                <li><input type="radio"></li>
+                <li><input type="radio"></li>
+                <li><input type="radio"></li>
+            </ul>
+        <button>right</button>
+    </nav>
 
 </section>
 
@@ -100,6 +114,62 @@
 </main>
 
 <style>
+
+/* styling for all stories & carousel nav */
+.all-stories{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav{
+    display: flex;
+}
+nav > ul{
+    display: flex;
+    margin: 1em 1.5em;
+}
+
+/*  */
+/* styling for all stories page */
+.language-filter{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    width: 100%;
+}
+.language-filter > a{
+    margin-left: auto;
+}
+.language-filter > a:hover{
+    text-decoration: underline;
+}
+label{
+    display: flex;
+    align-items: center;
+    padding: .3em;
+    padding-right: .5em;
+    background-color: #998DB2;
+    color: black;
+    border-radius: .5em;
+}
+label:nth-of-type(1){
+    margin-right: 1em;
+}
+input[type=checkbox]{
+    opacity: 0;
+    position: absolute;
+}
+input[type=checkbox]:checked + label{
+    background-color: white;
+    font-weight: bold;
+}
+label > img{
+    height: 1.5em;
+    width: auto;
+    margin-right: 0.5em;
+}
+
+/*  */
 h1{
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -141,7 +211,6 @@ h2{
 .own-playlist > ul{
     display: flex;
     gap: 10px;
-    margin-bottom: 5dvh;
     overflow-x: auto;
 }
 .own-playlist > ul > li{
@@ -197,7 +266,7 @@ small img {
     width: 2em;
 }
 
-/*  */
+/*  styling for suggested playlist page*/
 
 .suggested-playlist > ul {
     display: flex;
