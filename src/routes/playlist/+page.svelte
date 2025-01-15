@@ -12,6 +12,14 @@
       <Playlist {playlist} />
     {/each}
   </section>
+
+  <!-- Gelikde playlists -->
+  <h2>Liked playlists</h2>
+  <section class="playlist-list">
+    {#each data.playlists.filter(playlist => playlist.isLiked) as playlist}
+      <Playlist {playlist} />
+    {/each}
+  </section>
 </main>
 
 <style>
