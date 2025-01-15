@@ -55,7 +55,7 @@ Volg deze stappen om de applicatie lokaal te installeren:
 
 ```bash
 # Clone de repository
-git clone https://github.com/fdnd-agency/tumi-mundo.git
+git clone https://github.com/Jesse-Kramer/tumi-mundo.git
 
 # Installeer afhankelijkheden
 npm install
