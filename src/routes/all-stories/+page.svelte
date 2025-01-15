@@ -9,7 +9,7 @@
 
 <header>
     <div class="heading">
-        <a href="/stories"><img src="/icons/back-button-2.svg" alt="backbutton" class="heading-back" height="14px" width="24px"></a>
+        <a href="/lessons"><img src="/icons/back-button-2.svg" alt="backbutton" class="heading-back" height="14px" width="24px"></a>
         <h1>All stories</h1>
     </div>
 
