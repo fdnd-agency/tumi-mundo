@@ -1,61 +1,33 @@
 <script>
+    export let data;
+
     import Input from '../../components/forms/input.svelte';
     import { userState } from '$lib/account';
     import { goto } from '$app/navigation';
-    import { fetchApi } from '$lib/fetchApi';
-  
+
+    let users = data.users;
     let email = '';
     let password = '';
     let errorMessage = '';
-  
+
     async function handleLogin(event) {
-  event.preventDefault();
+        event.preventDefault();
 
-  // Validate inputs
-  if (!email || !password) {
-    errorMessage = 'Please fill out both fields.';
-    return;
-  }
+        if (!email || !password) {
+            errorMessage = 'Please fill out both fields.';
+            return;
+        }
 
-  console.log('Email:', email, 'Password:', password);
+        const user = users.find((user) => user.email === email && user.password === password);
 
-  try {
-    // Fetch all user data
-    const response = await fetchApi('/tm_users', 'GET');
-
-    // Log the fetched response to inspect its structure
-    console.log('Fetched response:', response);
-
-    // Check if response and data are valid
-    if (response && Array.isArray(response)) {
-      const users = response;
-
-      console.log('Fetched users:', users);
-
-      // Match email and password
-      const user = users.find((user) => user.email === email && user.password === password);
-
-      console.log('Matched user:', user);
-
-      if (user) {
-        // Update the global user state
-        userState.set({ userId: user.id, profileId: null});
-
-        // Redirect to the profile-selection page
-        await goto('/profile-selection');
-      } else {
-        errorMessage = 'Invalid email or password.';
-      }
-    } else {
-      errorMessage = 'Account not found or incorrect data format.';
+        if (user) {
+            userState.set({ userId: user.id, profileId: null });
+            
+            await goto('/profile-selection');
+        } else {
+            errorMessage = 'Invalid email or password.';
+        }
     }
-  } catch (error) {
-    errorMessage = 'An unexpected error occurred. Please try again.';
-    console.error('Login failed:', error);
-  }
-}
-
-
 </script>
 
 <main>
