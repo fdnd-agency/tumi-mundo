@@ -27,7 +27,7 @@
     <h2>Own playlists</h2>
     <ul>
         <li class="playlist-1">
-            <img src="/temp/temp-story.svg" class="story-img">
+            <img src="/temp/temp-story.svg" class="story-img" alt="story image">
             <h3>The octopus who was very hungry</h3>
             <small>    
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +37,7 @@
             </a></small>
         </li>
         <li class="create-playlist">
-            <img src="/icons/create-playlist.svg">
+            <img src="/icons/create-playlist.svg" alt="create playlist">
             <h3>Make a playlist !</h3>
             <small><a href="/create-playlist">Add your favorite stories in one playlist</a></small>
         </li>
@@ -48,11 +48,13 @@
     <h2>All stories</h2>
     <nav class="language-filter">
 
+        <label for="checkbox-nl"><img src="/languages/Dutch.svg" alt="dutch">Dutch</label>
         <input type="checkbox" id="checkbox-nl">
-        <label for="checkbox-nl"><img src="/languages/Dutch.svg">Dutch</label>
+        <!-- <label for="checkbox-nl"><img src="/languages/Dutch.svg">Dutch</label> -->
     
+        <label for="checkbox-en"><img src="/languages/English.svg" alt="english">English</label>
         <input type="checkbox" id="checkbox-en">
-        <label for="checkbox-en"><img src="/languages/English.svg">English</label>
+        <!-- <label for="checkbox-en"><img src="/languages/English.svg">English</label> -->
 
         <a href="/all-stories">Show all</a>
     </nav>
@@ -64,16 +66,17 @@
     </section>
 
     <nav>
-        <button><img src="/icons/carousel-left-button.svg"></button>
+        <button aria-label="Previous"><img src="/icons/carousel-left-button.svg" alt="left button"></button>
             <ul>
-                <li><input type="radio"></li>
-                <li><input type="radio"></li>
-                <li><input type="radio"></li>
+                <li><input type="radio" aria-label="nav-button"></li>
+                <li><input type="radio"aria-label="nav-button"></li>
+                <li><input type="radio"aria-label="nav-button"></li>
             </ul>
-        <button><img src="/icons/carousel-right-button.svg"></button>
+        <button aria-label="Next"><img src="/icons/carousel-right-button.svg" alt="right button"></button>
     </nav>
 
 </section>
+  
 
 <section class="own-playlist">
     <h2>Liked playlists</h2>
@@ -97,13 +100,25 @@
 </main>
 
 <style>
-
+input[type=radio]{
+    height: 1.2em;
+    width: 1.2em;
+    margin: .5em;
+    padding: 1em;
+}
+.story-list{
+    margin: 1em;
+}
 /* styling for all stories & carousel nav */
 .all-stories{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.all-stories > h2{
+    align-self: start;
+    margin: 0;
 }
 nav{
     display: flex;
@@ -134,7 +149,7 @@ nav > button > img{
 .language-filter{
     display: flex;
     align-items: center;
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
     width: 100%;
 }
 .language-filter > a{
@@ -176,15 +191,13 @@ h1{
 }
 h2{
     font-size: 1.3em;
+    margin-bottom: .75rem;
 }
 header{
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-h2{
-    margin-bottom: .75rem;
 }
 .create-playlist, .playlist-1{
     display: flex;
@@ -281,11 +294,32 @@ section.playlist-list > article {
     scroll-snap-align: center; 
 }
 
+/*  */
+body {
+  overflow-x: hidden; /* Verberg horizontale scroll voor de hele pagina */
+  margin: 0; /* Verwijder eventuele marges */
+  padding: 0; /* Verwijder eventuele paddings */
+  box-sizing: border-box; /* Zorg dat alle elementen inclusief borders worden gemeten */
+}
+.story-list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(3, auto);
+  gap: .5em;
+  overflow-x: auto; /* Horizontale scroll op deze container */
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0;
+  width: 100%; /* Zorg dat deze container niet breder is dan de viewport */
+  box-sizing: border-box;
+}
+
 @media only screen and (min-width: 600px) {
     main{
     align-items: center;
 }
+    .story-list{
+        grid-template-rows: repeat(4, auto);
+    }
 }
-
 
 </style>

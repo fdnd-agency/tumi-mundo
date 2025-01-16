@@ -64,7 +64,7 @@
   }
 
   article {
-    width: 23em;
+    width: 20em;
     height: 4.5em;
 
     display: grid;
@@ -76,6 +76,7 @@
     padding: var(--small-space);
     border-radius: 4px;
     color: black;
+    scroll-snap-align: center;
   }
 
   /* More specificity */
@@ -135,5 +136,9 @@
   .story-icons svg:hover circle {
     stroke: #000;
   }
-
+  @media only screen and (min-width: 412px) {
+    article{
+    width: 23em;
+}
+}
 </style>
