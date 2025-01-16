@@ -22,28 +22,27 @@
 
 <main>
     <section>
-        <div class="navigation">
-            <a href="/onboarding">
-                <img src="/icons/back-button-2.svg" alt="back-btn" height="24" width="14"/>
+        <nav class="navigation">
+            <a href="/onboarding" aria-label="Go back to onboarding">
+                <img src="/icons/back-button-2.svg" alt="back button" height="24" width="14"/>
             </a>
             <h1>We are going to learn!</h1>
-        </div>
+        </nav>
 
         <p>
             Now it is time to pick the language(s) your child will learn.
             You can pick a <strong>maximum of 3</strong> languages.
         </p>
 
-        <!-- Zoekcomponent -->
+        <!-- Search component -->
         <Search
             data={data.languages}
             bind:searchTerm
             on:filter={handleFilter} 
         />
 
-        <div class="lijntje"></div>
+        <hr class="line" />
 
-        <!-- Gefilterde talen weergeven -->
         {#if filteredLanguages.length > 0}
             <ul>
                 {#each filteredLanguages as language}
@@ -71,116 +70,134 @@
 </main>
 
 <style>
-    
-    *{
+    :root {
+        font-size: 16px;
+    }
+
+    * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
         list-style: none;
     }
-    main{
+
+    main {
         background: linear-gradient(to bottom, #3F93B7, #1C5872);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: bottom;
         height: 100vh;
-        height: 100dvh; /* for dynamic viewport height */
+        height: 100dvh;
         color: white;
         overflow: hidden;
         font-family: Poppins, sans-serif;
     }
-    .navigation{
+
+    .navigation {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         width: 100%;
     }
-    .navigation > a{
+
+    .navigation > a {
         align-self: start;
     }
+
     img {
-    aspect-ratio: 3 / 2; /* Breedte: hoogte verhouding */
-    width: 100%;
-    }   
-    section{
+        aspect-ratio: 3 / 2;
+        width: 100%;
+    }
+
+    section {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 20px;
+        margin: 1.25em;
         position: relative;
     }
-    h1{
-        margin-bottom: 16px;
+
+    h1 {
+        margin-bottom: 1em;
     }
-    h1, p, input{
+
+    h1, p, input {
         width: 100%;
     }
-    ul{
+
+    ul {
         width: 100%;
         height: 70vh;
         display: flex;
         flex-direction: column;
         overflow-y: scroll;
     }
-    h1,p{
+
+    h1, p {
         text-align: center;
     }
-    p{
-        margin-bottom: 40px;
+
+    p {
+        margin-bottom: 2.5em;
     }
-    .lijntje{
-        margin-top: 10px;
-        margin-bottom: 10px;
-        border-radius: 2px;
+
+    .line {
+        margin-top: 0.625em;
+        margin-bottom: 0.625em;
+        border-radius: 0.125em;
         background-color: #9AC0D1;
-        height: 5px;
+        height: 0.3125em;
         width: 100%;
     }
-    .radio{
+
+    .radio {
         width: 100%;
     }
-    /* input for languages */
-    input[type="checkbox"]:not(:checked), 
+
+    input[type="checkbox"]:not(:checked),
     input[type="checkbox"]:checked {
         position: absolute;
         left: -9999%;
     }
+
     input[type="checkbox"] + label {
         display: inline-block;
         color: black;
         background-color: white;
         list-style: none;
         align-self: self-end;
-        margin-bottom: 2px;
-        padding: 5px;
+        margin-bottom: 0.125em;
+        padding: 0.3125em;
         width: 100%;
-        border-radius: 10px;
+        border-radius: 0.625em;
     }
+
     input[type="checkbox"]:checked + label {
         color: white;
         background-color: #1A188A;
     }
+
     label {
-        position: relative; 
-        display: inline-block; 
-        height: 60px;
-        width: 100%; 
+        position: relative;
+        display: inline-block;
+        height: 3.75em;
+        width: 100%;
     }
+
     .flag-svg {
         position: absolute;
         top: 50%;
-        left: 5px; 
-        transform: translateY(-50%); 
-        width: 55px; 
+        left: 0.3125em;
+        transform: translateY(-50%);
+        width: 3.4375em;
         height: 100%;
     }
-    
-    .language-strong{
+
+    .language-strong {
         position: absolute;
         top: 50%;
-        left: 65px;
+        left: 4.0625em;
         transform: translateY(-50%);
     }
-    
-    </style>
+</style>
