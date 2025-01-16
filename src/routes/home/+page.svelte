@@ -2,19 +2,27 @@
     import Menu2 from '../../components/core/menu2.svelte';
     import Popup from '../../components/layout/popup.svelte';
     import { userState } from '$lib/account';
+    import { goto } from '$app/navigation';
+    import { onMount } from 'svelte';
+
+    onMount(() => {
+        if (!profileId) {
+            goto('/log-in');
+        }
+    });
 
     export let data;
 
-    let userId = $userState.userId;
     let profileId = $userState.profileId;
 
     let profiles = data.profiles;
 
     let selectedProfile = profiles.find(profile => profile.id === profileId);
 
-    let popupTitle = `Goodmorning ${selectedProfile.name_of_child},`;
+    let popupTitle = selectedProfile ? `Goodmorning ${selectedProfile.name_of_child},` : "Goodmorning,";
 
     let currentPage = "home";
+
 </script>
 
 <section>
