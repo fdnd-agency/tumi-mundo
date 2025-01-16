@@ -160,3 +160,15 @@ export function mapUsersWithProfiles(users, profiles, profileUsers) {
         return enrichedUser;
     })
 }
+
+export function ProfilesWithImages(profiles) {
+
+    return profiles.map((profile) => {
+
+        profile.avatar = profile.avatar ? `${assetBaseUrl}${profile.avatar}` : "unknown.svg";
+
+        return {
+            ...profile
+        };
+    });
+}

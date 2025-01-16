@@ -4,7 +4,6 @@ export async function load({ locals }) {
     const data = await fetchAllData();
 
     return {
-        ...data,
-        users: data.users
+        ...data
     };
 }

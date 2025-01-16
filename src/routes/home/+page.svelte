@@ -4,8 +4,15 @@
     import Menu2 from '../../components/core/menu2.svelte';
 
     import Popup from '../../components/layout/popup.svelte';
+    import { userState } from '$lib/account';
+
+    let userId = $userState.userId;  // Get the userId from the store
+    let profileId = $userState.profileId;  // Get the userId from the store
+
+    console.log("profileId:", profileId, "UserId:", userId)
 
     let currentPage = "home";
+
 </script>
 
 <section>
