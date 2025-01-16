@@ -1,18 +1,20 @@
 <script>
-    import Menu from '../../components/core/menu.svelte';
-
     import Menu2 from '../../components/core/menu2.svelte';
-
     import Popup from '../../components/layout/popup.svelte';
     import { userState } from '$lib/account';
 
-    let userId = $userState.userId;  // Get the userId from the store
-    let profileId = $userState.profileId;  // Get the userId from the store
+    export let data;
 
-    console.log("profileId:", profileId, "UserId:", userId)
+    let userId = $userState.userId;
+    let profileId = $userState.profileId;
+
+    let profiles = data.profiles;
+
+    let selectedProfile = profiles.find(profile => profile.id === profileId);
+
+    let popupTitle = `Goodmorning ${selectedProfile.name_of_child},`;
 
     let currentPage = "home";
-
 </script>
 
 <section>
@@ -27,7 +29,7 @@
     </article>
 
     <article>
-        <Popup/>  
+        <Popup title={popupTitle} />
         <img src="/characters/Rat.svg" alt="Rat character"/>
     </article>
 </section>

@@ -1,16 +1,20 @@
-  <dialog open>
-    <div class="popup">
-      <div class="heading-close">
-        <p>Goodmorning,</p>
-        <form method="dialog">
-          <button><img src="/icons/popup-close.svg" alt="close-button"></button>
-        </form>
-      </div>
-        <p class="popup-message">Shall we start with a story?</p> 
-        <a href="/lessons">Let's do it!</a>
-    </div>
-  </dialog>
+<script>
+  export let title = "Goodmorning,"; // Default message
+  export let message = "Shall we start with a story?"; // Default message
+</script>
 
+<dialog open>
+  <div class="popup">
+      <div class="heading-close">
+          <p>{title}</p>
+          <form method="dialog">
+              <button><img src="/icons/popup-close.svg" alt="close-button"></button>
+          </form>
+      </div>
+      <p class="popup-message">{message}</p> <!-- Use the dynamic message -->
+      <a href="/lessons">Let's do it!</a>
+  </div>
+</dialog>
 
 <style>
 
