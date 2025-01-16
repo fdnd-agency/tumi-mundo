@@ -74,6 +74,7 @@
     </nav>
 
 </section>
+  
 
 <section class="own-playlist">
     <h2>Liked playlists</h2>
@@ -97,13 +98,19 @@
 </main>
 
 <style>
-
+.story-list{
+    margin: 1em;
+}
 /* styling for all stories & carousel nav */
 .all-stories{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.all-stories > h2{
+    align-self: start;
+    margin: 0;
 }
 nav{
     display: flex;
@@ -134,7 +141,7 @@ nav > button > img{
 .language-filter{
     display: flex;
     align-items: center;
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
     width: 100%;
 }
 .language-filter > a{
@@ -176,15 +183,13 @@ h1{
 }
 h2{
     font-size: 1.3em;
+    margin-bottom: .75rem;
 }
 header{
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-h2{
-    margin-bottom: .75rem;
 }
 .create-playlist, .playlist-1{
     display: flex;
@@ -286,6 +291,23 @@ section.playlist-list > article {
     align-items: center;
 }
 }
-
+/*  */
+body {
+  overflow-x: hidden; /* Verberg horizontale scroll voor de hele pagina */
+  margin: 0; /* Verwijder eventuele marges */
+  padding: 0; /* Verwijder eventuele paddings */
+  box-sizing: border-box; /* Zorg dat alle elementen inclusief borders worden gemeten */
+}
+.story-list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(3, auto);
+  gap: .5em;
+  overflow-x: auto; /* Horizontale scroll op deze container */
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0;
+  width: 100%; /* Zorg dat deze container niet breder is dan de viewport */
+  box-sizing: border-box;
+}
 
 </style>
