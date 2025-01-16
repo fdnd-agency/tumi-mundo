@@ -165,7 +165,7 @@ export function ProfilesWithImages(profiles) {
 
     return profiles.map((profile) => {
 
-        profile.avatar = profile.avatar ? `${assetBaseUrl}${profile.avatar}` : "unknown.svg";
+        profile.avatar = profile.avatar ? `${assetBaseUrl}${profile.avatar}` : "profile-avatar.png";
 
         return {
             ...profile

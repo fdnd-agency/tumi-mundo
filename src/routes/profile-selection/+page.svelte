@@ -24,26 +24,29 @@
     }
 
     async function handleProfileSelection(profileId) {
-        userState.set({ profileId: profileId });
+        userState.update(state => ({
+            ...state,
+            profileId: profileId
+        }));
         await goto('/home');
     }
 </script>
 
 <main>
-    <div class="top-bar">
+    <section class="top-bar">
         <h1>Select account</h1>
-        <a href="/" class="edit-button">
+        <button class="edit-button">
             <img src="/icons/edit-icon.svg" alt="Edit icon" />
             <p>Edit</p>
-        </a>
-    </div>
+        <button>
+    </section>
     <ul>
         {#each filteredProfiles as profile}
             <li>
-                <a href="#" on:click={() => handleProfileSelection(profile.id)}>
+                <button on:click={() => handleProfileSelection(profile.id)}>
                     <img src="{profile.avatar}" alt="Profile avatar of {profile.name_of_child}" />
                     <h2>{profile.name_of_child}</h2>
-                </a>
+                </button>
             </li>
         {/each}
         <li>
@@ -74,85 +77,114 @@
 </main>
 
 <style>
-    /* Background styling */
-    main {
-        background: linear-gradient(to bottom, #3A9ECA, #2B627A);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        height: 100vh;
-        height: 100dvh; /* for dynamic viewport height */
-        color: white;
-        margin: auto;
-        padding: 1em;
-        padding-top: 3em;
-    }
+:root {
+    --color-primary: #3A9ECA;
+    --color-secondary: #2B627A;
+    --color-text: white;
 
-    /* Top bar styling */
-    .top-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 0 1em;
-    }
+    --font-size-base: 1em;
+    --font-size-h1: 1.5em;
+    --font-size-h2: 1em;
+    --font-size-edit: 0.9em;
 
-    .top-bar h1 {
-        flex-grow: 1;
-        text-align: center;
-        font-size: 1.5em;
-    }
+    --padding-small: 0.2em;
+    --padding-medium: 1em;
+    --padding-large: 3em;
 
-    .edit-button {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 0.2em;
-    }
+    --gap-small: 0.2em;
+    --gap-medium: 0.5em;
+    --gap-large: 5em;
 
-    .edit-button img {
-        width: 1.5em;
-        height: 1.5em;
-    }
+    --button-size: 6.5em;
+    --icon-size: 1.5em;
 
-    .edit-button p {
-        font-size: 0.9em;
-        margin: 0;
-    }
+    --border-radius: 50%;
+}
 
-    /* Profiles styling */
-    ul {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        grid-row-gap: 5em;
-        list-style: none;
-        padding: 0;
-        margin: 2em 0;
-    }
+main {
+    background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 100vh;
+    height: 100dvh; /* for dynamic viewport height */
+    color: var(--color-text);
+    margin: auto;
+    padding: var(--padding-medium);
+    padding-top: var(--padding-large);
+}
 
-    li {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 0.5em;
-    }
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 var(--padding-medium);
+}
 
-    li a img {
-        width: 6.5em;
-        height: 6.5em;
-        border-radius: 50%;
-    }
+.top-bar h1 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: var(--font-size-h1);
+}
 
-    /* General styling */
+.edit-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--gap-small);
+}
 
-    h1 {
-        font-size: 1.25em;
-        text-align: center;
-        margin-bottom: 1em;
-    }
+.edit-button img {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
 
-    h2 {
-        font-size: 1em;
-    }
-</style>
+.edit-button p {
+    font-size: var(--font-size-edit);
+    margin: 0;
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-row-gap: var(--gap-large);
+    list-style: none;
+    padding: 0;
+    margin: var(--padding-large) 0;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--gap-medium);
+}
+
+li button img {
+    width: var(--button-size);
+    height: var(--button-size);
+    border-radius: var(--border-radius);
+}
+
+h1 {
+    font-size: 1.25em;
+    text-align: center;
+    margin-bottom: var(--padding-medium);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+</style>    
