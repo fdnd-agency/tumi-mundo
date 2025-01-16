@@ -76,6 +76,7 @@
     padding: var(--small-space);
     border-radius: 4px;
     color: black;
+    scroll-snap-align: center;
   }
 
   /* More specificity */
