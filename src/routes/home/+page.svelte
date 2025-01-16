@@ -27,19 +27,26 @@
 
 <style>
 
+:root {
+    --image-width: 30em;
+    --text-font-size-large: 2.25em;
+    --text-font-size-small: 0.625em;
+    --max-image-width: 18.125em;
+}
+
 section {
     background: url('/home-background.png'), linear-gradient(to bottom, #3F93B7, #1C5872);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
     height: 100vh;
-    height: 100dvh; /* for dynamic viewport height */
+    height: 100dvh; 
     width: 100%;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: repeat(3, auto);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-column-gap: 0em;
+    grid-row-gap: 0em;
 }
 
 article:first-of-type { 
@@ -49,7 +56,6 @@ article:first-of-type {
 }
 
 article:nth-of-type(2) { 
-    /* grid-area: 3 / 1 / 4 / 2;  */
     display: flex;
     flex-direction: column;
 }
@@ -61,8 +67,15 @@ article {
     color: white;
 }
 
+article img {
+    max-width: var(--max-image-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 article:first-of-type img {
-    width: 30vh;
+    width: var(--image-width);
 }
 
 .progress-text {
@@ -71,19 +84,12 @@ article:first-of-type img {
     transform: translateY(20%);
 }
 
-article:first-of-type h1{
-    font-size: 36px;
+article:first-of-type h1 {
+    font-size: var(--text-font-size-large);
     font-weight: 400;
 }
 
-article:first-of-type p:nth-of-type(2){
-    font-size: 10px;
-} 
-
-article img {
-    max-width: 290px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+article:first-of-type p:nth-of-type(2) {
+    font-size: var(--text-font-size-small);
 }
 </style>
