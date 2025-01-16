@@ -35,15 +35,16 @@ button{
 }
 
 .popup{
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    color: black;
-    height: 5.3em;
-    width: 14em;
-    border-radius: .75rem;
-    padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  height: 5.3em;
+  width: 14em;
+  border-radius: .75rem;
+  padding: .5rem;
 }
+
 .heading-close{
   width: 100%;
   display: flex;
@@ -54,16 +55,16 @@ form{
 }
 
 .popup > a{
-    background-color: #954BE2;
-    color: white;
-    width: 100%;
-    border-radius: 5px;
-    text-align: center;
-    /* margin-bottom: 1em; */
+  background-color: #954BE2;
+  color: white;
+  width: 100%;
+  border-radius: 5px;
+  text-align: center;
+  /* margin-bottom: 1em; */
 }
 
 .popup > a:hover{
-    background-color: #6619ba;
+  background-color: #6619ba;
 }
 
 .popup-message{
@@ -71,15 +72,15 @@ form{
 }
 
 .popup::after{
-    content: '';
-    position: absolute;
-    width: 1.5rem;
-    height: 1.58rem;
-    background-color: white;
-    bottom: -10%;
-    right: 20%;
-    border-radius: 1rem 0;
-    z-index: -1;
+  content: '';
+  position: absolute;
+  width: 1.5rem;
+  height: 1.58rem;
+  background-color: white;
+  bottom: -10%;
+  right: 20%;
+  border-radius: 1rem 0;
+  z-index: -1;
 }
 
 @media only screen and (min-width: 388px) {
