@@ -286,11 +286,6 @@ section.playlist-list > article {
     scroll-snap-align: center; 
 }
 
-@media only screen and (min-width: 600px) {
-    main{
-    align-items: center;
-}
-}
 /*  */
 body {
   overflow-x: hidden; /* Verberg horizontale scroll voor de hele pagina */
@@ -308,6 +303,15 @@ body {
   padding: 1rem 0;
   width: 100%; /* Zorg dat deze container niet breder is dan de viewport */
   box-sizing: border-box;
+}
+
+@media only screen and (min-width: 600px) {
+    main{
+    align-items: center;
+}
+    .story-list{
+        grid-template-rows: repeat(4, auto);
+    }
 }
 
 </style>
