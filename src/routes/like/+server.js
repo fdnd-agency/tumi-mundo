@@ -9,6 +9,7 @@ export async function POST({ request }) {
     switch (method) {
       case 'DELETE': {
         const likeId = formData.get('likeId');
+
         if (!likeId) {
           return new Response(JSON.stringify({ error: 'Missing likeId' }), { status: 400 });
         }
@@ -17,6 +18,7 @@ export async function POST({ request }) {
         await fetchApi(`/tm_likes/${likeId}`, 'DELETE');
         break;
       }
+
       case 'POST': {
         const playlistId = formData.get('playlistId');
         const profileId = formData.get('profileId');
@@ -30,6 +32,7 @@ export async function POST({ request }) {
           playlist: playlistId,
           profile: parseInt(profileId, 10),
         });
+        
         break;
       }
       default:
