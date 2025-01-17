@@ -10,6 +10,18 @@
     /** @type {import('./$types').PageData} */
     export let data;
 
+    import { onMount } from 'svelte';
+
+    let storyList;
+
+    function scrollCarousel(direction) {
+        const scrollAmount = storyList.clientWidth; 
+        storyList.scrollBy({
+            left: direction * scrollAmount,
+            behavior: 'smooth',
+        });
+    }
+
 </script>
 
 <main>
@@ -46,37 +58,39 @@
 
 <section class="all-stories">
     <h2>All stories</h2>
-    <nav class="language-filter">
 
+    <nav class="language-filter">
+        
         <label for="checkbox-nl"><img src="/languages/Dutch.svg" alt="dutch">Dutch</label>
         <input type="checkbox" id="checkbox-nl">
-        <!-- <label for="checkbox-nl"><img src="/languages/Dutch.svg">Dutch</label> -->
-    
+        
         <label for="checkbox-en"><img src="/languages/English.svg" alt="english">English</label>
         <input type="checkbox" id="checkbox-en">
-        <!-- <label for="checkbox-en"><img src="/languages/English.svg">English</label> -->
-
+    
         <a href="/all-stories">Show all</a>
     </nav>
 
-    <section class="story-list">
+    <section bind:this={storyList} class="story-list">
         {#each data.stories as story}
             <Story {story} />
         {/each}
     </section>
 
-    <nav>
-        <button aria-label="Previous"><img src="/icons/carousel-left-button.svg" alt="left button"></button>
-            <ul>
-                <li><input type="radio" aria-label="nav-button"></li>
-                <li><input type="radio"aria-label="nav-button"></li>
-                <li><input type="radio"aria-label="nav-button"></li>
-            </ul>
-        <button aria-label="Next"><img src="/icons/carousel-right-button.svg" alt="right button"></button>
+    <nav class="carousel-nav">
+        <button aria-label="Previous" on:click={() => scrollCarousel(-1)}>
+            <img src="/icons/carousel-left-button.svg" alt="Previous">
+        </button>
+        <ul>
+            <li><input type="radio" aria-label="nav-button"></li>
+            <li><input type="radio" aria-label="nav-button"></li>
+            <li><input type="radio" aria-label="nav-button"></li>
+        </ul>
+        <button aria-label="Next" on:click={() => scrollCarousel(1)}>
+            <img src="/icons/carousel-right-button.svg" alt="Next">
+        </button>
     </nav>
-
 </section>
-  
+
 
 <section class="own-playlist">
     <h2>Liked playlists</h2>
@@ -144,12 +158,10 @@ nav > button{
 nav > button > img{
     height: 1.5em;
 }
-/*  */
 /* styling for all stories page */
 .language-filter{
     display: flex;
     align-items: center;
-    /* margin-bottom: 1em; */
     width: 100%;
 }
 .language-filter > a{
@@ -321,5 +333,4 @@ body {
         grid-template-rows: repeat(4, auto);
     }
 }
-
 </style>
