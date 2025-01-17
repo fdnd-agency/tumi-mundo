@@ -28,7 +28,7 @@
     }
 
 
-    // Maak indicators clickable
+    // Make indicators clickable
     indicators.forEach(indicator => {
       indicator.addEventListener('click', function () {
         const targetSlide = Number(this.dataset.slide);
@@ -42,9 +42,7 @@
 </script>
   
  
- <!-- carousel 1: shirts -->
   <div class="carousel-container">
-    <!-- <button type="button" class="carousel-button left" aria-label="left-button">o</button> -->
         <section>
             <ul class="carousel">
               <li>
@@ -147,7 +145,6 @@
               </li>
             </ul>
         </section>
-
   </div>
 
 
@@ -171,11 +168,11 @@
 }
 
 .indicator.active {
-  background-color: white; /* Actieve indicator kleur */
+  background-color: white; 
 }
 
 
-/* STYLING VOOR DE PAGINA */
+/* STYLING FOR THE PAGE */
 
 * {
     color: white;
@@ -187,7 +184,7 @@ section:nth-of-type(1) {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    height: 100dvh; /* for dynamic viewport height */
+    height: 100dvh;
     width: 100vw;
 }
 .slide-2{
@@ -246,7 +243,6 @@ button, a:nth-of-type(2) {
     margin-bottom: 40px;
     border-radius: 10px;
     width: 80%;
-    /* background-color: var(--secondary-blue); */
     padding: 15px;
     text-align: center;
     font-size: 16px;
@@ -254,11 +250,11 @@ button, a:nth-of-type(2) {
 }
 /*  */
 .button-1 {
-    background-color: #4A82C3; /* Eerste button */
+    background-color: #4A82C3; /* first button */
 }
 
 .button-2 {
-    background-color: #3D7A95; /* Tweede button */
+    background-color: #3D7A95; /* second button */
 }
 .make-acc{
   background-color: #04786C;
@@ -277,7 +273,7 @@ button, a:nth-of-type(2) {
   display: flex;
     flex-direction: column;
     height: 100vh;
-    height: 100dvh; /* for dynamic viewport height */
+    height: 100dvh; 
     width: 100vw;
     background-color: var(--main-blue);
     

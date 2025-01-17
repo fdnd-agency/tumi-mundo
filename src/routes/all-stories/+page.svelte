@@ -1,19 +1,21 @@
+
 <script>
     import Story from '../../components/layout/story.svelte';
     import Search from '../../components/forms/search.svelte';
 
     /** @type {import('./$types').PageData} */
     export let data;
-
 </script>
 
 <header>
     <div class="heading">
-        <a href="/lessons"><img src="/icons/back-button-2.svg" alt="backbutton" class="heading-back" height="14px" width="24px"></a>
-        <h1>All stories</h1>
+        <a href="/lessons" aria-label="Go back to lessons">
+            <img src="/icons/back-button-2.svg" alt="Back button" class="heading-back" height="0.875em" width="1.5em">
+        </a>
+        <h1>All Stories</h1>
     </div>
 
-     <!-- <Search/> -->
+    <!-- <Search /> -->
 
     <ul class="nav-ul">
         <li>
@@ -60,69 +62,69 @@
     font-display: swap;
 }
 
-:root{
+:root {
     background-image: linear-gradient(#471871, #142151);
     font-family: Poppins, sans-serif;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: white;
 }
 
-/* styling for header */
-.heading, ul{
+.heading,
+.nav-ul {
     display: flex;
-    
     align-items: center;
 }
 
-select, header, .nav-ul > li{
+select,
+header,
+.nav-ul > li {
     width: 100%;
 }
 
-.heading{
+.heading {
     justify-content: space-between;
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    margin-top: 1rem;
+    margin: 1em 0;
+    padding: 1em;
     position: relative; 
 }
 
-.heading > h1{
+.heading > h1 {
     position: absolute;
     left: 50%;
-    font-size: 1.7rem;
+    font-size: 1.7em;
     transform: translateX(-50%);
 }
 
-.heading-back{
-    align-self: self-start;
+.heading-back {
+    align-self: flex-start;
 }
 
 header {
     z-index: 10;
     height: 100%;
     justify-content: space-between; 
-    padding: 10px 20px;
+    padding: 0.625em 1.25em;
     background-color: transparent;
 }
 
-/* styling for the nav and dropdowns */
+/* Styling for nav and dropdowns */
 .nav-ul > li {
     background-color: #571899;
     font-size: 1em;
-    padding: .2rem .3rem;
+    padding: 0.2em 0.3em;
     border-radius: 5px;
 }
 
 .nav-ul {
-    margin-top: .3rem;
+    margin-top: 0.3em;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: .5rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5em;
     list-style-type: none;
     overflow-x: auto;
 }
@@ -133,12 +135,13 @@ select {
     border: none;
 }
 
-option, option:active{
+option,
+option:active {
     color: black;
 }
 
 section {
-    padding: 20px;
+    padding: 1.25em;
 }
 
 ul {
@@ -146,26 +149,26 @@ ul {
     padding: 0;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 1em;
 }
 
 h2 {
-    font-size: 24px;
-    margin-bottom: 16px;
+    font-size: 1.5em;
+    margin-bottom: 1em;
 }
 
-/* Styling for stories. */
-section.story-list {
+/* Styling for stories */
+.story-list {
     padding: 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 1em;
 }
 
-@media only screen and (min-width: 865px) {
-  .nav-ul {
-    gap: 1rem;
- }
+@media only screen and (min-width: 54.0625em) {
+    .nav-ul {
+        gap: 1em;
+    }
 }
 </style>
