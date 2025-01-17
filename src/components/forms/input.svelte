@@ -1,42 +1,67 @@
 <script>
-
-export let type = 'text';
-
+  export let type = 'text';
+  export let placeholder = '';
+  export let value = '';
+  export let name = '';
 </script>
 
+<label for={name}>
+  {#if type === 'email'}
+    Email
+  {:else if type === 'password'}
+    Password
+  {:else}
+    Name
+  {/if}
+</label>
+
 {#if type === 'email'}
-  <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="Your email" aria-label="email">
-
-
+  <input
+    type="email"
+    id={name}
+    name={name}
+    placeholder={placeholder}
+    aria-label={name}
+    bind:value={value}
+  />
 {:else if type === 'password'}
-  <label for="password">Password</label>
-    <input type="password" id="password" name="password" placeholder="Password (atleast 8 characters)" aria-label="password">
-
-{:else if type === 'text'}
-    <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" aria-label="name">
+  <input
+    type="password"
+    id={name}
+    name={name}
+    placeholder={placeholder}
+    aria-label={name}
+    bind:value={value}
+  />
+{:else}
+  <input
+    type="text"
+    id={name}
+    name={name}
+    placeholder={placeholder}
+    aria-label={name}
+    bind:value={value}
+  />
 {/if}
 
 <style>
-
-label{
-  color: black;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  font-size: 1.2rem;
-}
-input{
-  background-color: #EEEEEE;
-  border: none;
-  margin-bottom: 20px ;
-  font-size: 1rem;
-  height: 2rem;
-  width: 100%;
-  border-radius: 8px;
-  padding: 1.5rem 1rem;
-  box-sizing: border-box;
-}
+  label {
+    color: black;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 1.2rem;
+  }
+  input {
+    background-color: #EEEEEE;
+    border: none;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    height: 2rem;
+    width: 100%;
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+  }
 </style>
