@@ -34,7 +34,7 @@
     <h2>Own playlists</h2>
     <ul>
         <li class="playlist-1">
-            <img src="/temp/temp-story.svg" class="story-img" alt="story image">
+            <img src="https://fdnd-agency.directus.app/assets/263e541a-9dd8-4978-8ad0-9a6e5b9dfe1a" class="story-img" alt="story image">
             <h3>The octopus who was very hungry</h3>
             <small>    
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

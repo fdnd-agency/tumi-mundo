@@ -23,11 +23,13 @@
                     {#each data.buddys as buddy}
                         <option value="{ buddy.animal }">{ buddy.animal }</option>
                     {/each}
+            </select>
         </li>
         <li>
             <select name="season" id="season-select" aria-label="Choose a season">
                 <option value="season">Season</option>
                 <option value="summer">Summer</option>
+            </select>
         </li>
         <li>
             <select name="language" id="language"aria-label="Choose a language">
@@ -35,6 +37,7 @@
                     {#each data.languages as language}
                         <option value="{ language.language }">{ language.language }</option>
                     {/each}
+            </select>
         </li>
         <li>
             <select name="sorting" id="sorting"aria-label="Choose a sorting">
@@ -43,6 +46,7 @@
                 <option value="from z to a">From Z to A</option>
                 <option value="short to long playtime">Short to long playtime</option>
                 <option value="long to short playtime">Long to short playtime</option>
+            </select>
         </li>
     </ul>
 </header>
@@ -54,13 +58,6 @@
 </section>
 
 <style>
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/fonts/poppins-regular.woff2') format('woff2'),
-         url('/assets/fonts/poppins-regular.woff') format('woff');
-    font-display: swap;
-}
-
 :root {
     background-image: linear-gradient(#471871, #142151);
     font-family: Poppins, sans-serif;
@@ -149,11 +146,6 @@ ul {
     justify-content: center;
     flex-wrap: wrap;
     gap: 1em;
-}
-
-h2 {
-    font-size: 1.5em;
-    margin-bottom: 1em;
 }
 
 /* Styling for stories */
