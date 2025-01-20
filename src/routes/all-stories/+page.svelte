@@ -1,7 +1,6 @@
 
 <script>
-    import Story from '../../components/layout/story.svelte';
-    import Search from '../../components/forms/search.svelte';
+    import { Story } from '$lib/index';
 
     /** @type {import('./$types').PageData} */
     export let data;

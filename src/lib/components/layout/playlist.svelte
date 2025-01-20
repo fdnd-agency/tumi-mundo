@@ -1,5 +1,5 @@
 <script>
-  import { fetchApi } from '$lib/fetchApi';
+  import { fetchApi } from '$lib/index';
 
   export let playlist;
   const { image, title, playtime, isLiked: initialIsLiked, likeId: initialLikeId } = playlist;

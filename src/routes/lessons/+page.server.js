@@ -1,6 +1,6 @@
 // playlist/+page.server.js
 import { fetchAllData, mapPlaylistsWithDetails, mapStoriesWithDetails } from '$lib/api';
-import { fetchApi } from '$lib/fetchApi';
+import { fetchApi } from '$lib/index';
 
 export async function load({ locals }) {
     const profileId = 122; //PROFILE ID BECAUSE WE DIDN'T CONNECT EVERYTHING TO DATA YET

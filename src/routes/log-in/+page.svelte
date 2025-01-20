@@ -1,8 +1,7 @@
 <script>
     export let data;
 
-    import Input from '../../components/forms/input.svelte';
-    import { userState } from '$lib/account';
+    import { Input, userState } from '$lib/index';
     import { goto } from '$app/navigation';
 
     let users = data.users;

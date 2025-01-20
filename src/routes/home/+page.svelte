@@ -1,9 +1,7 @@
 <script>
-    import Menu2 from '../../components/core/menu2.svelte';
-    import Popup from '../../components/layout/popup.svelte';
-    import { userState } from '$lib/account';
     import { goto } from '$app/navigation';
     import { onMount } from 'svelte';
+    import { Menu, Popup, userState } from '$lib/index';
 
     onMount(() => {
         if (!profileId) {
@@ -26,7 +24,7 @@
 </script>
 
 <section>
-    <Menu2 {currentPage}/>
+    <Menu {currentPage}/>
     <article>
         <img src="/progress.svg" alt="Progress bar">
         <div class="progress-text">

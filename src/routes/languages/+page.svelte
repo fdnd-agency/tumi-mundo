@@ -1,6 +1,5 @@
 <script>
-    import Search from '../../components/forms/search.svelte'; 
-    import Continue from '../../components/forms/continue-btn.svelte';
+    import { Search, Button } from '$lib/index';
 
     export let data = {
         languages: [] // Begin met een lege talenlijst
@@ -65,7 +64,7 @@
             <p>No languages found.</p>
         {/if}
 
-        <Continue type="button"/>
+        <Button type="button"/>
     </section>
 </main>
 

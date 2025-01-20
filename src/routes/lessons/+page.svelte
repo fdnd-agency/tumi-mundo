@@ -1,16 +1,11 @@
 
 <script>
-    import Story from '../../components/layout/story.svelte';
-    import Playlist from '../../components/layout/playlist.svelte';
-
-    import Menu2 from '../../components/core/menu2.svelte';
+    import { Story, Playlist, Menu } from '$lib/index';
 
     let currentPage = "lessons";
 
     /** @type {import('./$types').PageData} */
     export let data;
-
-    import { onMount } from 'svelte';
 
     let storyList;
 
@@ -25,7 +20,7 @@
 </script>
 
 <main>
-<Menu2 {currentPage}/>
+<Menu {currentPage}/>
 
 <header>
     <h1>Lessons</h1>

@@ -1,5 +1,5 @@
 <script>
-    import { userState } from '$lib/account'; 
+    import { userState } from '$lib/index';
     import { goto } from '$app/navigation';
     import { onMount } from 'svelte';
 

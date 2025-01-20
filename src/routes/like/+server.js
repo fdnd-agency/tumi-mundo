@@ -1,4 +1,4 @@
-import { fetchApi } from '$lib/fetchApi';
+import { fetchApi } from '$lib/index';
 
 /** @type {import('./$types').RequestHandler} */
 export async function POST({ request }) {

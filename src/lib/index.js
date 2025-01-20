@@ -8,5 +8,6 @@ export { default as Popup } from '$lib/components/layout/popup.svelte'
 export { default as Story } from '$lib/components/layout/story.svelte'
 
 // Helpers
-export { default as FetchJSON } from '$lib/components/helpers/fetch-json.svelte'
-export { default as FetchAPI } from '$lib/components/helpers/fetchApi.svelte'
+export { default as fetchJson } from '$lib/components/helpers/fetch-json.js'
+export { fetchApi } from '$lib/components/helpers/fetchApi.js'
+export { userState } from '$lib/components/helpers/account.js'
