@@ -28,7 +28,7 @@
             ...state,
             profileId: profileId
         }));
-        await goto('/home');
+        await goto('/');
     }
 </script>
 
@@ -50,7 +50,7 @@
             </li>
         {/each}
         <li>
-            <a href="/home">
+            <a href="/">
                 <svg width="104" height="104" viewBox="0 0 116 117" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_1_4992)">
                         <circle cx="58" cy="58.3855" r="50" fill="#256783"/>
