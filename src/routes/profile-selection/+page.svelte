@@ -107,7 +107,7 @@ main {
     background-repeat: no-repeat;
     background-position: bottom;
     height: 100vh;
-    height: 100dvh; /* for dynamic viewport height */
+    height: 100dvh; 
     color: var(--color-text);
     margin: auto;
     padding: var(--padding-medium);

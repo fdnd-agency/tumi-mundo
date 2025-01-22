@@ -132,7 +132,7 @@ main {
     background-repeat: no-repeat;
     background-position: bottom;
     height: 100vh;
-    height: 100dvh; /* for dynamic viewport height */
+    height: 100dvh;
     width: 100%;
     color: var(--color-text);
     font-family: var(--font-family);
