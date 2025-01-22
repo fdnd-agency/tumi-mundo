@@ -78,56 +78,31 @@
         </li>
     </ul>
 </main>
-
 <style>
-:root {
-    --color-primary: #3A9ECA;
-    --color-secondary: #2B627A;
-    --color-text: white;
-
-    --font-size-base: 1em;
-    --font-size-h1: 1.5em;
-    --font-size-h2: 1em;
-    --font-size-edit: 0.9em;
-
-    --padding-small: 0.2em;
-    --padding-medium: 1em;
-    --padding-large: 3em;
-
-    --gap-small: 0.2em;
-    --gap-medium: 0.5em;
-    --gap-large: 5em;
-
-    --button-size: 6.5em;
-    --icon-size: 1.5em;
-
-    --border-radius: 50%;
-}
-
+/* Background styling */
 main {
-    background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+    background: linear-gradient(to bottom, #3A9ECA, #2B627A);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
-    height: 100vh;
-    height: 100dvh; 
-    color: var(--color-text);
+    height: 100dvh;
+    color: white;
     margin: auto;
-    padding: var(--padding-medium);
-    padding-top: var(--padding-large);
+    padding: 1em;
+    padding-top: 3em;
 }
 
 .top-bar {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 0 var(--padding-medium);
+    padding: 0 1em;
 }
 
 .top-bar h1 {
     flex-grow: 1;
     text-align: center;
-    font-size: var(--font-size-h1);
+    font-size: 1.5em;
 }
 
 .edit-button {
@@ -135,12 +110,36 @@ main {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: var(--gap-small);
+    gap: 0.2em;
 }
 
 .edit-button p {
-    font-size: var(--font-size-edit);
+    font-size: 0.9em;
     margin: 0;
+}
+
+/* Profiles styling */
+ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-row-gap: 5em;
+    list-style: none;
+    padding: 0;
+    margin: 2em 0;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5em;
+}
+
+li button img {
+    width: 6.5em;
+    height: 6.5em;
+    border-radius: 50%;
 }
 
 button {
@@ -153,36 +152,13 @@ button {
     outline: inherit;
 }
 
-ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-row-gap: var(--gap-large);
-    list-style: none;
-    padding: 0;
-    margin: var(--padding-large) 0;
-}
-
-li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: var(--gap-medium);
-}
-
-li button img {
-    width: var(--button-size);
-    height: var(--button-size);
-    border-radius: var(--border-radius);
-}
-
 h1 {
     font-size: 1.25em;
     text-align: center;
-    margin-bottom: var(--padding-medium);
+    margin-bottom: 1em;
 }
 
 h2 {
-    font-size: var(--font-size-h2);
+    font-size: 1em;
 }
-</style>    
+</style>
