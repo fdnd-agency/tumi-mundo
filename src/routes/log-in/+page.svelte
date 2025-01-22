@@ -161,14 +161,14 @@ p, button, label {
     width: 100%;
 }
 
-button, .popup-button, .login-popup, .sign-up {
+button, .popup-button, .login-popup, .sign-up{
     text-decoration: none;
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    padding: var(--padding-small);
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: .8rem;
     max-width: 17rem;
-    background-color: var(--color-primary);
-    color: var(--color-text);
+    background-color: #378DB3;
+    color: white;
     text-align: center;
     cursor: pointer;
     margin: auto;
@@ -179,10 +179,11 @@ button, .popup-button, .login-popup, .sign-up {
     width: 100%;
 }
 
-button, .sign-up {
-    background-color: var(--color-secondary);
-    color: var(--color-secondary-text);
-    padding: var(--padding-small) var(--padding-medium);
+button, .sign-up{
+    text-decoration: none;
+    background-color: #F0F0F0;
+    color: #535353;
+    padding: .8rem 1rem;
 }
 
 button:hover, .popup-button:hover {
