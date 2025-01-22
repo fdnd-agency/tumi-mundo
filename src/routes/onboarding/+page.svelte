@@ -46,11 +46,9 @@
                   <section>
                     <a href="/sign-up">Skip</a>
                     <div class="mouse">
-                        <picture class="eclipse">
-                            <source srcset="/characters/Ellipse131.svg?format=avif" type="image/avif">
-                            <source srcset="/characters/Ellipse131.svg?format=webp">
-                            <img src="h/characters/Ellipse131.svg" alt="eclipse" loading="lazy" width="250">
-                        </picture>
+                        <svg width="242" height="242" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg" class="eclipse">
+                          <circle cx="121" cy="121" r="121" fill="#4A82C3"/>
+                        </svg>                        
                         <picture class="rat">
                             <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
                             <source srcset="/characters/Rat.svg?format=webp">
@@ -78,11 +76,9 @@
                   <section class="slide-2">
                     <a href="/sign-up">Skip</a>
                       <div class="mouse">
-                          <picture class="eclipse">
-                              <source srcset="/characters/Ellipse131-2.svg?format=avif" type="image/avif">
-                              <source srcset="/characters/Ellipse131-2.svg?format=webp">
-                              <img src="/characters/Ellipse131-2.svg" alt="eclipse" loading="lazy" width="250">
-                          </picture>
+                          <svg width="242" height="242" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg" class="eclipse">
+                            <circle cx="121" cy="121" r="121" fill="#327592"/>
+                          </svg>
                           <picture class="rat">
                               <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
                               <source srcset="/characters/Rat.svg?format=webp">
@@ -110,11 +106,9 @@
                   <section class="slide-3">
                     <a href="/sign-up">Skip</a>
                     <div class="mouse">
-                        <picture class="eclipse">
-                            <source srcset="/characters/Ellipse131-3.svg?format=avif" type="image/avif">
-                            <source srcset="/characters/Ellipse131-3.svg?format=webp">
-                            <img src="h/characters/Ellipse131-3.svg" alt="eclipse" loading="lazy" width="250">
-                        </picture>
+                        <svg width="242" height="242" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg" class="eclipse">
+                          <circle cx="121" cy="121" r="121" fill="#047E72"/>
+                        </svg>                        
                         <picture class="rat">
                             <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
                             <source srcset="/characters/Rat.svg?format=webp">
