@@ -34,7 +34,7 @@
     <h2>Own playlists</h2>
     <ul>
         <li class="playlist-1">
-            <img src="https://fdnd-agency.directus.app/assets/263e541a-9dd8-4978-8ad0-9a6e5b9dfe1a" class="story-img" alt="story image">
+            <img src="https://fdnd-agency.directus.app/assets/263e541a-9dd8-4978-8ad0-9a6e5b9dfe1a" class="story-img" alt="story">
             <h3>The octopus who was very hungry</h3>
             <small>    
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +44,10 @@
             </a></small>
         </li>
         <li class="create-playlist">
-            <img src="/icons/create-playlist.svg" alt="create playlist">
+            <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="30" width="8" height="68" rx="4" fill="white"/>
+                <rect x="68" y="30" width="8" height="68" rx="4" transform="rotate(90 68 30)" fill="white"/>
+            </svg>                
             <h3>Make a playlist !</h3>
             <small><a href="/create-playlist">Add your favorite stories in one playlist</a></small>
         </li>
