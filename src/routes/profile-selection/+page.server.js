@@ -1,9 +1,9 @@
-import { fetchAllData, ProfilesWithImages } from '$lib/api';
+import { fetchAllData, mapProfilesWithImages } from '$lib/api';
 
 export async function load({ locals }) {
     // Fetch the necessary data (users, profiles, profileUsers)
     const data = await fetchAllData();
-    const enhancedProfiles = ProfilesWithImages(data.profiles);
+    const enhancedProfiles = mapProfilesWithImages(data.profiles);
 
     return {
         ...data,
