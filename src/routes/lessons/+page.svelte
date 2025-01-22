@@ -130,6 +130,7 @@
         background-image: linear-gradient(#471871, #142151);
         display: flex;
         flex-direction: column;
+        padding-bottom: 5em;
     }
     
     section {
