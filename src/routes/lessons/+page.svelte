@@ -227,6 +227,9 @@ input[type=radio]{
 .story-list{
     margin: 1em;
 }
+.story-list > li{
+    scroll-snap-align: center;
+}
 .language-filter{
     display: flex;
     align-items: center;
