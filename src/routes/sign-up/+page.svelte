@@ -4,40 +4,42 @@ import { Input } from '$lib/index';
 </script>
 
 <title>sign-up</title>
-<section>
-    <div class="heading">
-        <a href="/onboarding"><img src="/icons/back-button.svg" alt="back button"></a>
-        <h1>Sign up</h1> 
-    </div>
-   
-    <form action="/profile-selection">
-            <Input type="text"/>
-            <Input type="email"/>
-            <Input type="password"/>
-
-        <article>
-            <div>
-                <label class="switch">
-                    <input type="checkbox" aria-label="toggle-button">
-                    <span class="slider round"></span>
-                </label>
-
-                <p>Agree to the terms of services and the privacy policy <a href="/click" class="click-here">(click here for more information)</a></p>
-            </div>
+<main>
+    <section>
+        <div class="heading">
+            <a href="/onboarding"><img src="/icons/back-button.svg" alt="back button"></a>
+            <h1>Sign up</h1> 
+        </div>
     
-            <div>
-                <label class="switch">
-                    <input type="checkbox" aria-label="toggle-button">
-                    <span class="slider round"></span>
-                </label>
+        <form action="/profile-selection">
+                <Input type="text"/>
+                <Input type="email"/>
+                <Input type="password"/>
 
-                <p>Agree to share data with research universities and participate in research <a href="/" class="click-here">(click here for more information)</a></p>
-            </div>
-        </article>
+            <article>
+                <div>
+                    <label class="switch">
+                        <input type="checkbox" aria-label="toggle-button">
+                        <span class="slider round"></span>
+                    </label>
 
-        <input type="submit" value="Sign up!" class="sign-upbtn">
-    </form>
-</section>
+                    <p>Agree to the terms of services and the privacy policy <a href="/click" class="click-here">(click here for more information)</a></p>
+                </div>
+        
+                <div>
+                    <label class="switch">
+                        <input type="checkbox" aria-label="toggle-button">
+                        <span class="slider round"></span>
+                    </label>
+
+                    <p>Agree to share data with research universities and participate in research <a href="/" class="click-here">(click here for more information)</a></p>
+                </div>
+            </article>
+
+            <input type="submit" value="Sign up!" class="sign-upbtn">
+        </form>
+    </section>
+</main>
 
 
 <style>
@@ -45,13 +47,16 @@ import { Input } from '$lib/index';
     padding: 0;
     margin: 0;
 }
-section, form{
+section, form, main{
     display: flex;
     flex-direction: column;
 }
+main{
+    align-items: center;
+}
 section {
     padding: 20px;
-    height: 100vh;
+    max-width: 30em ;
     height: 100dvh; 
 }
 form {
@@ -127,6 +132,7 @@ div{
   left: 0;
   right: 0;
   bottom: 0;
+  width: 2em;
   background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
