@@ -1,6 +1,6 @@
 
 <script>
-    import { Story } from '$lib/index';
+    import { Story, Search } from '$lib/index';
 
     /** @type {import('./$types').PageData} */
     export let data;
@@ -14,7 +14,7 @@
         <h1>All Stories</h1>
     </div>
 
-    <!-- <Search /> -->
+    <Search />
 
     <ul class="nav-ul">
         <li>

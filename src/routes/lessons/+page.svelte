@@ -65,11 +65,13 @@
         <a href="/all-stories">Show all</a>
     </nav>
 
-    <section bind:this={storyList} class="story-list">
+    <ul bind:this={storyList} class="story-list">
         {#each data.stories as story}
+        <li>
             <Story {story} />
+        </li>
         {/each}
-    </section>
+    </ul>
 
     <nav class="carousel-nav">
         <button aria-label="Previous" on:click={() => scrollCarousel(-1)}>
@@ -109,16 +111,74 @@
 </main>
 
 <style>
-input[type=radio]{
-    height: 1.2em;
-    width: 1.2em;
-    margin: .5em;
-    padding: 1em;
+
+:root{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.story-list{
-    margin: 1em;
+main{
+    height: 100%;
+    color: white;
+    background-image: linear-gradient(#471871, #142151);
+    display: flex;
+    flex-direction: column;
 }
-/* styling for all stories & carousel nav */
+section{
+    padding: 1rem;
+}
+h1{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+h2{
+    font-size: 1.3em;
+    margin-bottom: .75rem;
+}
+header{
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Styling for "own playlist" section */
+.create-playlist, .playlist-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.playlist-1 > img{
+    width: 100%;
+}
+.playlist-1{
+    background-color: white;
+}
+.playlist-1 > a small{
+    color: black;
+}
+.playlist-1 > h3{
+    font-weight: bold;
+}
+.own-playlist{
+    display: flex;
+    flex-direction: column;
+}
+.own-playlist > ul{
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+}
+.own-playlist > ul > li{
+    height: 12.5rem;
+    width: 9rem;
+    color: black;
+    border-radius: .5rem;
+    padding: .7em;
+}
+
+/* Styling for "all stories" section & carousel nav */
+
 .all-stories{
     display: flex;
     flex-direction: column;
@@ -153,7 +213,15 @@ nav > button{
 nav > button > img{
     height: 1.5em;
 }
-/* styling for all stories page */
+input[type=radio]{
+    height: 1.2em;
+    width: 1.2em;
+    margin: .5em;
+    padding: 1em;
+}
+.story-list{
+    margin: 1em;
+}
 .language-filter{
     display: flex;
     align-items: center;
@@ -190,56 +258,7 @@ label > img{
     width: auto;
     margin-right: 0.5em;
 }
-
-/*  */
-h1{
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-}
-h2{
-    font-size: 1.3em;
-    margin-bottom: .75rem;
-}
-header{
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.create-playlist, .playlist-1{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.playlist-1 > img{
-    width: 100%;
-}
-.playlist-1{
-    background-color: white;
-}
-.playlist-1 > a small{
-    color: black;
-}
-.playlist-1 > h3{
-    font-weight: bold;
-}
-.own-playlist{
-    display: flex;
-    flex-direction: column;
-}
-.own-playlist > ul{
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-}
-.own-playlist > ul > li{
-    height: 12.5rem;
-    width: 9rem;
-    color: black;
-    border-radius: .5rem;
-    padding: .7em;
-}
+/* Styling for "create playlist" section */
 .create-playlist{
     background-color: #494375;
     text-align: center;
@@ -251,39 +270,12 @@ header{
     font-weight: bold;
     font-size: 1em;
 }
-.create-playlist > a{
-    color: white;
-    font-size: 1em;
-}
 .create-playlist > small{
     color: white;
-}
-:root{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-main{
-    height: 100%;
-    color: white;
-    background-image: linear-gradient(#471871, #142151);
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-}
-section{
-    padding: 1rem;
 }
 .playlist-1 > small{
     align-self: start;
     margin-top: auto;
-}
-small img {
-    vertical-align: middle;
-    padding-right: .3em;
-    height: 2em;
-    width: 2em;
 }
 
 /*  styling for suggested playlist page*/
@@ -296,27 +288,16 @@ section.playlist-list {
     padding-bottom: 1rem; 
     scroll-snap-type: x mandatory; 
 }
-section.playlist-list > article {
-    flex: 0 0 auto;
-    scroll-snap-align: center; 
-}
 
-/*  */
-body {
-  overflow-x: hidden; /* Verberg horizontale scroll voor de hele pagina */
-  margin: 0; /* Verwijder eventuele marges */
-  padding: 0; /* Verwijder eventuele paddings */
-  box-sizing: border-box; /* Zorg dat alle elementen inclusief borders worden gemeten */
-}
 .story-list {
   display: grid;
   grid-auto-flow: column;
   grid-template-rows: repeat(3, auto);
   gap: .5em;
-  overflow-x: auto; /* Horizontale scroll op deze container */
+  overflow-x: auto; 
   scroll-snap-type: x mandatory;
   padding: 1rem 0;
-  width: 100%; /* Zorg dat deze container niet breder is dan de viewport */
+  width: 100%;
   box-sizing: border-box;
 }
 

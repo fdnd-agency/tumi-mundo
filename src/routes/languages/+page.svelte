@@ -2,21 +2,20 @@
     import { Search, Button } from '$lib/index';
 
     export let data = {
-        languages: [] // Begin met een lege talenlijst
+        languages: [] 
     };
 
-    let filteredLanguages = data.languages; // Begin met alle talen
+    let filteredLanguages = data.languages;
+    let searchTerm = ""; 
 
     data.languages.forEach(language => {
         language.name = language.language;
-    });
+    }); 
 
-    let searchTerm = ""; // Zoekterm om aan de Search-component door te geven
-
-    // Wanneer de filter gebeurtenis wordt geactiveerd, update de filteredLanguages
     function handleFilter(event) {
         filteredLanguages = event.detail;
-    }
+    };
+
 </script>
 
 <main>
@@ -33,13 +32,11 @@
             You can pick a <strong>maximum of 3</strong> languages.
         </p>
 
-        <!-- Search component -->
         <Search
             data={data.languages}
             bind:searchTerm
             on:filter={handleFilter} 
         />
-
         <hr class="line" />
 
         {#if filteredLanguages.length > 0}
@@ -63,7 +60,6 @@
         {:else}
             <p>No languages found.</p>
         {/if}
-
         <Button type="button"/>
     </section>
 </main>
