@@ -68,7 +68,7 @@
   }
 
   .story-title {
-    font-size: var(--font-size-s);
+    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-bold);
     grid-area: 1 / 2 / 2 / 6;
   }

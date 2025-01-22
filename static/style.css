@@ -73,7 +73,8 @@
     /* Borders & Radius */
     /* ------------------------------- */
     
-    --border-radius: 4px;
+    --border-radius: .5em;
+    --border-radius-m: 1em;
     --border-width: 1px;
     
     /* ------------------------------- */
