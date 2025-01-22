@@ -52,7 +52,7 @@ section, form{
 section {
     padding: 20px;
     height: 100vh;
-    height: 100dvh; /* for dynamic viewport height */
+    height: 100dvh; 
 }
 form {
     flex-grow: 1;
@@ -61,7 +61,7 @@ form {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative; /* Maakt positionering mogelijk binnen de container */
+    position: relative;
     height: 80px;
     margin-bottom: 30px;
     margin-top: 10px;
@@ -70,15 +70,15 @@ form {
 .heading h1 {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); /* Plaatst het h1 in het midden van de container */
-    margin: 0; /* Zorgt voor consistentie */
-    font-size: 1.5rem; /* Pas aan naar gewenste grootte */
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 1.5rem;
 }
 
 .heading a {
-    text-decoration: none; /* Optioneel: verwijder onderstreping */
-    margin-left: 0; /* Zorg dat de `a` helemaal links begint */
-    display: flex; /* Zorg dat de img inline blijft met flexbox */
+    text-decoration: none;
+    margin-left: 0; 
+    display: flex; 
     align-items: center;
 }
 
@@ -107,7 +107,7 @@ div{
     margin-bottom: 20px;
 }
 
-/* Styling voor de toggle button */
+/* Styling for toggle button */
 .switch {
   position: relative;
   display: inline-block;
