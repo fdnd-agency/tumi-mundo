@@ -23,12 +23,9 @@
         behavior: 'smooth',
       });
 
-      // Update the current slide index
       currentSlide = (currentSlide + direction + indicators.length) % indicators.length;
     }
 
-
-    // Make indicators clickable
     indicators.forEach(indicator => {
       indicator.addEventListener('click', function () {
         const targetSlide = Number(this.dataset.slide);
@@ -49,11 +46,9 @@
                   <section>
                     <a href="/sign-up">Skip</a>
                     <div class="mouse">
-                        <picture class="eclipse">
-                            <source srcset="/characters/Ellipse131.svg?format=avif" type="image/avif">
-                            <source srcset="/characters/Ellipse131.svg?format=webp">
-                            <img src="h/characters/Ellipse131.svg" alt="eclipse" loading="lazy" width="250">
-                        </picture>
+                        <svg width="242" height="242" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg" class="eclipse">
+                          <circle cx="121" cy="121" r="121" fill="#4A82C3"/>
+                        </svg>                        
                         <picture class="rat">
                             <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
                             <source srcset="/characters/Rat.svg?format=webp">
@@ -73,7 +68,6 @@
                         Every household is different. Some only speak one language, others even as much as three!
                         Learning more than one language has great neurological benefits for anyone at any age. With TuMi Mundo your child can learn up to 3 languages.
                     </p>
-                    <!-- <a href="/onboarding-2">Continue</a> -->
                     <button type="button" class="carousel-button right button-1" data-target=".carousel" aria-label="right-button">Continue</button>  
                 </section>
               </li>
@@ -82,11 +76,9 @@
                   <section class="slide-2">
                     <a href="/sign-up">Skip</a>
                       <div class="mouse">
-                          <picture class="eclipse">
-                              <source srcset="/characters/Ellipse131-2.svg?format=avif" type="image/avif">
-                              <source srcset="/characters/Ellipse131-2.svg?format=webp">
-                              <img src="/characters/Ellipse131-2.svg" alt="eclipse" loading="lazy" width="250">
-                          </picture>
+                          <svg width="242" height="242" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg" class="eclipse">
+                            <circle cx="121" cy="121" r="121" fill="#327592"/>
+                          </svg>
                           <picture class="rat">
                               <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
                               <source srcset="/characters/Rat.svg?format=webp">
@@ -106,7 +98,6 @@
                                 During the learning journal you can measure the improvement of your child.  
                                 There is an option to share the data with researchers to further improve the method and participate in special researches! You can manage the option to share your data at any given time in the app.
                             </p>
-                    <!-- <a href="/onboarding-3">Continue</a> -->
                     <button type="button" class="carousel-button right button-2" data-target=".carousel" aria-label="right-button">Continue</button>  
                 </section>
               </li>
@@ -115,11 +106,9 @@
                   <section class="slide-3">
                     <a href="/sign-up">Skip</a>
                     <div class="mouse">
-                        <picture class="eclipse">
-                            <source srcset="/characters/Ellipse131-3.svg?format=avif" type="image/avif">
-                            <source srcset="/characters/Ellipse131-3.svg?format=webp">
-                            <img src="h/characters/Ellipse131-3.svg" alt="eclipse" loading="lazy" width="250">
-                        </picture>
+                        <svg width="242" height="242" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg" class="eclipse">
+                          <circle cx="121" cy="121" r="121" fill="#047E72"/>
+                        </svg>                        
                         <picture class="rat">
                             <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
                             <source srcset="/characters/Rat.svg?format=webp">
@@ -128,7 +117,6 @@
                         </picture>
                     </div>
 
-                    <!-- Carousel Indicators -->
                     <div class="carousel-indicators">
                       <span class="indicator" data-slide="0"></span>
                       <span class="indicator" data-slide="1"></span>
@@ -148,44 +136,20 @@
   </div>
 
 
-  <style>
-
-.carousel-indicators {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-  z-index: 10;
-}
-
-.indicator {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 1px solid lightgray;
-  background-color: transparent;
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.indicator.active {
-  background-color: white; 
-}
-
-
-/* STYLING FOR THE PAGE */
+<style>
 
 * {
-    color: white;
-    text-decoration: none;
-    --main-blue: #599AE7;
-    --secondary-blue: #4A82C3;
+  color: white;
+  text-decoration: none;
+  --main-blue: #599AE7;
+  --secondary-blue: #4A82C3;
 }
 section:nth-of-type(1) {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    height: 100dvh;
-    width: 100vw;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  width: 100vw;
 }
 .slide-2{
   background-color: #3F92B6;
@@ -194,67 +158,65 @@ section:nth-of-type(1) {
   background-color: #069E8F;
 }
 .mouse {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: center; 
-    align-items: center;   
-    position: relative; 
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;   
+  position: relative; 
 }
 picture {
-    position: relative; 
+  position: relative; 
 }
 .rat {
-    position: absolute;
-    top: 0; 
-    left: 0; 
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 h1, p {
-    text-align: center;
+  text-align: center;
 }
 h1 {
-    font-size: 20px;
-    margin-bottom: 1em;
+  font-size: 20px;
+  margin-bottom: 1em;
 }
 p {
-    font-size: 14px;
-    max-width: 45ch;
-    margin: auto;
-    margin-top: 0;
-    margin-bottom: 0;
+  font-size: 14px;
+  max-width: 45ch;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 a:nth-of-type(1) {
-    margin-left: auto;
-    color: white;
-    font-size: 20px;
-    padding: 1em;
+  margin-left: auto;
+  color: white;
+  font-size: 20px;
+  padding: 1em;
 }
 button, a:nth-of-type(2) {
-    margin: auto;
-    margin-bottom: 40px;
-    border-radius: 10px;
-    width: 80%;
-    padding: 15px;
-    text-align: center;
-    font-size: 16px;
-    border: none;
+  margin: auto;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  width: 80%;
+  padding: 15px;
+  text-align: center;
+  font-size: 16px;
+  border: none;
 }
-/*  */
 .button-1 {
-    background-color: #4A82C3; /* first button */
+  background-color: #4A82C3; 
 }
-
 .button-2 {
-    background-color: #3D7A95; /* second button */
+  background-color: #3D7A95;
 }
 .make-acc{
   background-color: #04786C;
@@ -271,12 +233,30 @@ button, a:nth-of-type(2) {
   scroll-behavior: smooth;
   scroll-snap-align: center;
   display: flex;
-    flex-direction: column;
-    height: 100vh;
-    height: 100dvh; 
-    width: 100vw;
-    background-color: var(--main-blue);
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh; 
+  width: 100vw;
+  background-color: var(--main-blue);
     
+}
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  z-index: 10;
+}
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid lightgray;
+  background-color: transparent;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.indicator.active {
+  background-color: white; 
 }
 
 </style>

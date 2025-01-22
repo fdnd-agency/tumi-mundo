@@ -8,7 +8,12 @@
       <div class="heading-close">
           <p>{title}</p>
           <form method="dialog">
-              <button><img src="/icons/popup-close.svg" alt="close-button"></button>
+              <button>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.375 14.375L5.625 5.625" stroke="#3E0D0D" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14.375 5.625L5.625 14.375" stroke="#3E0D0D" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
           </form>
       </div>
       <p class="popup-message">{message}</p> <!-- Use the dynamic message -->

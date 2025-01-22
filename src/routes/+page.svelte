@@ -1,117 +1,110 @@
 <script>
-    /** @type {import('./$types').PageData} */
-    export let data;
-    
-    import { onMount } from 'svelte';
     import { goto } from '$app/navigation';
+    import { onMount } from 'svelte';
+    import { Menu, Popup, userState } from '$lib/index';
 
     onMount(() => {
-        goto('/log-in'); // Redirects when the component is mounted
+        if (!profileId) {
+            goto('/log-in');
+        }
     });
 
+    export let data;
+
+    let profileId = $userState.profileId;
+
+    let profiles = data.profiles;
+
+    let selectedProfile = profiles.find(profile => profile.id === profileId);
+
+    let popupTitle = selectedProfile ? `Goodmorning ${selectedProfile.name_of_child},` : "Goodmorning,";
+
+    let currentPage = "home";
 
 </script>
 
 <section>
-    <h2>Accounts</h2>
+    <Menu {currentPage}/>
     <article>
-        {#if data.users && data.users.length > 0}
-            <ul>
-                {#each data.users as account}
-                    <li>{account.name}</li>
-                    <li>{account.email}</li>
-                    <li>{account.profiles}</li>
-                {/each}
-            </ul>
-    {:else}
-        <!-- This will show if no people are available -->
-        <p>Er zijn geen users</p>
-    {/if}
+        <img src="/progress.svg" alt="Progress bar">
+        <div class="progress-text">
+            <p>Today's listening</p>
+            <h1>00:00</h1>
+            <p>Of your 5-minute goal</p>
+        </div>
     </article>
 
-    <h2>Buddys</h2>
     <article>
-        {#if data.buddys && data.buddys.length > 0}
-            <ul>
-                {#each data.buddys as buddy}
-                    <li>{buddy.name}</li>
-                    <li>{buddy.animal}</li>
-                {/each}
-            </ul>
-    {:else}
-        <!-- This will show if no people are available -->
-        <p>Er zijn geen buddys</p>
-    {/if}
-    </article>
-
-    <h2>Profiles</h2>
-    <article>
-        {#if data.profiles && data.profiles.length > 0}
-            <ul>
-                {#each data.profiles as profile}
-                    <li>{profile.name_of_child}</li>
-                    <li>{profile.gender}</li>
-                    <li>{profile.date_of_birth}</li>
-                    <li>{profile.new_language_to_learn}</li>
-                    <li>{profile.buddy}</li>
-                {/each}
-            </ul>
-    {:else}
-        <!-- This will show if no people are available -->
-        <p>Er zijn geen profiles</p>
-    {/if}
-    </article>
-    <h2>Stories</h2>
-    <article>
-    {#each data.stories as story}
-        <h2>{story.title}</h2>
-        <p>{story.summary}</p>
-        {#if story.audios.length > 0}
-            <ul>
-                {#each story.audios as audio}
-                    <li>
-                        <p>Audio File: <a href={audio.file} target="_blank">{audio.file}</a></p>
-                        <p>Voice Colours: {audio.voice_colours.join(', ')}</p>
-                        <p>Speaker Profile: {audio.speaker_profile}</p>
-                        <p>Language: {audio.language}</p>
-                    </li>
-                {/each}
-            </ul>
-        {:else}
-            <p>No audio available for this story.</p>
-        {/if}
-    {/each}
-    </article>
-    <h2>Playlists</h2>
-    <article>
-        {#if data.playlists && data.playlists.length > 0}
-            <ul>
-                {#each data.playlists as playlist}
-                    <li>{playlist.title}</li>
-                    <li>{playlist.description}</li>
-                    <li>{playlist.stories}</li>
-                    <li>{playlist.slug}</li>
-                    <li>{playlist.language_id}</li>
-                    <li>{playlist.creator}</li>
-                {/each}
-            </ul>
-    {:else}
-        <!-- This will show if no people are available -->
-        <p>Er zijn geen playlists</p>
-    {/if}
-    </article>
-
-    <h2>Languages</h2>
-    <article>
-        {#if data.languages && data.languages.length > 0}
-            <ul>
-                {#each data.languages as language}
-                    <li>{language.language}</li>
-                {/each}
-            </ul>
-    {:else}
-        <!-- This will show if no people are available -->
-        <p>Er zijn geen languages</p>
-    {/if}
+        <Popup title={popupTitle} />
+        <img src="/characters/Rat.svg" alt="Rat character"/>
     </article>
 </section>
+
+<style>
+
+:root {
+    --image-width: 30em;
+    --text-font-size-large: 2.25em;
+    --text-font-size-small: 0.625em;
+    --max-image-width: 18.125em;
+}
+
+section {
+    background: url('/home-background.png'), linear-gradient(to bottom, #3F93B7, #1C5872);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 100vh;
+    height: 100dvh; 
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 0em;
+    grid-row-gap: 0em;
+}
+
+article:first-of-type { 
+    grid-area: 1 / 1 / 2 / 2;
+    flex-direction: column;
+    position: relative;
+}
+
+article:nth-of-type(2) { 
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+article img {
+    max-width: var(--max-image-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article:first-of-type img {
+    width: var(--image-width);
+}
+
+.progress-text {
+    position: absolute;
+    text-align: center;
+    transform: translateY(20%);
+}
+
+article:first-of-type h1 {
+    font-size: var(--text-font-size-large);
+    font-weight: 400;
+}
+
+article:first-of-type p:nth-of-type(2) {
+    font-size: var(--text-font-size-small);
+}
+</style>

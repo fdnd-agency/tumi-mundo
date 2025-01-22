@@ -1,44 +1,49 @@
 <script>
-
-import Input from '../../components/forms/input.svelte';
+import { Input } from '$lib/index';
 
 </script>
 
 <title>sign-up</title>
-<section>
-    <div class="heading">
-        <a href="/onboarding"><img src="/icons/back-button.svg" alt="back button"></a>
-        <h1>Sign up</h1> 
-    </div>
-   
-    <form action="/profile-selection">
-            <Input type="text"/>
-            <Input type="email"/>
-            <Input type="password"/>
-
-        <article>
-            <div>
-                <label class="switch">
-                    <input type="checkbox" aria-label="toggle-button">
-                    <span class="slider round"></span>
-                </label>
-
-                <p>Agree to the terms of services and the privacy policy <a href="/click" class="click-here">(click here for more information)</a></p>
-            </div>
+<main>
+    <section>
+        <div class="heading">
+            <a href="/onboarding">
+                <svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.3398 0.554956C14.0797 1.2949 14.0797 2.49458 13.3398 3.23452L4.5743 12L13.3398 20.7655C14.0797 21.5054 14.0797 22.7051 13.3398 23.445C12.5998 24.185 11.4002 24.185 10.6602 23.445L0.554955 13.3398C-0.184985 12.5998 -0.184985 11.4002 0.554955 10.6602L10.6602 0.554956C11.4002 -0.184985 12.5998 -0.184985 13.3398 0.554956Z" fill="black"/>
+                </svg>                    
+            </a>
+            <h1>Sign up</h1> 
+        </div>
     
-            <div>
-                <label class="switch">
-                    <input type="checkbox" aria-label="toggle-button">
-                    <span class="slider round"></span>
-                </label>
+        <form action="/profile-selection">
+                <Input type="text"/>
+                <Input type="email"/>
+                <Input type="password"/>
 
-                <p>Agree to share data with research universities and participate in research <a href="/" class="click-here">(click here for more information)</a></p>
-            </div>
-        </article>
+            <article>
+                <div>
+                    <label class="switch">
+                        <input type="checkbox" aria-label="toggle-button">
+                        <span class="slider round"></span>
+                    </label>
 
-        <input type="submit" value="Sign up!" class="sign-upbtn">
-    </form>
-</section>
+                    <p>Agree to the terms of services and the privacy policy <a href="/click" class="click-here">(click here for more information)</a></p>
+                </div>
+        
+                <div>
+                    <label class="switch">
+                        <input type="checkbox" aria-label="toggle-button">
+                        <span class="slider round"></span>
+                    </label>
+
+                    <p>Agree to share data with research universities and participate in research <a href="/" class="click-here">(click here for more information)</a></p>
+                </div>
+            </article>
+
+            <input type="submit" value="Sign up!" class="sign-upbtn">
+        </form>
+    </section>
+</main>
 
 
 <style>
@@ -46,14 +51,17 @@ import Input from '../../components/forms/input.svelte';
     padding: 0;
     margin: 0;
 }
-section, form{
+section, form, main{
     display: flex;
     flex-direction: column;
 }
+main{
+    align-items: center;
+}
 section {
     padding: 20px;
-    height: 100vh;
-    height: 100dvh; /* for dynamic viewport height */
+    max-width: 30em ;
+    height: 100dvh; 
 }
 form {
     flex-grow: 1;
@@ -62,7 +70,7 @@ form {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative; /* Maakt positionering mogelijk binnen de container */
+    position: relative;
     height: 80px;
     margin-bottom: 30px;
     margin-top: 10px;
@@ -71,15 +79,15 @@ form {
 .heading h1 {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); /* Plaatst het h1 in het midden van de container */
-    margin: 0; /* Zorgt voor consistentie */
-    font-size: 1.5rem; /* Pas aan naar gewenste grootte */
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 1.5rem;
 }
 
 .heading a {
-    text-decoration: none; /* Optioneel: verwijder onderstreping */
-    margin-left: 0; /* Zorg dat de `a` helemaal links begint */
-    display: flex; /* Zorg dat de img inline blijft met flexbox */
+    text-decoration: none;
+    margin-left: 0; 
+    display: flex; 
     align-items: center;
 }
 
@@ -108,7 +116,7 @@ div{
     margin-bottom: 20px;
 }
 
-/* Styling voor de toggle button */
+/* Styling for toggle button */
 .switch {
   position: relative;
   display: inline-block;
@@ -128,6 +136,7 @@ div{
   left: 0;
   right: 0;
   bottom: 0;
+  width: 2em;
   background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;

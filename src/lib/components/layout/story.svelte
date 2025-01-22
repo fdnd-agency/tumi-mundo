@@ -50,12 +50,11 @@
 
 <style>
   :root {
-    --small-space: .5em;
+    --small-space: var(--space-sm);
   }
 
-  /* General */
   p {
-    font-size: var(--small-space);
+    font-size: var(--font-size-sm);
   }
 
   .flex-items {
@@ -64,25 +63,21 @@
   }
 
   article {
-    width: 20em;
-    height: 4.5em;
-
+    width: var(--article-width);
+    height: var(--article-height);
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-
-    background-color: #fff;
+    grid-template-columns: var(--grid-columns);
+    grid-template-rows: var(--grid-rows);
+    background-color: var(--color-bg);
     overflow: hidden;
-    padding: var(--small-space);
-    border-radius: 4px;
+    padding: var(--space-sm);
+    border-radius: var(--border-radius);
     color: black;
-    scroll-snap-align: center;
   }
 
-  /* More specificity */
   .story-title {
-    font-size: 0.75em;
-    font-weight: 600;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
     grid-area: 1 / 2 / 2 / 6;
   }
 
@@ -90,35 +85,31 @@
     grid-area: 1 / 1 / 4 / 2;
   }
 
-  .story-image img{
-    max-width: 4em;
-    min-height: 4em;
+  .story-image img {
+    max-width: var(--image-max-width);
+    min-height: var(--image-min-height);
     object-fit: cover;
   }
 
   .story-language {
     grid-area: 1 / 5 / 2 / 6;
     justify-content: flex-end;
-    gap: var(--small-space);
+    gap: var(--space-sm);
   }
-    
+
   .story-summary {
     grid-area: 2 / 2 / 3 / 5;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    line-clamp: 2;
     overflow: hidden;
+    font-size: var(--font-size-xs);
   }
 
   .story-playtime {
     grid-area: 3 / 2 / 4 / 5; 
-    gap: var(--small-space);
-  }
-
-  .story-playtime a {
-    display: flex;
-    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--font-size-xs);
   }
 
   .story-playtime a svg:hover circle {
@@ -128,7 +119,7 @@
   .story-icons {
     grid-area: 3 / 5 / 4 / 6; 
     justify-content: flex-end;
-    gap: var(--small-space);
+    gap: var(--space-sm);
   }
 
   .story-icons svg:hover path,
@@ -136,9 +127,10 @@
   .story-icons svg:hover circle {
     stroke: #000;
   }
-  @media only screen and (min-width: 412px) {
-    article{
-    width: 23em;
-}
-}
+  
+  @media (min-width: 412px) {
+    article {
+      width: var(--article-width-large);
+    }
+  }
 </style>

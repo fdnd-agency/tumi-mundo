@@ -1,16 +1,11 @@
 
 <script>
-    import Story from '../../components/layout/story.svelte';
-    import Playlist from '../../components/layout/playlist.svelte';
-
-    import Menu2 from '../../components/core/menu2.svelte';
+    import { Story, Playlist, Menu } from '$lib/index';
 
     let currentPage = "lessons";
 
     /** @type {import('./$types').PageData} */
     export let data;
-
-    import { onMount } from 'svelte';
 
     let storyList;
 
@@ -25,7 +20,7 @@
 </script>
 
 <main>
-<Menu2 {currentPage}/>
+<Menu {currentPage}/>
 
 <header>
     <h1>Lessons</h1>
@@ -39,7 +34,7 @@
     <h2>Own playlists</h2>
     <ul>
         <li class="playlist-1">
-            <img src="/temp/temp-story.svg" class="story-img" alt="story image">
+            <img src="https://fdnd-agency.directus.app/assets/263e541a-9dd8-4978-8ad0-9a6e5b9dfe1a" class="story-img" alt="story">
             <h3>The octopus who was very hungry</h3>
             <small>    
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +44,10 @@
             </a></small>
         </li>
         <li class="create-playlist">
-            <img src="/icons/create-playlist.svg" alt="create playlist">
+            <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="30" width="8" height="68" rx="4" fill="white"/>
+                <rect x="68" y="30" width="8" height="68" rx="4" transform="rotate(90 68 30)" fill="white"/>
+            </svg>                
             <h3>Make a playlist !</h3>
             <small><a href="/create-playlist">Add your favorite stories in one playlist</a></small>
         </li>
@@ -70,15 +68,19 @@
         <a href="/all-stories">Show all</a>
     </nav>
 
-    <section bind:this={storyList} class="story-list">
+    <ul bind:this={storyList} class="story-list">
         {#each data.stories as story}
+        <li>
             <Story {story} />
+        </li>
         {/each}
-    </section>
+    </ul>
 
     <nav class="carousel-nav">
         <button aria-label="Previous" on:click={() => scrollCarousel(-1)}>
-            <img src="/icons/carousel-left-button.svg" alt="Previous">
+            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" alt="Previous">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.3357 5.10128C16.7796 5.54525 16.7796 6.26506 16.3357 6.70902L11.0764 11.9683L16.3357 17.2276C16.7796 17.6716 16.7796 18.3914 16.3357 18.8353C15.8917 19.2793 15.1719 19.2793 14.7279 18.8353L8.66476 12.7722C8.2208 12.3282 8.2208 11.6084 8.66476 11.1644L14.7279 5.10128C15.1719 4.65732 15.8917 4.65732 16.3357 5.10128Z" fill="white"/>
+            </svg>                
         </button>
         <ul>
             <li><input type="radio" aria-label="nav-button"></li>
@@ -86,7 +88,9 @@
             <li><input type="radio" aria-label="nav-button"></li>
         </ul>
         <button aria-label="Next" on:click={() => scrollCarousel(1)}>
-            <img src="/icons/carousel-right-button.svg" alt="Next">
+            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" alt="Next">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.66476 18.8358C8.2208 18.3919 8.2208 17.6721 8.66476 17.2281L13.924 11.9688L8.66476 6.70951C8.2208 6.26555 8.2208 5.54574 8.66476 5.10177C9.10873 4.65781 9.82853 4.65781 10.2725 5.10177L16.3357 11.1649C16.7796 11.6089 16.7796 12.3287 16.3357 12.7727L10.2725 18.8358C9.82853 19.2798 9.10872 19.2798 8.66476 18.8358Z" fill="white"/>
+            </svg>                
         </button>
     </nav>
 </section>
@@ -114,223 +118,236 @@
 </main>
 
 <style>
-input[type=radio]{
-    height: 1.2em;
-    width: 1.2em;
-    margin: .5em;
-    padding: 1em;
-}
-.story-list{
-    margin: 1em;
-}
-/* styling for all stories & carousel nav */
-.all-stories{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.all-stories > h2{
-    align-self: start;
-    margin: 0;
-}
-nav{
-    display: flex;
-    margin-top: 1em;
-    align-items: center;
-    justify-content: center;
-}
-nav > ul{
-    display: flex;
-    margin: 0 1.5em;
-}
-nav > button{
-    border: none;
-    border-radius: .5em;
-    padding:  1em;
-    height: 2em;
-    width: 3em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #9264F4;
-}
-nav > button > img{
-    height: 1.5em;
-}
-/* styling for all stories page */
-.language-filter{
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-.language-filter > a{
-    margin-left: auto;
-}
-.language-filter > a:hover{
-    text-decoration: underline;
-}
-label{
-    display: flex;
-    align-items: center;
-    padding: .3em;
-    padding-right: .5em;
-    background-color: #998DB2;
-    color: black;
-    border-radius: .5em;
-}
-label:nth-of-type(1){
-    margin-right: 1em;
-}
-input[type=checkbox]{
-    opacity: 0;
-    position: absolute;
-}
-input[type=checkbox]:checked + label{
-    background-color: white;
-    font-weight: bold;
-}
-label > img{
-    height: 1.5em;
-    width: auto;
-    margin-right: 0.5em;
-}
-
-/*  */
-h1{
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-}
-h2{
-    font-size: 1.3em;
-    margin-bottom: .75rem;
-}
-header{
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.create-playlist, .playlist-1{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.playlist-1 > img{
-    width: 100%;
-}
-.playlist-1{
-    background-color: white;
-}
-.playlist-1 > a small{
-    color: black;
-}
-.playlist-1 > h3{
-    font-weight: bold;
-}
-.own-playlist{
-    display: flex;
-    flex-direction: column;
-}
-.own-playlist > ul{
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-}
-.own-playlist > ul > li{
-    height: 12.5rem;
-    width: 9rem;
-    color: black;
-    border-radius: .5rem;
-    padding: .7em;
-}
-.create-playlist{
-    background-color: #494375;
-    text-align: center;
-    color: white;
-}
-.create-playlist > h3{
-    margin-bottom: 1em;
-    color: white;
-    font-weight: bold;
-    font-size: 1em;
-}
-.create-playlist > a{
-    color: white;
-    font-size: 1em;
-}
-.create-playlist > small{
-    color: white;
-}
-:root{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-main{
-    height: 100%;
-    color: white;
-    background-image: linear-gradient(#471871, #142151);
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-}
-section{
-    padding: 1rem;
-}
-.playlist-1 > small{
-    align-self: start;
-    margin-top: auto;
-}
-small img {
-    vertical-align: middle;
-    padding-right: .3em;
-    height: 2em;
-    width: 2em;
-}
-
-/*  styling for suggested playlist page*/
-
-section.playlist-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    overflow-x: auto;
-    padding-bottom: 1rem; 
-    scroll-snap-type: x mandatory; 
-}
-section.playlist-list > article {
-    flex: 0 0 auto;
-    scroll-snap-align: center; 
-}
-
-/*  */
-body {
-  overflow-x: hidden; /* Verberg horizontale scroll voor de hele pagina */
-  margin: 0; /* Verwijder eventuele marges */
-  padding: 0; /* Verwijder eventuele paddings */
-  box-sizing: border-box; /* Zorg dat alle elementen inclusief borders worden gemeten */
-}
-.story-list {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(3, auto);
-  gap: .5em;
-  overflow-x: auto; /* Horizontale scroll op deze container */
-  scroll-snap-type: x mandatory;
-  padding: 1rem 0;
-  width: 100%; /* Zorg dat deze container niet breder is dan de viewport */
-  box-sizing: border-box;
-}
-
-@media only screen and (min-width: 600px) {
-    main{
-    align-items: center;
-}
-    .story-list{
-        grid-template-rows: repeat(4, auto);
+    :root {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
-}
-</style>
+    
+    main {
+        height: 100%;
+        color: var(--color-text-light);
+        background-image: linear-gradient(#471871, #142151);
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 5em;
+    }
+    
+    section {
+        padding: var(--space-md);
+    }
+    
+    h1 {
+        margin-top: var(--space-lg);
+        margin-bottom: var(--space-md);
+    }
+    
+    h2 {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--space-sm);
+    }
+    
+    header {
+        margin-bottom: var(--space-lg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Styling for "own playlist" section */
+    .create-playlist, .playlist-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .playlist-1 > img {
+        width: 100%;
+    }
+    
+    .playlist-1 {
+        background-color: var(--color-text-light);
+        color: var(--color-text);
+    }
+    
+    .playlist-1 > a small {
+        color: var(--color-text);
+    }
+    
+    .playlist-1 > h3 {
+        font-weight: var(--font-weight-bold);
+        color: var(--color-text);
+    }
+    
+    .own-playlist {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .own-playlist > ul {
+        display: flex;
+        gap: var(--space-sm);
+        overflow-x: auto;
+    }
+    
+    .own-playlist > ul > li {
+        height: 12.5rem;
+        width: 9rem;
+        color: var(--color-text);
+        border-radius: var(--border-radius);
+        padding: var(--space-md);
+    }
+    
+    /* Styling for "all stories" section & carousel nav */
+    .all-stories {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .all-stories > h2 {
+        align-self: start;
+        margin: 0;
+    }
+    
+    nav {
+        display: flex;
+        margin-top: var(--space-md);
+        align-items: center;
+        justify-content: center;
+    }
+    
+    nav > ul {
+        display: flex;
+        margin: 0 var(--space-lg);
+    }
+    
+    nav > button {
+        border: none;
+        border-radius: var(--border-radius);
+        padding: var(--space-sm);
+        height: 2em;
+        width: 3em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #9264F4;
+    }
+    
+    input[type=radio] {
+        height: 1.2em;
+        width: 1.2em;
+        margin: var(--space-sm);
+        padding: var(--space-md);
+    }
+    
+    .story-list {
+        margin: var(--space-md);
+    }
+    
+    .story-list > li {
+        scroll-snap-align: center;
+    }
+    
+    .language-filter {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .language-filter > a {
+        margin-left: auto;
+        color: white;
+    }
+    
+    .language-filter > a:hover {
+        text-decoration: underline;
+    }
+    
+    label {
+        display: flex;
+        align-items: center;
+        padding: var(--space-xs);
+        padding-right: var(--space-sm);
+        background-color: #998DB2;
+        color: var(--color-text);
+        border-radius: var(--border-radius);
+    }
+    
+    label:nth-of-type(1) {
+        margin-right: var(--space-md);
+    }
+    
+    input[type=checkbox] {
+        opacity: 0;
+        position: absolute;
+    }
+    
+    input[type=checkbox]:checked + label {
+        background-color: var(--color-text-light);
+        font-weight: var(--font-weight-bold);
+    }
+    
+    label > img {
+        height: 1.5em;
+        width: auto;
+        margin-right: var(--space-sm);
+    }
+    
+    /* Styling for "create playlist" section */
+    .create-playlist {
+        background-color: #494375;
+        text-align: center;
+        color: var(--color-text-light);
+    }
+    
+    .create-playlist > h3 {
+        margin-bottom: var(--space-md);
+        color: var(--color-text-light);
+        font-weight: var(--font-weight-bold);
+        font-size: var(--font-size-md);
+    }
+    
+    .create-playlist > small {
+        color: var(--color-text-light);
+    }
+    
+    .playlist-1 > small {
+        align-self: start;
+        margin-top: auto;
+    }
+    
+    /* Styling for suggested playlist page */
+    section.playlist-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-lg);
+        overflow-x: auto;
+        padding-bottom: var(--space-md);
+        scroll-snap-type: x mandatory;
+    }
+    
+    .story-list {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-rows: var(--grid-rows);
+        gap: var(--space-xs);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: var(--space-md) 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    @media only screen and (min-width: 600px) {
+        main {
+            align-items: center;
+        }
+        .story-list {
+            grid-template-rows: repeat(4, auto);
+        }
+    }
+    </style>
+    

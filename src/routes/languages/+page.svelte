@@ -1,30 +1,30 @@
 <script>
-    import Search from '../../components/forms/search.svelte'; 
-    import Continue from '../../components/forms/continue-btn.svelte';
+    import { Search, Button } from '$lib/index';
 
     export let data = {
-        languages: [] // Begin met een lege talenlijst
+        languages: [] 
     };
 
-    let filteredLanguages = data.languages; // Begin met alle talen
+    let filteredLanguages = data.languages;
+    let searchTerm = ""; 
 
     data.languages.forEach(language => {
         language.name = language.language;
-    });
+    }); 
 
-    let searchTerm = ""; // Zoekterm om aan de Search-component door te geven
-
-    // Wanneer de filter gebeurtenis wordt geactiveerd, update de filteredLanguages
     function handleFilter(event) {
         filteredLanguages = event.detail;
-    }
+    };
+
 </script>
 
 <main>
     <section>
         <nav class="navigation">
             <a href="/onboarding" aria-label="Go back to onboarding">
-                <img src="/icons/back-button-2.svg" alt="back button" height="24" width="14"/>
+                <svg width="24" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.3398 0.554956C14.0797 1.2949 14.0797 2.49458 13.3398 3.23452L4.5743 12L13.3398 20.7655C14.0797 21.5054 14.0797 22.7051 13.3398 23.445C12.5998 24.185 11.4002 24.185 10.6602 23.445L0.554955 13.3398C-0.184985 12.5998 -0.184985 11.4002 0.554955 10.6602L10.6602 0.554956C11.4002 -0.184985 12.5998 -0.184985 13.3398 0.554956Z" fill="white"/>
+                </svg>
             </a>
             <h1>We are going to learn!</h1>
         </nav>
@@ -34,13 +34,11 @@
             You can pick a <strong>maximum of 3</strong> languages.
         </p>
 
-        <!-- Search component -->
         <Search
             data={data.languages}
             bind:searchTerm
             on:filter={handleFilter} 
         />
-
         <hr class="line" />
 
         {#if filteredLanguages.length > 0}
@@ -64,8 +62,7 @@
         {:else}
             <p>No languages found.</p>
         {/if}
-
-        <Continue type="button"/>
+        <Button type="button"/>
     </section>
 </main>
 
