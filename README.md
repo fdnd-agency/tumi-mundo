@@ -45,7 +45,7 @@ Bovendien worden deze inzichten nog niet op grote schaal toegepast als ontwikkel
 
 ## Live Link
 
-[Bekijk de applicatie live](https://tumi-mundo.vercel.app/)
+[Bekijk de applicatie live](https://tumimundo.agency.fdnd.nl/)
 
 ## Installatiehandleiding
 
@@ -78,6 +78,22 @@ Contributies aan dit project zijn welkom! Volg deze stappen om bij te dragen:
 4. Push naar de branch (`git push origin feature-naam`).
 5. Maak een Pull Request.
 
+We werken op dit project in de onderstaande versies:
+```
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "3.2.*",
+		"@sveltejs/kit": "2.0.*",
+		"@sveltejs/vite-plugin-svelte": "3.0.*",
+		"svelte": "4.2.*",
+		"vite": "5.0.*"
+	},
+	"type": "module",
+	"dependencies": {
+		"@directus/sdk": "17.0.*"
+	}
+}
+```
+
 ## Hints voor volgende teams
 
 - Zorg voor duidelijke documentatie bij nieuwe functies.
@@ -96,6 +112,8 @@ Contributies aan dit project zijn welkom! Volg deze stappen om bij te dragen:
 
 ![Node.js](https://img.shields.io/badge/Node.js-v16-green)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
+![Svelte](https://img.shields.io/badge/Svelte-v4-orange)
+
 
 ## Link naar Projectboard
 
