@@ -42,7 +42,7 @@ export async function POST({ request }) {
     return new Response(null, {
       status: 303,
       headers: {
-        Location: '/playlist',
+        Location: '/lessons',
       },
     });
   } catch (error) {
