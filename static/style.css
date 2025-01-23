@@ -141,6 +141,11 @@ p {
     font-weight: 400;
 }
 
-@view-transition {
-    navigation: auto;
+/* View transitions */
+@supports (navigation: auto) {
+    @media (prefers-reduced-motion: no-preference) {
+        @view-transition {
+            navigation: auto;
+        }
+    }
 }
