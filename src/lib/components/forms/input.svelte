@@ -48,7 +48,7 @@
 <style>
   label {
     color: black;
-    margin-bottom: 10px;
+    margin-bottom: .6em;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -57,11 +57,11 @@
   input {
     background-color: #EEEEEE;
     border: none;
-    margin-bottom: 20px;
+    margin-bottom: 1.2em;
     font-size: 1rem;
     height: 2rem;
     width: 100%;
-    border-radius: 8px;
+    border-radius: .5em;
     padding: 1.5rem 1rem;
     box-sizing: border-box;
   }

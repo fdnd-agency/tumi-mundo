@@ -80,7 +80,6 @@
         height: 100dvh;
         color: white;
         overflow: hidden;
-        font-family: Poppins, sans-serif;
     }
 
     .navigation {

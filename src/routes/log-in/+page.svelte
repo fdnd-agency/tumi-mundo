@@ -87,7 +87,6 @@
     --color-bg-light: #EEEEEE;
     --color-popup-bg: rgba(0, 0, 0, 0.7);
 
-    --font-family: 'Poppins', sans-serif;
     --font-size-base: 16px;
     --font-size-heading: 3rem;
     --font-size-popup-title: 20px;
@@ -128,7 +127,6 @@ main {
     height: 100dvh;
     width: 100%;
     color: var(--color-text);
-    font-family: var(--font-family);
 }
 
 section {

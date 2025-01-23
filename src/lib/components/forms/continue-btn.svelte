@@ -16,17 +16,16 @@
 <style>
 
 input[type="submit"], button{
-    font-family: Poppins;
     width: 85%;
-    padding: 13px;
-    border-radius: 7px;
+    padding: .8em;
+    border-radius: .4em;
     border: none;
-    font-size: 18px;
+    font-size: 1.1em;
     color: #4f4f4f;
     background-color: #d4d4d4 ;
     position: fixed;
     bottom: 0;
-    margin-bottom: 40px;
+    margin-bottom: 2.5em;
 }
 input[type="submit"]:hover,:focus{
     cursor: pointer;
