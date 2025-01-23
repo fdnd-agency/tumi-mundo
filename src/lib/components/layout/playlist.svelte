@@ -70,6 +70,7 @@
 <style>
   :root {
     --small-space: .5em;
+    --color-text: black;
   }
 
   p {

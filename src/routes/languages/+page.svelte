@@ -131,7 +131,7 @@
         margin-bottom: 0.625em;
         border-radius: 0.125em;
         background-color: #9AC0D1;
-        height: 0.3125em;
+        height: 1px;
         width: 100%;
     }
 

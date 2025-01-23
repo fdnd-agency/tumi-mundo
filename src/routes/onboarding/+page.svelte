@@ -159,7 +159,7 @@ section:nth-of-type(1) {
 }
 .mouse {
   width: 100%;
-  height: 400px;
+  height: 25em;
   display: flex;
   justify-content: center; 
   align-items: center;   
@@ -186,11 +186,11 @@ h1, p {
   text-align: center;
 }
 h1 {
-  font-size: 20px;
+  font-size: 1.25em;
   margin-bottom: 1em;
 }
 p {
-  font-size: 14px;
+  font-size: .8em;
   max-width: 45ch;
   margin: auto;
   margin-top: 0;
@@ -199,17 +199,17 @@ p {
 a:nth-of-type(1) {
   margin-left: auto;
   color: white;
-  font-size: 20px;
+  font-size: 1.25em;
   padding: 1em;
 }
 button, a:nth-of-type(2) {
   margin: auto;
-  margin-bottom: 40px;
-  border-radius: 10px;
+  margin-bottom: 2.5em;
+  border-radius: .6em;
   width: 80%;
-  padding: 15px;
+  padding: 1em;
   text-align: center;
-  font-size: 16px;
+  font-size: 1em;
   border: none;
 }
 .button-1 {
@@ -243,12 +243,12 @@ button, a:nth-of-type(2) {
 .carousel-indicators {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 1.8em;
   z-index: 10;
 }
 .indicator {
-  width: 10px;
-  height: 10px;
+  width: .6em;
+  height: .6em;
   border-radius: 50%;
   border: 1px solid lightgray;
   background-color: transparent;

@@ -108,7 +108,7 @@ header {
     background-color: #571899;
     font-size: 1em;
     padding: 0.2em 0.3em;
-    border-radius: 5px;
+    border-radius: .25em;
 }
 
 .nav-ul {
