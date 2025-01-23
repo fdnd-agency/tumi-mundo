@@ -4,7 +4,6 @@
 De codebase is georganiseerd in een logische structuur waarbij de belangrijkste functionaliteiten in aparte modules zijn ondergebracht:
 
 - **`$lib/directus.js`**: Bevat de configuratie en instantie van Directus CMS.
-- **`$env/static/public.js`**: Bevat omgevingsvariabelen zoals de API URL.
 - **`$lib/index.js`**: Bevat herbruikbare componenten.
 
 ## Belangrijke Componenten
