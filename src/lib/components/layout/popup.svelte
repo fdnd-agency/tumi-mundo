@@ -1,6 +1,7 @@
 <script>
-  export let title = "Goodmorning,"; // Default message
-  export let message = "Shall we start with a story?"; // Default message
+   // Standard data
+  export let title = "Goodmorning,";
+  export let message = "Shall we start with a story?";
 </script>
 
 <dialog open>
@@ -16,7 +17,7 @@
                 </button>
           </form>
       </div>
-      <p class="popup-message">{message}</p> <!-- Use the dynamic message -->
+      <p class="popup-message">{message}</p>
       <a href="/lessons">Let's do it!</a>
   </div>
 </dialog>
@@ -65,7 +66,6 @@ form{
   width: 100%;
   border-radius: 5px;
   text-align: center;
-  /* margin-bottom: 1em; */
 }
 
 .popup > a:hover{

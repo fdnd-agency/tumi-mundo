@@ -71,8 +71,7 @@
   :root {
     --small-space: .5em;
   }
-
-  /* General */
+  
   p {
     font-size: var(--small-space);
   }

@@ -39,7 +39,6 @@
 </div>
 
 <style>
-/* Zet de zoekcontainer op een containment context */
 .search-container {
     width: 100%;
     max-width: 500px;
@@ -47,7 +46,6 @@
     contain: inline-size;
 }
 
-/* Basisstijl voor de zoekbalk */
 .search {
     background-image: url(/icons/search-icon.svg);
     background-repeat: no-repeat;
@@ -56,9 +54,9 @@
     border-radius: 8px;
     border: none;
     width: 100%;
-    max-width: 500px; /* Optionele maximale breedte */
-    margin: 10px auto; /* Centraal uitlijnen */
-    box-sizing: border-box; /* Zorg ervoor dat padding en border in de breedte worden meegenomen */
+    max-width: 500px;
+    margin: 10px auto;
+    box-sizing: border-box;
 }
   
 div{

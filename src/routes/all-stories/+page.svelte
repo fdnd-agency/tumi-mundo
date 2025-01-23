@@ -66,13 +66,6 @@ main {
     background-image: linear-gradient(#471871, #142151);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: white;
-}
-
 .heading,
 .nav-ul {
     display: flex;
@@ -111,7 +104,6 @@ header {
     background-color: transparent;
 }
 
-/* Styling for nav and dropdowns */
 .nav-ul > li {
     background-color: #571899;
     font-size: 1em;
@@ -151,7 +143,6 @@ ul {
     gap: 1em;
 }
 
-/* Styling for stories */
 .story-list {
     padding: 0;
     display: flex;

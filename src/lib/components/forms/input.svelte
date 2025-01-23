@@ -1,4 +1,5 @@
 <script>
+  // Standard data
   export let type = 'text';
   export let placeholder = '';
   export let value = '';

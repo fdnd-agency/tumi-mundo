@@ -71,13 +71,6 @@
         font-size: 16px;
     }
 
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
     main {
         background: linear-gradient(to bottom, #3F93B7, #1C5872);
         background-size: contain;
