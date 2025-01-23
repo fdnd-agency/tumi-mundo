@@ -24,8 +24,6 @@ Het project is momenteel in de **ontwikkelingsfase**. De meeste basisfunctionali
 
 ## Aandachtspunten of Uitdagingen
 
-- **Probleem met User Authenticatie**: Er is een probleem met de validatie van gebruikers die niet goed werkt bij meerdere gebruikers met hetzelfde e-maildomein. Dit moet verder worden onderzocht.
-
 - **Responsiviteit**: Er zijn enkele kleine problemen met de responsiviteit van een paar paginas die aandacht vereisen.
 
 ## Aanbevolen Eerste Stappen voor het Volgende Team
