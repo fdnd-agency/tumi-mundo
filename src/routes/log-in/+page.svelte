@@ -105,11 +105,10 @@ section, .buttons {
 }
 
 main {
-    background: url(/log-in-bg.svg), linear-gradient(to bottom, #3F93B7, #1C5872);
+    background: url(/log-in-background.png), linear-gradient(to bottom, #3F93B7, #1C5872);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    height: 100vh;
     height: 100dvh;
     width: 100%;
     color: var(--color-text);

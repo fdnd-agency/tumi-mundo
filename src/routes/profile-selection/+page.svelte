@@ -138,6 +138,7 @@ li button img {
     width: 6.5em;
     height: 6.5em;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 button {
