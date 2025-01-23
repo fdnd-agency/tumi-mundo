@@ -71,7 +71,7 @@
   :root {
     --small-space: .5em;
   }
-  
+
   p {
     font-size: var(--small-space);
   }
@@ -92,7 +92,7 @@
     background-color: #fff;
     overflow: hidden;
     padding: var(--small-space);
-    border-radius: 4px;
+    border-radius: .25em;
     color: black;
 
     gap: .5em;
@@ -119,7 +119,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: .25em;
   }
 
   .playlist-playtime {

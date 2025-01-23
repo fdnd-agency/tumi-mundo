@@ -58,8 +58,8 @@
     --article-width-large: 23em;
     --image-max-width: 4em;
     --image-min-height: 4em;
-    --flag-height: 17.59px;
-    --flag-width: 17.58px;
+    --flag-height: 1.12em;
+    --flag-width: 1.12em;
     
     /* ------------------------------- */
     /* Grid Layout */
@@ -112,32 +112,32 @@ ul{
 }
 
 h1{
-    font-size: 22px;
+    font-size: 1.375em;
     font-weight: 600;
 }
 
 h2{
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: 600;
 }
 
 h3 {
-    font-size: 12px;
+    font-size: .75em;
     font-weight: 400;
 }
 
 p {
-    font-size: 16px;
+    font-size: 1em;
     font-weight: 400;
 }
 
 .medium-title {
-    font-size: 12px;
+    font-size: .75em;
     font-weight: 600;
 }
 
 .small-text {
-    font-size: 8px;
+    font-size: .5em;
     font-weight: 400;
 }
 

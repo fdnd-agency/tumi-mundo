@@ -64,7 +64,7 @@ form{
   background-color: #954BE2;
   color: white;
   width: 100%;
-  border-radius: 5px;
+  border-radius: .25em;
   text-align: center;
 }
 

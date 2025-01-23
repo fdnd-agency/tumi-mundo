@@ -67,16 +67,11 @@
 </main>
 
 <style>
-    :root {
-        font-size: 16px;
-    }
-
     main {
         background: linear-gradient(to bottom, #3F93B7, #1C5872);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: bottom;
-        height: 100vh;
         height: 100dvh;
         color: white;
         overflow: hidden;
