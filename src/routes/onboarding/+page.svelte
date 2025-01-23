@@ -39,101 +39,101 @@
 </script>
   
  
-  <div class="carousel-container">
+<main>
+  <section>
+    <ul class="carousel">
+      <li>
         <section>
-            <ul class="carousel">
-              <li>
-                  <section>
-                    <a href="/sign-up">Skip</a>
-                    <div class="mouse">
-                        <svg width="242" height="242" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg" class="eclipse">
-                          <circle cx="121" cy="121" r="121" fill="#4A82C3"/>
-                        </svg>                        
-                        <picture class="rat">
-                            <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
-                            <source srcset="/characters/Rat.svg?format=webp">
-                            <!-- svelte-ignore a11y-img-redundant-alt -->
-                            <img src="/characters/Rat.svg" alt="rat image" height="250">
-                        </picture>
-                    </div>
+          <a href="/sign-up">Skip</a>
+            <div class="mouse">
+              <svg width="242" height="242" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg" class="eclipse">
+                <circle cx="121" cy="121" r="121" fill="#4A82C3"/>
+              </svg>                        
+              <picture class="rat">
+                <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
+                <source srcset="/characters/Rat.svg?format=webp">
+                <!-- svelte-ignore a11y-img-redundant-alt -->
+                <img src="/characters/Rat.svg" alt="rat image" height="250">
+              </picture>
+            </div>
 
-                    <div class="carousel-indicators">
-                      <span class="indicator active" data-slide="0"></span>
-                      <span class="indicator" data-slide="1"></span>
-                      <span class="indicator" data-slide="2"></span>
-                    </div>
-                  
-                    <h1>Learn languages</h1>
-                    <p>
-                        Every household is different. Some only speak one language, others even as much as three!
-                        Learning more than one language has great neurological benefits for anyone at any age. With TuMi Mundo your child can learn up to 3 languages.
-                    </p>
-                    <button type="button" class="carousel-button right button-1" data-target=".carousel" aria-label="right-button">Continue</button>  
-                </section>
-              </li>
-
-              <li>
-                  <section class="slide-2">
-                    <a href="/sign-up">Skip</a>
-                      <div class="mouse">
-                          <svg width="242" height="242" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg" class="eclipse">
-                            <circle cx="121" cy="121" r="121" fill="#327592"/>
-                          </svg>
-                          <picture class="rat">
-                              <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
-                              <source srcset="/characters/Rat.svg?format=webp">
-                              <!-- svelte-ignore a11y-img-redundant-alt -->
-                              <img src="/characters/Rat.svg" alt="rat image" height="250">
-                          </picture>
-                      </div>
-
-                      <div class="carousel-indicators">
-                        <span class="indicator" data-slide="0"></span>
-                        <span class="indicator active" data-slide="1"></span>
-                        <span class="indicator" data-slide="2"></span>
-                      </div>
-                  
-                        <h1>Test the progress</h1>
-                            <p>
-                                During the learning journal you can measure the improvement of your child.  
-                                There is an option to share the data with researchers to further improve the method and participate in special researches! You can manage the option to share your data at any given time in the app.
-                            </p>
-                    <button type="button" class="carousel-button right button-2" data-target=".carousel" aria-label="right-button">Continue</button>  
-                </section>
-              </li>
-
-              <li>
-                  <section class="slide-3">
-                    <a href="/sign-up">Skip</a>
-                    <div class="mouse">
-                        <svg width="242" height="242" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg" class="eclipse">
-                          <circle cx="121" cy="121" r="121" fill="#047E72"/>
-                        </svg>                        
-                        <picture class="rat">
-                            <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
-                            <source srcset="/characters/Rat.svg?format=webp">
-                            <!-- svelte-ignore a11y-img-redundant-alt -->
-                            <img src="/characters/Rat.svg" alt="rat image" height="250">
-                        </picture>
-                    </div>
-
-                    <div class="carousel-indicators">
-                      <span class="indicator" data-slide="0"></span>
-                      <span class="indicator" data-slide="1"></span>
-                      <span class="indicator active" data-slide="2"></span>
-                    </div>
-                  
-                    <h1>See the results</h1>
-                        <p>
-                            See the results of the tests and watch as your child learns a language with TuMi Mundo.
-                            The older your child becomes the further into the method you go, it starts with listening, it ends with being able to have a full conversation.
-                        </p>
-                    <a href="/sign-up" class="make-acc">Make an account</a>
-                </section>
-              </li>
-            </ul>
+            <div class="carousel-indicators">
+              <span class="indicator active" data-slide="0"></span>
+              <span class="indicator" data-slide="1"></span>
+              <span class="indicator" data-slide="2"></span>
+            </div>
+          
+            <h1>Learn languages</h1>
+            <p>
+                Every household is different. Some only speak one language, others even as much as three!
+                Learning more than one language has great neurological benefits for anyone at any age. With TuMi Mundo your child can learn up to 3 languages.
+            </p>
+          <button type="button" class="carousel-button right button-1" data-target=".carousel" aria-label="right-button">Continue</button>  
         </section>
-  </div>
+      </li>
+
+      <li>
+        <section class="slide-2">
+          <a href="/sign-up">Skip</a>
+            <div class="mouse">
+              <svg width="242" height="242" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg" class="eclipse">
+                <circle cx="121" cy="121" r="121" fill="#327592"/>
+              </svg>
+              <picture class="rat">
+                <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
+                <source srcset="/characters/Rat.svg?format=webp">
+                <!-- svelte-ignore a11y-img-redundant-alt -->
+                <img src="/characters/Rat.svg" alt="rat image" height="250">
+              </picture>
+            </div>
+
+            <div class="carousel-indicators">
+              <span class="indicator" data-slide="0"></span>
+              <span class="indicator active" data-slide="1"></span>
+              <span class="indicator" data-slide="2"></span>
+            </div>
+          
+            <h1>Test the progress</h1>
+            <p>
+                During the learning journal you can measure the improvement of your child.  
+                There is an option to share the data with researchers to further improve the method and participate in special researches! You can manage the option to share your data at any given time in the app.
+            </p>
+          <button type="button" class="carousel-button right button-2" data-target=".carousel" aria-label="right-button">Continue</button>  
+        </section>
+      </li>
+
+      <li>
+        <section class="slide-3">
+          <a href="/sign-up">Skip</a>
+            <div class="mouse">
+              <svg width="242" height="242" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg" class="eclipse">
+                <circle cx="121" cy="121" r="121" fill="#047E72"/>
+              </svg>                        
+              <picture class="rat">
+                <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
+                <source srcset="/characters/Rat.svg?format=webp">
+                <!-- svelte-ignore a11y-img-redundant-alt -->
+                <img src="/characters/Rat.svg" alt="rat image" height="250">
+              </picture>
+            </div>
+
+            <div class="carousel-indicators">
+              <span class="indicator" data-slide="0"></span>
+              <span class="indicator" data-slide="1"></span>
+              <span class="indicator active" data-slide="2"></span>
+            </div>
+        
+            <h1>See the results</h1>
+            <p>
+              See the results of the tests and watch as your child learns a language with TuMi Mundo.
+              The older your child becomes the further into the method you go, it starts with listening, it ends with being able to have a full conversation.
+            </p>
+          <a href="/sign-up" class="make-acc">Make an account</a>
+        </section>
+      </li>
+    </ul>
+  </section>
+</main>
 
 
 <style>

@@ -106,13 +106,6 @@
     --popup-height: 500px;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
 section {
     padding: 0 var(--padding-large);
 }
