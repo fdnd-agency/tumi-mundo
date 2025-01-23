@@ -10,14 +10,17 @@ Een innovatieve aanpak om taalontwikkeling bij kinderen te ondersteunen door mid
 2. [Kenmerken](#kenmerken)
 3. [Screenshots](#screenshots)
 4. [Live Link](#live-link)
-5. [Installatiehandleiding](#installatiehandleiding)
-6. [Huisstijl](#huisstijl)
-7. [Bijdragen](#bijdragen)
-8. [Hints voor volgende teams](#hints-voor-volgende-teams)
-9. [Gebruikte Bronnen](#gebruikte-bronnen)
-10. [Badges](#badges)
-11. [Link naar Projectboard](#link-naar-projectboard)
-12. [Licentie](#licentie)
+5. [Teamleden](#teamleden)
+6. [Technische stack](#technische-stack)
+7. [Installatiehandleiding](#installatiehandleiding)
+8. [Belangrijke scripts](#belangrijke-scripts)
+9. [Huisstijl](#huisstijl)
+10. [Bijdragen](#bijdragen)
+11. [Hints voor volgende teams](#hints-voor-volgende-teams)
+12. [Gebruikte Bronnen](#gebruikte-bronnen)
+13. [Badges](#badges)
+14. [Link naar Projectboard](#link-naar-projectboard)
+15. [Licentie](#licentie)
 
 ## Introductie
 
@@ -47,6 +50,18 @@ Bovendien worden deze inzichten nog niet op grote schaal toegepast als ontwikkel
 
 [Bekijk de applicatie live](https://tumimundo.agency.fdnd.nl/)
 
+## Teamleden
+- Jesse Kramer - developer [github](https://github.com/Jesse-Kramer)
+- Lemuel Magsino - developer [github](https://github.com/lemuelmgsn)
+
+## Technische stack
+
+- **Framework:** SvelteKit
+- **Headless CMS:** Directus
+- **Package manager:** NPM
+- **Bundler:** Vite
+- **Programmeertalen:** HTML, CSS, JavaScript
+
 ## Installatiehandleiding
 
 Volg deze stappen om de applicatie lokaal te installeren:
@@ -61,6 +76,12 @@ npm install
 # Start de applicatie
 npm start
 ```
+
+## Belangrijke scripts
+
+- `npm run dev` - Start de applicatie in ontwikkelmodus.
+- `npm run build` - Bouwt de applicatie voor productie.
+- `npm run preview` - Start een lokale preview van de productie-build.
 
 ## Huisstijl
 
@@ -122,4 +143,11 @@ We werken op dit project in de onderstaande versies:
 ## Licentie
 
 Dit project is gelicenseerd onder de MIT-licentie. Zie het bestand [LICENSE](LICENSE) voor meer informatie.
+
+
+
+
+Dit project is gelicenseerd onder de MIT-licentie. Zie het bestand [LICENSE](LICENSE) voor meer informatie.
+
+
 
