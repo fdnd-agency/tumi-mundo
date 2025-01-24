@@ -79,7 +79,6 @@
     </ul>
 </main>
 <style>
-/* Background styling */
 main {
     background: linear-gradient(to bottom, #3A9ECA, #2B627A);
     background-size: contain;
@@ -118,7 +117,6 @@ main {
     margin: 0;
 }
 
-/* Profiles styling */
 ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -140,6 +138,7 @@ li button img {
     width: 6.5em;
     height: 6.5em;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 button {

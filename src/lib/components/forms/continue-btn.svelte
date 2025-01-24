@@ -1,8 +1,9 @@
 
 <script>
-  export let type = 'button'; // standaard type is 'button'
-  export let label = 'Continue'; // standaard label
-  export let onClick = () => {}; // standaard is een lege functie
+ // Standard data
+  export let type = 'button';
+  export let label = 'Continue';
+  export let onClick = () => {};
 </script>
 
 
@@ -12,24 +13,19 @@
   <input type="submit" value={label} on:click={onClick} />
 {/if}
 
-
-<!-- <input type="submit" value="Continue" tabindex="0"/> -->
-
 <style>
 
-/* continue button voor input */
 input[type="submit"], button{
-    font-family: Poppins;
     width: 85%;
-    padding: 13px;
-    border-radius: 7px;
+    padding: .8em;
+    border-radius: .4em;
     border: none;
-    font-size: 18px;
+    font-size: 1.1em;
     color: #4f4f4f;
     background-color: #d4d4d4 ;
     position: fixed;
     bottom: 0;
-    margin-bottom: 40px;
+    margin-bottom: 2.5em;
 }
 input[type="submit"]:hover,:focus{
     cursor: pointer;

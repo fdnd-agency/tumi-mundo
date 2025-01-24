@@ -4,9 +4,9 @@ export let csr = true;
 import { fetchAllData } from '$lib/api';
 
 export async function load({ fetch, url }) {
-    const searchQuery = url.searchParams.get("search"); // Fetch the searchterm from the URL
+    const searchQuery = url.searchParams.get("search");
 
-    const data = await fetchAllData(fetch); // Fetch all data
+    const data = await fetchAllData(fetch);
 
     // Filter the language if searchterm is given
     if (searchQuery) {

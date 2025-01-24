@@ -23,7 +23,7 @@
 
 </script>
 
-<section>
+<main>
     <Menu {currentPage}/>
     <article>
         <img src="/progress.svg" alt="Progress bar">
@@ -38,7 +38,7 @@
         <Popup title={popupTitle} />
         <img src="/characters/Rat.svg" alt="Rat character"/>
     </article>
-</section>
+</main>
 
 <style>
 
@@ -49,7 +49,7 @@
     --max-image-width: 18.125em;
 }
 
-section {
+main {
     background: url('/home-background.png'), linear-gradient(to bottom, #3F93B7, #1C5872);
     background-size: cover;
     background-repeat: no-repeat;

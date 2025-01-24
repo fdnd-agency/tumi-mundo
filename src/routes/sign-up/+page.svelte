@@ -59,7 +59,7 @@ main{
     align-items: center;
 }
 section {
-    padding: 20px;
+    padding: 1.25em;
     max-width: 30em ;
     height: 100dvh; 
 }
@@ -71,9 +71,9 @@ form {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    height: 80px;
-    margin-bottom: 30px;
-    margin-top: 10px;
+    height: 5em;
+    margin-bottom: 1.8em;
+    margin-top: .6em;
 }
 
 .heading h1 {
@@ -92,10 +92,9 @@ form {
 }
 
 label{
-    font-size: 20px;
+    font-size: 1.25em;
 }                                                                                
 p{
-    font-size: 16px;
     max-width: 40ch;
 }
 
@@ -103,26 +102,26 @@ input{
     padding: 1rem;
     background-color: #EEEEEE;
     border: none;
-    border-radius: 10px;
-    margin-bottom: 20px ;
-    font-size: 16px;
+    border-radius: .6em;
+    margin-bottom: 1.25em ;
+    font-size: 1em;
 }
 label{
-    margin-bottom: 10px;
+    margin-bottom: .6em;
 }
 div{
     display: flex;
     flex-direction: row;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
 }
 
 /* Styling for toggle button */
 .switch {
   position: relative;
   display: inline-block;
-  width: 80px;
-  height: 20px;
-  margin-right: 10px;
+  width: 5em;
+  height: 1.25em;
+  margin-right: .6em;
 }
 .switch input {
   opacity: 0;
@@ -144,8 +143,8 @@ div{
 .slider:before {
   position: absolute;
   content: "";
-  height: 15px;
-  width: 15px;
+  height: 1em;
+  width: 1em;
   left: 2px;
   bottom: 3px;
   background-color: white;
@@ -159,12 +158,12 @@ input:focus + .slider {
   box-shadow: 0 0 1px #2196F3;
 }
 input:checked + .slider:before {
-  -webkit-transform: translateX(20px);
-  -ms-transform: translateX(20px);
-  transform: translateX(20px);
+  -webkit-transform: translateX(1.25em);
+  -ms-transform: translateX(1.25em);
+  transform: translateX(1.25em);
 }
 .slider.round {
-  border-radius: 17px;
+  border-radius: 1em;
 }
 .slider.round:before {
   border-radius: 50%;
@@ -172,16 +171,16 @@ input:checked + .slider:before {
 .sign-upbtn{
     align-self: center;
     bottom: 0;
-    border-radius: 10px;
+    border-radius: .6em;
     width: 95%;
     background-color: #3D7A95;
-    padding: 10px;
+    padding: .6em;
     text-align: center;
-    font-size: 16px;
+    font-size: 1em;
     color: white;
     text-decoration: none; 
     margin-top: auto;  
-    margin-bottom: 60px;
+    margin-bottom: 3.75em;
 }
 .click-here{
     color: #599AE7;

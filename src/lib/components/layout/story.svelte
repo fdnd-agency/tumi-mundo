@@ -3,7 +3,7 @@
 
   const { image, title, summary, playtime, language, audios } = story;
   
-  // SELECT THE FIRST AUDIO FILE, EX: NO SPEAKER PROFILE SELECTED
+  // SELECT THE FIRST AUDIO FILE, BECAUSE THERE ARE MULITPLE AUDIOS TO 1 STORY.
   const firstAudio = audios?.[0]?.file || null;
 </script>
 

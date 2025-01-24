@@ -67,27 +67,14 @@
 </main>
 
 <style>
-    :root {
-        font-size: 16px;
-    }
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
     main {
         background: linear-gradient(to bottom, #3F93B7, #1C5872);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: bottom;
-        height: 100vh;
         height: 100dvh;
         color: white;
         overflow: hidden;
-        font-family: Poppins, sans-serif;
     }
 
     .navigation {
@@ -144,7 +131,7 @@
         margin-bottom: 0.625em;
         border-radius: 0.125em;
         background-color: #9AC0D1;
-        height: 0.3125em;
+        height: 1px;
         width: 100%;
     }
 

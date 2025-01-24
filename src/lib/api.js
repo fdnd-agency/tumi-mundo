@@ -86,8 +86,6 @@ export function mapStoriesWithDetails(stories, audios, languages) {
 
         if (story.image) {
             story.image = retrieveFromAssets(story.image);
-        } else {
-            story.image = "unknown.svg";
         }
 
         if (story.playtime) {
@@ -124,8 +122,6 @@ export function mapPlaylistsWithDetails(playlists, stories, playlistStories) {
 
         if (playlist.image) {
             playlist.image = retrieveFromAssets(playlist.image);
-        } else {
-            playlist.image = "unknown.svg";
         }
 
         const formattedPlaytime = totalPlaytime > 0 ? formatPlaytime(totalPlaytime) : "0 min 0 sec";
@@ -148,8 +144,6 @@ export function mapProfilesWithImages(profiles) {
 
         if (profile.avatar) {
             profile.avatar = retrieveFromAssets(profile.avatar);
-        } else {
-            profile.avatar = "profile-avatar.png";
         }
 
         return {

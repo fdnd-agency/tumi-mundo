@@ -78,39 +78,17 @@
 <style>
 
 :root {
-    --color-primary: #378DB3;
-    --color-primary-hover: #2a6d91;
-    --color-secondary: #F0F0F0;
-    --color-secondary-text: #535353;
-    --color-text: white;
-    --color-link: #378EB4;
-    --color-bg-light: #EEEEEE;
-    --color-popup-bg: rgba(0, 0, 0, 0.7);
-
-    --font-family: 'Poppins', sans-serif;
-    --font-size-base: 16px;
-    --font-size-heading: 3rem;
-    --font-size-popup-title: 20px;
-
-    --border-radius: 10px;
-    --border-color: white;
+    --color-text: white;;
 
     --padding-small: 0.8rem;
     --padding-medium: 1rem;
     --padding-large: 2rem;
 
-    --gap-small: 5px;
-    --gap-medium: 10px;
+    --gap-small: .3em;
+    --gap-medium: .6em;
 
-    --popup-width: 400px;
-    --popup-height: 500px;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    --popup-width: 25em;
+    --popup-height: 31.25em;
 }
 
 section {
@@ -127,15 +105,13 @@ section, .buttons {
 }
 
 main {
-    background: url(/log-in-bg.svg), linear-gradient(to bottom, #3F93B7, #1C5872);
+    background: url(/log-in-background.png), linear-gradient(to bottom, #3F93B7, #1C5872);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    height: 100vh;
     height: 100dvh;
     width: 100%;
     color: var(--color-text);
-    font-family: var(--font-family);
 }
 
 section {
@@ -145,29 +121,29 @@ section {
 
 h1 {
     margin-top: 10rem;
-    font-size: var(--font-size-heading);
+    font-size: 3em;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
 p, button, label {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-md);
 }
 
 .buttons {
     margin-top: auto;
     gap: var(--gap-medium);
-    margin-bottom: 60px;
+    margin-bottom: 3.75em;
     width: 100%;
 }
 
 button, .popup-button, .login-popup, .sign-up{
     text-decoration: none;
     border: 1px solid white;
-    border-radius: 10px;
+    border-radius: .6em;
     padding: .8rem;
     max-width: 17rem;
-    background-color: #378DB3;
+    background-color: var(--color-login-bg);
     color: white;
     text-align: center;
     cursor: pointer;
@@ -187,7 +163,7 @@ button, .sign-up{
 }
 
 button:hover, .popup-button:hover {
-    background-color: var(--color-primary-hover);
+    background-color: var(--color-login-bg-hover);
 }
 
 a {
@@ -208,7 +184,7 @@ a {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: var(--font-size-popup-title);
+    font-size: var(--font-size-lg);
 }
 
 .close-div {
@@ -222,14 +198,13 @@ a {
 
 .close-div svg {
     cursor: pointer;
-    margin-right: -10px;
+    margin-right: -.6em;
 }
 
 .close-div label {
     cursor: pointer;
-    font-size: 14px;
     color: #333;
-    margin-right: -10px;
+    margin-right: -.6em;
 }
 
 h2 {
@@ -244,9 +219,9 @@ input {
     padding: var(--padding-medium);
     background-color: var(--color-bg-light);
     border: none;
-    border-radius: 30px;
-    margin-bottom: 20px;
-    font-size: var(--font-size-base);
+    border-radius: 1.875em;
+    margin-bottom: 1.25em;
+    font-size: var(--font-size-md);
     height: 3rem;
 }
 
@@ -275,8 +250,8 @@ label {
     height: var(--popup-height);
     width: var(--popup-width);
     box-sizing: border-box;
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 1.25em;
+    padding: 1.25em;
     background: #fff;
     position: absolute;
     left: 50%;
@@ -289,7 +264,7 @@ label {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
 }
 
 .popup-container > input {
@@ -307,8 +282,7 @@ label {
 
 .error-message {
     color: red;
-    font-size: 14px;
-    margin-top: 10px;
+    margin-top: .6em;
     text-align: center;
 }
 </style>    

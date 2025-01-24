@@ -3,7 +3,7 @@ import { fetchAllData, mapPlaylistsWithDetails, mapStoriesWithDetails } from '$l
 import { fetchApi } from '$lib/index';
 
 export async function load({ locals }) {
-    const profileId = 122; //PROFILE ID BECAUSE WE DIDN'T CONNECT EVERYTHING TO DATA YET
+    const profileId = 122; // NEEDS TO BE CONNECTED TO ACCOUNT.JS
     const data = await fetchAllData();
 
     const storiesWithDetails = mapStoriesWithDetails(data.stories, data.audios, data.languages);
