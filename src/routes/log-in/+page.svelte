@@ -57,12 +57,14 @@
                     </div>
                 </div>
                 <div class="popup-content">
-                    <form action="./profile-selection">
+                    <form on:submit|preventDefault={handleLogin}>
                         <ul>
                             <li><Input type="email" name="email-input" placeholder="Email" bind:value={email} /></li>
                             <li><Input type="password" name="password-input" placeholder="Password" bind:value={password} /></li>
                             <li><button type="submit" class="login-popup">Log in</button></li>
-                            <li class="error-message">PRESENTATION MODE: CLICK "LOG IN" BUTTON TO CONTINUE</li>
+                            {#if errorMessage}
+                            <li class="error-message">{errorMessage}</li>
+                            {/if}
                             <li><a href="/">I don't remember my password/username</a></li>
                         </ul>
                     </form>
