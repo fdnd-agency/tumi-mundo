@@ -1,4 +1,4 @@
-<h1><a href="./">Log out</a></h1>
+<h1><a href="./log-in">Log out</a></h1>
 
 <style>
     h1, a {
