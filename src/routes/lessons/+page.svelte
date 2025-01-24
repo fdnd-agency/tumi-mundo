@@ -337,7 +337,7 @@
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         padding: var(--space-md) 0;
-        width: 100%;
+        width: 24em;
         box-sizing: border-box;
     }
     
@@ -349,5 +349,12 @@
             grid-template-rows: repeat(4, auto);
         }
     }
+    @media only screen and (min-width: 800px) {
+
+    .story-list {
+        grid-template-columns: repeat(2, 1fr);
+        width: 48em;
+    }
+}
     </style>
     
