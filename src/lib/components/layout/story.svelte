@@ -3,7 +3,7 @@
 
   const { image, title, summary, playtime, language, audios } = story;
   
-  // SELECT THE FIRST AUDIO FILE, BECAUSE THERE ARE MULITPLE AUDIOS TO 1 STORY.
+  // SELECT THE FIRST AUDIO FILE, BECAUSE THERE ARE MULTIPLE AUDIOS TO 1 STORY.
   const firstAudio = audios?.[0]?.file || null;
 </script>
 
@@ -12,23 +12,22 @@
     <source srcset="{image}?width=64&format=avif" type="image/avif">
     <source srcset="{image}?width=64&format=webp" type="image/webp">
     <source srcset="{image}?width=64" type="image/jpeg">
-    <!-- <img src="{image}" alt="{title} cover image" height="60" width="64" loading="lazy"> -->
     <img 
-    srcset="{image}?width=400 400w, {image}?width=800 800w, {image}?width=1200 1200w" 
-    sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px" 
-    src="{image}" 
-    alt="{title} cover image" 
-    height="60" 
-    width="64" 
-    loading="lazy"
-  />
+      srcset="{image}?width=400 400w, {image}?width=800 800w, {image}?width=1200 1200w" 
+      sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px" 
+      src="{image}?width=400" 
+      alt="{title} cover image" 
+      height="400" 
+      width="400" 
+      loading="lazy"
+    />
   </picture>
   
 
   <h2 class="story-title">{title}</h2>
 
   <picture class="story-language flex-items">
-    <img src="/languages/{language}.svg" alt="{language} flag" height="17.59" width="17.58">
+    <img src="/languages/{language}.svg" alt="{language} flag" height="17.59" width="17.58" loading="lazy">
   </picture>
 
   <p class="story-summary">{summary}</p>
@@ -103,7 +102,7 @@
   .story-image img {
     max-width: var(--image-max-width);
     min-height: var(--image-min-height);
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .story-language {
