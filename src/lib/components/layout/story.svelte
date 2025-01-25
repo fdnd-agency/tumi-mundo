@@ -9,10 +9,21 @@
 
 <article>
   <picture class="story-image flex-items">
+    <source srcset="{image}?width=64&format=avif" type="image/avif">
     <source srcset="{image}?width=64&format=webp" type="image/webp">
     <source srcset="{image}?width=64" type="image/jpeg">
-    <img src="{image}" alt="{title} cover image" height="60" width="64" loading="eager">
+    <!-- <img src="{image}" alt="{title} cover image" height="60" width="64" loading="lazy"> -->
+    <img 
+    srcset="{image}?width=400 400w, {image}?width=800 800w, {image}?width=1200 1200w" 
+    sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px" 
+    src="{image}" 
+    alt="{title} cover image" 
+    height="60" 
+    width="64" 
+    loading="lazy"
+  />
   </picture>
+  
 
   <h2 class="story-title">{title}</h2>
 
@@ -23,12 +34,16 @@
   <p class="story-summary">{summary}</p>
 
   <div class="story-playtime flex-items">
+    {#if firstAudio}
     <a href={firstAudio} target="_blank" aria-label="Listen to {title}">
       <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="9" cy="9" r="9" fill="#3A54DE"/>
         <path d="M12.8159 9.79599C13.3367 9.39307 13.3367 8.6069 12.8159 8.20397C11.2422 6.98629 9.48494 6.02651 7.60988 5.36056L7.26734 5.2389C6.61199 5.00614 5.91977 5.44954 5.83105 6.12603C5.58317 8.01614 5.58317 9.98383 5.83105 11.8739C5.91977 12.5504 6.61199 12.9938 7.26733 12.7611L7.60988 12.6394C9.48494 11.9735 11.2422 11.0137 12.8159 9.79599Z" fill="white"/>
-      </svg>            
+      </svg>  
     </a>
+  {:else}
+    <span>No audio available</span>
+  {/if}
 
     <p>{playtime}</p>
   </div>
