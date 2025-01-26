@@ -38,6 +38,8 @@
     <img src="{image}" alt="">
   </div>
 
+
+
   <h3 class="playlist-title">{title}</h3>
 
   <div class="playlist-playtime flex-items">
