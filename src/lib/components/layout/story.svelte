@@ -13,12 +13,10 @@
     <source srcset="{image}?width=64&format=webp" type="image/webp">
     <source srcset="{image}?width=64" type="image/jpeg">
     <img 
-      srcset="{image}?width=400 400w, {image}?width=800 800w, {image}?width=1200 1200w" 
-      sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px" 
-      src="{image}?width=400" 
+      src="{image}?width=64" 
       alt="{title} cover image" 
-      height="400" 
-      width="400" 
+      height="64" 
+      width="64" 
       loading="lazy"
     />
   </picture>
@@ -102,7 +100,7 @@
   .story-image img {
     max-width: var(--image-max-width);
     min-height: var(--image-min-height);
-    object-fit: contain;
+    object-fit: cover;
   }
 
   .story-language {
