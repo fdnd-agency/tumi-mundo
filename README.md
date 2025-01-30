@@ -147,7 +147,3 @@ Dit project is gelicenseerd onder de MIT-licentie. Zie het bestand [LICENSE](LIC
 
 
 
-Dit project is gelicenseerd onder de MIT-licentie. Zie het bestand [LICENSE](LICENSE) voor meer informatie.
-
-
-
