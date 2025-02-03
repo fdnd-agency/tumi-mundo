@@ -11,7 +11,8 @@
 
     onMount(() => {
         if (!userId) {
-            goto('/log-in');
+            // goto('/log-in');
+            goto('/profile-selection')
         }
     });
 
@@ -28,7 +29,8 @@
             ...state,
             profileId: profileId
         }));
-        await goto('/');
+        // await goto('/');
+        await goto ('/profile-selection')
     }
 </script>
 
