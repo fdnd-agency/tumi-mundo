@@ -6,10 +6,37 @@
           </a>
     </nav>
     <img src="/playlist-header.svg" alt="header" class="header-svg">
+
+    <section class="meta-section">
+        <h1>Penguin snow adventures</h1>
+        <p>All the stories about Loeky! Here are all Daan’s favorite stories that he can listen to before bed time or at the start of the day.</p>
+
+        <div class="meta-info">
+            <img src="/icons/profile-icon.svg">
+            <p>Made by <strong>Sarah</strong></p>
+
+            <img src="/icons/clock.svg">
+            <p>2u 11m</p>
+        </div>
+
+        <div class="meta-play">
+            <a><img src="/icons/download.svg"></a>
+            <a class="heart-svg"><img src="/icons/heart.svg"></a>
+
+            <a><img src="/icons/play.svg"></a>
+        </div>
+
+
+    </section>
 </main>
 
 <style>
-
+*{
+    color: var(--color-text-light);
+}
+nav, .meta-section{
+    padding: 1em;
+}
 main{
     height: 100dvh;
     width: 100dvw;
@@ -30,7 +57,6 @@ main{
 }
 nav{
     position: absolute;
-    padding: 1em;
     top: 0;
     z-index: 1;
     width: 100dvw;
@@ -77,5 +103,27 @@ a{
 
 .dot:after {
   left: .8em;
+}
+/* styling for meta info */
+.meta-info, .meta-play{
+    display: flex;
+    align-items: center;
+}
+.meta-info{
+    margin-top: 1em;
+}
+.meta-info > p:nth-of-type(1){
+    margin-right: auto;
+}
+.meta-section{
+    transform: translateY(-1em);
+}
+.meta-info > img{
+    padding-right: .3em;
+}
+
+.heart-svg{
+    margin: 0 auto 0 .5em;
+
 }
 </style>
