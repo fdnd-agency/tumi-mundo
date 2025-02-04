@@ -1,9 +1,19 @@
+<script>
+    import { Story } from '$lib/index';
+
+    /** @type {import('./$types').PageData} */
+    export let data;
+
+
+    // console.log(data);
+</script>
+
 <main>
     <nav>
         <a href="/lessons"><img src="icons/back-icon.svg" class="back-btn" height="50" width="50"></a>
         <a href="#" class="dots">
             <div class="dot"></div>
-          </a>
+        </a>
     </nav>
     <img src="/playlist-header.svg" alt="header" class="header-svg">
 
@@ -14,7 +24,6 @@
         <div class="meta-info">
             <img src="/icons/profile-icon.svg">
             <p>Made by <strong>Sarah</strong></p>
-
             <img src="/icons/clock.svg">
             <p>2u 11m</p>
         </div>
@@ -22,40 +31,48 @@
         <div class="meta-play">
             <a><img src="/icons/download.svg"></a>
             <a class="heart-svg"><img src="/icons/heart.svg"></a>
-
             <a><img src="/icons/play.svg"></a>
         </div>
-
-
     </section>
+
+    <section class="stories-section">
+            <ul>
+                {#each data.stories as story }
+                    <li>
+                        <Story {story} />
+                    </li>
+                {/each}
+            </ul>
+    </section>
+
 </main>
 
 <style>
-*{
+
+* {
     color: var(--color-text-light);
 }
-nav, .meta-section{
-    padding: 1em;
+nav, .meta-section {
+    padding: var(--space-md);
 }
-main{
-    height: 100dvh;
+main {
+    height: max-content;
     width: 100dvw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(#6577D3, #100E52);
-    
 }
-.header-svg{
+.header-svg {
     position: absolute;
     top: 0;
     width: 100vw;
 }
-.back-btn{
-    width: 50px;
+.back-btn {
+    width: 3.125em;
 }
-nav{
+nav {
     position: absolute;
     top: 0;
     z-index: 1;
@@ -65,10 +82,9 @@ nav{
     justify-content: space-between;
     align-items: center;
 }
-a{
+a {
     z-index: 0;
 }
-
 /* styling for dots */
 .dots {
     display: flex;
@@ -85,45 +101,52 @@ a{
   border-radius: 20px;
   background-color: black;
 }
-
 .dot {
   top: 50%;
   left: 50%;
   margin-top: -10px;
   margin-left: -10px;
 }
-
 .dot:before, .dot:after {
   content: "";
 }
-
 .dot:before {
   right: .8em;
 }
-
 .dot:after {
   left: .8em;
 }
 /* styling for meta info */
-.meta-info, .meta-play{
+.meta-info, .meta-play {
     display: flex;
     align-items: center;
 }
-.meta-info{
+.meta-info {
     margin-top: 1em;
 }
-.meta-info > p:nth-of-type(1){
+.meta-info > p:nth-of-type(1) {
     margin-right: auto;
 }
-.meta-section{
-    transform: translateY(-1em);
+.meta-section {
+    margin-top: 16em;
 }
-.meta-info > img{
+.meta-info > img {
     padding-right: .3em;
 }
-
-.heart-svg{
+.heart-svg {
     margin: 0 auto 0 .5em;
+}
+/* styling for stories section */
+.stories-section {
+    height: 25em; 
+    overflow-y: auto;
+    width: 100%; 
+}
 
+.stories-section > ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
 </style>
