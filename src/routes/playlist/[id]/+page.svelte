@@ -1,0 +1,7 @@
+<script>
+  export let playlist;
+</script>
+
+<h1>{playlist.title}</h1>
+<p>{playlist.description}</p>
+

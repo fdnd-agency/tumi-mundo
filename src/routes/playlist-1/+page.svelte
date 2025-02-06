@@ -68,6 +68,7 @@ main {
     position: absolute;
     top: 0;
     width: 100vw;
+    /* width: 400px */
 }
 .back-btn {
     width: 3.125em;
@@ -128,7 +129,7 @@ a {
     margin-right: auto;
 }
 .meta-section {
-    margin-top: 16em;
+    margin-top: 37vh;
 }
 .meta-info > img {
     padding-right: .3em;
@@ -148,5 +149,10 @@ a {
     align-items: center;
     flex-direction: column;
     gap: 10px;
+}
+@media only screen and (min-width: 600px) {
+  main {
+    background-color: lightblue;
+  }
 }
 </style>
