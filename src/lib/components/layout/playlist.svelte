@@ -9,9 +9,8 @@
 
   let profileId = 122;
 
-  // Toggle functie die aanroepen via JS maakt (en pagina niet herlaadt)
   async function toggleLike(event) {
-    event.preventDefault(); // Voorkom formulier verzenden
+    event.preventDefault(); 
 
     const endpoint = isLiked ? `/tm_likes/${existingLikeId}` : '/tm_likes';
     const method = isLiked ? 'DELETE' : 'POST';

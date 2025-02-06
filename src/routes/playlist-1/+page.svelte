@@ -55,9 +55,12 @@
 nav, .meta-section {
     padding: var(--space-md);
 }
+nav, .meta-section, .meta-info, .meta-play{
+    max-width: 31.25em;
+}
 main {
     height: max-content;
-    width: 100dvw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,8 +70,7 @@ main {
 .header-svg {
     position: absolute;
     top: 0;
-    width: 100vw;
-    /* width: 400px */
+    z-index: 0;
 }
 .back-btn {
     width: 3.125em;
@@ -76,8 +78,8 @@ main {
 nav {
     position: absolute;
     top: 0;
-    z-index: 1;
-    width: 100dvw;
+    z-index: 10;
+    width: 100%;
     margin-top: 3.5em;
     display: flex;
     justify-content: space-between;
@@ -91,6 +93,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-content: center;
     position: relative;
     width: 50px; 
     height: 50px;
@@ -140,10 +143,11 @@ a {
 /* styling for stories section */
 .stories-section {
     height: 25em; 
-    overflow-y: auto;
+    overflow-y: scroll;
     width: 100%; 
+    scrollbar-width: none;
+    
 }
-
 .stories-section > ul {
     display: flex;
     align-items: center;
@@ -155,4 +159,5 @@ a {
     background-color: lightblue;
   }
 }
+
 </style>

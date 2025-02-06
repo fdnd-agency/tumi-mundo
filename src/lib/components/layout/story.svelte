@@ -78,7 +78,7 @@
 
   article {
     width: var(--article-width-large);
-    height: var(--article-height-large);
+    height: var(--article-height-xlarge);
     display: grid;
     grid-template-columns: var(--grid-columns);
     grid-template-rows: var(--grid-rows);
@@ -147,4 +147,5 @@
       width: var(--article-width-large);
     }
   }
+  
 </style>
