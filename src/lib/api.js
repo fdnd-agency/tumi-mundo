@@ -1,11 +1,18 @@
 import getDirectusInstance from '$lib/directus';
-import { readItems } from '@directus/sdk';
+import { readItem, readItems } from '@directus/sdk';
 import { PUBLIC_APIURL } from '$env/static/public';
 
 const assetBaseUrl = `${PUBLIC_APIURL}/assets/`;
 
-export async function fetchCollection(fetch, collectionName) {
+export async function fetchCollection(fetch, collectionName, id = null) {
     const directus = getDirectusInstance(fetch);
+
+    if (id) {
+        // Haal één specifiek item op als een ID is meegegeven
+        return await directus.request(readItem(collectionName, id));
+    }
+
+    // Haal een volledige collectie op als er geen ID is meegegeven
     return await directus.request(readItems(collectionName));
 }
 

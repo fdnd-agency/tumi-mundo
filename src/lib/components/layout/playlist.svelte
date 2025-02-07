@@ -2,7 +2,7 @@
   import { fetchApi } from '$lib/index';
 
   export let playlist;
-  const { image, title, playtime, isLiked: initialIsLiked, likeId: initialLikeId } = playlist;
+  const { image, title, playtime, stories, isLiked: initialIsLiked, likeId: initialLikeId } = playlist;
 
   let isLiked = initialIsLiked;
   let existingLikeId = initialLikeId;
@@ -42,7 +42,7 @@
   </div>
 
   <h3 class="playlist-title">
-    <a href={`/playlists/${playlist.id}`} aria-label="Go to playlist page">{title}</a>
+    <a href={`/playlist/${playlist.id}`} aria-label="Go to playlist page">{title}</a>
   </h3>
 
   <div class="playlist-playtime flex-items">
@@ -69,8 +69,12 @@
         </svg>
       </button>
     </form>
-
   </div>
+  <ul>
+    {#each stories as story}
+      <li>{story.title}</li> <!-- Pas aan afhankelijk van wat je wilt tonen -->
+    {/each}
+  </ul>
 </article>
 
 
@@ -91,8 +95,8 @@
   }
 
   article {
-    width: 8.5em;
-    height: 12em;
+    width: 10em;
+    height: 15em;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);

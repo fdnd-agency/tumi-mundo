@@ -8,7 +8,7 @@ export async function load({ fetch }) {
     const storiesWithDetails = mapStoriesWithDetails(data.stories, data.audios, data.languages);
 
     return {
-        stories: storiesWithDetails, // Zorg ervoor dat je 'stories' in de return waarde zit
-        languages: data.languages    // En eventuele andere data die je nodig hebt
+        stories: storiesWithDetails, 
+        languages: data.languages    
     };
 }
