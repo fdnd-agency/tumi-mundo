@@ -11,7 +11,14 @@ export async function load({ params, fetch }) {
             error: new Error("Playlist not found"),
         };
     }
+
+    const storyIds = playlist.stories || [];
+    const stories = await Promise.all(storyIds.map(id => fetchCollection(fetch, 'tm_story', id)));
+
     return {
-        playlist
+        playlist: {
+            ...playlist,
+            stories, 
+        }
     };
 }

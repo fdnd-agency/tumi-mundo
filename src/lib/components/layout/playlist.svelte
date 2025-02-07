@@ -70,11 +70,6 @@
       </button>
     </form>
   </div>
-  <ul>
-    {#each stories as story}
-      <li>{story.title}</li> <!-- Pas aan afhankelijk van wat je wilt tonen -->
-    {/each}
-  </ul>
 </article>
 
 
