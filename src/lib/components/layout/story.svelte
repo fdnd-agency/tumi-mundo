@@ -5,6 +5,7 @@
   
   // SELECT THE FIRST AUDIO FILE, BECAUSE THERE ARE MULTIPLE AUDIOS TO 1 STORY.
   const firstAudio = audios?.[0]?.file || null;
+
 </script>
 
 <article>
@@ -75,8 +76,8 @@
   }
 
   article {
-    width: var(--article-width);
-    height: var(--article-height);
+    width: var(--article-width-large);
+    height: var(--article-height-xlarge);
     display: grid;
     grid-template-columns: var(--grid-columns);
     grid-template-rows: var(--grid-rows);
@@ -145,4 +146,5 @@
       width: var(--article-width-large);
     }
   }
+  
 </style>

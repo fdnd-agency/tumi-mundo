@@ -29,8 +29,8 @@
             ...state,
             profileId: profileId
         }));
-        // await goto('/');
-        await goto ('/profile-selection')
+        await goto('/');
+        // await goto ('/profile-selection')
     }
 </script>
 

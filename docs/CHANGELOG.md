@@ -32,3 +32,7 @@ All notable changes to this project will be documented in this file.
 
 <!--  -->
 
+### Added 
+- playlist page with header/nav and a meta data section
+- static 
+

@@ -2,7 +2,7 @@
   import { fetchApi } from '$lib/index';
 
   export let playlist;
-  const { image, title, playtime, isLiked: initialIsLiked, likeId: initialLikeId } = playlist;
+  const { image, title, playtime, stories, isLiked: initialIsLiked, likeId: initialLikeId } = playlist;
 
   let isLiked = initialIsLiked;
   let existingLikeId = initialLikeId;
@@ -10,23 +10,26 @@
   let profileId = 122;
 
   async function toggleLike(event) {
-    event.preventDefault();
-    const heartIcon = event.currentTarget.querySelector('svg');
+    event.preventDefault(); 
+
     const endpoint = isLiked ? `/tm_likes/${existingLikeId}` : '/tm_likes';
     const method = isLiked ? 'DELETE' : 'POST';
-    const data = isLiked ? null : { playlist: playlist.id, profile: profileId };
 
     try {
-      await fetchApi(endpoint, method, data);
+      const response = await fetchApi(endpoint, method, {
+        playlist: playlist.id,
+        profile: profileId
+      });
+
+      // Directe update van de UI
       isLiked = !isLiked;
-
-      if (heartIcon) {
-        heartIcon.classList.toggle('liked', isLiked);
+      // Als het een nieuwe like is, krijg je een likeId
+      if (response?.likeId) {
+        existingLikeId = response.likeId;
       }
-
-      existingLikeId = isLiked
-        ? (await fetchApi(`/tm_likes?filter[playlist][_eq]=${playlist.id}&filter[profile][_eq]=${profileId}`))[0]?.id
-        : null;
+      
+      // Herlaad de layout (trigger opnieuw renderen)
+      playlist = { ...playlist, isLiked, likeId: existingLikeId };
     } catch (error) {
       console.error('Failed to toggle like:', error);
     }
@@ -38,9 +41,9 @@
     <img src="{image}" alt="">
   </div>
 
-
-
-  <h3 class="playlist-title">{title}</h3>
+  <h3 class="playlist-title">
+    <a href={`/playlist/${playlist.id}`} aria-label="Go to playlist page">{title}</a>
+  </h3>
 
   <div class="playlist-playtime flex-items">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,25 +52,27 @@
     </svg>      
     <p>{playtime}</p>
   </div>
-  
+
   <div class="playlist-icons flex-items">
     <form action="/like" method="POST" on:submit|preventDefault={toggleLike}>
-    {#if isLiked}
-      <input type="hidden" name="likeId" value="{existingLikeId}">
-      <input type="hidden" name="_method" value="DELETE">
-    {:else}
-      <input type="hidden" name="playlistId" value="{playlist.id}">
-      <input type="hidden" name="profileId" value="{profileId}">
-    {/if}
-  
-    <button type="submit" class="playlist-icons" aria-label="{isLiked ? 'Unlike' : 'Like'}">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class:liked={isLiked}>
-      <path d="M11.6536 7.15238C11.8471 7.33832 12.1529 7.33832 12.3464 7.15238C13.1829 6.34871 14.326 5.75 15.6 5.75C18.1489 5.75 20.25 7.64769 20.25 10.0298C20.25 11.7261 19.4577 13.1809 18.348 14.428C17.2397 15.6736 15.7972 16.7316 14.4588 17.6376L12.1401 19.207C12.0555 19.2643 11.9445 19.2643 11.8599 19.207L9.54125 17.6376C8.20278 16.7316 6.76035 15.6736 5.65201 14.428C4.54225 13.1809 3.75 11.7261 3.75 10.0298C3.75 7.64769 5.85106 5.75 8.4 5.75C9.67403 5.75 10.8171 6.34871 11.6536 7.15238Z" stroke="#C4C4C4" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>      
-    </button>
-  </form>  
+      {#if isLiked}
+        <input type="hidden" name="likeId" value="{existingLikeId}">
+        <input type="hidden" name="_method" value="DELETE">
+      {:else}
+        <input type="hidden" name="playlistId" value="{playlist.id}">
+        <input type="hidden" name="profileId" value="{profileId}">
+      {/if}
+      
+      <button type="submit" class="playlist-icons" aria-label="{isLiked ? 'Unlike' : 'Like'}">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class:liked={isLiked}>
+          <path d="M11.6536 7.15238C11.8471 7.33832 12.1529 7.33832 12.3464 7.15238C13.1829 6.34871 14.326 5.75 15.6 5.75C18.1489 5.75 20.25 7.64769 20.25 10.0298C20.25 11.7261 19.4577 13.1809 18.348 14.428C17.2397 15.6736 15.7972 16.7316 14.4588 17.6376L12.1401 19.207C12.0555 19.2643 11.9445 19.2643 11.8599 19.207L9.54125 17.6376C8.20278 16.7316 6.76035 15.6736 5.65201 14.428C4.54225 13.1809 3.75 11.7261 3.75 10.0298C3.75 7.64769 5.85106 5.75 8.4 5.75C9.67403 5.75 10.8171 6.34871 11.6536 7.15238Z" stroke="#C4C4C4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </form>
   </div>
 </article>
+
+
 
 <style>
   :root {
@@ -85,8 +90,8 @@
   }
 
   article {
-    width: 8.5em;
-    height: 12em;
+    width: 10em;
+    height: 15em;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -170,6 +175,5 @@
   :global(.playlist-icons button svg.liked) {
     animation: scale .5s ease-in;
   }
-
 
 </style>
