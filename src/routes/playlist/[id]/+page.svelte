@@ -101,21 +101,21 @@ a {
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 50px; 
-  height: 50px;
+  width: 3.125em; 
+  height: 3.125em;
 }
 .dot, .dot:before, .dot:after {
 position: absolute;
 width: .4em;
 height: .4em;
-border-radius: 20px;
+border-radius: var(--border-radius-m);
 background-color: black;
 }
 .dot {
 top: 50%;
 left: 50%;
-margin-top: -10px;
-margin-left: -10px;
+margin-top: 0.625em;
+margin-left: 0.625em;
 }
 .dot:before, .dot:after {
 content: "";
@@ -158,7 +158,7 @@ left: .8em;
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625em;
 }
 @media only screen and (min-width: 600px) {
 main {
