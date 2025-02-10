@@ -4,7 +4,14 @@
   export let data; 
 
   let playlist = data?.playlist;
+  let isLoading = !playlist;
+  let error = null;
 
+  $: {
+    if (playlist) {
+      isLoading = false;
+    }
+  }
 </script>
 
 <main>
@@ -21,58 +28,63 @@
   <img src="/playlist-header.svg" alt="header" class="header-svg">
 
   <section class="meta-section">
-      <h1>{playlist.title}</h1>
-      <p>{playlist.description}</p>
+      <h1>{playlist?.title}</h1>
+      <p>{playlist?.description}</p>
 
       <div class="meta-info">
           <img src="/icons/profile-icon.svg" alt="profile picture">
-          <p>Made by <strong>User { playlist.creator }</strong></p>
+          <p>Made by <strong>User {playlist?.creator}</strong></p>
           <img src="/icons/clock.svg" alt="time">
           <p>2u 11m</p>
       </div>
 
       <div class="meta-play">
-          <a><img src="/icons/download.svg" alt="download"></a>
-          <a class="heart-svg"><img src="/icons/heart.svg" alt="like"></a>
-          <a><img src="/icons/play.svg" alt="play"></a>
+          <a href="#"><img src="/icons/download.svg" alt="download"></a>
+          <a href="#" class="heart-svg"><img src="/icons/heart.svg" alt="like"></a>
+          <a href="#"><img src="/icons/play.svg" alt="play"></a>
       </div>
   </section>
 
-{#if playlist}
+  {#if isLoading}
+  <div class="loading">Loading playlist...</div>
+{:else if error}
+  <p class="error">Error loading playlist: {error}</p>
+{:else if playlist && playlist.stories.length > 0}
   <section class="stories-section">
-      <ul>
-          {#each playlist.stories as story}
-            <Story {story} />
-          {/each}
-        </ul>
+    <ul>
+      {#each playlist.stories as story}
+        <Story {story} />
+      {/each}
+    </ul>
   </section>
 {:else}
-<p>Playlist niet gevonden.</p>
+  <p>Playlist not found.</p>
+  <a href="/lessons" class="view-all">View all playlists</a>
 {/if}
-
-
 </main>
 
 <style>
-
 * {
   color: var(--color-text-light);
+}
+.view-all{
+  text-decoration: underline;
 }
 nav, .meta-section {
   padding: var(--space-md);
 }
-nav, .meta-section, .meta-info, .meta-play{
+nav, .meta-section, .meta-info, .meta-play {
   max-width: 31.25em;
 }
 main {
   height: max-content;
   width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-image: var(--bg-image-playlist);
-
 }
 .header-svg {
   position: absolute;
@@ -97,32 +109,31 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: center;
   position: relative;
   width: 3.125em; 
   height: 3.125em;
 }
 .dot, .dot:before, .dot:after {
-position: absolute;
-width: .4em;
-height: .4em;
-border-radius: var(--border-radius-m);
-background-color: black;
+  position: absolute;
+  width: .4em;
+  height: .4em;
+  border-radius: var(--border-radius-m);
+  background-color: black;
 }
 .dot {
-top: 50%;
-left: 50%;
-margin-top: 0.625em;
-margin-left: 0.625em;
+  top: 50%;
+  left: 50%;
+  margin-top: 0.625em;
+  margin-left: 0.625em;
 }
 .dot:before, .dot:after {
-content: "";
+  content: "";
 }
 .dot:before {
-right: .8em;
+  right: .8em;
 }
 .dot:after {
-left: .8em;
+  left: .8em;
 }
 /* styling for meta info */
 .meta-info, .meta-play {
@@ -150,7 +161,6 @@ left: .8em;
   overflow-y: scroll;
   width: 100%; 
   scrollbar-width: none;
-  
 }
 .stories-section > ul {
   display: flex;
@@ -159,10 +169,8 @@ left: .8em;
   gap: 0.625em;
 }
 @media only screen and (min-width: 600px) {
-main {
-  background-color: lightblue;
+  main {
+    background-color: lightblue;
+  }
 }
-}
-
 </style>
-
