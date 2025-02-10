@@ -1,5 +1,4 @@
 <script>
-
   import { onMount } from 'svelte';
 
   let currentSlide = 0;
@@ -37,8 +36,7 @@
     });
   });
 </script>
-  
- 
+
 <main>
   <section>
     <ul class="carousel">
@@ -47,7 +45,7 @@
           <a href="/sign-up">Skip</a>
             <div class="mouse">
               <svg width="242" height="242" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg" class="eclipse">
-                <circle cx="121" cy="121" r="121" fill="#4A82C3"/>
+                <circle cx="121" cy="121" r="121" fill="hsla(213, 53%, 52%, 1)"/>
               </svg>                        
               <picture class="rat">
                 <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
@@ -77,7 +75,7 @@
           <a href="/sign-up">Skip</a>
             <div class="mouse">
               <svg width="242" height="242" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg" class="eclipse">
-                <circle cx="121" cy="121" r="121" fill="#327592"/>
+                <circle cx="121" cy="121" r="121" fill="hsla(199, 48%, 38%, 1)"/>
               </svg>
               <picture class="rat">
                 <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
@@ -107,7 +105,7 @@
           <a href="/sign-up">Skip</a>
             <div class="mouse">
               <svg width="242" height="242" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg" class="eclipse">
-                <circle cx="121" cy="121" r="121" fill="#047E72"/>
+                <circle cx="121" cy="121" r="121" fill="hsla(173, 95%, 25%, 1)"/>
               </svg>                        
               <picture class="rat">
                 <source srcset="/characters/Rat.svg?format=avif" type="image/avif">
@@ -135,14 +133,13 @@
   </section>
 </main>
 
-
 <style>
 
 * {
-  color: white;
+  color: var(--color-white);
   text-decoration: none;
-  --main-blue: #599AE7;
-  --secondary-blue: #4A82C3;
+  --main-blue: hsla(215, 74%, 65%, 1);
+  --secondary-blue: hsla(213, 53%, 52%, 1);
 }
 section:nth-of-type(1) {
   display: flex;
@@ -152,10 +149,10 @@ section:nth-of-type(1) {
   width: 100vw;
 }
 .slide-2{
-  background-color: #3F92B6;
+  background-color: hsla(195, 49%, 48%, 1);
 }
 .slide-3{
-  background-color: #069E8F;
+  background-color: hsla(174, 94%, 34%, 1);
 }
 .mouse {
   width: 100%;
@@ -198,7 +195,7 @@ p {
 }
 a:nth-of-type(1) {
   margin-left: auto;
-  color: white;
+  color: var(--color-white);
   font-size: 1.25em;
   padding: 1em;
 }
@@ -213,13 +210,13 @@ button, a:nth-of-type(2) {
   border: none;
 }
 .button-1 {
-  background-color: #4A82C3; 
+  background-color: hsla(213, 53%, 52%, 1); 
 }
 .button-2 {
-  background-color: #3D7A95;
+  background-color: hsla(198, 43%, 41%, 1);
 }
 .make-acc{
-  background-color: #04786C;
+  background-color: hsla(173, 94%, 24%, 1);
 }
 
 .carousel{
@@ -238,7 +235,6 @@ button, a:nth-of-type(2) {
   height: 100dvh; 
   width: 100vw;
   background-color: var(--main-blue);
-    
 }
 .carousel-indicators {
   display: flex;
@@ -256,7 +252,7 @@ button, a:nth-of-type(2) {
   cursor: pointer;
 }
 .indicator.active {
-  background-color: white; 
+  background-color: var(--color-white); 
 }
 
 </style>

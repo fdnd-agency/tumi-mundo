@@ -63,7 +63,7 @@
 
 <style>
 main {
-    background-image: linear-gradient(#471871, #142151);
+    background-image: var(--bg-image-purple);
 }
 
 .heading,
@@ -105,7 +105,7 @@ header {
 }
 
 .nav-ul > li {
-    background-color: #571899;
+    background-color: hsla(266, 72%, 35%, 1);
     font-size: 1em;
     padding: 0.2em 0.3em;
     border-radius: .25em;

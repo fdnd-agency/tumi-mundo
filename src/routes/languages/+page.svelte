@@ -68,12 +68,12 @@
 
 <style>
     main {
-        background: linear-gradient(to bottom, #3F93B7, #1C5872);
+        background: var(--bg-image-blue);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: bottom;
         height: 100dvh;
-        color: white;
+        color: var(--color-white);
         overflow: hidden;
     }
 
@@ -130,7 +130,7 @@
         margin-top: 0.625em;
         margin-bottom: 0.625em;
         border-radius: 0.125em;
-        background-color: #9AC0D1;
+        background-color: hsla(197, 38%, 72%, 1);
         height: 1px;
         width: 100%;
     }
@@ -148,7 +148,7 @@
     input[type="checkbox"] + label {
         display: inline-block;
         color: black;
-        background-color: white;
+        background-color: var(--color-white);
         list-style: none;
         align-self: self-end;
         margin-bottom: 0.125em;
@@ -158,8 +158,9 @@
     }
 
     input[type="checkbox"]:checked + label {
-        color: white;
-        background-color: #1A188A;
+        color: var(--color-white);
+        background-color: hsla(241, 71%, 32%, 1);
+
     }
 
     label {

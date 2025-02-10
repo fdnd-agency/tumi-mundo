@@ -82,12 +82,12 @@
 </main>
 <style>
 main {
-    background: linear-gradient(to bottom, #3A9ECA, #2B627A);
+    background: var(--bg-image-blue);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
     height: 100dvh;
-    color: white;
+    color: var(--color-white);
     margin: auto;
     padding: 1em;
     padding-top: 3em;

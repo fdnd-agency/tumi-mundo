@@ -105,7 +105,7 @@ section, .buttons {
 }
 
 main {
-    background: url(/log-in-background.png), linear-gradient(to bottom, #3F93B7, #1C5872);
+    background: url(/log-in-background.png), var(--bg-image-blue);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -139,12 +139,12 @@ p, button, label {
 
 button, .popup-button, .login-popup, .sign-up{
     text-decoration: none;
-    border: 1px solid white;
+    border: 1px solid var(--color-white);
     border-radius: .6em;
     padding: .8rem;
     max-width: 17rem;
     background-color: var(--color-login-bg);
-    color: white;
+    color: var(--color-white);
     text-align: center;
     cursor: pointer;
     margin: auto;
@@ -158,7 +158,7 @@ button, .popup-button, .login-popup, .sign-up{
 button, .sign-up{
     text-decoration: none;
     background-color: #F0F0F0;
-    color: #535353;
+    color: hsla(0, 0%, 33%, 1);
     padding: .8rem 1rem;
 }
 
@@ -203,7 +203,7 @@ a {
 
 .close-div label {
     cursor: pointer;
-    color: #333;
+    color: hsla(0, 0%, 20%, 1);
     margin-right: -.6em;
 }
 
@@ -252,7 +252,7 @@ label {
     box-sizing: border-box;
     border-radius: 1.25em;
     padding: 1.25em;
-    background: #fff;
+    background: var(--color-white);
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);

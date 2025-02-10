@@ -6,6 +6,7 @@
     /* Primary Colors */
     --color-primary: #3A54DE;
     --color-primary-hover: #F3A22A;
+    --color-white: hsla(0, 0%, 100%, 1);;
     
     /* Secondary Colors */
     --color-secondary: #B0B0B0;
@@ -17,8 +18,10 @@
     --color-bg: #fff;
     --color-bg-light: #EEEEEE;
     --color-popup-bg: rgba(0, 0, 0, 0.7);
-    --bg-image-purple: linear-gradient(#471871, #142151);
-    --bg-image-blue: linear-gradient(to bottom, #3F93B7, #1C5872);
+    --bg-image-purple: linear-gradient(hsla(271, 65%, 27%, 1), hsla(226, 58%, 18%, 1));
+    --bg-image-blue: linear-gradient(to bottom, hsla(196, 47%, 48%, 1), hsla(197, 61%, 28%, 1));
+    --bg-image-playlist: linear-gradient(hsla(229, 60%, 61%, 1), hsla(242, 77%, 19%, 1));
+
     
     /* Log-in */
     --color-login-bg: #378DB3;

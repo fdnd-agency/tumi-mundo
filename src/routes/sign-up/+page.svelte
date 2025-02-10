@@ -100,7 +100,7 @@ p{
 
 input{
     padding: 1rem;
-    background-color: #EEEEEE;
+    background-color: var(--color-white);
     border: none;
     border-radius: .6em;
     margin-bottom: 1.25em ;
@@ -136,7 +136,7 @@ div{
   right: 0;
   bottom: 0;
   width: 2em;
-  background-color: #ccc;
+  background-color: var(--color-white);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -147,15 +147,15 @@ div{
   width: 1em;
   left: 2px;
   bottom: 3px;
-  background-color: white;
+  background-color: var(--color-white);
   -webkit-transition: .4s;
   transition: .4s;
 }
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: hsla(217, 91%, 60%, 1);;
 }
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px hsla(217, 91%, 60%, 1);
 }
 input:checked + .slider:before {
   -webkit-transform: translateX(1.25em);
@@ -173,17 +173,17 @@ input:checked + .slider:before {
     bottom: 0;
     border-radius: .6em;
     width: 95%;
-    background-color: #3D7A95;
+    background-color: hsla(198, 43%, 41%, 1);
     padding: .6em;
     text-align: center;
     font-size: 1em;
-    color: white;
+    color: var(--color-white);
     text-decoration: none; 
     margin-top: auto;  
     margin-bottom: 3.75em;
 }
 .click-here{
-    color: #599AE7;
+    color: hsla(217, 75%, 65%, 1);
 }
 
 </style>

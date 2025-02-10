@@ -71,15 +71,13 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(#6577D3, #100E52);
+  background-image: var(--bg-image-playlist);
+
 }
 .header-svg {
   position: absolute;
   top: 0;
   z-index: 0;
-}
-.back-btn {
-  width: 3.125em;
 }
 nav {
   position: absolute;

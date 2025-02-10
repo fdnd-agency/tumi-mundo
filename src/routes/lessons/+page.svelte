@@ -103,7 +103,7 @@
     main {
         height: 100%;
         color: var(--color-text-light);
-        background-image: linear-gradient(#471871, #142151);
+        background-image: var(--bg-image-purple);
         display: flex;
         flex-direction: column;
         padding-bottom: 5em;
@@ -204,7 +204,7 @@
     
     .language-filter > a {
         margin-left: auto;
-        color: white;
+        color: var(--color-white);
     }
     
     .language-filter > a:hover {
@@ -216,7 +216,7 @@
         align-items: center;
         padding: var(--space-xs);
         padding-right: var(--space-sm);
-        background-color: #998DB2;
+        background-color: hsla(263, 21%, 62%, 1);
         color: var(--color-text);
         border-radius: var(--border-radius);
     }
@@ -243,7 +243,7 @@
     
     /* Styling for "create playlist" section */
     .create-playlist {
-        background-color: #494375;
+        background-color: hsla(248, 27%, 36%, 1);
         text-align: center;
         color: var(--color-text-light);
     }
