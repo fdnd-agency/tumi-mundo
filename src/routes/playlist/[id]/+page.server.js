@@ -1,16 +1,19 @@
 import { fetchCollection } from '$lib/api';
+import { PUBLIC_APIURL } from '$env/static/public';
 
 export async function load({ params, fetch }) {
     if (!params.id || !/^\d+$/.test(params.id)) {
-        throw error(400, 'Invalid playlist ID');
+        return { error: 'Invalid playlist ID' };
     }
 
-     const playlistId = params.id;
+    const playlistId = params.id;
     try {
         const playlist = await fetchCollection(fetch, 'tm_playlist', playlistId);
         if (!playlist) {
-            throw error(404, 'Playlist not found');
+            return { error: 'Playlist not found' };
         }
+        
+        playlist.image = `${PUBLIC_APIURL}/assets/${playlist.image}`;
 
         const storyIds = playlist.stories || [];
         const stories = await Promise.all(
@@ -30,6 +33,7 @@ export async function load({ params, fetch }) {
             }
         };
     } catch (err) {
-        throw error(500, 'Failed to fetch playlist data');
+        console.error('Failed to fetch playlist:', err);
+        return { error: 'Failed to fetch playlist data' };
     }
- }
+}
