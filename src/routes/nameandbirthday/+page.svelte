@@ -1,8 +1,6 @@
 <script>
     import { Button } from '$lib/index';
 
-//   import ContinueBtn from "../../lib/components/forms/continue-btn.svelte";
-
 </script>
 
 <main>
@@ -15,24 +13,35 @@
         </header>
         <p>For the accuracy of the pace of the method, please enter the birthday of your child. Enter the name to create a personal profile.</p>
 
-        <section class="name">
-            <h2>What's your childs name?</h2>
-            <input type="text" placeholder="Your child's name">
-        </section>
+        <form method="POST">
+            <section class="name">
+                <label for="name">What's your child's name?</label>
+                <input type="text" id="name" name="name" placeholder="Your child's name">
+            </section>
 
-        <section class="birthdate">
-            <h2>What's their date of birth?</h2>
-            <input type="date">
-        </section>
+            <section class="birthdate">
+                <label for="birthdate">What's their date of birth?</label>
+                <input type="date" id="birthdate" name="birthdate">
+            </section>
+        </form>
 
-        <Button type="submit"/> <!-- Implement "<ContinueBtn/>" svg/component after merging> -->
+        <button type="submit">Continue</button>
 
     </section>
 
-    <div class="white-border"></div>
+    <!-- <div class="white-border"></div> -->
 </main>
 
 <style>
+button{
+    position: absolute;
+    bottom: 0;
+    margin: 2em;
+    width: 85%;
+    height: 3.5em;
+    color: #000;
+    border-radius: var(--border-radius);
+}
 .white-border{
     bottom: 0;
     position: absolute;
@@ -70,6 +79,9 @@ main{
     padding: 1em;
     max-width: 31.25em;
 }
+form{
+    width: 100%;
+}
 header{
     width: 100%;
 }
@@ -95,7 +107,7 @@ input{
     width: 100%;
     margin-bottom: 3em;
 }
-h2{
+label{
     font-size: 1em;
     font-weight: 100;
     margin-bottom: .3em;
