@@ -1,5 +1,5 @@
 <script>
-    import { Button } from '$lib/index';
+    // import { Button, Back } from '$lib/index'; Use these svg components after merging
 </script>
 
 <main>
