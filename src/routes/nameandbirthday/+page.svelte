@@ -1,6 +1,5 @@
 <script>
     import { Button } from '$lib/index';
-
 </script>
 
 <main>
@@ -23,42 +22,15 @@
                 <label for="birthdate">What's their date of birth?</label>
                 <input type="date" id="birthdate" name="birthdate">
             </section>
+
+            <button type="submit">Continue</button> <!-- Implement "<ContinueBtn/>" component after merging> -->
         </form>
 
-        <button type="submit">Continue</button> <!-- Implement "<ContinueBtn/>" component after merging> -->
-
     </section>
-
-    <!-- <div class="white-border"></div> -->
 </main>
 
 <style>
-button{
-    position: absolute;
-    bottom: 0;
-    margin: 2em;
-    width: 85%;
-    height: 3.5em;
-    color: #000;
-    border-radius: var(--border-radius);
-}
-.white-border{
-    bottom: 0;
-    position: absolute;
-    width: 100vw;
-  height: 200px;
-  background: white;
-}
-.name, .birthdate{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-}
-.name{
-    margin-top: 2em;
-}
+
 *{
     color: var(--color-white);
 }
@@ -74,13 +46,17 @@ main{
     margin-top: 3em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 1em;
     max-width: 31.25em;
+    flex: 1;
 }
 form{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 header{
     width: 100%;
@@ -115,6 +91,24 @@ label{
 p{
     font-weight: 100;
     max-width: 30em;
+}
+button{
+    margin-top: auto;
+    width: 100%;
+    max-width: 31.5em;
+    height: 3.5em;
+    color: #000;
+    border-radius: var(--border-radius);
+}
+.name, .birthdate{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+.name{
+    margin-top: 2em;
 }
 
 </style>
