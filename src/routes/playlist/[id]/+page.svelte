@@ -23,10 +23,20 @@
             <div class="dot"></div>
         </a>
       </nav>
-
-      <div class="playlist-image-container">
-        <img src="{playlist.image}" alt="{playlist.title}" class="playlist-image">
-      </div>
+      
+      <picture class="playlist-image-container">
+        <source srcset="{playlist.image}?width=448&format=avif" type="image/avif">
+        <source srcset="{playlist.image}?width=448&format=webp" type="image/webp">
+        <source srcset="{playlist.image}?width=448" type="image/jpeg">
+        <img 
+          src="{playlist.image}?width=64" 
+          alt="playlist image"
+          height="380" 
+          width="448" 
+          loading="lazy"
+          class="playlist-image"
+        />
+      </picture>
     </header>
 
     <section class="meta-section">
