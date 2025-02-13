@@ -25,7 +25,7 @@
             </section>
         </form>
 
-        <button type="submit">Continue</button>
+        <button type="submit">Continue</button> <!-- Implement "<ContinueBtn/>" component after merging> -->
 
     </section>
 
