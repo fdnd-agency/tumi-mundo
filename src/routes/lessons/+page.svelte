@@ -16,6 +16,14 @@
             behavior: 'smooth',
         });
     }
+    function handleLikeToggle(event) {
+        const { playlistId, isLiked } = event.detail;
+        data.playlists = data.playlists.map(playlist => 
+            playlist.id === playlistId 
+                ? { ...playlist, isLiked: isLiked }
+                : playlist
+        );
+    }
 
 </script>
 
@@ -75,8 +83,8 @@
     <section class="own-playlist">
         <h2>Liked playlists</h2>
         <section class="playlist-list">
-            {#each data.playlists.filter(playlist => playlist.isLiked) as playlist}
-                <Playlist {playlist} />
+            {#each data.playlists.filter(playlist => playlist.isLiked) as playlist (playlist.id)}
+                <Playlist {playlist} on:likeToggle={handleLikeToggle} />
             {/each}
         </section>
     </section>
@@ -84,8 +92,8 @@
     <section class="own-playlist suggested-playlist">
         <h2>Suggested playlists</h2>
         <section class="playlist-list">
-            {#each data.playlists.filter(playlist => !playlist.isLiked) as playlist}
-                <Playlist {playlist} />
+            {#each data.playlists.filter(playlist => !playlist.isLiked) as playlist (playlist.id)}
+                <Playlist {playlist} on:likeToggle={handleLikeToggle} />
             {/each}
         </section>
     </section>
