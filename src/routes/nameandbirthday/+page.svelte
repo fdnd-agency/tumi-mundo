@@ -13,15 +13,15 @@
         <p>For the accuracy of the pace of the method, please enter the birthday of your child. Enter the name to create a personal profile.</p>
 
         <form method="POST">
-            <section class="name">
+            <div class="name">
                 <label for="name">What's your child's name?</label>
                 <input type="text" id="name" name="name" placeholder="Your child's name">
-            </section>
+            </div>
 
-            <section class="birthdate">
+            <div class="birthdate">
                 <label for="birthdate">What's their date of birth?</label>
                 <input type="date" id="birthdate" name="birthdate">
-            </section>
+            </div>
 
             <button type="submit">Continue</button> <!-- Implement "<ContinueBtn/>" component after merging> -->
         </form>
