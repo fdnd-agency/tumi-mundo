@@ -26,12 +26,12 @@ input[type="submit"], button{
     position: fixed;
     bottom: 0;
     margin-bottom: 2.5em;
+    z-index: 10;
 }
 input[type="submit"]:hover,:focus{
     cursor: pointer;
     color: white;
     background-color: #215165 ;
-    border: 1px solid red;
 }
     
 </style>
