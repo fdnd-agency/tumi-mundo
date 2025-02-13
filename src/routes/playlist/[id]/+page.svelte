@@ -18,12 +18,12 @@
   <article>
     <header>
       <nav>
-        <a href="/lessons" class="back"><Back/></a>
-        <a href="#" class="dots">
+        <a href="/lessons" class="back" aria-label="Go back to all lessons"><Back/></a>
+        <a href="#dropdown" class="dots" aria-label="Go to more options">
             <div class="dot"></div>
         </a>
       </nav>
-      
+
       <picture class="playlist-image-container">
         <source srcset="{playlist.image}?width=448&format=avif" type="image/avif">
         <source srcset="{playlist.image}?width=448&format=webp" type="image/webp">
@@ -65,7 +65,9 @@
     <section class="stories-section">
       <ul>
         {#each playlist.stories as story}
+        <li>
           <Story {story} />
+        </li>
         {/each}
       </ul>
     </section>
