@@ -115,7 +115,6 @@ label{
 p{
     font-weight: 100;
     max-width: 30em;
-    padding: 1em 1em 0 1em;
 }
 
 </style>
