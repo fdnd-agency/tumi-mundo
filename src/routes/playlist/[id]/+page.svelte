@@ -33,7 +33,6 @@
           alt="playlist image"
           height="380" 
           width="448" 
-          loading="lazy"
           class="playlist-image"
         />
       </picture>
@@ -51,9 +50,9 @@
         </div>
 
         <div class="meta-play">
-            <a href="#"><img src="/icons/download.svg" alt="download"></a>
-            <a href="#" class="heart-svg"><img src="/icons/heart.svg" alt="like"></a>
-            <a href="#"><img src="/icons/play.svg" alt="play"></a>
+            <a href="#download"><img src="/icons/download.svg" alt="download"></a>
+            <a href="#like" class="heart-svg"><img src="/icons/heart.svg" alt="like"></a>
+            <a href="#play"><img src="/icons/play.svg" alt="play"></a>
         </div>
     </section>
 
