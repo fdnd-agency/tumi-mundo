@@ -1,5 +1,8 @@
 <script>
+  
   import { fetchApi, Play, LikeButton} from '$lib/index';
+  import { createEventDispatcher } from 'svelte';
+
 
   export let playlist;
   const { image, title, playtime, stories, isLiked: initialIsLiked, likeId: initialLikeId } = playlist;
@@ -8,6 +11,8 @@
   let existingLikeId = initialLikeId;
 
   let profileId = 122;
+
+  const dispatch = createEventDispatcher();
 
   async function toggleLike(event) {
     event.preventDefault(); 
@@ -21,15 +26,13 @@
         profile: profileId
       });
 
-      // Directe update van de UI
       isLiked = !isLiked;
-      // Als het een nieuwe like is, krijg je een likeId
       if (response?.likeId) {
         existingLikeId = response.likeId;
       }
       
-      // Herlaad de layout (trigger opnieuw renderen)
-      playlist = { ...playlist, isLiked, likeId: existingLikeId };
+      // Dispatch een event naar de parent component
+      dispatch('likeToggle', { playlistId: playlist.id, isLiked });
     } catch (error) {
       console.error('Failed to toggle like:', error);
     }
