@@ -1,12 +1,20 @@
 <script>
   import { Story, fetchApi, Back } from '$lib/index';
- 
+
   export let data;
  
   let playlist = data?.playlist;
-  let isLiked = playlist.isLiked;
-  let existingLikeId = playlist.likeId;
- 
+  let isLoading = !playlist;
+  let error = null;
+
+  $: {
+    if (playlist) {
+      isLoading = false;
+    }
+  }
+
+  let isLiked = playlist?.isLiked || false;
+  let existingLikeId = playlist?.likeId || null;
   let profileId = 122;
  
   async function toggleLike(event) {
@@ -22,19 +30,15 @@
       });
  
       isLiked = !isLiked;
-      if (response?.id) {
-        existingLikeId = response.id;
-      } else if (isLiked === false) {
-        existingLikeId = null;
-      }
-      
+      existingLikeId = response?.id || null;
       playlist = { ...playlist, isLiked, likeId: existingLikeId };
  
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      console.error('Error toggling like:', err);
+      error = err.message || 'Er is iets fout gegaan';
     }
   }
-<</script>
+</script>
 
 <main>
   <article>
@@ -83,24 +87,6 @@
     </div>
   </section>
 
-{#if playlist}
-  <section class="stories-section">
-      <ul>
-          {#each playlist.stories as story}
-            <Story {story} />
-          {/each}
-        </ul>
-  </section>
-{:else}
-<p>Playlist niet gevonden.</p>
-{/if}
-
-        <div class="meta-play">
-            <a href="#download"><img src="/icons/download.svg" alt="download"></a>
-            <a href="#like" class="heart-svg"><img src="/icons/heart.svg" alt="like"></a>
-            <a href="#play"><img src="/icons/play.svg" alt="play"></a>
-        </div>
-    </section>
 
     {#if isLoading}
     <div class="loading">Loading playlist...</div>
@@ -121,9 +107,9 @@
       <p>Playlist not found.</p>
       <a href="/lessons" class="view-all">View all playlists</a>
     </section>
-    
   {/if}
   </article>
+  
 </main>
 
 <style>
