@@ -12,43 +12,43 @@
 {/if}
 
 <style>
-  :global(:root) {
-    --button-blue: hsl(200, 52%, 46%);
-    --button-darker-blue: hsl(200, 49%, 26%);
-    --button-grey: hsl(0, 0%, 75%);
-  }
+:global(:root) {
+  --button-blue: hsl(200, 52%, 46%);
+  --button-darker-blue: hsl(200, 49%, 26%);
+  --button-grey: hsl(0, 0%, 75%);
+}
 
-  input[type="submit"], button {
-    margin-top: auto;
-    min-height: 3em;
-    width: 85%;
-    max-width: 31.25em;
-    padding: .8em;
-    border-radius: .4em;
-    border: none;
-    font-size: 1.1em;
-    bottom: 0;
-    margin-bottom: 2.5em;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
+input[type="submit"], button {
+  margin-top: auto;
+  min-height: 3em;
+  width: 85%;
+  max-width: 31.25em;
+  padding: .8em;
+  border-radius: .4em;
+  border: none;
+  font-size: 1.1em;
+  bottom: 0;
+  margin-bottom: 2.5em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  .primary {
-    background-color: var(--button-darker-blue);
-    color: var(--primary-text);
-  }
+.primary {
+  background-color: var(--button-darker-blue);
+  color: var(--primary-text);
+}
 
-  .primary:hover, .primary:focus {
-    background-color: #1A3B4C;
-  }
+.primary:hover, .primary:focus {
+  background-color: #1A3B4C;
+}
 
-  .secondary {
-    background-color: var(--button-grey);
-    color: hsl(0, 0%, 48%);
-  }
+.secondary {
+  background-color: var(--button-grey);
+  color: hsl(0, 0%, 48%);
+}
 
-  .secondary:hover, .secondary:active {
-    background-color: var(--button-darker-blue);
-    color: white;
-  }
+.secondary:hover, .secondary:active {
+  background-color: var(--button-darker-blue);
+  color: white;
+}
 </style>

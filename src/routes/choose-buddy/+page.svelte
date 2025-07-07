@@ -2,7 +2,7 @@
   import { Back, Button, BennySVG, MiloSVG, DaisySVG, PercySVG, RaymondSVG } from '$lib/index'
   import { onMount } from 'svelte'
   
-    // Maak een mapping van buddy-namen naar hun SVG-inhoud
+    // Make a mapping with buddy-names to their SVG-content
     const buddyMap = {
     Percy: PercySVG,
     Raymond: RaymondSVG,

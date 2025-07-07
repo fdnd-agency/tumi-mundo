@@ -1,26 +1,26 @@
 <!-- @author: Marjam Lodien -->
 <script>
-    import { browser } from '$app/environment';
-    import { goto } from '$app/navigation';
-  
-    export let seasons = [];
-    export let languages = [];
-    export let animals = [];
-    export let selectedSeason = '';
-    export let selectedLanguage = '';
-    export let selectedAnimal = '';
-    export let selectedSorting = ''
-  
-    let form;
-  
-    function handleChange() {
-      if (browser) {
-        const formData = new FormData(form);
-        const searchParams = new URLSearchParams(formData);
-        goto(`?${searchParams.toString()}`)
-      }
+  import { browser } from '$app/environment';
+  import { goto } from '$app/navigation';
+
+  export let seasons = [];
+  export let languages = [];
+  export let animals = [];
+  export let selectedSeason = '';
+  export let selectedLanguage = '';
+  export let selectedAnimal = '';
+  export let selectedSorting = ''
+
+  let form;
+
+  function handleChange() {
+    if (browser) {
+      const formData = new FormData(form);
+      const searchParams = new URLSearchParams(formData);
+      goto(`?${searchParams.toString()}`)
     }
-  </script>
+  }
+</script>
   
   <form bind:this={form} method="GET" on:change={handleChange}>
     <select name="season" id="season-select" aria-label="Choose a season">
