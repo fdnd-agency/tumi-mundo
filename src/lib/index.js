@@ -10,6 +10,11 @@ export { default as BuddyCarousel } from '$lib/components/core/BuddyCarousel.sve
 export { default as BuddyForm } from '$lib/components/core/BuddyForm.svelte'
 export { default as LanguageList } from '$lib/components/core/LanguageList.svelte'
 
+export { default as AllStories } from '$lib/components/core/AllStories.svelte'
+export { default as LikedPlaylists} from '$lib/components/core/LikedPlaylists.svelte'
+export { default as OwnPlaylists } from '$lib/components/core/OwnPlaylists.svelte'
+export { default as SuggestedPlaylists } from '$lib/components/core/SuggestedPlaylists.svelte'
+
 
 export { default as Button } from '$lib/components/forms/ContinueBtn.svelte'
 export { default as Filter } from '$lib/components/forms/Filter.svelte'

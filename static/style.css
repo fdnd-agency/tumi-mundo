@@ -160,3 +160,58 @@ p {
         }
     }
 }
+
+/* styling for sections in /lessons */
+/* === Global playlist sections === */
+
+.own-playlist {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+}
+
+.playlist-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  overflow-x: auto;
+  padding-bottom: var(--space-md);
+  scroll-snap-type: x mandatory;
+}
+
+.playlist-scroll-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.create-playlist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10em;
+  height: 16em;
+  background-color: hsla(248, 27%, 36%, 1);
+  text-align: center;
+  color: var(--color-text-light);
+  border-radius: 0.5em;
+  padding: 0.5em;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.create-playlist a {
+  color: white;
+}
+
+.create-playlist h3 {
+  margin-top: 1em;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.create-playlist small {
+  margin-top: auto;
+}
