@@ -6,6 +6,8 @@ export { default as Dropdown } from '$lib/components/core/Dropdown.svelte'
 export { default as AllStoriesFilter } from '$lib/components/core/AllStoriesFilter.svelte'
 export { default as Heading } from '$lib/components/core/Heading.svelte'
 export { default as StoryList } from '$lib/components/core/StoryList.svelte'
+export { default as BuddyCarousel } from '$lib/components/core/BuddyCarousel.svelte'
+export { default as BuddyForm } from '$lib/components/core/BuddyForm.svelte'
 
 
 export { default as Button } from '$lib/components/forms/ContinueBtn.svelte'
