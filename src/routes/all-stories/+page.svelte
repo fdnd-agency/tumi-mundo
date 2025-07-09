@@ -1,6 +1,6 @@
 <script>
- import { Heading , Filters, StoryList } from '$lib/index';
- 
+ import { Heading , AllStoriesFilter, StoryList } from '$lib/index';
+
   /** @type {import('./$types').PageData} */
   export let data;
 
@@ -9,7 +9,7 @@
 
 <main>
   <Heading />
-  <Filters 
+  <AllStoriesFilter 
     {seasons} 
     {languages} 
     {animals} 

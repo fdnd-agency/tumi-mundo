@@ -3,7 +3,7 @@ export { default as MakePlaylist } from '$lib/components/core/MakePlaylist.svelt
 export { default as Menu } from '$lib/components/core/Menu.svelte'
 export { default as Carousel } from '$lib/components/core/Carousel.svelte'
 export { default as Dropdown } from '$lib/components/core/Dropdown.svelte'
-export { default as Filters } from '$lib/components/core/Filters.svelte'
+export { default as AllStoriesFilter } from '$lib/components/core/AllStoriesFilter.svelte'
 export { default as Heading } from '$lib/components/core/Heading.svelte'
 export { default as StoryList } from '$lib/components/core/StoryList.svelte'
 
