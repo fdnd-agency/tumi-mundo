@@ -15,6 +15,11 @@ export { default as LikedPlaylists} from '$lib/components/core/LikedPlaylists.sv
 export { default as OwnPlaylists } from '$lib/components/core/OwnPlaylists.svelte'
 export { default as SuggestedPlaylists } from '$lib/components/core/SuggestedPlaylists.svelte'
 
+export { default as LoginIntro } from '$lib/components/core/LoginIntro.svelte'
+export { default as LoginPopup } from '$lib/components/core/LoginPopup.svelte'
+
+
+
 
 export { default as Button } from '$lib/components/forms/ContinueBtn.svelte'
 export { default as Filter } from '$lib/components/forms/Filter.svelte'
