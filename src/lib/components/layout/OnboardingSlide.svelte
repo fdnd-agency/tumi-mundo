@@ -9,13 +9,14 @@
   export let color = 'hsla(213, 53%, 52%, 1)';
   export let showButton = true;
   export let isLast = false;
+  export let eclipseColor;
 </script>
 
 <section style="background-color: {color}">
   <a href="/sign-up" class="skip">Skip</a>
 
   <div class="mouse">
-    <Eclipse color={color} />
+    <Eclipse color= {eclipseColor} />
     <picture class="rat">
       <source srcset="/characters/Rat.svg?format=avif" type="image/avif" />
       <source srcset="/characters/Rat.svg?format=webp" />
@@ -43,6 +44,7 @@
     width: 100vw;
     color: var(--color-white);
   }
+
   .mouse {
     width: 100%;
     height: 25em;
@@ -51,22 +53,49 @@
     align-items: center;
     position: relative;
   }
+
   .rat {
     position: absolute;
     inset: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
   }
-  h1, p { text-align: center; }
-  h1 { font-size: 1.25em; margin-bottom: 1em; }
-  p { font-size: 0.8em; max-width: 45ch; margin: auto; }
+
+  .eclipse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18rem; /* iets groter maken */
+    height: auto;
+    opacity: 0.3; /* subtiel effect */
+    z-index: 0; /* achter de rat */
+    pointer-events: none;
+  }
+
+  h1 { 
+    text-align: center;
+    font-size: 1.25em; 
+    margin-bottom: 1em; 
+  }
+
+  p { 
+    font-size: 0.8em; 
+    max-width: 45ch; 
+    margin: auto; 
+    margin-top: 0;
+    text-align: left;
+  }
+
   .skip {
     margin-left: auto;
     color: white;
     font-size: 1.25em;
     padding: 1em;
   }
+
   button, .make-acc {
     margin: auto;
     margin-bottom: 2.5em;
@@ -77,5 +106,6 @@
     font-size: 1em;
     border: none;
   }
+
   .make-acc { background-color: hsla(173, 94%, 24%, 1); }
 </style>

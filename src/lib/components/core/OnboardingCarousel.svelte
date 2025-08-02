@@ -6,21 +6,25 @@
   let slides = [
     {
       title: 'Learn languages',
-      text: 'Every household is different. Some only speak one language...',
-      color: 'hsla(213, 53%, 52%, 1)',
+      text: 'Every household is different. Some only speak one language, others even as much as three! Learning more than one language has great neurological benefits for anyone at any age. With TuMi Mundo your child can learn up to 3 languages.',
+      color: 'hsla(214, 72%, 65%, 1)',
+      eclipseColor: 'hsla(213, 53%, 52%, 1)'
+
     },
     {
       title: 'Test the progress',
-      text: 'During the learning journey you can measure improvement...',
+      text: 'During the learning journal you can measure the improvement of your child. There is an option to share the data with researchers to further improve the method and participate in special researches! You can manage the option to share your data at any given time in the app.',
       color: 'hsla(195, 49%, 48%, 1)',
+      eclipseColor: 'hsla(196, 47%, 38%, 1)' 
     },
     {
       title: 'See the results',
-      text: 'See the results of the tests and watch as your child learns...',
+      text: 'See the results of the tests and watch as your child learns a language with TuMi Mundo. The older your child becomes the further into the method you go, it starts with listening, it ends with being able to have a full conversation.',
       color: 'hsla(174, 94%, 34%, 1)',
       isLast: true,
       buttonLabel: 'Make an account',
-      buttonLink: '/sign-up'
+      buttonLink: '/sign-up',
+      eclipseColor: 'hsla(174, 96%, 25%, 1)'
     }
   ];
 
