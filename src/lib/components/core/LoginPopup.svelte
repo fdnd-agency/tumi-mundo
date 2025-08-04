@@ -56,26 +56,6 @@
 
 <style>
 
-:root {
-  --color-text: white;
-  --color-link: #378EB4;
-  --color-bg-light: var(--color-bg-light);
-  --color-white: #fff;
-  --color-popup-bg: rgba(0, 0, 0, 0.6);
-  --color-login-bg: #378DB3;
-  --color-login-bg-hover: #2a6d91;;
-
-  --padding-small: 0.8rem;
-  --padding-medium: 1rem;
-  --padding-large: 2rem;
-
-  --gap-small: 0.3em;
-  --gap-medium: 0.6em;
-
-  --popup-width: 25em;
-  --popup-height: 31.25em;
-}
-
 input {
   width: 100%;
   height: 3rem;
@@ -121,15 +101,12 @@ a {
   top: 150%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   width: var(--popup-width);
   height: var(--popup-height);
-
   background: var(--color-white);
   border-radius: 1.25em;
   padding: 1.25em;
   box-sizing: border-box;
-
   transition: 0.25s all;
 }
 
@@ -156,7 +133,6 @@ a {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-
   margin: 0 auto;
   text-align: center;
   font-size: var(--font-size-lg);
@@ -168,10 +144,8 @@ a {
   align-items: center;
   justify-content: center;
   gap: var(--gap-small);
-
   margin-left: auto;
   margin-right: -0.6em;
-
   cursor: pointer;
   color: hsla(0, 0%, 20%, 1);
 }
@@ -197,12 +171,10 @@ a {
 .login-popup {
   width: 100%;
   padding: 0.8rem;
-
   background-color: var(--color-login-bg);
   color: var(--color-white);
   border: 1px solid var(--color-white);
   border-radius: 0.6em;
-
   text-align: center;
   cursor: pointer;
   margin-bottom: 1em;

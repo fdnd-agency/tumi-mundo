@@ -15,16 +15,6 @@
 
 <style>
 
-    :root {
-    --color-text: white;
-    --padding-small: .8rem;
-    --padding-medium: 1rem;
-    --padding-large: 2rem;
-    --gap-small: .3em;
-    --gap-medium: .6em;
-    --popup-width: 25em;
-    --popup-height: 31.25em
-}
   section {
     padding: 0 var(--padding-large);
     flex-grow: 1;
@@ -44,10 +34,12 @@
   p {
     font-size: var(--font-size-md);
   }
+
   h1, p{
     color: white;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); 
   }
+
   .buttons {
     margin-top: auto;
     gap: var(--gap-medium);
@@ -72,6 +64,7 @@
     text-align: center;
     cursor: pointer;
   }
+
   .popup-button:hover{
     background-color:var(--color-login-bg-hover) ;
   }
@@ -86,6 +79,5 @@
     text-decoration: underline;
     max-width: 22rem;
     text-align: center;
-    
   }
 </style>

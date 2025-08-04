@@ -34,11 +34,6 @@
 </main>
 
 <style>
-  :root {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
 
   main {
     height: 100%;
@@ -61,7 +56,7 @@
     margin-bottom: var(--space-md);
   }
 
-  @media only screen and (min-width: 600px) {
+  @media (min-width: 600px) {
     main {
       align-items: center;
     }

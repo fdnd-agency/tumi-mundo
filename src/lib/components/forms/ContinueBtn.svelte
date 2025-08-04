@@ -12,11 +12,6 @@
 {/if}
 
 <style>
-:global(:root) {
-  --button-blue: hsl(200, 52%, 46%);
-  --button-darker-blue: hsl(200, 49%, 26%);
-  --button-grey: hsl(0, 0%, 75%);
-}
 
 input[type="submit"], button {
   margin-top: auto;
