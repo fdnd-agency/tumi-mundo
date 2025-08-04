@@ -37,6 +37,7 @@
       button.addEventListener('click', () => scrollCarousel(1));
     });
 
+    // Makes indicators clickable
     indicators.forEach(indicator => {
       indicator.addEventListener('click', function () {
         const targetSlide = Number(this.dataset.slide);
@@ -53,11 +54,6 @@
       updateIndicators();
     }
 
-    function updateIndicators() {
-      indicators.forEach((indicator, i) => {
-        indicator.classList.toggle('active', i === currentSlide);
-      });
-    }
   });
 </script>
 
