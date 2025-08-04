@@ -8,14 +8,14 @@
       title: 'Learn languages',
       text: 'Every household is different. Some only speak one language, others even as much as three! Learning more than one language has great neurological benefits for anyone at any age. With TuMi Mundo your child can learn up to 3 languages.',
       color: 'hsla(214, 72%, 65%, 1)',
-      eclipseColor: 'hsla(213, 53%, 52%, 1)'
+      contrastColor: 'hsla(213, 53%, 52%, 1)',
 
     },
     {
       title: 'Test the progress',
       text: 'During the learning journal you can measure the improvement of your child. There is an option to share the data with researchers to further improve the method and participate in special researches! You can manage the option to share your data at any given time in the app.',
       color: 'hsla(195, 49%, 48%, 1)',
-      eclipseColor: 'hsla(196, 47%, 38%, 1)' 
+      contrastColor: 'hsla(196, 47%, 38%, 1)' 
     },
     {
       title: 'See the results',
@@ -24,7 +24,7 @@
       isLast: true,
       buttonLabel: 'Make an account',
       buttonLink: '/sign-up',
-      eclipseColor: 'hsla(174, 96%, 25%, 1)'
+      contrastColor: 'hsla(174, 96%, 25%, 1)'
     }
   ];
 

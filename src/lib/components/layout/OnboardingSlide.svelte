@@ -9,14 +9,14 @@
   export let color = 'hsla(213, 53%, 52%, 1)';
   export let showButton = true;
   export let isLast = false;
-  export let eclipseColor;
+  export let contrastColor;
 </script>
 
 <section style="background-color: {color}">
   <a href="/sign-up" class="skip">Skip</a>
 
   <div class="mouse">
-    <Eclipse color= {eclipseColor} />
+    <Eclipse color= {contrastColor} />
     <picture class="rat">
       <source srcset="/characters/Rat.svg?format=avif" type="image/avif" />
       <source srcset="/characters/Rat.svg?format=webp" />
@@ -32,7 +32,7 @@
   {#if isLast}
     <a href={buttonLink} class="make-acc">{buttonLabel}</a>
   {:else if showButton}
-    <button type="button" class="carousel-button right">{buttonLabel}</button>
+    <button type="button" class="carousel-button right" style="background-color: {contrastColor}" >{buttonLabel}</button>
   {/if}
 </section>
 
@@ -61,18 +61,6 @@
     justify-content: center;
     align-items: center;
     z-index: 1;
-  }
-
-  .eclipse {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 18rem; /* iets groter maken */
-    height: auto;
-    opacity: 0.3; /* subtiel effect */
-    z-index: 0; /* achter de rat */
-    pointer-events: none;
   }
 
   h1 { 
@@ -105,7 +93,11 @@
     text-align: center;
     font-size: 1em;
     border: none;
+    color: white;
   }
 
-  .make-acc { background-color: hsla(173, 94%, 24%, 1); }
+  .make-acc { 
+    background-color: hsla(173, 94%, 24%, 1); 
+  }
+
 </style>
