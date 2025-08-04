@@ -76,6 +76,7 @@
     overflow: auto;
     width: 100%;
   }
+  
   .carousel > li {
     scroll-snap-align: center;
     width: 100vw;

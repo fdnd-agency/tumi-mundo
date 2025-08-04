@@ -15,6 +15,7 @@
     justify-content: center;
     margin-bottom: 1.8em;
   }
+
   .indicator {
     width: .6em;
     height: .6em;
@@ -23,5 +24,6 @@
     margin: 0 5px;
     cursor: pointer;
   }
+  
   .indicator.active { background-color: white; }
 </style>
