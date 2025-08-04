@@ -8,6 +8,7 @@ export { default as Heading } from '$lib/components/core/Heading.svelte'
 export { default as StoryList } from '$lib/components/core/StoryList.svelte'
 export { default as BuddyCarousel } from '$lib/components/core/BuddyCarousel.svelte'
 export { default as BuddyForm } from '$lib/components/core/BuddyForm.svelte'
+export { default as BuddyIntro } from '$lib/components/core/BuddyIntro.svelte'
 export { default as LanguageList } from '$lib/components/core/LanguageList.svelte'
 
 export { default as AllStories } from '$lib/components/core/AllStories.svelte'

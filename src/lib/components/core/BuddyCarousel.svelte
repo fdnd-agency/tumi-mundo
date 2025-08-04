@@ -108,7 +108,7 @@
   .scroll-container {
     min-height: 26.75em;
     width: 100%;
-    max-width: 720px;
+    max-width: 45em;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 1em;
