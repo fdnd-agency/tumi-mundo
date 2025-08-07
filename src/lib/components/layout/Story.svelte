@@ -53,7 +53,7 @@ const {
 
   <div class="story-icons flex-items">
     <Download/>
-    <!-- <AddStory/> -->
+    <!-- <AddStory/> turned off because <MakePlaylist/> has these same inputs -->
   </div>
   
 </article>

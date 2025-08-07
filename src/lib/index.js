@@ -4,6 +4,24 @@ export { default as Menu } from '$lib/components/core/Menu.svelte'
 export { default as Carousel } from '$lib/components/core/Carousel.svelte'
 export { default as Dropdown } from '$lib/components/core/Dropdown.svelte'
 export { default as OnboardingCarousel } from '$lib/components/core/OnboardingCarousel.svelte'
+export { default as AllStoriesFilter } from '$lib/components/core/AllStoriesFilter.svelte'
+export { default as Heading } from '$lib/components/core/Heading.svelte'
+export { default as StoryList } from '$lib/components/core/StoryList.svelte'
+export { default as BuddyCarousel } from '$lib/components/core/BuddyCarousel.svelte'
+export { default as BuddyForm } from '$lib/components/core/BuddyForm.svelte'
+export { default as BuddyIntro } from '$lib/components/core/BuddyIntro.svelte'
+export { default as LanguageList } from '$lib/components/core/LanguageList.svelte'
+
+export { default as AllStories } from '$lib/components/core/AllStories.svelte'
+export { default as LikedPlaylists} from '$lib/components/core/LikedPlaylists.svelte'
+export { default as OwnPlaylists } from '$lib/components/core/OwnPlaylists.svelte'
+export { default as SuggestedPlaylists } from '$lib/components/core/SuggestedPlaylists.svelte'
+
+export { default as LoginIntro } from '$lib/components/core/LoginIntro.svelte'
+export { default as LoginPopup } from '$lib/components/core/LoginPopup.svelte'
+
+
+
 
 export { default as Button } from '$lib/components/forms/ContinueBtn.svelte'
 export { default as Filter } from '$lib/components/forms/Filter.svelte'
