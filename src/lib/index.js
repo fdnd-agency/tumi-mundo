@@ -4,6 +4,11 @@ export { default as Menu } from '$lib/components/core/Menu.svelte'
 export { default as Carousel } from '$lib/components/core/Carousel.svelte'
 export { default as Dropdown } from '$lib/components/core/Dropdown.svelte'
 
+export { default as DeleteDialog } from '$lib/components/core/DeleteDialog.svelte'
+export { default as PlaylistHeader } from '$lib/components/core/PlaylistHeader.svelte'
+export { default as PlaylistMeta } from '$lib/components/core/PlaylistMeta.svelte'
+export { default as PlaylistStories } from '$lib/components/core/PlaylistStories.svelte'
+
 export { default as Button } from '$lib/components/forms/ContinueBtn.svelte'
 export { default as Filter } from '$lib/components/forms/Filter.svelte'
 export { default as Input } from '$lib/components/forms/Input.svelte'
