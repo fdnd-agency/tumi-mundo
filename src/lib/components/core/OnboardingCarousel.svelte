@@ -75,6 +75,10 @@
     scroll-snap-type: x mandatory;
     overflow: auto;
     width: 100%;
+    overflow-y: hidden;
+  }
+  .carousel::-webkit-scrollbar {
+  display: none;
   }
   
   .carousel > li {

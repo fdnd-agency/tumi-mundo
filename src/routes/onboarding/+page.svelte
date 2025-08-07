@@ -1,5 +1,5 @@
 <script>
-  import OnboardingCarousel from '$lib/components/core/OnboardingCarousel.svelte';
+  import { OnboardingCarousel } from '$lib/index';
 </script>
 
 <main>
