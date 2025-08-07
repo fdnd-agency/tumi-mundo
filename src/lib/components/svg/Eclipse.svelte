@@ -1,7 +1,7 @@
 <script>
     export let color = "hsla(213, 53%, 52%, 1)"; 
 </script>
-  
+
   <svg 
     width="242" 
     height="242" 
