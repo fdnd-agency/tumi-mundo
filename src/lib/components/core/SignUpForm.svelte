@@ -45,17 +45,20 @@
 </form>
 
 <style>
+    
 .signup-form {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
 }
+
 .field-error {
   color: #d32f2f;
   margin-top: -0.8em;
   margin-bottom: 0.8em;
   font-size: 0.875em;
 }
+
 .sign-upbtn {
   align-self: center;
   border-radius: .6em;
@@ -70,8 +73,10 @@
   cursor: pointer;
   border: none;
 }
+
 .sign-upbtn:hover {
   background-color: var(--color-login-bg-hover);
 }
+
 </style>
 

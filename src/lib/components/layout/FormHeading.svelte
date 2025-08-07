@@ -8,6 +8,7 @@
 </header>
 
 <style>
+  
 .form-header {
   display: flex;
   align-items: center;
@@ -16,6 +17,7 @@
   position: relative;
   height: 5em;
 }
+
 .form-header h1 {
   font-size: 1.5em;
   position: absolute;
@@ -23,4 +25,5 @@
   transform: translateX(-50%);
   margin: 0;
 }
+
 </style>

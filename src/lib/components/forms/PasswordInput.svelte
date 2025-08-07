@@ -77,11 +77,13 @@
 {/if}
 
 <style>
+
 .password-field-wrapper {
   position: relative;
   display: flex;
   flex-direction: column;
 }
+
 .toggle-password-btn {
   position: absolute;
   right: 1em;
@@ -91,6 +93,7 @@
   padding: 0;
   cursor: pointer;
 }
+
 .password-field-wrapper .toggle-password-btn {
   position: absolute;
   top: 50%;
@@ -103,6 +106,7 @@
   font-size: 0.875rem;
   margin-top: 0.25rem;
 }
+
 .password-criteria {
   background: #f7fafd;
   border: 1px solid #e2e8f0;
@@ -110,27 +114,33 @@
   padding: 1em;
   margin-top: 0.75em;
 }
+
 .password-criteria h3 {
   font-size: 1em;
   margin-bottom: 0.5em;
 }
+
 .password-criteria ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .password-criteria li {
   display: flex;
   align-items: center;
   gap: 0.5em;
   margin-bottom: 0.3em;
 }
+
 .password-criteria li.valid {
   color: #2ecc40;
   font-weight: 500;
 }
+
 .password-criteria li.invalid {
   color: #d32f2f;
   font-weight: 400;
 }
+
 </style>
