@@ -20,6 +20,8 @@ export { default as SuggestedPlaylists } from '$lib/components/core/SuggestedPla
 export { default as LoginIntro } from '$lib/components/core/LoginIntro.svelte'
 export { default as LoginPopup } from '$lib/components/core/LoginPopup.svelte'
 
+export { default as ProfileList } from '$lib/components/core/ProfileList.svelte'
+export { default as TopBarProfile } from '$lib/components/core/TopBarProfile.svelte'
 
 
 
@@ -35,6 +37,7 @@ export { default as Popup } from '$lib/components/layout/Popup.svelte'
 export { default as Story } from '$lib/components/layout/Story.svelte'
 
 export { default as OnboardingSlide } from '$lib/components/layout/OnboardingSlide.svelte'
+export { default as ProfileItem } from '$lib/components/layout/ProfileItem.svelte'
 
 
 // Helpers
