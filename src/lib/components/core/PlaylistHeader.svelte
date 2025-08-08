@@ -48,7 +48,6 @@ nav {
   aspect-ratio: 1 / 1; 
   overflow: hidden; 
   padding: 1em 1em 0 1em;
-
   position: relative;
   display: flex;
   flex-direction: column;
@@ -75,34 +74,4 @@ header{
 }
 
 
-/*  test */
-
-nav {
-  position: absolute;
-  width: 100%;
-  margin-top: 2em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-md);
-}
-.playlist-image-container {
-  z-index: 0;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  padding: 1em 1em 0 1em;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-.playlist-image {
-  height: calc(100% - 5em);
-  width: calc(100% - 5em);
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-  border-radius: var(--border-radius);
-}
 </style>

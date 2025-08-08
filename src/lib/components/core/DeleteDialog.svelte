@@ -1,7 +1,22 @@
 <script>
+  import { deleteFromCollection } from '$lib/api.js';
   import { DeleteSVG } from '$lib/index';
-  export let playlistId;
-  export let onDelete;
+
+  export let playlist;
+  export let setError;
+
+  async function deletePlaylist(event) {
+    event.preventDefault();
+    if (!playlist?.id) return;
+
+    try {
+      await deleteFromCollection(fetch, 'tm_playlist', playlist.id);
+      window.location.href = '/lessons';
+    } catch (err) {
+      console.error('Error deleting playlist:', err);
+      setError(err.message || 'Er is iets fout gegaan bij verwijderen.');
+    }
+  }
 </script>
 
 <dialog id="delete">
@@ -13,8 +28,14 @@
 
     <div class="popup-btns">
       <a href="#cancelled" class="black-text cancel-btn">Cancel</a>
-      <form method="POST" action={`/lessons/delete/${playlistId}`} on:submit|preventDefault={onDelete}>
-        <button type="submit" class="delete-btn">Delete <DeleteSVG /></button>
+      <form
+        method="POST"
+        action={`/lessons/delete/${playlist.id}`}
+        on:submit|preventDefault={deletePlaylist}
+      >
+        <button type="submit" class="delete-btn">
+          Delete <DeleteSVG />
+        </button>
       </form>
     </div>
   </div>
@@ -56,7 +77,7 @@ dialog{
   flex-direction: column;
   text-align: left;
   padding: 1em;
-  padding-left: 1.5em
+  padding-left: 1.5em;
 }
 
 .delete-content > h2{
@@ -101,6 +122,7 @@ dialog:target .delete-content {
   gap: .3em;
   font-size: 1em;
   border: none;
+  cursor: pointer;
 }
 
 .delete-btn:hover{
@@ -111,68 +133,5 @@ dialog:target .delete-content {
   display: flex;
   align-items: center;
 }
-
-/* test */
-
-dialog {
-  background-color: rgba(0, 0, 0, 0.8);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 110vh;
-  border: none;
-  z-index: 9999;
-}
-.delete-content {
-  background-color: #fff;
-  max-width: 25em;
-  width: 90%;
-  height: 14em;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: var(--border-radius);
-  padding: 1em 1.5em;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-.popup-btns {
-  margin-top: auto;
-  margin-left: auto;
-  display: flex;
-}
-.black-text {
-  color: black;
-}
-dialog:target {
-  opacity: 1;
-  visibility: visible;
-}
-.cancel-btn, .delete-btn {
-  padding: .5em .7em;
-  border-radius: var(--border-radius);
-  font-weight: var(--font-weight-normal);
-}
-.cancel-btn {
-  border: 1px solid black;
-}
-.delete-btn {
-  margin-left: .5em;
-  background-color: #D51D1D;
-  display: flex;
-  align-items: center;
-  gap: .3em;
-  border: none;
-  font-size: 1em;
-  cursor: pointer;
-}
-
 
 </style>

@@ -1,6 +1,5 @@
 <script>
   import { fetchApi, DeleteDialog, PlaylistStories, PlaylistMeta, PlaylistHeader  } from '$lib/index';
-  import { deleteFromCollection } from '$lib/api.js';
 
   export let data;
   let playlist = data?.playlist;
@@ -33,17 +32,6 @@
     }
   }
 
-  async function deletePlaylist(event) {
-    event.preventDefault();
-    if (!playlist?.id) return;
-    try {
-      await deleteFromCollection(fetch, 'tm_playlist', playlist.id);
-      window.location.href = '/lessons';
-    } catch (err) {
-      console.error('Error deleting playlist:', err);
-      error = err.message || 'Er is iets fout gegaan bij verwijderen.';
-    }
-  }
 </script>
 
 <main>
@@ -60,7 +48,8 @@
     {/if}
   </article>
 
-  <DeleteDialog playlistId={playlist.id} onDelete={deletePlaylist} />
+   <DeleteDialog {playlist} setError={(msg) => error = msg} />
+
 </main>
 
 <style>
