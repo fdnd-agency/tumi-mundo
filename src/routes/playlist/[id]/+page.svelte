@@ -5,17 +5,14 @@
   let playlist = data?.playlist;
   let isLoading = !playlist;
   let error = null;
-
   $: if (playlist) isLoading = false;
-
 
 </script>
 
 <main>
   <article>
     <PlaylistHeader {playlist} />
-    <!-- <PlaylistMeta {playlist} {isLiked} {toggleLike} /> -->
-     <PlaylistMeta {playlist} isLiked={playlist.isLiked} />
+    <PlaylistMeta {playlist} isLiked={playlist.isLiked} />
 
     {#if isLoading}
       <div class="loading">Loading playlist...</div>
@@ -27,7 +24,6 @@
   </article>
 
    <DeleteDialog {playlist} setError={(msg) => error = msg} />
-
 </main>
 
 <style>
