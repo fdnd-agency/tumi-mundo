@@ -1,7 +1,31 @@
 <script>
+  import { fetchApi } from '$lib/index';
+
   export let playlist;
-  export let isLiked;
-  export let toggleLike;
+  export let isLiked = false;
+  let existingLikeId = playlist?.likeId || null;
+  let error = null;
+  let profileId = 122; 
+
+  async function toggleLike(event) {
+    event.preventDefault();
+    const endpoint = isLiked ? `/tm_likes/${existingLikeId}` : '/tm_likes';
+    const method = isLiked ? 'DELETE' : 'POST';
+
+    try {
+      const response = await fetchApi(endpoint, method, {
+        playlist: playlist.id,
+        profile: profileId
+      });
+
+      isLiked = !isLiked;
+      existingLikeId = response?.id || null;
+      playlist = { ...playlist, isLiked, likeId: existingLikeId };
+    } catch (err) {
+      console.error('Error toggling like:', err);
+      error = err.message || 'Er is iets fout gegaan';
+    }
+  }
 </script>
 
 <section class="meta-section">
@@ -31,10 +55,13 @@
     </button>
     <a href="/play"><img src="/icons/play.svg" alt="play" height="60" /></a>
   </div>
+
+  {#if error}
+    <p class="error">{error}</p>
+  {/if}
 </section>
 
 <style>
-
 .meta-section {
   padding: var(--space-md);
   max-width: 31.25em;
@@ -91,5 +118,4 @@
     transform: scale(1.4);
   }
 }
-
 </style>
