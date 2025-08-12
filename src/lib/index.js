@@ -20,10 +20,18 @@ export { default as SuggestedPlaylists } from '$lib/components/core/SuggestedPla
 export { default as LoginIntro } from '$lib/components/core/LoginIntro.svelte'
 export { default as LoginPopup } from '$lib/components/core/LoginPopup.svelte'
 
+
 export { default as ProfileList } from '$lib/components/core/ProfileList.svelte'
 export { default as TopBarProfile } from '$lib/components/core/TopBarProfile.svelte'
+export { default as SignUpForm } from '$lib/components/core/SignUpForm.svelte'
 
 
+
+
+export { default as DeleteDialog } from '$lib/components/core/DeleteDialog.svelte'
+export { default as PlaylistHeader } from '$lib/components/core/PlaylistHeader.svelte'
+export { default as PlaylistMeta } from '$lib/components/core/PlaylistMeta.svelte'
+export { default as PlaylistStories } from '$lib/components/core/PlaylistStories.svelte'
 
 export { default as Button } from '$lib/components/forms/ContinueBtn.svelte'
 export { default as Filter } from '$lib/components/forms/Filter.svelte'
@@ -31,13 +39,19 @@ export { default as Input } from '$lib/components/forms/Input.svelte'
 export { default as Search } from '$lib/components/forms/Search.svelte'
 export { default as AddStory } from '$lib/components/forms/AddStory.svelte';
 export { default as CarouselIndicators } from '$lib/components/forms/CarouselIndicators.svelte'
+export { default as PasswordInput } from '$lib/components/forms/PasswordInput.svelte'
 
 export { default as Playlist } from '$lib/components/layout/Playlist.svelte'
 export { default as Popup } from '$lib/components/layout/Popup.svelte'
 export { default as Story } from '$lib/components/layout/Story.svelte'
 
 export { default as OnboardingSlide } from '$lib/components/layout/OnboardingSlide.svelte'
+
 export { default as ProfileItem } from '$lib/components/layout/ProfileItem.svelte'
+
+export { default as FormHeading } from '$lib/components/layout/FormHeading.svelte'
+export { default as TermsToggles } from '$lib/components/layout/TermsToggles.svelte'
+
 
 
 // Helpers
