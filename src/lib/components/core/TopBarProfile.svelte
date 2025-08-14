@@ -1,5 +1,15 @@
 <script>
-	import { Edit } from '$lib/index';
+	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
+	import { userState, Edit } from '$lib/index';
+
+	let userId = $userState.userId;
+
+	onMount(() => {
+		if (!userId) {
+			goto('/profile-selection');
+		}
+	});
 </script>
 
 <section class="top-bar">

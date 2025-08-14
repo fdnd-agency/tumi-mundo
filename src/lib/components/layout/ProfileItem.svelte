@@ -2,7 +2,7 @@
 	export let profile;
 </script>
 
-<button on:click>
+<button>
 	<img src={profile.avatar} alt="Profile avatar of {profile.name_of_child}" />
 	<h2>{profile.name_of_child}</h2>
 </button>

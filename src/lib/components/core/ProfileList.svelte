@@ -1,12 +1,25 @@
 <script>
-	import { AddProfile, ProfileItem } from '$lib/index';
-	import { createEventDispatcher } from 'svelte';
-	export let filteredProfiles = [];
+	import { AddProfile, ProfileItem, userState } from '$lib/index';
+	import { goto } from '$app/navigation';
 
-	const dispatch = createEventDispatcher();
+	export let profiles = [];
+	export let profileUsers = [];
+	export let userId;
 
-	function handleSelect(profileId) {
-		dispatch('select', profileId);
+	$: filteredProfiles = userId
+		? profiles.filter(profile =>
+			profileUsers.some(profileUser =>
+				profileUser.user_id === userId && profileUser.profile_id === profile.id
+			)
+		  )
+		: [];
+
+	async function handleSelect(profileId) {
+		userState.update(state => ({
+			...state,
+			profileId: profileId
+		}));
+		await goto('/');
 	}
 </script>
 
@@ -26,23 +39,23 @@
 
 <style>
 ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-row-gap: 5em;
-    list-style: none;
-    padding: 0;
-    margin: 2em 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	grid-row-gap: 5em;
+	list-style: none;
+	padding: 0;
+	margin: 2em 0;
 }
 
 li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.5em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 0.5em;
 }
 
 h2 {
-    font-size: 1em;
+	font-size: 1em;
 }
 </style>
