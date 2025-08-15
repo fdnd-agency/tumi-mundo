@@ -21,6 +21,10 @@ export { default as LoginIntro } from '$lib/components/core/LoginIntro.svelte'
 export { default as LoginPopup } from '$lib/components/core/LoginPopup.svelte'
 
 
+export { default as StoryNavActions} from '$lib/components/core/StoryNavActions.svelte'
+
+
+
 
 
 export { default as Button } from '$lib/components/forms/ContinueBtn.svelte'
