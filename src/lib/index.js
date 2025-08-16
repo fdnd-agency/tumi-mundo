@@ -22,6 +22,7 @@ export { default as LoginPopup } from '$lib/components/core/LoginPopup.svelte'
 
 
 export { default as StoryNavActions} from '$lib/components/core/StoryNavActions.svelte'
+export { default as AudioWithTranscript} from '$lib/components/core/AudioWithTranscript.svelte'
 
 
 
