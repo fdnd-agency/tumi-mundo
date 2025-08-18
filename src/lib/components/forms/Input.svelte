@@ -52,6 +52,7 @@
   {/if}
  
 <style>
+
   label {
     color: black;
     margin-bottom: .6em;
@@ -60,6 +61,7 @@
     text-align: left;
     font-size: 1.2rem;
   }
+
   input {
     background-color: #EEEEEE;
     border: none;
@@ -71,10 +73,13 @@
     padding: 1.5rem 1rem;
     box-sizing: border-box;
   }
+
   input.is-valid {
     border: 2px solid #2ecc40;
   }
+
   input.is-invalid {
     border: 2px solid #d32f2f;
   }
+  
 </style>
