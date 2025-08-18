@@ -67,6 +67,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
+  max-width: 31.25em;
 }
 
 .navigation > a {
@@ -113,6 +114,7 @@ p {
   text-align: center;
   margin-bottom: 2.5em;
   width: 100%;
+  max-width: 31.25em;
 } 
 </style>
 
