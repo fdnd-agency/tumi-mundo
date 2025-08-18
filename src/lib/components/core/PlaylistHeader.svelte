@@ -4,12 +4,7 @@
 </script>
 
 <header>
-  <!-- <nav id="cancelled">
-    <a href="/lessons" aria-label="go back" class="go-back-btn"><Back /></a>
-    <Dropdown />
-  </nav> -->
   <Heading variant= playlist/>
-
   <picture class="playlist-image-container">
     <source srcset="{playlist.image}?width=448&format=avif" type="image/avif" />
     <source srcset="{playlist.image}?width=448&format=webp" type="image/webp" />
@@ -26,8 +21,6 @@
 </header>
 
 <style>
-
-
 
 .playlist-image-container {
   z-index: 0;

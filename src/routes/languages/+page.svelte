@@ -9,10 +9,7 @@
 <main>
   <section>
     <Heading variant= languages />
-
-   
     <LanguageList {data} />
-
     <Button type="input" variant="secondary" />
   </section>
 </main>
@@ -37,23 +34,5 @@
     padding: 1.25em;
     position: relative;
   }
-
-  .navigation {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
-  }
-
-  .navigation > a {
-    align-self: start;
-  }
-
-  h1 {
-    margin-bottom: 1em;
-    text-align: center;
-    width: 100%;
-  }
-
 
 </style>
