@@ -36,7 +36,7 @@
   <!-- Cancelled nav -->
   <nav id="cancelled" class="playlist-nav">
     <a href={backHref || '/lessons'} aria-label="go back" class="go-back-btn">
-      <Back color={backColor} />
+      <Back />
     </a>
     {#if showDropdown}
       <Dropdown />
