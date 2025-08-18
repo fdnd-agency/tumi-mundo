@@ -3,14 +3,14 @@
   export let form
 </script>
 
-<main>
+<div>
   <FormHeading />
   <SignUpForm {form} />
-</main>
+</div>
 
 <style>
 
-main {
+div {
   padding: var(--space-md);
   max-width: 31.25em;
   margin: 0 auto;

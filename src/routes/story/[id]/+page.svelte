@@ -6,13 +6,13 @@
   let darkMode = data.theme === 'dark';
 </script>
 
-<main class:light-mode={!darkMode} style="view-transition-name:main-bg;">
+<div class:light-mode={!darkMode} style="view-transition-name:main-bg;">
   <StoryNavActions bind:showVisuals bind:darkMode {story} />
   <AudioWithTranscript {story} {audio} />
-</main>
+</div>
 
 <style>
-main {
+div {
   background: var(--bg-story-dark);
   min-height: 100vh;
   display: flex;
@@ -24,7 +24,7 @@ main {
   overflow-y: hidden;
 }
 
-main.light-mode {
+div.light-mode {
   background: var(--bg-image-blue);
 }
 
