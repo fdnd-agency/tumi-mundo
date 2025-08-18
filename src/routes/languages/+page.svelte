@@ -1,5 +1,5 @@
 <script>
-  import { Back, Button, LanguageList } from '$lib/index';
+  import { Heading, Button, LanguageList } from '$lib/index';
 
   export let data = {
     languages: []
@@ -8,18 +8,9 @@
 
 <main>
   <section>
-    <nav class="navigation">
-      <a href="/onboarding" aria-label="Go back to onboarding">
-        <Back color="white" />
-      </a>
-      <h1>We are going to learn!</h1>
-    </nav>
+    <Heading variant= languages />
 
-    <p>
-      Now it is time to pick the language(s) your child will learn.
-      You can pick a <strong>maximum of 3</strong> languages.
-    </p>
-
+   
     <LanguageList {data} />
 
     <Button type="input" variant="secondary" />
@@ -64,9 +55,5 @@
     width: 100%;
   }
 
-  p {
-    text-align: center;
-    margin-bottom: 2.5em;
-    width: 100%;
-  }
+
 </style>
