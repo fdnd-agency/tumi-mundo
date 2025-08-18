@@ -8,7 +8,7 @@
 </script>
 
 <main>
-  <Heading />
+  <Heading variant="stories" />
   <AllStoriesFilter 
     {seasons} 
     {languages} 

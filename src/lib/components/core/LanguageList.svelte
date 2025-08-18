@@ -53,6 +53,7 @@
     background-color: hsla(197, 38%, 72%, 1);
     height: 1px;
     width: 100%;
+    max-width: 31.25em;
   }
 
   ul {
@@ -63,6 +64,7 @@
     overflow-y: auto;
     margin-bottom: 1em;
     flex-grow: 1;
+    max-width: 31.25em;
   }
 
   li.languages {

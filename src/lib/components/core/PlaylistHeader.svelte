@@ -1,14 +1,10 @@
 <script>
-  import { Back, Dropdown } from '$lib/index';
+  import { Heading } from '$lib/index';
   export let playlist;
 </script>
 
 <header>
-  <nav id="cancelled">
-    <a href="/lessons" aria-label="go back" class="go-back-btn"><Back /></a>
-    <Dropdown />
-  </nav>
-
+  <Heading variant= playlist/>
   <picture class="playlist-image-container">
     <source srcset="{playlist.image}?width=448&format=avif" type="image/avif" />
     <source srcset="{playlist.image}?width=448&format=webp" type="image/webp" />
@@ -25,22 +21,6 @@
 </header>
 
 <style>
-
-.go-back-btn{
-  z-index: 10;
-}
-
-nav {
-  max-width: 31.25em;
-  width: 100%;
-  flex-wrap: wrap;
-  padding: var(--space-md);
-  position: absolute;
-  margin-top: 2em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .playlist-image-container {
   z-index: 0;

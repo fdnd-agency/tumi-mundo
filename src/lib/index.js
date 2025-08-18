@@ -36,6 +36,7 @@ export { default as DeleteDialog } from '$lib/components/core/DeleteDialog.svelt
 export { default as PlaylistHeader } from '$lib/components/core/PlaylistHeader.svelte'
 export { default as PlaylistMeta } from '$lib/components/core/PlaylistMeta.svelte'
 export { default as PlaylistStories } from '$lib/components/core/PlaylistStories.svelte'
+export { default as PlaylistLike } from '$lib/components/core/PlaylistLike.svelte'
 
 export { default as Button } from '$lib/components/forms/ContinueBtn.svelte'
 export { default as Filter } from '$lib/components/forms/Filter.svelte'
