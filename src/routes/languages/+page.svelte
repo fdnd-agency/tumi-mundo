@@ -23,6 +23,8 @@
     height: 100dvh;
     color: var(--color-white);
     overflow: hidden;
+    display: flex;
+    justify-content: center;
   }
 
   section {
@@ -33,6 +35,7 @@
     align-items: center;
     padding: 1.25em;
     position: relative;
+    max-width: 31.25em;
   }
 
 </style>

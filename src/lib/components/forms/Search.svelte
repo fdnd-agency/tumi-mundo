@@ -42,7 +42,6 @@
 .search-container {
     width: 100%;
     max-width: 31.25em;
-    margin: auto;
     contain: inline-size;
 }
 
@@ -54,7 +53,6 @@
     border-radius: .5em;
     border: none;
     width: 100%;
-    max-width: 31.25em;
     margin: .6em auto;
     box-sizing: border-box;
 }
