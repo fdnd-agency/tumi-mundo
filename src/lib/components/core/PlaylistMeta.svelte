@@ -1,5 +1,5 @@
 <script>
-  import { fetchApi } from '$lib/index';
+  import { fetchApi, Play } from '$lib/index';
 
   export let playlist;
   export let isLiked = false;
@@ -59,11 +59,11 @@
   
     {#if firstStoryId}
       <a href={`/story/${firstStoryId}`} aria-label="Play first story">
-        <img src="/icons/play.svg" alt="play" height="60" />
+         <Play/>
       </a>
     {:else}
-      <button class="play" disabled aria-disabled="true" title="No stories in this playlist">
-        <img src="/icons/play.svg" alt="play (disabled)" height="60" />
+      <button class="play-disabled" disabled aria-disabled="true" title="No stories in this playlist">
+         <Play/>
       </button>
     {/if}
   </div>
@@ -88,6 +88,15 @@
   max-width: 31.25em;
   width: 100%;
   flex-wrap: wrap;
+}
+
+.play-disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: none;
+  border: 0;
+  border-radius: 50em;
 }
 
 .meta-info {
