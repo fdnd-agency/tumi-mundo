@@ -8,7 +8,7 @@
 
 <main class:light-mode={!darkMode} style="view-transition-name:main-bg;">
   <StoryNavActions bind:showVisuals bind:darkMode {story} />
-  <AudioWithTranscript {story} {audio} />
+  <AudioWithTranscript {story} {audio} {showVisuals} />
 </main>
 
 <style>
@@ -23,18 +23,9 @@ main {
   z-index: 0;
   overflow-y: hidden;
 }
-
-main.light-mode {
-  background: var(--bg-image-blue);
-}
+main.light-mode { background: var(--bg-image-blue); }
 
 ::view-transition-old(main-bg),
-::view-transition-new(main-bg) {
-  animation: fade-color 0.6s ease forwards;
-}
-
-@keyframes fade-color {
-  from { opacity: 0.2; }
-  to { opacity: 1; }
-}
+::view-transition-new(main-bg) { animation: fade-color 0.6s ease forwards; }
+@keyframes fade-color { from { opacity: .2; } to { opacity: 1; } }
 </style>
