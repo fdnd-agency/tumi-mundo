@@ -72,7 +72,6 @@
   }
 </script>
 
-<section class="audio-transcript">
 <section class="story-wrap">
   <div class="story-grid">
     {#if showVisuals && story}
