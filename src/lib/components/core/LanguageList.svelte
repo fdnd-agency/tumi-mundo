@@ -2,17 +2,19 @@
   import { Search } from '$lib/index';
 
   export let data = { languages: [] };
+  export let selected = [];         
+  export let max = 3;               
 
   let filteredLanguages = data.languages;
   let searchTerm = "";
 
-  data.languages.forEach(language => {
-    language.name = language.language;
-  });
+  data.languages = data.languages.map((l) => ({ ...l, name: l.language }));
 
   function handleFilter(event) {
     filteredLanguages = event.detail;
   }
+
+  $: maxed = selected.length >= max;
 </script>
 
 <Search
@@ -25,18 +27,25 @@
 
 {#if filteredLanguages.length > 0}
   <ul>
-    {#each filteredLanguages as language}
+    {#each filteredLanguages as lang (lang.language)}
       <li class="languages">
         <input
           class="radio"
           type="checkbox"
-          id="language-{language.language}"
+          id={"language-" + lang.language}
           name="language"
-          value="{language.language}"
+          value={lang.language}
+          bind:group={selected}                  
+          disabled={maxed && !selected.includes(lang.language)}  
         />
-        <label for="language-{language.language}">
-          <img src="/languages/{language.language}.svg" alt="{language.language} flag" class="flag-svg" height="55" width="66" />
-          <strong class="language-strong">{language.language}</strong>
+        <label for={"language-" + lang.language}>
+          <img
+            src={"/languages/" + lang.language + ".svg"}
+            alt={lang.language + " flag"}
+            class="flag-svg"
+            height="55" width="66"
+          />
+          <strong class="language-strong">{lang.language}</strong>
         </label>
       </li>
     {/each}
@@ -52,12 +61,10 @@
     border-radius: 0.125em;
     background-color: hsla(197, 38%, 72%, 1);
     height: 1px;
-    width: 100%;
     max-width: 31.25em;
   }
 
   ul {
-    width: 100%;
     height: 70vh;
     display: flex;
     flex-direction: column;
@@ -67,28 +74,20 @@
     max-width: 31.25em;
   }
 
-  li.languages {
-    width: 100%;
+  li.languages, .radio, ul, .line { 
+    width: 100%; 
   }
 
-  .radio {
-    width: 100%;
-  }
-
-  input[type="checkbox"]:not(:checked),
-  input[type="checkbox"]:checked {
-    position: absolute;
-    left: -9999%;
+  input[type="checkbox"] { 
+    position: absolute; 
+    left: -9999%; 
   }
 
   input[type="checkbox"] + label {
     display: inline-block;
     color: black;
     background-color: var(--color-white);
-    list-style: none;
-    align-self: self-end;
-    margin: auto;
-    margin-bottom: 0.125em;
+    margin: auto auto 0.125em;
     padding: 0.3125em;
     width: 100%;
     max-width: 31.25em;
@@ -100,6 +99,11 @@
   input[type="checkbox"]:checked + label {
     color: var(--color-white);
     background-color: hsla(241, 71%, 32%, 1);
+  }
+
+  input[type="checkbox"]:disabled + label {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 
   .flag-svg {
@@ -116,5 +120,11 @@
     top: 50%;
     left: 4.0625em;
     transform: translateY(-50%);
+  }
+
+  .limit {
+    min-height: 1.25em;
+    color: #d67;
+    font-size: 0.9rem;
   }
 </style>
