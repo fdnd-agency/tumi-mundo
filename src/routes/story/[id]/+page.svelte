@@ -18,14 +18,26 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   position: relative;
   z-index: 0;
   overflow-y: hidden;
 }
-main.light-mode { background: var(--bg-image-blue); }
+
+main.light-mode { 
+  background: var(--bg-image-blue); 
+}
 
 ::view-transition-old(main-bg),
-::view-transition-new(main-bg) { animation: fade-color 0.6s ease forwards; }
-@keyframes fade-color { from { opacity: .2; } to { opacity: 1; } }
+::view-transition-new(main-bg) { 
+  animation: fade-color 0.6s ease forwards; 
+}
+
+@keyframes fade-color { 
+  from { 
+    opacity: .2; 
+    } 
+  to { 
+    opacity: 1; 
+    } 
+}
 </style>

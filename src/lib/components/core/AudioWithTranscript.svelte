@@ -124,14 +124,16 @@
 .story-grid {
   display: grid;
   gap: 1.25rem;
-  place-items: center;
   padding: 1rem;
   max-width: 60rem;
   margin-inline: auto;
+  grid-template-rows: auto auto auto;
   grid-template-areas:
     "media"
     "transcript"
     "player";
+  align-items: start;
+  justify-items: center;
 }
 
 .story-image {
@@ -150,6 +152,9 @@
 .player { 
   grid-area: player; 
   width: min(36rem, 92vw); 
+  margin-top: 0.25rem;
+  position: absolute;
+  bottom: 1em;
 }
 
 .title { 
@@ -163,11 +168,12 @@
 }
 
 .transcript-lines {
-  max-height: 10rem;
+  max-height: clamp(8rem, 35vh, 65vh); 
   overflow-y: auto;
   scroll-behavior: smooth;
   text-align: center;
 }
+
 .transcript-lines::-webkit-scrollbar { 
   display: none; 
 }
@@ -175,8 +181,8 @@
 .transcript-lines p {
   margin: .4em 0; 
   transition: background-color .3s, color .3s; 
-  font-size: 1.5em; }
-
+  font-size: 1.5em;
+}
 .transcript-lines p.active {
   color: #f3a22a;
   background: rgba(255,255,255,.1);
@@ -188,6 +194,7 @@
 @container story (min-width: 900px) {
   .story-grid {
     grid-template-columns: 420px 1fr;
+    grid-template-rows: auto auto;
     grid-template-areas:
       "media transcript"
       "player transcript";
@@ -196,8 +203,8 @@
   }
   .transcript-panel { 
     text-align: left;
-     width: auto; 
-     max-width: 52ch; 
+    width: auto; 
+    max-width: 52ch; 
   }
   .title { 
     text-align: left; 
@@ -206,6 +213,9 @@
   }
   .transcript-lines { 
     max-height: calc(100dvh - 13rem); 
+  }
+  .player{
+    position: relative;
   }
 }
 
