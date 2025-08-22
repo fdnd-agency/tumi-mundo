@@ -27,6 +27,20 @@ main.light-mode {
   background: var(--bg-image-blue); 
 }
 
+main.light-mode :global(.title){
+  color: black;
+}
+
+main.light-mode :global(.transcript p.active){
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #000000;
+  font-weight: bold;
+}
+
+main.light-mode :global(.transcript p){
+  color: #272727;
+}
+
 ::view-transition-old(main-bg),
 ::view-transition-new(main-bg) { 
   animation: fade-color 0.6s ease forwards; 

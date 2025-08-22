@@ -84,7 +84,7 @@
 
     <div class="transcript-panel">
       <h2 class="title">{story.title}</h2>
-      <div class="transcript-lines">
+      <div class="transcript-lines transcript">
         {#if transcriptLines.length > 0}
           {#each transcriptLines as line, i (i)}
             <p class:active={i === currentLineIndex} bind:this={transcriptRefs[i]}>
@@ -161,6 +161,7 @@
   margin: .5rem 0 1rem; 
   font-size: 2em; 
   font-weight: 800; 
+  color: var(--color-white);
 }
 
 .player audio { 
@@ -182,6 +183,7 @@
   margin: .4em 0; 
   transition: background-color .3s, color .3s; 
   font-size: 1.5em;
+  color: var(--color-white);
 }
 .transcript-lines p.active {
   color: #f3a22a;
