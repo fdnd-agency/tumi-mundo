@@ -62,7 +62,7 @@
       class="playlist-playtime flex-items"
       style="view-transition-name:playlist-play-{playlist.id};"
     >
-      <Play />
+      <!-- <Play /> -->
       <p>{playtime}</p>
     </div>
 
