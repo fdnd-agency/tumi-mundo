@@ -1,5 +1,5 @@
 <script>
-   import { SkipBtn } from '$lib/index';
+  import { SkipBtn } from '$lib/index';
   export let story; 
   export let audio = null; 
   export let showVisuals = false;
@@ -73,21 +73,22 @@
       ((parseInt(ms) || 0) / 1000)
     );
   }
-
 </script>
 
 <section class="story-wrap">
-  <div class="story-grid">
-    {#if showVisuals && story}
-      <picture class="story-image">
-        <source srcset="{story.image}?width=320&format=avif" type="image/avif" />
-        <source srcset="{story.image}?width=320&format=webp" type="image/webp" />
-        <img src="{story.image}?width=320" alt="{story.summary} cover image" width="320" height="270" />
-      </picture>
-    {/if}
+  <div class="story-grid" class:has-visuals={showVisuals && story}>
+    <div class="image-title-wrapper">
+      {#if showVisuals && story}
+        <picture class="story-image">
+          <source srcset="{story.image}?width=320&format=avif" type="image/avif" />
+          <source srcset="{story.image}?width=320&format=webp" type="image/webp" />
+          <img src="{story.image}?width=320" alt="{story.summary} cover image" width="320" height="270" />
+        </picture>
+      {/if}
+      <h2 class="title">{story.title}</h2>
+    </div>
 
     <div class="transcript-panel">
-      <h2 class="title">{story.title}</h2>
       <div class="transcript-lines transcript">
         {#if transcriptLines.length > 0}
           {#each transcriptLines as line, i (i)}
@@ -132,7 +133,7 @@
           Your browser does not support the audio element.
         </audio>
       {:else}
-        <p>No transcript available</p>
+        <p>No audio available</p>
       {/if}
     </div>
   </div>
@@ -146,6 +147,14 @@
 }
 
 .story-grid {
+  --player-h: 4rem;                   
+  --btns-h: 3.25rem;                 
+  --title-h: clamp(2.75rem, 6vh, 5.25rem); 
+  --vpad: 1.75rem;                   
+  --image-h: 0rem;                    
+  --shrink: 30vh;
+  --media-w: clamp(16.25rem, 80vw, 21.25rem); 
+
   display: grid;
   gap: 1.25rem;
   padding: 1rem;
@@ -158,91 +167,80 @@
     "player";
   align-items: start;
   justify-items: center;
-  position: relative;
+  position: relative; 
 }
 
-.story-image {
-  grid-area: media; 
+.story-grid:has(.story-image) {
+  --image-h: min(92vw, 2.25rem); 
+}
+
+.image-title-wrapper{
+  grid-area: media;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  width: var(--media-w);
+}
+
+.story-image{
   display: block;
-  border-radius: 1rem; 
-  overflow: hidden; 
+  width: 100%;
   aspect-ratio: 1 / 1;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .story-image img{
-  display: block;        
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;      
+  object-fit: cover;  
 }
 
-.transcript-panel {
-  grid-area: transcript; 
-  text-align: center; 
-  width: min(36rem, 92vw); 
-}
-
-.player { 
-  grid-area: player; 
-  width: min(36rem, 92vw); 
-  margin-top: 0.25rem;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 1em;
-  z-index: 20;
-}
-
-.story-buttons{ 
-  display:flex; 
-  gap:14px; 
-  justify-content:center; 
-  margin-bottom:.5rem; 
-  position: relative;
-  z-index: 2; 
-}
-
-.navfab{
-  display: grid; 
-  place-items: center;
-}
-
-.navfab[aria-disabled="true"]{
-  opacity:.4; 
-  pointer-events:none;
-}
-
-.title { 
-  margin: .5rem 0 1rem; 
-  font-size: 2em; 
-  font-weight: 800; 
+.title {
+  margin: .25rem 0 .5rem;
+  font-size: 2rem;
+  font-weight: 800;
   color: var(--color-white);
 }
 
-.player audio { 
-  width: 100%; 
+.transcript-panel {
+  grid-area: transcript;
+  text-align: center;
+  width: min(36rem, 92vw);
 }
 
 .transcript-lines {
-  max-height: clamp(8rem, 35vh, 65vh); 
+  max-height: calc(
+    100svh
+    - var(--player-h)
+    - var(--btns-h)
+    - var(--title-h)
+    - var(--image-h)
+    - var(--vpad)
+    - var(--shrink)
+  );
   overflow-y: auto;
   scroll-behavior: smooth;
   text-align: left;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 7.5em; 
+  padding-bottom: 1rem; 
+  margin-bottom: 10em;
 }
+
 .transcript-lines::-webkit-scrollbar { 
   display: none; 
 }
 
 .transcript-lines p {
-  margin: .4em 0; 
-  transition: background-color .3s, color .3s; 
+  margin: .2em 0;
+  transition: background-color .3s, color .3s;
   font-size: 1.5em;
   color: var(--color-white);
-  width: 9em;
+  width: 11em;   
 }
 
 .transcript-lines p.active {
@@ -252,50 +250,85 @@
   border-radius: .25em;
 }
 
-/* Desktop */
+.player {
+  grid-area: player;
+  width: var(--media-w);  
+  margin-top: 0.25rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1em;
+  z-index: 20;
+}
+
+.player audio { 
+  width: 100%; 
+}
+
+.story-buttons {
+  display: flex;
+  gap: 0.875rem;        
+  justify-content: center;
+  margin-bottom: .5rem;
+  position: relative;
+  z-index: 2;
+}
+.navfab { 
+  display: grid; 
+  place-items: center; 
+}
+
+.navfab[aria-disabled="true"] { 
+  opacity: .4; 
+  pointer-events: none; 
+}
+
+/* desktop container query */
 @container story (min-width: 900px) {
   .story-grid {
-    grid-template-columns: 420px 1fr;
+    --media-w: 22.5rem;               
+    grid-template-columns: 26.25rem 1fr;
     grid-template-rows: auto auto;
     grid-template-areas:
       "media transcript"
       "player transcript";
     align-items: start;
-    gap: clamp(1rem, 4vw, 3rem);
+    column-gap: clamp(1rem, 4vw, 3rem);
+    row-gap: .25rem;
   }
 
-  .transcript-panel { 
+  .transcript-panel {
     text-align: left;
-    width: auto; 
-    max-width: 52ch; 
+    width: auto;
+    max-width: 52ch;
     display: flex;
     flex-direction: column;
-    align-items: self-start;
-  }
-  
-  .title { 
-    text-align: left; 
-    font-size: clamp(1.8rem, 1.2rem + 1.8vw, 2.4rem);
-    margin-top: .25rem; 
+    align-items: flex-start;
   }
 
-  .transcript-lines { 
-    max-height: calc(100dvh - 13rem); 
+  .title {
+    text-align: left;
+    font-size: clamp(1.8rem, 1.2rem + 1.2vw, 2.2rem);
+    margin-top: .25rem;
+  }
+
+  .transcript-lines {
+    max-height: calc(100dvh - 13rem);
     padding-bottom: 0;
+    align-items: flex-start;
   }
 
-  .player{
+  .player {
+    width: var(--media-w);
     position: relative; 
-    left: auto; transform: none; bottom: auto; 
-    z-index: auto;
-  }
-
-  .story-image { 
-    height: 100%; 
+    left: auto; transform: none; bottom: auto; z-index: auto;
+    margin-top: 0;     
   }
 }
 
 @container story (min-width: 1200px) {
-  .story-grid { grid-template-columns: 480px 1fr; }
+  .story-grid { 
+    grid-template-columns: 30rem 1fr;   
+  }
 }
 </style>
