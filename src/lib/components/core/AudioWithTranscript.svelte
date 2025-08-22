@@ -1,7 +1,10 @@
 <script>
+   import { SkipBtn } from '$lib/index';
   export let story; 
   export let audio = null; 
   export let showVisuals = false;
+  export let prevHref = null;
+  export let nextHref = null;
 
   const audioSrc = story?.audios?.[0]?.file || '';
 
@@ -70,6 +73,7 @@
       ((parseInt(ms) || 0) / 1000)
     );
   }
+
 </script>
 
 <section class="story-wrap">
@@ -98,6 +102,26 @@
     </div>
 
     <div class="player">
+      <div class="story-buttons">
+        <a
+          class="navfab"
+          href={prevHref || undefined}
+          aria-label="Previous story"
+          aria-disabled={!prevHref}
+          tabindex={prevHref ? 0 : -1}
+          sveltekit:prefetch
+        ><SkipBtn direction="left"/></a>
+
+        <a
+          class="navfab"
+          href={nextHref || undefined}
+          aria-label="Next story"
+          aria-disabled={!nextHref}
+          tabindex={nextHref ? 0 : -1}
+          sveltekit:prefetch
+        ><SkipBtn direction="right"/></a>
+      </div>
+
       {#if audioSrc}
         <audio
           bind:this={audioEl}
@@ -134,6 +158,7 @@
     "player";
   align-items: start;
   justify-items: center;
+  position: relative;
 }
 
 .story-image {
@@ -145,7 +170,7 @@
 }
 
 .story-image img{
-  display: block;    
+  display: block;        
   width: 100%;
   height: 100%;
   object-fit: cover;      
@@ -162,7 +187,29 @@
   width: min(36rem, 92vw); 
   margin-top: 0.25rem;
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 1em;
+  z-index: 20;
+}
+
+.story-buttons{ 
+  display:flex; 
+  gap:14px; 
+  justify-content:center; 
+  margin-bottom:.5rem; 
+  position: relative;
+  z-index: 2; 
+}
+
+.navfab{
+  display: grid; 
+  place-items: center;
+}
+
+.navfab[aria-disabled="true"]{
+  opacity:.4; 
+  pointer-events:none;
 }
 
 .title { 
@@ -184,8 +231,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 7.5em; 
 }
-
 .transcript-lines::-webkit-scrollbar { 
   display: none; 
 }
@@ -197,6 +244,7 @@
   color: var(--color-white);
   width: 9em;
 }
+
 .transcript-lines p.active {
   color: #f3a22a;
   background: rgba(255,255,255,.1);
@@ -215,25 +263,38 @@
     align-items: start;
     gap: clamp(1rem, 4vw, 3rem);
   }
+
   .transcript-panel { 
     text-align: left;
     width: auto; 
     max-width: 52ch; 
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
   }
+  
   .title { 
     text-align: left; 
     font-size: clamp(1.8rem, 1.2rem + 1.8vw, 2.4rem);
     margin-top: .25rem; 
   }
+
   .transcript-lines { 
     max-height: calc(100dvh - 13rem); 
+    padding-bottom: 0;
   }
+
   .player{
-    position: relative;
+    position: relative; 
+    left: auto; transform: none; bottom: auto; 
+    z-index: auto;
+  }
+
+  .story-image { 
+    height: 100%; 
   }
 }
 
-/* Extra breed */
 @container story (min-width: 1200px) {
   .story-grid { grid-template-columns: 480px 1fr; }
 }

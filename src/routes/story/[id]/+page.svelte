@@ -1,14 +1,27 @@
 <script>
   import { StoryNavActions, AudioWithTranscript } from '$lib/index';
   export let data;
-  const { story, audio } = data;
-  let showVisuals = data.showVisuals;
-  let darkMode = data.theme === 'dark';
+
+  $: story = data.story;
+  $: audio = data.audio;
+  $: prevHref = data.prevHref;
+  $: nextHref = data.nextHref;
+  $: showVisuals = data.showVisuals;
+  $: darkMode = data.theme === 'dark';
 </script>
 
 <main class:light-mode={!darkMode} style="view-transition-name:main-bg;">
   <StoryNavActions bind:showVisuals bind:darkMode {story} />
-  <AudioWithTranscript {story} {audio} {showVisuals} />
+
+  {#key story?.id ?? story?.slug ?? story}
+    <AudioWithTranscript
+      {story}
+      {audio}
+      {showVisuals}
+      {prevHref}
+      {nextHref}
+    />
+  {/key}
 </main>
 
 <style>

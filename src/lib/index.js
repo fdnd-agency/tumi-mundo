@@ -86,6 +86,7 @@ export { default as DeleteSVG } from '$lib/components/svg/DeleteSVG.svelte';
 export { default as VisualsSVG } from '$lib/components/svg/VisualsSVG.svelte';
 export { default as DarkModeSVG } from '$lib/components/svg/DarkModeSVG.svelte';
 export { default as CloudsSVG } from '$lib/components/svg/CloudsSVG.svelte';
+export { default as SkipBtn } from '$lib/components/svg/SkipBtn.svelte';
 
 
 // Buddy icons
