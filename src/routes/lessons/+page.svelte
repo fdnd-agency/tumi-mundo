@@ -8,7 +8,7 @@
 
 </script>
 
-<main>
+<div>
   <Menu {currentPage} />
 
   <header>
@@ -22,11 +22,11 @@
   <PlaylistLike {data} />
   <MakePlaylist {data} />
   <AllStories {data} />
-</main>
+</div>
 
 <style>
 
-main {
+div {
   height: 100%;
   color: var(--color-text-light);
   background-image: var(--bg-image-purple);
@@ -48,7 +48,7 @@ h1 {
 }
 
 @media (min-width: 600px) {
-  main {
+  div {
     align-items: center;
   }
 }

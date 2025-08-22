@@ -6,15 +6,14 @@
   };
 </script>
 
-<main>
+<div>
   <Heading variant= languages />
   <LanguageList {data} />
   <Button type="input" variant="secondary" />
-</main>
+</div>
 
 <style>
-  
-main {
+div {
   background: var(--bg-image-blue);
   background-size: contain;
   background-repeat: no-repeat;
