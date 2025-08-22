@@ -138,9 +138,17 @@
 
 .story-image {
   grid-area: media; 
+  display: block;
   border-radius: 1rem; 
   overflow: hidden; 
-  box-shadow: 0 8px 24px rgb(0 0 0 / .25); 
+  aspect-ratio: 1 / 1;
+}
+
+.story-image img{
+  display: block;    
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      
 }
 
 .transcript-panel {
@@ -172,7 +180,10 @@
   max-height: clamp(8rem, 35vh, 65vh); 
   overflow-y: auto;
   scroll-behavior: smooth;
-  text-align: center;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .transcript-lines::-webkit-scrollbar { 
@@ -184,6 +195,7 @@
   transition: background-color .3s, color .3s; 
   font-size: 1.5em;
   color: var(--color-white);
+  width: 9em;
 }
 .transcript-lines p.active {
   color: #f3a22a;
