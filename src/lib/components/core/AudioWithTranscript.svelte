@@ -5,6 +5,7 @@
   export let showVisuals = false;
   export let prevHref = null;
   export let nextHref = null;
+  export let plainTranscript = ''
 
   const audioSrc = story?.audios?.[0]?.file || '';
 
@@ -100,6 +101,11 @@
           <p>No transcript available</p>
         {/if}
       </div>
+      <noscript>
+        {#if plainTranscript}
+          <p class="transcript-plain">{plainTranscript}</p>
+        {/if}
+      </noscript>
     </div>
 
     <div class="player">
@@ -110,7 +116,7 @@
           aria-label="Previous story"
           aria-disabled={!prevHref}
           tabindex={prevHref ? 0 : -1}
-          sveltekit:prefetch
+          
         ><SkipBtn direction="left"/></a>
 
         <a
@@ -119,7 +125,7 @@
           aria-label="Next story"
           aria-disabled={!nextHref}
           tabindex={nextHref ? 0 : -1}
-          sveltekit:prefetch
+         
         ><SkipBtn direction="right"/></a>
       </div>
 
@@ -140,6 +146,19 @@
 </section>
 
 <style>
+
+    .transcript-plain{
+    max-width: 30em;
+    line-height: 1.6;
+    font-size: 1.5em;
+    color: var(--color-white);
+    margin: 0;
+    white-space: normal;
+    text-align: left;
+  }
+  .transcript-lines{
+    display: none;
+  }
 .story-wrap {
   container-type: inline-size;
   container-name: story;

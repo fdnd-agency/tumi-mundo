@@ -8,6 +8,7 @@
   $: nextHref = data.nextHref;
   $: showVisuals = data.showVisuals;
   $: darkMode = data.theme === 'dark';
+  $: plainTranscript = data
 </script>
 
 <main class:light-mode={!darkMode} style="view-transition-name:main-bg;">
@@ -20,6 +21,7 @@
       {showVisuals}
       {prevHref}
       {nextHref}
+      plainTranscript={data.plainTranscript}  
     />
   {/key}
 </main>
