@@ -52,9 +52,11 @@ main.light-mode :global(.transcript p.active){
   font-weight: bold;
 }
 
-main.light-mode :global(.transcript p){
+main.light-mode :global(.transcript p), main.light-mode :global(summary), main.light-mode :global(.transcript-plain){
   color: #272727;
 }
+
+
 
 ::view-transition-old(main-bg),
 ::view-transition-new(main-bg) { 
