@@ -116,6 +116,8 @@
               <div class="transcript-scroll">
                 <p class="transcript-plain">{plainTranscript}</p>
               </div>
+              {:else}
+                <p>No audio transcript available</p>
             {/if}
           </details>
         </noscript>
