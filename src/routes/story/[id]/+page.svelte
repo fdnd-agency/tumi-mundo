@@ -38,21 +38,21 @@ div {
   overflow-y: hidden;
 }
 
-main.light-mode { 
+div.light-mode { 
   background: var(--bg-image-blue); 
 }
 
-main.light-mode :global(.title), main.light-mode :global(.player p), main.light-mode :global(.transcript-plain), main.light-mode :global(.transcript-fallback summary){
+div.light-mode :global(.title), div.light-mode :global(.player p), div.light-mode :global(.transcript-plain), div.light-mode :global(.transcript-fallback summary){
   color: black;
 }
 
-main.light-mode :global(.transcript p.active){
+div.light-mode :global(.transcript p.active){
   background-color: rgba(0, 0, 0, 0.05);
   color: #000000;
   font-weight: bold;
 }
 
-main.light-mode :global(.transcript p){
+div.light-mode :global(.transcript p){
   color: #272727;
 }
 
