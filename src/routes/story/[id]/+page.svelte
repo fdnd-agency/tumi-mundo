@@ -11,7 +11,7 @@
   $: plainTranscript = data
 </script>
 
-<main class:light-mode={!darkMode} style="view-transition-name:main-bg;">
+<div class:light-mode={!darkMode} style="view-transition-name:main-bg;">
   <StoryNavActions bind:showVisuals bind:darkMode {story} />
 
   {#key story?.id ?? story?.slug ?? story}
@@ -24,10 +24,10 @@
       plainTranscript={data.plainTranscript}  
     />
   {/key}
-</main>
+</div>
 
 <style>
-main {
+div {
   background: var(--bg-story-dark);
   min-height: 100vh;
   display: flex;
