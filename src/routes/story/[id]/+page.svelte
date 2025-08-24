@@ -42,7 +42,7 @@ main.light-mode {
   background: var(--bg-image-blue); 
 }
 
-main.light-mode :global(.title){
+main.light-mode :global(.title), main.light-mode :global(.player p), main.light-mode :global(.transcript-plain), main.light-mode :global(.transcript-fallback summary){
   color: black;
 }
 
@@ -52,7 +52,7 @@ main.light-mode :global(.transcript p.active){
   font-weight: bold;
 }
 
-main.light-mode :global(.transcript p), main.light-mode :global(summary), main.light-mode :global(.transcript-plain){
+main.light-mode :global(.transcript p){
   color: #272727;
 }
 

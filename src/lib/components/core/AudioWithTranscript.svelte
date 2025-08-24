@@ -281,6 +281,11 @@
   inline-size: 100%;
 }
 
+.player p{
+  color: var(--color-white);
+  text-align: center;
+}
+
 .story-buttons {
   display: flex;
   gap: .875rem;
