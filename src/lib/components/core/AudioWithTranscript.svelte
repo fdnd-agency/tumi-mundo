@@ -10,6 +10,7 @@
   export let plainTranscript = '';
 
   const audioSrc = story?.audios?.[0]?.file || '';
+
   let transcriptLines = [];
   let audioEl;
   let currentTime = 0;
@@ -35,9 +36,7 @@
     }
   }
 
-  onMount(() => { 
-    jsEnabled = true; 
-  });
+  onMount(() => { jsEnabled = true; });
 
   function scrollToActiveLine() {
     const el = transcriptRefs[currentLineIndex];
@@ -90,7 +89,7 @@
         <picture class="story-image">
           <source srcset="{story.image}?width=320&format=avif" type="image/avif" />
           <source srcset="{story.image}?width=320&format=webp" type="image/webp" />
-          <img src="{story.image}?width=320" alt="{story.summary} cover image" width="320" height="270" />
+          <img src="{story.image}?width=320" alt="{story.summary} cover image" width="320" height="270"  fetchpriority="high" />
         </picture>
       {/if}
       <h2 class="title">{story.title}</h2>
@@ -127,26 +126,29 @@
 
     <div class="player" class:js-on={jsEnabled}>
       <div class="story-buttons">
-        {#if prevHref}
-          <a class="navfab" href={prevHref} aria-label="Previous story" rel="prev">
-            <SkipBtn direction="left" />
-          </a>
-        {:else}
-          <span class="navfab is-disabled" aria-label="Previous story (unavailable)" aria-disabled="true">
-            <SkipBtn direction="left" />
-          </span>
-        {/if}
+  {#if prevHref}
+    <a class="navfab" href={prevHref} rel="prev" aria-label="Previous story">
+      <SkipBtn direction="left" />
+    </a>
+  {:else}
+    <button class="navfab is-disabled" type="button" disabled
+            aria-label="Previous story unavailable" title="No previous story">
+      <SkipBtn direction="left" />
+    </button>
+  {/if}
 
-        {#if nextHref}
-          <a class="navfab" href={nextHref} aria-label="Next story" rel="next">
-            <SkipBtn direction="right" />
-          </a>
-        {:else}
-          <span class="navfab is-disabled" aria-label="Next story (unavailable)" aria-disabled="true">
-            <SkipBtn direction="right" />
-          </span>
-        {/if}
-      </div>
+  {#if nextHref}
+    <a class="navfab" href={nextHref} rel="next" aria-label="Next story">
+      <SkipBtn direction="right" />
+    </a>
+  {:else}
+    <button class="navfab is-disabled" type="button" disabled
+            aria-label="Next story unavailable" title="No next story">
+      <SkipBtn direction="right" />
+    </button>
+  {/if}
+</div>
+
 
       {#if audioSrc}
         <audio
@@ -317,8 +319,15 @@
 }
 
 .navfab.is-disabled {
-  opacity: .4;
-  pointer-events: none;  
+  opacity: .45;
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: transparent;
+  border: none;
+}
+
+button{
+  display: none;
 }
 
 .transcript-fallback {
