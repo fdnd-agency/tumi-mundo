@@ -3,13 +3,13 @@
     export let data
 </script>
 
-<main>
+<div>
   <LoginIntro />
   <LoginPopup users={data.users} />
-</main>
+</div>
 
 <style>
-  main {
+  div {
     background: url(/log-in-background.png), var(--bg-image-blue);
     background-size: cover;
     background-repeat: no-repeat;

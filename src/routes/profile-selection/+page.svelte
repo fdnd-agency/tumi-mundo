@@ -4,17 +4,17 @@
 	let userId = $userState.userId;
 </script>
 
-<main>
+<div>
 	<TopBarProfile />
 	<ProfileList
 		{userId}
 		profiles={data.profiles}
 		profileUsers={data.profileUsers}
 	/>
-</main>
+</div>
 
 <style>
-main {
+div {
 	background: var(--bg-image-blue);
 	background-size: contain;
 	background-repeat: no-repeat;

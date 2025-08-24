@@ -9,7 +9,7 @@
 
 </script>
 
-<main>
+<div>
   <article>
     <PlaylistHeader {playlist} />
     <PlaylistMeta {playlist} isLiked={playlist.isLiked} />
@@ -24,10 +24,9 @@
   </article>
 
    <DeleteDialog {playlist} setError={(msg) => error = msg} />
-</main>
+</div>
 
 <style>
-
 article {
   margin: 0 auto;
   height: max-content;
@@ -38,7 +37,7 @@ article {
   justify-content: center;
 }
 
-main {
+div {
   display: flex;
   background-image: var(--bg-image-playlist);
   min-height: 100vh;
