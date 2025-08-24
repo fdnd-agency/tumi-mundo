@@ -10,7 +10,6 @@
   export let plainTranscript = '';
 
   const audioSrc = story?.audios?.[0]?.file || '';
-
   let transcriptLines = [];
   let audioEl;
   let currentTime = 0;
@@ -36,7 +35,9 @@
     }
   }
 
-  onMount(() => { jsEnabled = true; });
+  onMount(() => { 
+    jsEnabled = true; 
+  });
 
   function scrollToActiveLine() {
     const el = transcriptRefs[currentLineIndex];
@@ -126,12 +127,25 @@
 
     <div class="player" class:js-on={jsEnabled}>
       <div class="story-buttons">
-        <a class="navfab" href={prevHref || undefined} aria-label="Previous story" aria-disabled={!prevHref} tabindex={prevHref ? 0 : -1}>
-          <SkipBtn direction="left" />
-        </a>
-        <a class="navfab" href={nextHref || undefined} aria-label="Next story" aria-disabled={!nextHref} tabindex={nextHref ? 0 : -1}>
-          <SkipBtn direction="right" />
-        </a>
+        {#if prevHref}
+          <a class="navfab" href={prevHref} aria-label="Previous story" rel="prev">
+            <SkipBtn direction="left" />
+          </a>
+        {:else}
+          <span class="navfab is-disabled" aria-label="Previous story (unavailable)" aria-disabled="true">
+            <SkipBtn direction="left" />
+          </span>
+        {/if}
+
+        {#if nextHref}
+          <a class="navfab" href={nextHref} aria-label="Next story" rel="next">
+            <SkipBtn direction="right" />
+          </a>
+        {:else}
+          <span class="navfab is-disabled" aria-label="Next story (unavailable)" aria-disabled="true">
+            <SkipBtn direction="right" />
+          </span>
+        {/if}
       </div>
 
       {#if audioSrc}
@@ -301,9 +315,10 @@
   display: grid;
   place-items: center;
 }
-.navfab[aria-disabled="true"] {
+
+.navfab.is-disabled {
   opacity: .4;
-  pointer-events: none;
+  pointer-events: none;  
 }
 
 .transcript-fallback {
