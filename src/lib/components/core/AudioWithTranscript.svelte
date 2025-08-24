@@ -82,9 +82,10 @@
   }
 </script>
 
-<section class="story-wrap">
+<article class="story-wrap">
   <div class="story-grid" class:has-visuals={showVisuals && story}>
-    <div class="image-title-wrapper">
+
+    <header class="image-title-wrapper">
       {#if showVisuals && story}
         <picture class="story-image">
           <source srcset="{story.image}?width=320&format=avif" type="image/avif" />
@@ -92,86 +93,90 @@
           <img src="{story.image}?width=320" alt="{story.summary} cover image" width="320" height="270"  fetchpriority="high" />
         </picture>
       {/if}
-      <h2 class="title">{story.title}</h2>
-    </div>
+      <h1 class="title">{story.title}</h1>
+    </header>
 
-    <div class="transcript-panel">
-      {#if jsEnabled}
-        <div class="transcript-lines transcript">
-          {#if transcriptLines.length > 0}
-            {#each transcriptLines as line, i (i)}
-              <p class:active={i === currentLineIndex} bind:this={transcriptRefs[i]}>
-                {line.text}
-              </p>
-            {/each}
+    <section class="transcript-panel">
+      <h2 class="hidden">transcript panel</h2>
+        {#if jsEnabled}
+          <div class="transcript-lines transcript">
+            {#if transcriptLines.length > 0}
+              {#each transcriptLines as line, i (i)}
+                <p class:active={i === currentLineIndex} bind:this={transcriptRefs[i]}>
+                  {line.text}
+                </p>
+              {/each}
+            {:else}
+              <p>No transcript available</p>
+            {/if}
+          </div>
+        {:else}
+          <noscript class="transcript-fallback">
+            <details>
+              <summary>Read audio transcript</summary>
+              {#if plainTranscript}
+                <div class="transcript-scroll">
+                  <p class="transcript-plain">{plainTranscript}</p>
+                </div>
+                {:else}
+                  <p>No audio transcript available</p>
+              {/if}
+            </details>
+          </noscript>
+        {/if}
+    </section>
+
+    <section class="player" class:js-on={jsEnabled}>
+      <h2 class="hidden">transcript panel</h2>
+        <div class="story-buttons">
+          {#if prevHref}
+            <a class="navfab" href={prevHref} rel="prev" aria-label="Previous story">
+              <SkipBtn direction="left" />
+            </a>
           {:else}
-            <p>No transcript available</p>
+            <button class="navfab is-disabled" type="button" disabled
+                    aria-label="Previous story unavailable" title="No previous story">
+              <SkipBtn direction="left" />
+            </button>
+          {/if}
+
+          {#if nextHref}
+            <a class="navfab" href={nextHref} rel="next" aria-label="Next story">
+              <SkipBtn direction="right" />
+            </a>
+          {:else}
+            <button class="navfab is-disabled" type="button" disabled
+                    aria-label="Next story unavailable" title="No next story">
+              <SkipBtn direction="right" />
+            </button>
           {/if}
         </div>
-      {:else}
-        <noscript class="transcript-fallback">
-          <details>
-            <summary>Read audio transcript</summary>
-            {#if plainTranscript}
-              <div class="transcript-scroll">
-                <p class="transcript-plain">{plainTranscript}</p>
-              </div>
-              {:else}
-                <p>No audio transcript available</p>
-            {/if}
-          </details>
-        </noscript>
-      {/if}
-    </div>
 
-    <div class="player" class:js-on={jsEnabled}>
-      <div class="story-buttons">
-  {#if prevHref}
-    <a class="navfab" href={prevHref} rel="prev" aria-label="Previous story">
-      <SkipBtn direction="left" />
-    </a>
-  {:else}
-    <button class="navfab is-disabled" type="button" disabled
-            aria-label="Previous story unavailable" title="No previous story">
-      <SkipBtn direction="left" />
-    </button>
-  {/if}
-
-  {#if nextHref}
-    <a class="navfab" href={nextHref} rel="next" aria-label="Next story">
-      <SkipBtn direction="right" />
-    </a>
-  {:else}
-    <button class="navfab is-disabled" type="button" disabled
-            aria-label="Next story unavailable" title="No next story">
-      <SkipBtn direction="right" />
-    </button>
-  {/if}
-</div>
-
-
-      {#if audioSrc}
-        <audio
-          bind:this={audioEl}
-          on:timeupdate={(e) => (currentTime = e.currentTarget.currentTime)}
-          controls
-        >
-          <source src={audioSrc} type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio>
-      {:else}
-        <p>No audio available</p>
-      {/if}
-    </div>
+          {#if audioSrc}
+            <audio
+              bind:this={audioEl}
+              on:timeupdate={(e) => (currentTime = e.currentTarget.currentTime)}
+              controls
+            >
+              <source src={audioSrc} type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          {:else}
+            <p>No audio available</p>
+          {/if}
+    </section>
   </div>
-</section>
+</article>
 
 <style>
-
 .story-wrap {
   container-type: inline-size;
   container-name: story;
   inline-size: 100%;
+}
+
+.hidden{
+  display: none;
 }
 
 .story-grid {
