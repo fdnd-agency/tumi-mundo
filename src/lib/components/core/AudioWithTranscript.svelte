@@ -127,7 +127,7 @@
     </section>
 
     <section class="player" class:js-on={jsEnabled}>
-      <h2 class="hidden">transcript panel</h2>
+      <h2 class="hidden">player section</h2>
         <div class="story-buttons">
           {#if prevHref}
             <a class="navfab" href={prevHref} rel="prev" aria-label="Previous story">
