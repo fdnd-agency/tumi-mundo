@@ -1,14 +1,29 @@
 <script>
   import { StoryNavActions, AudioWithTranscript } from '$lib/index';
   export let data;
-  const { story, audio } = data;
-  let showVisuals = data.showVisuals;
-  let darkMode = data.theme === 'dark';
+
+  $: story = data.story;
+  $: audio = data.audio;
+  $: prevHref = data.prevHref;
+  $: nextHref = data.nextHref;
+  $: showVisuals = data.showVisuals;
+  $: darkMode = data.theme === 'dark';
+  $: plainTranscript = data
 </script>
 
 <div class:light-mode={!darkMode} style="view-transition-name:main-bg;">
   <StoryNavActions bind:showVisuals bind:darkMode {story} />
-  <AudioWithTranscript {story} {audio} />
+
+  {#key story?.id ?? story?.slug ?? story}
+    <AudioWithTranscript
+      {story}
+      {audio}
+      {showVisuals}
+      {prevHref}
+      {nextHref}
+      plainTranscript={data.plainTranscript}  
+    />
+  {/key}
 </div>
 
 <style>
@@ -18,23 +33,42 @@ div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   position: relative;
   z-index: 0;
   overflow-y: hidden;
 }
 
-div.light-mode {
-  background: var(--bg-image-blue);
+main.light-mode { 
+  background: var(--bg-image-blue); 
 }
+
+main.light-mode :global(.title), main.light-mode :global(.player p), main.light-mode :global(.transcript-plain), main.light-mode :global(.transcript-fallback summary){
+  color: black;
+}
+
+main.light-mode :global(.transcript p.active){
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #000000;
+  font-weight: bold;
+}
+
+main.light-mode :global(.transcript p){
+  color: #272727;
+}
+
+
 
 ::view-transition-old(main-bg),
-::view-transition-new(main-bg) {
-  animation: fade-color 0.6s ease forwards;
+::view-transition-new(main-bg) { 
+  animation: fade-color 0.6s ease forwards; 
 }
 
-@keyframes fade-color {
-  from { opacity: 0.2; }
-  to { opacity: 1; }
+@keyframes fade-color { 
+  from { 
+    opacity: .2; 
+    } 
+  to { 
+    opacity: 1; 
+    } 
 }
 </style>
