@@ -414,7 +414,6 @@ details[open] > summary::after {
     margin-block-start: 0;
   }
 
-  /* NOSCRIPT desktop tweaks */
   .transcript-fallback {
     inline-size: min(52ch, 92vw);
     margin-inline: 0;
@@ -434,6 +433,57 @@ details[open] > summary::after {
 @container story (min-width: 1200px) {
   .story-grid {
     grid-template-columns: 30rem 1fr;
+  }
+}
+
+/* Scroll animation for plain transcript */
+@keyframes reveal {
+  entry 0%   { 
+    opacity: 0; 
+    transform: translateY(.75rem); 
+  }
+  entry 100% { 
+    opacity: 1; 
+    transform: none; 
+  }
+  exit 0%    { 
+    opacity: 1; 
+    transform: none; 
+  }
+  exit 100%  { 
+    opacity: 0; 
+    transform: translateY(-.75rem); 
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .transcript-plain {
+    animation: reveal linear both;
+    animation-timeline: view(block nearest);
+  }
+}
+
+.transcript-scroll{
+  --fade: 1.5rem;               
+  --mask: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 var(--fade),
+    #000 calc(100% - var(--fade)),
+    transparent 100%
+  );
+  padding-block: var(--fade);
+  -webkit-mask-image: var(--mask);
+  mask-image: var(--mask);
+  max-block-size: clamp(12rem, 45vh, 22rem);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-inline-end: .25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transcript-plain { 
+    animation: none; 
   }
 }
 
